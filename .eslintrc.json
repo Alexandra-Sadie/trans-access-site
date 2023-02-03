@@ -1,0 +1,9 @@
+// this is reccomended practice for extending hidden
+// eslint configs of cra
+//
+// see: https://github.com/facebook/create-react-app/tree/v4.0.3/packages/eslint-config-react-app
+{
+  // strict implements the most rigorous accessibility test
+  "extends": ["react-app", "plugin:jsx-a11y/strict"],
+  "plugins": ["jsx-a11y"]
+}
