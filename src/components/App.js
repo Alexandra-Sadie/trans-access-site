@@ -1,16 +1,13 @@
-import { Route, Routes } from "react-router";
-import Main from "./pages/Main";
-import SecondPage from "./pages/SecondPage";
+import { Outlet } from "react-router-dom";
+import Navbar from "./Navbar/Navbar";
 
-function App() {
+const App = () => {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/second" element={<SecondPage />} />
-      </Routes>
+      <Navbar />
+      <Outlet />
     </>
   );
-}
+};
 
 export default App;
