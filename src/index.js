@@ -9,7 +9,6 @@ import "@fontsource/roboto/700.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { routingObject } from "./routing";
 import Main from "./components/pages/Main";
-import SecondPage from "./components/pages/SecondPage";
 import Intervention from "./components/pages/Intervention";
 import Therapist from "./components/pages/Therapist";
 import NameChange from "./components/pages/NameChange";
