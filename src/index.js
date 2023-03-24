@@ -16,7 +16,6 @@ import NameChange from "./components/pages/NameChange";
 import Doctor from "./components/pages/Doctor";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-console.log(routingObject);
 root.render(
   <React.StrictMode>
     <CssBaseline />
@@ -27,7 +26,6 @@ root.render(
         <Route path="/" element={<App />}>
           {/* using path="/" in the sub-route makes home fall through to this */}
           <Route path={routingObject.main.route} element={<Main />} />
-          <Route path="second" element={<SecondPage />} />
           <Route
             path={routingObject.intervention.route}
             element={<Intervention />}
