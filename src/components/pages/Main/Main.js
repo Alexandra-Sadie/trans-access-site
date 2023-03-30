@@ -8,8 +8,13 @@ const Main = () => {
     <Stack
       sx={{ pt: 6 }}
       spacing={1.5}
-      divider={<Divider flexItem />}
-      direction={{ xs: "column", sm: "row" }}
+      divider={
+        <Divider
+          flexItem
+          // divider always starts from left for vile reasons and it looks fun like this lol
+          sx={{ maxWidth: "50%" }}
+        />
+      }
       alignItems="center"
     >
       {
