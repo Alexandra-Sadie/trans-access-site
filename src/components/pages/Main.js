@@ -6,52 +6,27 @@ import { routingObject } from "../../routing";
 const RouteButton = ({ route, title }) => {
   return (
     <Button variant="contained" to={`${route}`} component={RouterLink}>
-      {`To ${title}`}
+      {`${title}`}
     </Button>
   );
 };
 
 const Main = () => {
-  console.log(
-    Object.keys(routingObject).map(() => (
-      <RouteButton route={"Route"} title={"Title"} />
-    ))
-  );
+  console.log(Object.values(routingObject));
   return (
     <Stack>
-      {Object.keys(routingObject).map((key) => {
-        const route = routingObject[key].route;
-        const title = routingObject[key].title;
-        return <RouteButton route={route} title={title} />;
-      })}
-      {/* <Button
-        variant="contained"
-        to={`/${routingObject.intervention.route}`}
-        component={RouterLink}
-      >
-        {`To ${routingObject.intervention.title}`}
-      </Button>
-      <Button
-        variant="contained"
-        to={`/${routingObject.name_change.route}`}
-        component={RouterLink}
-      >
-        {`To ${routingObject.name_change.title}`}
-      </Button>
-      <Button
-        variant="contained"
-        to={`/${routingObject.therapist.route}`}
-        component={RouterLink}
-      >
-        {`To ${routingObject.therapist.title}`}
-      </Button>
-      <Button
-        variant="contained"
-        to={`/${routingObject.doctor.route}`}
-        component={RouterLink}
-      >
-        {`To ${routingObject.doctor.title}`}
-      </Button> */}
+      {
+        // this returns an array of each route sub-object of routingObject
+        // these are expected to be of structure {route: string, title: string}
+        Object.values(routingObject)
+          // we are ON main page and don't want to include a link TO main page so we filter out that route
+          // and keep the others
+          .filter(({ route }) => route !== "/")
+          // this takes said sub-objects and renders them as buttons
+          .map(({ route, title }) => (
+            <RouteButton key={route} route={route} title={title} />
+          ))
+      }
     </Stack>
   );
 };
