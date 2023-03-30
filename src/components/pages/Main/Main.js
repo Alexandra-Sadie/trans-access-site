@@ -4,7 +4,7 @@ import RouteButton from "./RouteButton";
 
 const Main = () => {
   return (
-    <Stack>
+    <Stack sx={{ pt: 2 }}>
       {
         // this returns an array of each route sub-object of routingObject
         // these are expected to be of structure {route: string, title: string}
