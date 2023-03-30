@@ -1,18 +1,8 @@
-import { Link as RouterLink } from "react-router-dom";
-import { Button } from "@mui/material";
 import { Stack } from "@mui/system";
-import { routingObject } from "../../routing";
-
-const RouteButton = ({ route, title }) => {
-  return (
-    <Button variant="contained" to={`${route}`} component={RouterLink}>
-      {`${title}`}
-    </Button>
-  );
-};
+import { routingObject } from "../../../routing";
+import RouteButton from "./RouteButton";
 
 const Main = () => {
-  console.log(Object.values(routingObject));
   return (
     <Stack>
       {
