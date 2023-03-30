@@ -1,10 +1,17 @@
+import { Divider } from "@mui/material";
 import { Stack } from "@mui/system";
 import { routingObject } from "../../../routing";
 import RouteButton from "./RouteButton";
 
 const Main = () => {
   return (
-    <Stack sx={{ pt: 2 }}>
+    <Stack
+      sx={{ pt: 6 }}
+      spacing={1.5}
+      divider={<Divider flexItem />}
+      direction={{ xs: "column", sm: "row" }}
+      alignItems="center"
+    >
       {
         // this returns an array of each route sub-object of routingObject
         // these are expected to be of structure {route: string, title: string}
