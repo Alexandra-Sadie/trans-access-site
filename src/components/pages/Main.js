@@ -5,7 +5,7 @@ import { routingObject } from "../../routing";
 
 const RouteButton = ({ route, title }) => {
   return (
-    <Button variant="contained" to={`/${route}`} component={RouterLink}>
+    <Button variant="contained" to={`${route}`} component={RouterLink}>
       {`To ${title}`}
     </Button>
   );
@@ -19,9 +19,11 @@ const Main = () => {
   );
   return (
     <Stack>
-      {Object.keys(routingObject).map(() => (
-        <RouteButton route={"Route"} title={"Title"} />
-      ))}
+      {Object.keys(routingObject).map((key) => {
+        const route = routingObject[key].route;
+        const title = routingObject[key].title;
+        return <RouteButton route={route} title={title} />;
+      })}
       {/* <Button
         variant="contained"
         to={`/${routingObject.intervention.route}`}
