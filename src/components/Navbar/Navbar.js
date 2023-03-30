@@ -1,5 +1,20 @@
 import { Menu } from "@mui/icons-material";
-import { AppBar, IconButton, Toolbar } from "@mui/material";
+import { AppBar, Button, IconButton, Stack, Toolbar } from "@mui/material";
+
+import { Link as RouterLink } from "react-router-dom";
+
+const NavbarButton = ({ route, title }) => {
+  return (
+    <Button
+      variant="text"
+      // sx={{ minWidth: "200px" }}
+      to={`${route}`}
+      component={RouterLink}
+    >
+      {`${title}`}
+    </Button>
+  );
+};
 
 const Navbar = () => {
   return (
@@ -11,6 +26,7 @@ const Navbar = () => {
         <IconButton color="inherit" aria-label="menu">
           <Menu />
         </IconButton>
+        <Stack direction="row" spacing={2}></Stack>
       </Toolbar>
     </AppBar>
   );
