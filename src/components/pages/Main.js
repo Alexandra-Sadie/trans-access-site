@@ -3,10 +3,26 @@ import { Button } from "@mui/material";
 import { Stack } from "@mui/system";
 import { routingObject } from "../../routing";
 
+const RouteButton = ({ route, title }) => {
+  return (
+    <Button variant="contained" to={`/${route}`} component={RouterLink}>
+      {`To ${title}`}
+    </Button>
+  );
+};
+
 const Main = () => {
+  console.log(
+    Object.keys(routingObject).map(() => (
+      <RouteButton route={"Route"} title={"Title"} />
+    ))
+  );
   return (
     <Stack>
-      <Button
+      {Object.keys(routingObject).map(() => (
+        <RouteButton route={"Route"} title={"Title"} />
+      ))}
+      {/* <Button
         variant="contained"
         to={`/${routingObject.intervention.route}`}
         component={RouterLink}
@@ -33,7 +49,7 @@ const Main = () => {
         component={RouterLink}
       >
         {`To ${routingObject.doctor.title}`}
-      </Button>
+      </Button> */}
     </Stack>
   );
 };
