@@ -9,6 +9,11 @@ export const routingObject = {
     route: "intervention",
   },
 
+  name_change: {
+    title: "Name Change",
+    route: "name_change",
+  },
+
   therapist: {
     title: "Therapist",
     route: "therapist",
@@ -17,10 +22,5 @@ export const routingObject = {
   doctor: {
     title: "Doctor",
     route: "doctor",
-  },
-
-  name_change: {
-    title: "Name Change",
-    route: "name_change",
   },
 };
