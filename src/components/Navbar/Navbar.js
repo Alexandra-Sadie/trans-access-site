@@ -4,6 +4,7 @@ import {
   // Button,
   IconButton,
   Menu,
+  MenuItem,
   Stack,
   Toolbar,
 } from "@mui/material";
@@ -64,7 +65,9 @@ const Navbar = () => {
           //   display: { xs: "block", md: "none" },
           // }}
         >
-          <p>wahoo</p>
+          <MenuItem>
+            <p>wahoo</p>
+          </MenuItem>
         </Menu>
 
         <Stack direction="row" spacing={2}>
