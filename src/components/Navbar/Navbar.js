@@ -17,6 +17,15 @@ import { Link as RouterLink } from "react-router-dom";
 import { routingObject } from "../../routing";
 import NavbarButton from "./NavbarButton";
 
+const HamburgerLink = ({ route, title }) => (
+  <MenuItem key={route}>
+    {/* i am winging that this is the most semantic and accessible approach but it seems right */}
+    <Link sx={{ textDecoration: "none" }} to={route} component={RouterLink}>
+      <Typography textAlign="center">{title}</Typography>
+    </Link>
+  </MenuItem>
+);
+
 const Navbar = () => {
   // *STATE ZONE
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -67,16 +76,7 @@ const Navbar = () => {
           //   display: { xs: "block", md: "none" },
           // }}
         >
-          <MenuItem>
-            {/* i am winging that this is the most semantic and accessible approach but it seems right */}
-            <Link
-              sx={{ textDecoration: "none" }}
-              to={"name_change"}
-              component={RouterLink}
-            >
-              <Typography textAlign="center">Name Change</Typography>
-            </Link>
-          </MenuItem>
+          <HamburgerLink route={"name_change"} title="Name Change" />
         </Menu>
 
         <Stack direction="row" spacing={2}>
