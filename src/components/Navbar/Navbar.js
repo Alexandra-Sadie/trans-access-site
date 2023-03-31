@@ -17,17 +17,14 @@ import NavbarButton from "./NavbarButton";
 const Navbar = () => {
   // *STATE ZONE
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const [isOpen, setIsOpen] = useState(false);
 
   // *FUNCTION ZONE
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
-    setIsOpen(true);
   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-    setIsOpen(false);
   };
 
   // *RETURN
@@ -57,7 +54,9 @@ const Navbar = () => {
             vertical: "top",
             horizontal: "left",
           }}
-          open={isOpen}
+          // this is true if anchorElNav has a value
+          // and false if it is null
+          open={Boolean(anchorElNav)}
           onClose={handleCloseNavMenu}
           // the below will be useful to hide the menu
           // confidently on desktop view but not for now
