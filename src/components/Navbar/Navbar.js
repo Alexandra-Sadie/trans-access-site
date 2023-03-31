@@ -1,10 +1,6 @@
-import MenuIcon from "@mui/icons-material/Menu";
-import { AppBar, IconButton, Menu, Toolbar } from "@mui/material";
-import { Box } from "@mui/system";
+import { AppBar, Toolbar } from "@mui/material";
 import { useState } from "react";
 
-import { routingObject } from "../../routing";
-import HamburgerLink from "./HamburgerMenu/HamburgerLink";
 import DesktopNavLinks from "./DesktopNavLinks/DesktopNavLinks";
 import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
 
@@ -25,13 +21,16 @@ const Navbar = () => {
   return (
     //   AppBar implies bar at top of application while Toolbar implies
     // list of utility/navigation links
+    // todo link so post about this
     <AppBar position="sticky">
       <Toolbar>
+        {/* this is visible on mobile breakpoints */}
         <HamburgerMenu
           anchorElNav={anchorElNav}
           handleOpenNavMenu={handleOpenNavMenu}
           handleCloseNavMenu={handleCloseNavMenu}
         />
+        {/* this is visible on desktop breakpoint */}
         <DesktopNavLinks />
       </Toolbar>
     </AppBar>
