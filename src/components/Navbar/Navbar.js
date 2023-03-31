@@ -18,7 +18,7 @@ import { routingObject } from "../../routing";
 import NavbarButton from "./NavbarButton";
 
 const HamburgerLink = ({ route, title }) => (
-  <MenuItem key={route}>
+  <MenuItem>
     {/* i am winging that this is the most semantic and accessible approach but it seems right */}
     <Link sx={{ textDecoration: "none" }} to={route} component={RouterLink}>
       <Typography textAlign="center">{title}</Typography>
@@ -76,7 +76,10 @@ const Navbar = () => {
           //   display: { xs: "block", md: "none" },
           // }}
         >
-          <HamburgerLink route={"name_change"} title="Name Change" />
+          {/* <HamburgerLink route={"name_change"} title="Name Change" /> */}
+          {Object.values(routingObject).map(({ route, title }) => (
+            <HamburgerLink key={route} route={route} title={title} />
+          ))}
         </Menu>
 
         <Stack direction="row" spacing={2}>
