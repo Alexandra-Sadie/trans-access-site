@@ -3,14 +3,16 @@ import {
   AppBar,
   // Button,
   IconButton,
+  Link,
   Menu,
   MenuItem,
   Stack,
   Toolbar,
+  Typography,
 } from "@mui/material";
 import { useState } from "react";
 
-// import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 
 import { routingObject } from "../../routing";
 import NavbarButton from "./NavbarButton";
@@ -66,7 +68,14 @@ const Navbar = () => {
           // }}
         >
           <MenuItem>
-            <p>wahoo</p>
+            {/* i am winging that this is the most semantic and accessible approach but it seems right */}
+            <Link
+              sx={{ textDecoration: "none" }}
+              to={"name_change"}
+              component={RouterLink}
+            >
+              <Typography textAlign="center">Name Change</Typography>
+            </Link>
           </MenuItem>
         </Menu>
 
