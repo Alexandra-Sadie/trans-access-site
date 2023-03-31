@@ -1,7 +1,7 @@
 import MenuIcon from "@mui/icons-material/Menu";
 import {
   AppBar,
-  Button,
+  // Button,
   IconButton,
   Menu,
   Stack,
@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 
-import { Link as RouterLink } from "react-router-dom";
+// import { Link as RouterLink } from "react-router-dom";
 
 import { routingObject } from "../../routing";
 import NavbarButton from "./NavbarButton";
