@@ -6,6 +6,7 @@ import { useState } from "react";
 import { routingObject } from "../../routing";
 import HamburgerLink from "./HamburgerMenu";
 import NavbarButton from "./DesktopNavLinks/NavbarButton";
+import DesktopNavLinks from "./DesktopNavLinks/DesktopNavLinks";
 
 const Navbar = () => {
   // *STATE ZONE
@@ -73,7 +74,7 @@ const Navbar = () => {
         </Box>
 
         {/* Stack is a Box/div that automatically is a flex container */}
-        <Stack
+        {/* <Stack
           direction="row"
           spacing={2}
           // this hides on mobile breakpoints
@@ -91,7 +92,8 @@ const Navbar = () => {
                 <NavbarButton key={route} route={route} title={title} />
               ))
           }
-        </Stack>
+        </Stack> */}
+        <DesktopNavLinks />
       </Toolbar>
     </AppBar>
   );
