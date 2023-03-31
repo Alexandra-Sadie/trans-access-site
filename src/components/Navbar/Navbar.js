@@ -1,31 +1,33 @@
-import { Menu } from "@mui/icons-material";
+import MenuIcon from "@mui/icons-material/Menu";
 import { AppBar, Button, IconButton, Stack, Toolbar } from "@mui/material";
+import { useState } from "react";
 
 import { Link as RouterLink } from "react-router-dom";
 
 import { routingObject } from "../../routing";
-
-const NavbarButton = ({ route, title }) => {
-  return (
-    <Button
-      variant="text"
-      sx={{ color: "#fff" }}
-      to={`${route}`}
-      component={RouterLink}
-    >
-      {`${title}`}
-    </Button>
-  );
-};
+import NavbarButton from "./NavbarButton";
 
 const Navbar = () => {
+  // *STATE ZONE
+  const [anchorElNav, setAnchorElNav] = useState(null);
+
+  // *FUNCTION ZONE
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  // *RETURN
   return (
     //   {/* AppBar implies bar at top of application while Toolbar implies
     // list of utility/navigation links */}
     <AppBar position="sticky">
       <Toolbar>
         <IconButton color="inherit" aria-label="menu">
-          <Menu />
+          <MenuIcon />
         </IconButton>
         <Stack direction="row" spacing={2}>
           {
