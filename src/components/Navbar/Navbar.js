@@ -4,7 +4,7 @@ import { Box } from "@mui/system";
 import { useState } from "react";
 
 import { routingObject } from "../../routing";
-import HamburgerLink from "./HamburgerMenu";
+import HamburgerLink from "./HamburgerMenu/HamburgerLink";
 import DesktopNavLinks from "./DesktopNavLinks/DesktopNavLinks";
 
 const Navbar = () => {
