@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import { routingObject } from "../../routing";
 import HamburgerLink from "./HamburgerMenu";
-import NavbarButton from "./NavbarButton";
+import NavbarButton from "./DesktopNavLinks/NavbarButton";
 
 const Navbar = () => {
   // *STATE ZONE
