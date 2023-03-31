@@ -1,5 +1,12 @@
 import MenuIcon from "@mui/icons-material/Menu";
-import { AppBar, Button, IconButton, Stack, Toolbar } from "@mui/material";
+import {
+  AppBar,
+  Button,
+  IconButton,
+  Menu,
+  Stack,
+  Toolbar,
+} from "@mui/material";
 import { useState } from "react";
 
 import { Link as RouterLink } from "react-router-dom";
@@ -10,14 +17,17 @@ import NavbarButton from "./NavbarButton";
 const Navbar = () => {
   // *STATE ZONE
   const [anchorElNav, setAnchorElNav] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   // *FUNCTION ZONE
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
+    setIsOpen(true);
   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+    setIsOpen(false);
   };
 
   // *RETURN
@@ -33,6 +43,29 @@ const Navbar = () => {
         >
           <MenuIcon />
         </IconButton>
+
+        {/* COPY PASTE ZONE BELOW */}
+        <Menu
+          id="menu-appbar"
+          anchorEl={anchorElNav}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "left",
+          }}
+          keepMounted
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "left",
+          }}
+          open={isOpen}
+          onClose={handleCloseNavMenu}
+          sx={{
+            display: { xs: "block", md: "none" },
+          }}
+        >
+          <p>wahoo</p>
+        </Menu>
+
         <Stack direction="row" spacing={2}>
           {
             // this returns an array of each route sub-object of routingObject
