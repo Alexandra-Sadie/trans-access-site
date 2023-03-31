@@ -73,7 +73,15 @@ const Navbar = () => {
         </Box>
 
         {/* Stack is a Box/div that automatically is a flex container */}
-        <Stack direction="row" spacing={2}>
+        <Stack
+          direction="row"
+          spacing={2}
+          // this hides on mobile breakpoints
+          // and grants its default display, flex, on
+          // desktop breakpoint
+          // note: I THINK that its default display is flex
+          sx={{ display: { xs: "none", md: "flex" } }}
+        >
           {
             // this returns an array of each route sub-object of routingObject
             // these are expected to be of structure {route: string, title: string}
