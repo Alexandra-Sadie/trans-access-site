@@ -26,7 +26,11 @@ const Navbar = () => {
     // list of utility/navigation links */}
     <AppBar position="sticky">
       <Toolbar>
-        <IconButton color="inherit" aria-label="menu">
+        <IconButton
+          color="inherit"
+          aria-label="menu"
+          onClick={handleOpenNavMenu}
+        >
           <MenuIcon />
         </IconButton>
         <Stack direction="row" spacing={2}>
