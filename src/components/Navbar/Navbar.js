@@ -59,9 +59,11 @@ const Navbar = () => {
           }}
           open={isOpen}
           onClose={handleCloseNavMenu}
-          sx={{
-            display: { xs: "block", md: "none" },
-          }}
+          // the below will be useful to hide the menu
+          // confidently on desktop view but not for now
+          // sx={{
+          //   display: { xs: "block", md: "none" },
+          // }}
         >
           <p>wahoo</p>
         </Menu>
