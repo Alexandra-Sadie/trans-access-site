@@ -41,8 +41,8 @@ const Navbar = () => {
 
   // *RETURN
   return (
-    //   {/* AppBar implies bar at top of application while Toolbar implies
-    // list of utility/navigation links */}
+    //   AppBar implies bar at top of application while Toolbar implies
+    // list of utility/navigation links
     <AppBar position="sticky">
       <Toolbar>
         <IconButton
@@ -76,12 +76,18 @@ const Navbar = () => {
           //   display: { xs: "block", md: "none" },
           // }}
         >
-          {/* <HamburgerLink route={"name_change"} title="Name Change" /> */}
-          {Object.values(routingObject).map(({ route, title }) => (
-            <HamburgerLink key={route} route={route} title={title} />
-          ))}
+          {
+            // this returns an array of each route sub-object of routingObject
+            // these are expected to be of structure {route: string, title: string}
+            Object.values(routingObject)
+              // this takes said sub-objects and renders them as typographical links in the menu
+              .map(({ route, title }) => (
+                <HamburgerLink key={route} route={route} title={title} />
+              ))
+          }
         </Menu>
 
+        {/* Stack is a Box/div that automatically is a flex container */}
         <Stack direction="row" spacing={2}>
           {
             // this returns an array of each route sub-object of routingObject
