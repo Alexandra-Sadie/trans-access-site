@@ -1,30 +1,10 @@
 import MenuIcon from "@mui/icons-material/Menu";
-import {
-  AppBar,
-  // Button,
-  IconButton,
-  Link,
-  Menu,
-  MenuItem,
-  Stack,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { AppBar, IconButton, Menu, Stack, Toolbar } from "@mui/material";
 import { useState } from "react";
 
-import { Link as RouterLink } from "react-router-dom";
-
 import { routingObject } from "../../routing";
+import HamburgerLink from "./HamburgerMenu";
 import NavbarButton from "./NavbarButton";
-
-const HamburgerLink = ({ route, title }) => (
-  <MenuItem>
-    {/* i am winging that this is the most semantic and accessible approach but it seems right */}
-    <Link sx={{ textDecoration: "none" }} to={route} component={RouterLink}>
-      <Typography textAlign="center">{title}</Typography>
-    </Link>
-  </MenuItem>
-);
 
 const Navbar = () => {
   // *STATE ZONE
@@ -48,6 +28,8 @@ const Navbar = () => {
         <IconButton
           color="inherit"
           aria-label="menu"
+          aria-controls="menu-appbar"
+          aria-haspopup="true"
           onClick={handleOpenNavMenu}
         >
           <MenuIcon />
