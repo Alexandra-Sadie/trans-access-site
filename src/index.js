@@ -1,13 +1,18 @@
+// !IMPORT ZONE
+// standard requisite imports
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./components/App";
 import CssBaseline from "@mui/material/CssBaseline";
+// fonts
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
+// routing
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { routingObject } from "./routing";
+// our components
 import Main from "./components/pages/Main/Main";
 import Intervention from "./components/pages/Intervention";
 import Therapist from "./components/pages/Therapist";
