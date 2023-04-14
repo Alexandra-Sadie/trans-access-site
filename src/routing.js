@@ -1,3 +1,4 @@
+// TODO explaining wtf this is -- philosophy of ssot objec and breakdown of why the objects r structured the way they are, etc
 export const routingObject = {
   main: {
     title: "Main",

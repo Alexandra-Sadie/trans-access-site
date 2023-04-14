@@ -1,3 +1,4 @@
+// !IMPORT ZONE
 import { Stack } from "@mui/material";
 import { routingObject } from "../../../routing";
 import NavbarButton from "./NavbarButton";
@@ -5,6 +6,7 @@ import NavbarButton from "./NavbarButton";
 const DesktopNavLinks = () => {
   return (
     //   Stack is a Box/div that automatically is a flex container
+    // TODO link to docs
     <Stack
       direction="row"
       spacing={2}
@@ -12,6 +14,7 @@ const DesktopNavLinks = () => {
       // and grants its default display, flex, on
       // desktop breakpoint
       // note: I THINK that its default display is flex
+      // TODO clean this up ^
       sx={{ display: { xs: "none", md: "flex" } }}
     >
       {

@@ -1,3 +1,4 @@
+// !IMPORT ZONE
 import { Divider } from "@mui/material";
 import { Stack } from "@mui/system";
 import { routingObject } from "../../../routing";
@@ -5,9 +6,11 @@ import RouteButton from "./RouteButton";
 
 const Main = () => {
   return (
+    // TODO explain what Stack means, link to mui docs
     <Stack
       sx={{ pt: 6 }}
       spacing={1.5}
+      // TODO explain stylistic divider
       divider={
         <Divider
           flexItem
