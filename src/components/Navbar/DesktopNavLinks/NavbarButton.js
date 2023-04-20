@@ -15,11 +15,11 @@ const NavbarButton = ({ route, title }) => {
     <Button
       variant="text"
       sx={{ color: "#fff" }}
-      to={`${route}`}
+      to={route}
       // see above on why this is RouterLink
       component={RouterLink}
     >
-      {`${title}`}
+      {title}
     </Button>
   );
 };
