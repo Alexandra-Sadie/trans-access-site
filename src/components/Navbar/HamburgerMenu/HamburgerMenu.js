@@ -1,5 +1,5 @@
 // !IMPORT ZONE
-import MenuIcon from "@mui/icons-material/Menu";
+import { Menu as HamburgerIcon } from "@mui/icons-material";
 import { Box, IconButton, Menu } from "@mui/material";
 import { routingObject } from "../../../routing";
 import HamburgerLink from "./HamburgerLink";
@@ -17,9 +17,13 @@ const HamburgerMenu = ({
         display: { xs: "block", md: "none" },
       }}
     >
+      {/* IconButton is an MUI element that simply wraps any MUI Icon and makes it a clickable button
+      
+      docs: https://mui.com/material-ui/api/icon-button/
+      */}
       <IconButton
-        // TODO link to docs
         color="inherit"
+        // TODO ACCESIBILITY - determine if these aria notes are correct - they are taken copy-paste from MUI docs example
         aria-label="menu"
         aria-controls="menu-appbar"
         aria-haspopup="true"
@@ -27,7 +31,7 @@ const HamburgerMenu = ({
       >
         {/* //TODO link to docs for menuicon
         // ? mb rename? to be more contextually self documenting  */}
-        <MenuIcon />
+        <HamburgerIcon />
       </IconButton>
 
       {/* COPY PASTE ZONE BELOW 
