@@ -5,8 +5,8 @@ import NavbarButton from "./NavbarButton";
 
 const DesktopNavLinks = () => {
   return (
-    //   Stack is a Box/div that automatically is a flex container
-    // TODO link to docs
+    // Stack is essentially MUI's version of a flex container "for arranging items on a one-dimensional vertical/horizontal (horizontal is the default) axis".
+    // docs: https://mui.com/material-ui/react-stack/
     <Stack
       direction="row"
       spacing={2}

@@ -6,15 +6,16 @@ import RouteButton from "./RouteButton";
 
 const Main = () => {
   return (
-    // TODO explain what Stack means, link to mui docs
+    // Stack is essentially MUI's version of a flex container "for arranging items on a one-dimensional vertical/horizontal (horizontal is the default) axis".
+    // docs: https://mui.com/material-ui/react-stack/
     <Stack
       sx={{ pt: 6 }}
       spacing={1.5}
-      // TODO explain stylistic divider
+      // This divider is purely a stylistic touch we added while futzing around.
       divider={
         <Divider
           flexItem
-          // divider always starts from left for vile reasons and it looks fun like this lol
+          // Dividers always start from the left - this makes it stop halfway through the page - and it looks fun like this :)
           sx={{ maxWidth: "50%" }}
         />
       }
