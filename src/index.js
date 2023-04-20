@@ -4,7 +4,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import CssBaseline from "@mui/material/CssBaseline";
 // fonts
-// TODO explain this - theyre never called etc
+// We've imported our fonts here because MUI uses them to construct its internal stylesheet; even if we don't call them directly in our code they're being used in the MUI styling. This is an MUI standard practice (as opposed to importing them in an HTML or CSS file)
+// docs: https://mui.com/material-ui/getting-started/installation/#roboto-font
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
