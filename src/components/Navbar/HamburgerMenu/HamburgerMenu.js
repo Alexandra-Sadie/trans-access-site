@@ -7,12 +7,12 @@ import { useState } from "react";
 
 const HamburgerMenu = () => {
   // *STATE ZONE
-  // we handle the hamburger dropdown menu by anchoring the menu to the hamburger icon when the hamburger is clicked on. (when the menu has no anchor it doesn't appear)
-  // this state is used to monitor what html element the menu is anchoring to, if any (should only ever be the burger)
+  // we handle the hamburger dropdown menu by anchoring the menu to the hamburger icon when the hamburger (ie IconButton component) is clicked on. (when the menu has no anchor it doesn't appear)
+  // this state is used to monitor what html element the menu is anchoring to, if any (should only ever be the burger IconButton)
   const [anchorElNav, setAnchorElNav] = useState(null);
 
   // *FUNCTION ZONE
-  // this function expects to receive a click event & is called in the onClick of the hamburger icon
+  // this function expects to receive a click event & is called in the onClick of the IconButton
   // when this function runs, it will set the anchor of the dropdown menu to the clicked element (the burger)
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -55,20 +55,23 @@ const HamburgerMenu = () => {
       <Menu
         // accessibility: this id is neccesary for aria-controls="menu-appbar" in the IconButton above
         id="menu-appbar"
-        // TODO explain anchorEl, anchorOrigin, keepMounted
+        // as noted in State Zone above, this tells the Menu which element to anchor itself to
         anchorEl={anchorElNav}
+        // this sets what corner of the icon the menu anchors to
         anchorOrigin={{
           vertical: "bottom",
           horizontal: "left",
         }}
+        // ? this seems to do some performance thing is it useful enough to keep
         keepMounted
         transformOrigin={{
           vertical: "top",
           horizontal: "left",
         }}
-        // this is true if anchorElNav has a value
-        // and false if it is null
-        // TODO improve^
+        // Boolean() returns true if anchorElNav has content (i.e. the IconButton has been clicked and so handleOpenNavMenu has been called) and false if anchorElNav is null (i.e. on application start or if handleCloseNavMenu has been called)
+        // this is considered derived state
+        //
+        // then, if it returns true, the Menu is open, i.e. visible, if it returns false, the menu is not visible
         open={Boolean(anchorElNav)}
         onClose={handleCloseNavMenu}
       >
