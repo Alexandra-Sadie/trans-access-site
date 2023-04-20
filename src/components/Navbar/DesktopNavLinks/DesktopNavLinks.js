@@ -5,16 +5,14 @@ import NavbarButton from "./NavbarButton";
 
 const DesktopNavLinks = () => {
   return (
-    //   Stack is a Box/div that automatically is a flex container
-    // TODO link to docs
+    // Stack is essentially MUI's version of a flex container "for arranging items on a one-dimensional vertical/horizontal (horizontal is the default) axis".
+    // docs: https://mui.com/material-ui/react-stack/
     <Stack
       direction="row"
+      // this spacing property uses the spacing unit set in the MUI theme
+      // docs: https://mui.com/material-ui/customization/spacing/
       spacing={2}
-      // this hides on mobile breakpoints
-      // and grants its default display, flex, on
-      // desktop breakpoint
-      // note: I THINK that its default display is flex
-      // TODO clean this up ^
+      // this means the Stack will be display:none at mobile breakpoints and display:flex on desktop breakpoints
       sx={{ display: { xs: "none", md: "flex" } }}
     >
       {

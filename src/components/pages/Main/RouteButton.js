@@ -1,4 +1,8 @@
 // !IMPORT ZONE
+// TODO extract to readme
+// Link imported from "react-router-dom" is a React Router component that acts as an anchor link (wow!) to other routes (pages). HOWEVER because MUI ALSO has a component called Link, used to style anchor text, we import it as RouterLink across the entire project to avoid namespace confusion. This is MUI recommended practice.
+// React Router Link docs: https://reactrouter.com/en/main/components/link
+// MUI routing/link docs: https://mui.com/material-ui/guides/routing/
 import { Link as RouterLink } from "react-router-dom";
 import { Button } from "@mui/material";
 
@@ -6,16 +10,16 @@ import { Button } from "@mui/material";
 
 const RouteButton = ({ route, title }) => {
   return (
-    // TODO link to MUI button
+    // minor note, this is the MUI-specific Button component
+    // docs: https://mui.com/material-ui/react-button/
     <Button
       variant="contained"
       sx={{ minWidth: "200px" }}
-      // TODO see if these need template literal or can just be string lol
-      to={`${route}`}
-      // TODO explain what this routerlink means
+      to={route}
+      // see above on why this is RouterLink
       component={RouterLink}
     >
-      {`${title}`}
+      {title}
     </Button>
   );
 };
