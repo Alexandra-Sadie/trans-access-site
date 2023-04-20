@@ -15,4 +15,9 @@ The live version of this app can be found [here](https://trans-access-site.web.a
 
 ## Our sponsors
 
-- list of sponsors
+We have currently been funded by
+
+- CURE Concordia
+- The Concordia Council on Student Life
+- Campus Ex/El Office
+- SHIFT
