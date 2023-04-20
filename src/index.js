@@ -23,7 +23,9 @@ import Doctor from "./components/pages/Doctor";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/* // TODO explain */}
+    {/* // CssBaseline is MUI's version of a CSS Normalize snippet, which applies universal styles to the entire app to normalize some differences in visual rendering across browsers
+    docs: https://mui.com/material-ui/react-css-baseline/
+    */}
     <CssBaseline />
     {/* //TODO explain browserrouter -- can link to documentation */}
     <BrowserRouter>
