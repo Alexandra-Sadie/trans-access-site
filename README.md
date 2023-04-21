@@ -17,7 +17,8 @@ React is a modern web framework that allows you to create advanced web browser a
 For documentation please see React's excellent official [getting started guide](https://react.dev/learn) which is designed for beginners and very easy to use.
 
 _todo_
--explain single page app concept
+
+- explain single page app concept
 
 ### MUI
 
