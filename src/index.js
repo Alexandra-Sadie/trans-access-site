@@ -68,12 +68,12 @@ root.render(
           />
 
           <Route path={routingObject.doctor.route} element={<Doctor />} />
-        </Route>
 
-        <Route
-          path={routingObject.login_signup.route}
-          element={<LoginSignup />}
-        />
+          <Route
+            path={routingObject.login_signup.route}
+            element={<LoginSignup />}
+          />
+        </Route>
 
         {/* 
         // TODO: either make this properly fall through to full home page OR make custom error page 
