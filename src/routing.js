@@ -28,6 +28,6 @@ export const routingObject = {
 
   login_signup: {
     title: "Login & Signup",
-    route: "login_signup"
-  }
+    route: "login_signup",
+  },
 };
