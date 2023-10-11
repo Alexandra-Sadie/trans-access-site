@@ -20,7 +20,7 @@ import Intervention from "./components/pages/Intervention";
 import Therapist from "./components/pages/Therapist";
 import NameChange from "./components/pages/NameChange";
 import Doctor from "./components/pages/Doctor";
-import LoginSignup from "./components/pages/LoginSignup";
+import LoginSignup from "./components/pages/LoginSignup/LoginSignup";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
