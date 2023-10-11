@@ -32,6 +32,7 @@ _todo_
 - more theory of MUI
 - explain Material Design
 - link to Material Design docs
+- explain breakpoints
 
 ### React Router
 
