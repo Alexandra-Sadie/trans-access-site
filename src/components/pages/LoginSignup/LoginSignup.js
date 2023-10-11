@@ -1,4 +1,4 @@
-import { Card, Stack, CardHeader, Typography } from "@mui/material";
+import { Card, Stack, Typography, Box, TextField } from "@mui/material";
 
 const LoginSignup = () => {
   return (
@@ -17,7 +17,18 @@ const LoginSignup = () => {
     >
       <Card>
         {/* //TODO we may want this to not be component and/or variant h4 for semantics */}
-        <Typography variant="h4">Login</Typography> test1
+        <Typography variant="h4">Login</Typography>
+
+        <Box component="form" noValidate>
+          <TextField
+            margin="normal"
+            required
+            id="email"
+            label="Email Address"
+            name="email"
+            autoComplete="email"
+          ></TextField>
+        </Box>
       </Card>
       <Card>
         <Typography variant="h4">Sign Up</Typography>
