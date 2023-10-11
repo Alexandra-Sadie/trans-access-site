@@ -16,7 +16,7 @@ const LoginSignup = () => {
       alignItems={"center"}
     >
       {/* //*Login */}
-      <Card>
+      <Card elevation={2}>
         {/* //TODO we may want this to not be component and/or variant h4 for semantics */}
         <Typography variant="h4">Login</Typography>
 
@@ -51,7 +51,9 @@ const LoginSignup = () => {
           </Button>
         </Stack>
       </Card>
-      <Card>
+
+      {/* //* Sign Up */}
+      <Card elevation={2}>
         <Typography variant="h4">Sign Up</Typography>
       </Card>
     </Stack>
