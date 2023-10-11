@@ -20,6 +20,7 @@ import Intervention from "./components/pages/Intervention";
 import Therapist from "./components/pages/Therapist";
 import NameChange from "./components/pages/NameChange";
 import Doctor from "./components/pages/Doctor";
+import LoginSignup from "./components/pages/LoginSignup";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -67,6 +68,11 @@ root.render(
           />
 
           <Route path={routingObject.doctor.route} element={<Doctor />} />
+
+          <Route
+            path={routingObject.login_signup.route}
+            element={<LoginSignup />}
+          />
         </Route>
 
         {/* 

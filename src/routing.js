@@ -25,4 +25,9 @@ export const routingObject = {
     title: "Doctor",
     route: "doctor",
   },
+
+  login_signup: {
+    title: "Login & Signup",
+    route: "login_signup",
+  },
 };
