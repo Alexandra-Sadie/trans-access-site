@@ -1,4 +1,4 @@
-import { Card, Stack } from "@mui/material";
+import { Card, Stack, CardHeader, Typography } from "@mui/material";
 
 const LoginSignup = () => {
   return (
@@ -15,8 +15,13 @@ const LoginSignup = () => {
       justifyContent={"center"}
       alignItems={"center"}
     >
-      <Card>test1</Card>
-      <Card>test2</Card>
+      <Card>
+        {/* //TODO we may want this to not be component and/or variant h4 for semantics */}
+        <Typography variant="h4">Login</Typography> test1
+      </Card>
+      <Card>
+        <Typography variant="h4">Sign Up</Typography>
+      </Card>
     </Stack>
   );
 };
