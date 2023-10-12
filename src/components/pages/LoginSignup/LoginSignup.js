@@ -20,7 +20,11 @@ const LoginSignup = () => {
         {/* //TODO we may want this to not be component and/or variant h4 for semantics */}
         <Typography variant="h4">Login</Typography>
 
-        <Stack component="form" noValidate>
+        <Stack
+          component="form"
+          // TODO do we want novalidate? with it gone, it checks for valid email which is handy, but do we need it so html validation doesnt fuck with react?
+          noValidate
+        >
           {/* email */}
           <TextField
             margin="normal"
@@ -54,32 +58,37 @@ const LoginSignup = () => {
 
       {/* //* Sign Up */}
       <Card elevation={2}>
-        <Typography variant="h4">Sign Up</Typography>
+        <Stack compoment="form" novalidate>
+          <Typography variant="h4">Sign Up</Typography>
+          {/* email */}
+          <TextField
+            margin="normal"
+            required
+            id="signup-email"
+            label="Email Address"
+            name="signup-email"
+            //type="email" adds validation parameters and mobile keyboard customized for email input -- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types
+            type="email"
+            autoComplete="email"
+          ></TextField>
 
-        {/* email */}
-        <TextField
-          margin="normal"
-          required
-          id="signup-email"
-          label="Email Address"
-          name="signup-email"
-          //type="email" adds validation parameters and mobile keyboard customized for email input -- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types
-          type="email"
-          autoComplete="email"
-        ></TextField>
+          {/* password */}
+          <TextField
+            margin="normal"
+            required
+            name="signup-password"
+            label="Password"
+            // TODO can we add a button to make it visible?
+            // this censors the text as you type it -- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types
+            type="password"
+            id="signup-password"
+            autoComplete="new-password"
+          ></TextField>
 
-        {/* password */}
-        <TextField
-          margin="normal"
-          required
-          name="signup-password"
-          label="Password"
-          // TODO can we add a button to make it visible?
-          // this censors the text as you type it -- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types
-          type="password"
-          id="signup-password"
-          autoComplete="new-password"
-        ></TextField>
+          <Button type="submit" variant="contained">
+            Sign Up
+          </Button>
+        </Stack>
       </Card>
     </Stack>
   );
