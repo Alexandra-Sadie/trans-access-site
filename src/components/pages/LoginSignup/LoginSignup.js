@@ -1,4 +1,6 @@
-import { Card, Stack } from "@mui/material";
+import { Stack } from "@mui/material";
+import LoginCard from "./LoginCard";
+import SignupCard from "./SignupCard";
 
 const LoginSignup = () => {
   return (
@@ -15,8 +17,8 @@ const LoginSignup = () => {
       justifyContent={"center"}
       alignItems={"center"}
     >
-      <Card>test1</Card>
-      <Card>test2</Card>
+      <LoginCard />
+      <SignupCard />
     </Stack>
   );
 };
