@@ -18,15 +18,9 @@ const UserLoggedInProvider = ({ children }) => {
     setIsUserLoggedIn(false);
   };
 
-  //storing logged in status in an object to be passed to value below
-  const currentLoginContext = {
-    isUserLoggedIn,
-    logIn,
-    logOut,
-  };
-
   return (
-    <UserLoggedInContext.Provider value={currentLoginContext}>
+    // passing down our relevant state and associated functions in an anonymous object that children can pull from as needed using useContext
+    <UserLoggedInContext.Provider value={{ isUserLoggedIn, logIn, logOut }}>
       {children}
     </UserLoggedInContext.Provider>
   );
