@@ -13,6 +13,8 @@ import "@fontsource/roboto/700.css";
 // routing
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { routingObject } from "./routing";
+// our providers
+import LoggedInProvider from "./providers/LoggedInProvider";
 // our components
 import App from "./components/App";
 import Main from "./components/pages/Main/Main";
@@ -45,41 +47,49 @@ root.render(
     Component documentation here: https://reactrouter.com/en/6.10.0/router-components/browser-router
     //TODO extract some of this to readme.md
  */}
-    <BrowserRouter>
-      <Routes>
-        {/* 
+    {/* //TODO more detail on how providers work
+    I have wrapped BrowserRouter in our LoggedInProvider so that it can give context on the user's logged in status to all routes in the app
+ */}
+    <LoggedInProvider>
+      <BrowserRouter>
+        <Routes>
+          {/* 
         We've structured our routes (AKA our pages) as nested sub-routes "inside" of App.js. This lets us use the React Router Outlet feature to load universal content in App.js which will be visible on every sub-route (AKA every page). We use this to make the Navbar load identically everywhere.
         See comments on app.js for further info. 
         docs: https://reactrouter.com/en/6.10.0/components/outlet
         */}
-        <Route element={<App />}>
-          <Route path={routingObject.main.route} element={<Main />} />
+          <Route element={<App />}>
+            <Route path={routingObject.main.route} element={<Main />} />
 
-          <Route
-            path={routingObject.intervention.route}
-            element={<Intervention />}
-          />
+            <Route
+              path={routingObject.intervention.route}
+              element={<Intervention />}
+            />
 
-          <Route path={routingObject.therapist.route} element={<Therapist />} />
+            <Route
+              path={routingObject.therapist.route}
+              element={<Therapist />}
+            />
 
-          <Route
-            path={routingObject.name_change.route}
-            element={<NameChange />}
-          />
+            <Route
+              path={routingObject.name_change.route}
+              element={<NameChange />}
+            />
 
-          <Route path={routingObject.doctor.route} element={<Doctor />} />
+            <Route path={routingObject.doctor.route} element={<Doctor />} />
 
-          <Route
-            path={routingObject.login_signup.route}
-            element={<LoginSignup />}
-          />
-        </Route>
+            <Route
+              path={routingObject.login_signup.route}
+              element={<LoginSignup />}
+            />
+          </Route>
 
-        {/* 
+          {/* 
         // TODO: either make this properly fall through to full home page OR make custom error page 
         for now, people will see the toolbar with links to leave*/}
-        <Route path="*" element={<App />} />
-      </Routes>
-    </BrowserRouter>
+          <Route path="*" element={<App />} />
+        </Routes>
+      </BrowserRouter>
+    </LoggedInProvider>
   </React.StrictMode>
 );
