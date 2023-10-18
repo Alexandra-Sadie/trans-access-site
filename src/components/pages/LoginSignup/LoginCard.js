@@ -1,6 +1,13 @@
 import { Card, Stack, Typography, TextField, Button } from "@mui/material";
+import { LoggedInContext } from "../../../providers/LoggedInProvider";
+import { useContext } from "react";
 
 const LoginCard = () => {
+  // !LOGIC ZONE
+  const { currentLoginStatus } = useContext(LoggedInContext);
+  console.log(currentLoginStatus);
+
+  // !RETURN
   return (
     <Card elevation={2} sx={{ p: 3 }}>
       {/* //TODO we may want this to not be component and/or variant h4 for semantics */}
@@ -37,8 +44,16 @@ const LoginCard = () => {
         ></TextField>
 
         <Button type="submit" variant="contained">
-          Login
+          Log In
         </Button>
+
+        <Typography>For testing purposes:</Typography>
+
+        <Button type="button" variant="contained">
+          Log Out
+        </Button>
+
+        <Typography>Are you logged in?</Typography>
       </Stack>
     </Card>
   );
