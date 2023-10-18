@@ -1,5 +1,5 @@
 import { Card, Stack, Typography, TextField, Button } from "@mui/material";
-import { LoggedInContext } from "../../../providers/LoggedInProvider";
+import { LoggedInContext } from "../../../providers/UserLoggedInProvider";
 import { useContext } from "react";
 
 const LoginCard = () => {

@@ -1,35 +1,35 @@
 import { useState, createContext } from "react";
 
-export const LoggedInContext = createContext({});
+export const UserLoggedInContext = createContext({});
 
 // defining the data to be passed down
-const LoggedInProvider = ({ children }) => {
-  const [loggedInStatus, setLoggedInStatus] = useState(false);
+const UserLoggedInProvider = ({ children }) => {
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
   // functions to change logged in/out status
 
   const logIn = (event) => {
     event.preventDefault();
-    setLoggedInStatus(true);
+    setIsUserLoggedIn(true);
   };
 
   const logOut = (event) => {
     event.preventDefault();
-    setLoggedInStatus(false);
+    setIsUserLoggedIn(false);
   };
 
   //storing logged in status in an object to be passed to value below
   const currentLoginContext = {
-    loggedInStatus,
+    isUserLoggedIn,
     logIn,
     logOut,
   };
 
   return (
-    <LoggedInContext.Provider value={currentLoginContext}>
+    <UserLoggedInContext.Provider value={currentLoginContext}>
       {children}
-    </LoggedInContext.Provider>
+    </UserLoggedInContext.Provider>
   );
 };
 
-export default LoggedInProvider;
+export default UserLoggedInProvider;
