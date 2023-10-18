@@ -1,10 +1,10 @@
 import { Card, Stack, Typography, TextField, Button } from "@mui/material";
-import { LoggedInContext } from "../../../providers/UserLoggedInProvider";
+import { UserLoggedInContext } from "../../../providers/UserLoggedInProvider";
 import { useContext } from "react";
 
 const LoginCard = () => {
   // !LOGIC ZONE
-  const currentLoginStatus = useContext(LoggedInContext);
+  const currentLoginStatus = useContext(UserLoggedInContext);
   console.log(currentLoginStatus);
 
   // !RETURN
@@ -62,7 +62,7 @@ const LoginCard = () => {
         </Button>
 
         <Typography>
-          Are you logged in? {currentLoginStatus.loggedInStatus ? "YES" : "NO"}
+          Are you logged in? {currentLoginStatus.isUserLoggedIn ? "YES" : "NO"}
         </Typography>
       </Stack>
     </Card>
