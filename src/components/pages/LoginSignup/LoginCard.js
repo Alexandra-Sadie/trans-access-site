@@ -4,7 +4,7 @@ import { useContext } from "react";
 
 const LoginCard = () => {
   // !LOGIC ZONE
-  const { currentLoginStatus } = useContext(LoggedInContext);
+  const currentLoginStatus = useContext(LoggedInContext);
   console.log(currentLoginStatus);
 
   // !RETURN
@@ -43,17 +43,27 @@ const LoginCard = () => {
           autoComplete="current-password"
         ></TextField>
 
-        <Button type="submit" variant="contained">
+        <Button
+          type="submit"
+          variant="contained"
+          onClick={currentLoginStatus.logIn}
+        >
           Log In
         </Button>
 
         <Typography>For testing purposes:</Typography>
 
-        <Button type="button" variant="contained">
+        <Button
+          type="button"
+          variant="contained"
+          onClick={currentLoginStatus.logOut}
+        >
           Log Out
         </Button>
 
-        <Typography>Are you logged in?</Typography>
+        <Typography>
+          Are you logged in? {currentLoginStatus.loggedInStatus ? "YES" : "NO"}
+        </Typography>
       </Stack>
     </Card>
   );

@@ -4,18 +4,18 @@ export const LoggedInContext = createContext({});
 
 // defining the data to be passed down
 const LoggedInProvider = ({ children }) => {
-  const [loggedInStatus, setLoggedInStatus] = useState({
-    loggedIn: false,
-  });
+  const [loggedInStatus, setLoggedInStatus] = useState(false);
 
   // functions to change logged in/out status
 
-  const logIn = () => {
-    setLoggedInStatus({ loggedIn: true });
+  const logIn = (event) => {
+    event.preventDefault();
+    setLoggedInStatus(true);
   };
 
-  const logOut = () => {
-    setLoggedInStatus({ loggedIn: false });
+  const logOut = (event) => {
+    event.preventDefault();
+    setLoggedInStatus(false);
   };
 
   //storing logged in status in an object to be passed to value below
