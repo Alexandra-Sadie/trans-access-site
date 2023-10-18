@@ -1,6 +1,12 @@
 import { Card, Stack, Typography, TextField, Button } from "@mui/material";
+import { UserLoggedInContext } from "../../../providers/UserLoggedInProvider";
+import { useContext } from "react";
 
 const LoginCard = () => {
+  // !LOGIC ZONE
+  const { isUserLoggedIn, logIn, logOut } = useContext(UserLoggedInContext);
+
+  // !RETURN
   return (
     <Card elevation={2} sx={{ p: 3 }}>
       {/* //TODO we may want this to not be component and/or variant h4 for semantics */}
@@ -36,9 +42,19 @@ const LoginCard = () => {
           autoComplete="current-password"
         ></TextField>
 
-        <Button type="submit" variant="contained">
-          Login
+        <Button type="submit" variant="contained" onClick={logIn}>
+          Log In
         </Button>
+
+        <Typography>For testing purposes:</Typography>
+
+        <Button type="button" variant="contained" onClick={logOut}>
+          Log Out
+        </Button>
+
+        <Typography>
+          Are you logged in? {isUserLoggedIn ? "YES" : "NO"}
+        </Typography>
       </Stack>
     </Card>
   );
