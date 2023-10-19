@@ -8,6 +8,8 @@ import { routingObject } from "../../routing";
 
 const Navbar = () => {
   // defining pages that should be linked to in nav
+  // this returns an array of each route sub-object of routingObject
+  // these are expected to be of structure {route: string, title: string}
   const navRoutesArray = Object.values(routingObject).filter(
     ({ route }) => route !== "my_account" && route !== "login_signup"
   );
@@ -24,9 +26,9 @@ const Navbar = () => {
         {/* // ? mb put the sx breakpoints css here in these elements to make it self-commenting */}
         <Box sx={{ flexGrow: 1 }}>
           {/* this is visible on mobile breakpoints */}
-          <HamburgerMenu />
+          <HamburgerMenu navRoutesArray={navRoutesArray} />
           {/* this is visible on desktop breakpoint */}
-          <DesktopNavLinks />
+          <DesktopNavLinks navRoutesArray={navRoutesArray} />
         </Box>
         {/* for UI development this is one Button with ternaries in it - we may want a ternary between two buttons */}
         <LoginButton />
