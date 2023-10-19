@@ -3,8 +3,11 @@ import { AppBar, Box, Button, Toolbar } from "@mui/material";
 // our components
 import DesktopNavLinks from "./DesktopNavLinks/DesktopNavLinks";
 import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
+import { useContext } from "react";
+import { UserLoggedInContext } from "../../providers/UserLoggedInProvider";
 
 const Navbar = () => {
+  const { isUserLoggedIn, logIn, logOut } = useContext(UserLoggedInContext);
   return (
     // AppBar implies a bar at top of application while Toolbar implies a list of utility/navigation links -- we have a Toolbar nested INSIDE an AppBar bc it's a list of links placed at the top of the app :)
     // Stack Overflow comment explaining this: https://stackoverflow.com/a/61145181
@@ -22,7 +25,7 @@ const Navbar = () => {
           <DesktopNavLinks />
         </Box>
         <Button variant="outlined" sx={{ color: "#fff", borderColor: "#fff" }}>
-          Login/out
+          {isUserLoggedIn ? "Log Out" : "Log In"}
         </Button>
       </Toolbar>
     </AppBar>
