@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { UserLoggedInContext } from "../../providers/UserLoggedInProvider";
 import { Button, Stack } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
 
 const LoginButton = () => {
   const { isUserLoggedIn, logIn, logOut } = useContext(UserLoggedInContext);
@@ -14,6 +15,7 @@ const LoginButton = () => {
               color: "#fff",
               fontSize: { sm: "small", md: "medium" },
             }}
+            component={RouterLink}
           >
             My Account
           </Button>
