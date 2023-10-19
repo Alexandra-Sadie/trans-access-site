@@ -40,7 +40,8 @@ const LoginButton = () => {
               color: "#fff",
               fontSize: { sm: "small", md: "medium" },
             }}
-            onClick={logIn}
+            component={RouterLink}
+            to={routingObject.login_signup.route}
           >
             Log In
           </Button>
