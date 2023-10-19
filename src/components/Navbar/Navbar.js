@@ -1,5 +1,5 @@
 // !IMPORT ZONE
-import { AppBar, Toolbar } from "@mui/material";
+import { AppBar, Box, Button, Toolbar } from "@mui/material";
 // our components
 import DesktopNavLinks from "./DesktopNavLinks/DesktopNavLinks";
 import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
@@ -15,10 +15,15 @@ const Navbar = () => {
     <AppBar position="sticky">
       <Toolbar>
         {/* // ? mb put the sx breakpoints css here in these elements to make it self-commenting */}
-        {/* this is visible on mobile breakpoints */}
-        <HamburgerMenu />
-        {/* this is visible on desktop breakpoint */}
-        <DesktopNavLinks />
+        <Box sx={{ flexGrow: 1 }}>
+          {/* this is visible on mobile breakpoints */}
+          <HamburgerMenu />
+          {/* this is visible on desktop breakpoint */}
+          <DesktopNavLinks />
+        </Box>
+        <Button variant="outlined" sx={{ color: "#fff", borderColor: "#fff" }}>
+          Login/out
+        </Button>
       </Toolbar>
     </AppBar>
   );
