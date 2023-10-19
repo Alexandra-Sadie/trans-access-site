@@ -30,4 +30,9 @@ export const routingObject = {
     title: "Login & Signup",
     route: "login_signup",
   },
+
+  my_account: {
+    title: "My Account",
+    route: "my_account",
+  },
 };
