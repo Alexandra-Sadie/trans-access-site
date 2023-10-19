@@ -1,13 +1,11 @@
 // !IMPORT ZONE
-import { AppBar, Box, Button, Toolbar } from "@mui/material";
+import { AppBar, Box, Toolbar } from "@mui/material";
 // our components
 import DesktopNavLinks from "./DesktopNavLinks/DesktopNavLinks";
 import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
-import { useContext } from "react";
-import { UserLoggedInContext } from "../../providers/UserLoggedInProvider";
+import LoginButton from "./LoginButton";
 
 const Navbar = () => {
-  const { isUserLoggedIn, logIn, logOut } = useContext(UserLoggedInContext);
   return (
     // AppBar implies a bar at top of application while Toolbar implies a list of utility/navigation links -- we have a Toolbar nested INSIDE an AppBar bc it's a list of links placed at the top of the app :)
     // Stack Overflow comment explaining this: https://stackoverflow.com/a/61145181
@@ -25,13 +23,7 @@ const Navbar = () => {
           <DesktopNavLinks />
         </Box>
         {/* for UI development this is one Button with ternaries in it - we may want a ternary between two buttons */}
-        <Button
-          variant="outlined"
-          sx={{ color: "#fff", borderColor: "#fff" }}
-          onClick={isUserLoggedIn ? logOut : logIn}
-        >
-          {isUserLoggedIn ? "Log Out" : "Log In"}
-        </Button>
+        <LoginButton />
       </Toolbar>
     </AppBar>
   );
