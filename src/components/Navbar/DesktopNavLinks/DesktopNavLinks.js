@@ -1,6 +1,5 @@
 // !IMPORT ZONE
 import { Stack } from "@mui/material";
-import { routingObject } from "../../../routing";
 import NavbarButton from "./NavbarButton";
 
 const DesktopNavLinks = ({ navRoutesArray }) => {

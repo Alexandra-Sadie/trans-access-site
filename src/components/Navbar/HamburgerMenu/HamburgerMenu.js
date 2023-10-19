@@ -1,7 +1,6 @@
 // !IMPORT ZONE
 import HamburgerIcon from "@mui/icons-material/Menu";
 import { Box, IconButton, Menu } from "@mui/material";
-import { routingObject } from "../../../routing";
 import HamburgerLink from "./HamburgerLink";
 import { useState } from "react";
 
