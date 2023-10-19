@@ -39,7 +39,11 @@ const LoginCard = () => {
           autoComplete="current-password"
         ></TextField>
 
-        <Button type="submit" variant="contained">
+        <Button
+          type="submit"
+          variant="contained"
+          onClick={(e) => e.preventDefault()}
+        >
           Log In
         </Button>
       </Stack>

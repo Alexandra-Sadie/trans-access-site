@@ -30,7 +30,11 @@ const SignupCard = () => {
           autoComplete="new-password"
         ></TextField>
 
-        <Button type="submit" variant="contained">
+        <Button
+          type="submit"
+          variant="contained"
+          onClick={(e) => e.preventDefault()}
+        >
           Sign Up
         </Button>
       </Stack>
