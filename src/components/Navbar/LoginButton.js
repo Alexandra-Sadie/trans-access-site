@@ -7,7 +7,11 @@ const LoginButton = () => {
   return (
     <Button
       variant="outlined"
-      sx={{ color: "#fff", borderColor: "#fff" }}
+      sx={{
+        color: "#fff",
+        borderColor: "#fff",
+        fontSize: { sm: "small", md: "medium" },
+      }}
       onClick={isUserLoggedIn ? logOut : logIn}
     >
       {isUserLoggedIn ? "Log Out" : "Log In"}
