@@ -5,7 +5,7 @@ import { Link as RouterLink } from "react-router-dom";
 import { routingObject } from "../../routing";
 
 const LoginButton = () => {
-  const { isUserLoggedIn, logIn, logOut } = useContext(UserLoggedInContext);
+  const { isUserLoggedIn, logOut } = useContext(UserLoggedInContext);
   return (
     <Stack direction="row" spacing={2}>
       {isUserLoggedIn ? (
