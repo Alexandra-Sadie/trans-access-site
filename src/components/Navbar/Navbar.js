@@ -24,7 +24,12 @@ const Navbar = () => {
           {/* this is visible on desktop breakpoint */}
           <DesktopNavLinks />
         </Box>
-        <Button variant="outlined" sx={{ color: "#fff", borderColor: "#fff" }}>
+        {/* for UI development this is one Button with ternaries in it - we may want a ternary between two buttons */}
+        <Button
+          variant="outlined"
+          sx={{ color: "#fff", borderColor: "#fff" }}
+          onClick={isUserLoggedIn ? logOut : logIn}
+        >
           {isUserLoggedIn ? "Log Out" : "Log In"}
         </Button>
       </Toolbar>
