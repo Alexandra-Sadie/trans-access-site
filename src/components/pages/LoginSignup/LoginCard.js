@@ -52,7 +52,9 @@ const LoginCard = () => {
           onClick={(e) => {
             e.preventDefault();
             logIn();
-            navigate(routingObject.main.route);
+            setTimeout(() => {
+              navigate(routingObject.main.route);
+            }, 300);
           }}
         >
           Log In
