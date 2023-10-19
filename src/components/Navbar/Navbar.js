@@ -4,8 +4,14 @@ import { AppBar, Box, Toolbar } from "@mui/material";
 import DesktopNavLinks from "./DesktopNavLinks/DesktopNavLinks";
 import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
 import LoginButton from "./LoginButton";
+import { routingObject } from "../../routing";
 
 const Navbar = () => {
+  // defining pages that should be linked to in nav
+  const navRoutesArray = Object.values(routingObject).filter(
+    ({ route }) => route !== "my_account" && route !== "login_signup"
+  );
+
   return (
     // AppBar implies a bar at top of application while Toolbar implies a list of utility/navigation links -- we have a Toolbar nested INSIDE an AppBar bc it's a list of links placed at the top of the app :)
     // Stack Overflow comment explaining this: https://stackoverflow.com/a/61145181
