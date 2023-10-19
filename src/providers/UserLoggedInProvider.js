@@ -9,12 +9,10 @@ const UserLoggedInProvider = ({ children }) => {
   // functions to change logged in/out status
 
   const logIn = (event) => {
-    event.preventDefault();
     setIsUserLoggedIn(true);
   };
 
   const logOut = (event) => {
-    event.preventDefault();
     setIsUserLoggedIn(false);
   };
 

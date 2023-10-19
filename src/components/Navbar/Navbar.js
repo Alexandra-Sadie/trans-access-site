@@ -1,8 +1,9 @@
 // !IMPORT ZONE
-import { AppBar, Toolbar } from "@mui/material";
+import { AppBar, Box, Toolbar } from "@mui/material";
 // our components
 import DesktopNavLinks from "./DesktopNavLinks/DesktopNavLinks";
 import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
+import LoginButton from "./LoginButton";
 
 const Navbar = () => {
   return (
@@ -15,10 +16,14 @@ const Navbar = () => {
     <AppBar position="sticky">
       <Toolbar>
         {/* // ? mb put the sx breakpoints css here in these elements to make it self-commenting */}
-        {/* this is visible on mobile breakpoints */}
-        <HamburgerMenu />
-        {/* this is visible on desktop breakpoint */}
-        <DesktopNavLinks />
+        <Box sx={{ flexGrow: 1 }}>
+          {/* this is visible on mobile breakpoints */}
+          <HamburgerMenu />
+          {/* this is visible on desktop breakpoint */}
+          <DesktopNavLinks />
+        </Box>
+        {/* for UI development this is one Button with ternaries in it - we may want a ternary between two buttons */}
+        <LoginButton />
       </Toolbar>
     </AppBar>
   );

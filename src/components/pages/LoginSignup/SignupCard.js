@@ -3,7 +3,7 @@ import { Card, Stack, Typography, TextField, Button } from "@mui/material";
 const SignupCard = () => {
   return (
     <Card elevation={2} sx={{ p: 3 }}>
-      <Stack compoment="form" noValidate>
+      <Stack component="form" noValidate>
         <Typography variant="h4">Sign Up</Typography>
         {/* email */}
         <TextField
@@ -30,7 +30,11 @@ const SignupCard = () => {
           autoComplete="new-password"
         ></TextField>
 
-        <Button type="submit" variant="contained">
+        <Button
+          type="submit"
+          variant="contained"
+          onClick={(e) => e.preventDefault()}
+        >
           Sign Up
         </Button>
       </Stack>
