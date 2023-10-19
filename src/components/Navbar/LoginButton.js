@@ -6,10 +6,9 @@ const LoginButton = () => {
   const { isUserLoggedIn, logIn, logOut } = useContext(UserLoggedInContext);
   return (
     <Button
-      variant="outlined"
+      variant="contained"
       sx={{
         color: "#fff",
-        borderColor: "#fff",
         fontSize: { sm: "small", md: "medium" },
       }}
       onClick={isUserLoggedIn ? logOut : logIn}
