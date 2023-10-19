@@ -1,11 +1,14 @@
 import { Card, Stack, Typography, TextField, Button } from "@mui/material";
 import { UserLoggedInContext } from "../../../providers/UserLoggedInProvider";
 import { useContext } from "react";
-import { redirect } from "react-router-dom";
+import { routingObject } from "../../../routing";
+import { useNavigate } from "react-router-dom";
 
 const LoginCard = () => {
   // !LOGIC ZONE
   const { logIn } = useContext(UserLoggedInContext);
+
+  const navigate = useNavigate();
 
   // !RETURN
   return (
@@ -49,6 +52,7 @@ const LoginCard = () => {
           onClick={(e) => {
             e.preventDefault();
             logIn();
+            navigate(routingObject.main.route);
           }}
         >
           Log In
