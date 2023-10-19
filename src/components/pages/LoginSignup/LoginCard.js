@@ -1,7 +1,14 @@
 import { Card, Stack, Typography, TextField, Button } from "@mui/material";
+import { UserLoggedInContext } from "../../../providers/UserLoggedInProvider";
+import { useContext } from "react";
+import { routingObject } from "../../../routing";
+import { useNavigate } from "react-router-dom";
 
 const LoginCard = () => {
   // !LOGIC ZONE
+  const { logIn } = useContext(UserLoggedInContext);
+
+  const navigate = useNavigate();
 
   // !RETURN
   return (
@@ -42,7 +49,13 @@ const LoginCard = () => {
         <Button
           type="submit"
           variant="contained"
-          onClick={(e) => e.preventDefault()}
+          onClick={(e) => {
+            e.preventDefault();
+            logIn();
+            setTimeout(() => {
+              navigate(routingObject.main.route);
+            }, 300);
+          }}
         >
           Log In
         </Button>

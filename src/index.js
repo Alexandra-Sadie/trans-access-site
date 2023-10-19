@@ -23,6 +23,7 @@ import Therapist from "./components/pages/Therapist";
 import NameChange from "./components/pages/NameChange";
 import Doctor from "./components/pages/Doctor";
 import LoginSignup from "./components/pages/LoginSignup/LoginSignup";
+import MyAccount from "./components/pages/MyAccount";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -81,6 +82,11 @@ root.render(
             <Route
               path={routingObject.login_signup.route}
               element={<LoginSignup />}
+            />
+
+            <Route
+              path={routingObject.my_account.route}
+              element={<MyAccount />}
             />
           </Route>
 
