@@ -39,19 +39,17 @@ const LoginButton = () => {
           </Button>
         </>
       ) : (
-        <>
-          <Button
-            variant="contained"
-            sx={{
-              color: "#fff",
-              fontSize: { sm: "small", md: "medium" },
-            }}
-            component={RouterLink}
-            to={routingObject.login_signup.route}
-          >
-            Log In
-          </Button>
-        </>
+        <Button
+          variant="contained"
+          sx={{
+            color: "#fff",
+            fontSize: { sm: "small", md: "medium" },
+          }}
+          component={RouterLink}
+          to={routingObject.login_signup.route}
+        >
+          Log In
+        </Button>
       )}
     </Stack>
   );
