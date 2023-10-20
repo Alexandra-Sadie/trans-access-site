@@ -1,10 +1,11 @@
 import { useContext } from "react";
-import { UserLoggedInContext } from "../../providers/UserLoggedInProvider";
+import { UserLoggedInContext } from "../../../providers/UserLoggedInProvider";
 import { Button, Stack } from "@mui/material";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
-import { routingObject } from "../../routing";
+import { routingObject } from "../../../routing";
 
-const LoginButton = () => {
+// i'd be open to a better name for this
+const NavUserButtons = () => {
   const { isUserLoggedIn, logOut } = useContext(UserLoggedInContext);
   const navigate = useNavigate();
   return (
@@ -30,6 +31,7 @@ const LoginButton = () => {
             }}
             onClick={() => {
               logOut();
+              // this mocks in server logging out time to test app interactions
               setTimeout(() => {
                 navigate(routingObject.main.route);
               }, 300);
@@ -54,4 +56,4 @@ const LoginButton = () => {
     </Stack>
   );
 };
-export default LoginButton;
+export default NavUserButtons;
