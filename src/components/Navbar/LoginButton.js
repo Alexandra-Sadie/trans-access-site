@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import { UserLoggedInContext } from "../../providers/UserLoggedInProvider";
 import { Button, Stack } from "@mui/material";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { routingObject } from "../../routing";
 
 const LoginButton = () => {
   const { isUserLoggedIn, logOut } = useContext(UserLoggedInContext);
+  const navigate = useNavigate();
   return (
     <Stack direction="row" spacing={2}>
       {isUserLoggedIn ? (
@@ -27,7 +28,12 @@ const LoginButton = () => {
               color: "#fff",
               fontSize: { sm: "small", md: "medium" },
             }}
-            onClick={logOut}
+            onClick={() => {
+              logOut();
+              setTimeout(() => {
+                navigate(routingObject.main.route);
+              }, 300);
+            }}
           >
             Log Out
           </Button>
