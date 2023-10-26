@@ -3,8 +3,8 @@ import { AppBar, Box, Toolbar } from "@mui/material";
 // our components
 import DesktopNavLinks from "./DesktopNavLinks/DesktopNavLinks";
 import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
-import LoginButton from "./LoginButton";
 import { routingObject } from "../../routing";
+import NavUserButtons from "./NavUserButtons/NavUserButtons";
 
 const Navbar = () => {
   // defining pages that should be linked to in nav
@@ -31,7 +31,7 @@ const Navbar = () => {
           <DesktopNavLinks navRoutesArray={navRoutesArray} />
         </Box>
         {/* for UI development this is one Button with ternaries in it - we may want a ternary between two buttons */}
-        <LoginButton />
+        <NavUserButtons />
       </Toolbar>
     </AppBar>
   );
