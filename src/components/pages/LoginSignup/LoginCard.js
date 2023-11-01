@@ -1,11 +1,13 @@
 import { Card, Stack, Typography, TextField, Button } from "@mui/material";
 import { UserLoggedInContext } from "../../../providers/UserLoggedInProvider";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { routingObject } from "../../../routing";
 import { useNavigate } from "react-router-dom";
 
 const LoginCard = () => {
   // !LOGIC ZONE
+  const [currentEmail, setCurrentEmail] = useState("");
+  const [currentPassword, setCurrentPassword] = useState("");
   const { logIn } = useContext(UserLoggedInContext);
 
   const navigate = useNavigate();
@@ -31,6 +33,10 @@ const LoginCard = () => {
           //type="email" adds validation parameters and mobile keyboard customized for email input -- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types
           type="email"
           autoComplete="email"
+          onChange={(e) => {
+            setCurrentEmail(e.target.value);
+          }}
+          // value={currentEmail}
         ></TextField>
 
         {/* password */}
@@ -44,6 +50,9 @@ const LoginCard = () => {
           type="password"
           id="login-password"
           autoComplete="current-password"
+          onChange={(e) => {
+            setCurrentPassword(e.target.value);
+          }}
         ></TextField>
 
         <Button
@@ -51,7 +60,7 @@ const LoginCard = () => {
           variant="contained"
           onClick={(e) => {
             e.preventDefault();
-            logIn();
+            logIn(currentEmail, currentPassword);
             setTimeout(() => {
               navigate(routingObject.main.route);
             }, 300);

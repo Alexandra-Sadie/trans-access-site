@@ -9,7 +9,7 @@ const UserLoggedInProvider = ({ children }) => {
   // functions to change logged in/out status
 
   const logIn = (email, password) => {
-    setUser({ email: "jokes@laughs.biz ", id: 2 });
+    setUser({ email, password, id: 2 });
   };
 
   const logOut = () => {
