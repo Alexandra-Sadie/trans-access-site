@@ -1,4 +1,6 @@
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState, createContext } from "react";
+import { auth } from "../firebase";
 
 export const UserLoggedInContext = createContext({});
 
@@ -9,7 +11,12 @@ const UserLoggedInProvider = ({ children }) => {
   // functions to change logged in/out status
 
   const logIn = (email, password) => {
-    setUser({ email, password, id: 2 });
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userObj) => {
+        const { email, uid } = userObj.user;
+        setUser({ email, uid });
+      })
+      .catch((err) => console.error(err));
   };
 
   const logOut = () => {
