@@ -1,12 +1,15 @@
 import { Card, Stack, Typography, TextField, Button } from "@mui/material";
 import { UserLoggedInContext } from "../../../providers/UserLoggedInProvider";
 import { useContext, useState } from "react";
+import { routingObject } from "../../../routing";
+import { useNavigate } from "react-router-dom";
 
 const SignupCard = () => {
   // !LOGIC ZONE
   const { createNewUser } = useContext(UserLoggedInContext);
   const [currentSignupEmail, setCurrentSignupEmail] = useState("");
   const [currentSignupPassword, setCurrentSignupPassword] = useState("");
+  const navigate = useNavigate();
 
   // !RETURN
   return (
@@ -53,6 +56,9 @@ const SignupCard = () => {
           onClick={(e) => {
             e.preventDefault();
             createNewUser(currentSignupEmail, currentSignupPassword);
+            setTimeout(() => {
+              navigate(routingObject.main.route);
+            }, 300);
           }}
         >
           Sign Up

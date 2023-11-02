@@ -9,7 +9,6 @@ const LoginCard = () => {
   const [currentEmail, setCurrentEmail] = useState("");
   const [currentPassword, setCurrentPassword] = useState("");
   const { logIn } = useContext(UserLoggedInContext);
-
   const navigate = useNavigate();
 
   // !RETURN

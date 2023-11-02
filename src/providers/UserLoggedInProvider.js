@@ -29,7 +29,8 @@ const UserLoggedInProvider = ({ children }) => {
   const createNewUser = (signupEmail, signupPassword) => {
     createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
       .then((userCredential) => {
-        console.log(userCredential);
+        const { email, uid } = userCredential.user;
+        setUser({ email, uid });
       })
       .catch((err) => console.log(err));
   };
