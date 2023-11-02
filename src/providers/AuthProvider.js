@@ -29,8 +29,8 @@ const AuthProvider = ({ children }) => {
 
   // functions to change logged in/out status
 
-  const logIn = (email, password) => {
-    signInWithEmailAndPassword(auth, email, password)
+  const logIn = (loginEmail, loginPassword) => {
+    signInWithEmailAndPassword(auth, loginEmail, loginPassword)
       // TODO: decide if we really want to do anything here
       .then((userCredential) => {
         console.log(userCredential);
