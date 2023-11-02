@@ -27,11 +27,11 @@ const UserLoggedInProvider = ({ children }) => {
   };
 
   const createNewUser = (signupEmail, signupPassword) => {
-    createUserWithEmailAndPassword(auth, signupEmail, signupPassword).then(
-      (userCredential) => {
+    createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
+      .then((userCredential) => {
         console.log(userCredential);
-      }
-    );
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
