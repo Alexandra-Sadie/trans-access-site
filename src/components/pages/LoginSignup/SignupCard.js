@@ -56,6 +56,7 @@ const SignupCard = () => {
           onClick={(e) => {
             e.preventDefault();
             createNewUser(currentSignupEmail, currentSignupPassword);
+            // this timeout is to look nice, remove for final production
             setTimeout(() => {
               navigate(routingObject.main.route);
             }, 300);

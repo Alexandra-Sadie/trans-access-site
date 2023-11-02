@@ -60,6 +60,7 @@ const LoginCard = () => {
           onClick={(e) => {
             e.preventDefault();
             logIn(currentEmail, currentPassword);
+            // this timeout is to look nice, remove for final production
             setTimeout(() => {
               navigate(routingObject.main.route);
             }, 300);
