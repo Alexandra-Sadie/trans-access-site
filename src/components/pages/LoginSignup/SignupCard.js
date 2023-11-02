@@ -1,12 +1,12 @@
 import { Card, Stack, Typography, TextField, Button } from "@mui/material";
-import { UserLoggedInContext } from "../../../providers/UserLoggedInProvider";
+import { AuthContext } from "../../../providers/AuthProvider";
 import { useContext, useState } from "react";
 import { routingObject } from "../../../routing";
 import { useNavigate } from "react-router-dom";
 
 const SignupCard = () => {
   // !LOGIC ZONE
-  const { createNewUser } = useContext(UserLoggedInContext);
+  const { createNewUser } = useContext(AuthContext);
   const [currentSignupEmail, setCurrentSignupEmail] = useState("");
   const [currentSignupPassword, setCurrentSignupPassword] = useState("");
   const navigate = useNavigate();

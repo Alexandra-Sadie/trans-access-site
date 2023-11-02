@@ -7,10 +7,10 @@ import {
 import { useState, createContext, useEffect } from "react";
 import { auth } from "../firebase";
 
-export const UserLoggedInContext = createContext({});
+export const AuthContext = createContext({});
 
 // defining the data to be passed down
-const UserLoggedInProvider = ({ children }) => {
+const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -58,12 +58,10 @@ const UserLoggedInProvider = ({ children }) => {
 
   return (
     // passing down our relevant state and associated functions in an anonymous object that children can pull from as needed using useContext
-    <UserLoggedInContext.Provider
-      value={{ user, logIn, logOut, createNewUser }}
-    >
+    <AuthContext.Provider value={{ user, logIn, logOut, createNewUser }}>
       {children}
-    </UserLoggedInContext.Provider>
+    </AuthContext.Provider>
   );
 };
 
-export default UserLoggedInProvider;
+export default AuthProvider;

@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import { UserLoggedInContext } from "../../../providers/UserLoggedInProvider";
+import { AuthContext } from "../../../providers/AuthProvider";
 import { Button, Stack } from "@mui/material";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { routingObject } from "../../../routing";
 
 // ? i'd be open to a better name for this
 const NavUserButtons = () => {
-  const { user, logOut } = useContext(UserLoggedInContext);
+  const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
   return (
     <Stack direction="row" spacing={2}>
