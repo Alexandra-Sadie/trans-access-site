@@ -14,7 +14,7 @@ import "@fontsource/roboto/700.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { routingObject } from "./routing";
 // our providers
-import UserLoggedInProvider from "./providers/UserLoggedInProvider";
+import AuthProvider from "./providers/AuthProvider";
 // our components
 import App from "./components/App";
 import Main from "./components/pages/Main/Main";
@@ -51,7 +51,7 @@ root.render(
     {/* //TODO more detail on how providers work
     I have wrapped BrowserRouter in our LoggedInProvider so that it can give context on the user's logged in status to all routes in the app
  */}
-    <UserLoggedInProvider>
+    <AuthProvider>
       <BrowserRouter>
         <Routes>
           {/* 
@@ -96,6 +96,6 @@ root.render(
           <Route path="*" element={<App />} />
         </Routes>
       </BrowserRouter>
-    </UserLoggedInProvider>
+    </AuthProvider>
   </React.StrictMode>
 );
