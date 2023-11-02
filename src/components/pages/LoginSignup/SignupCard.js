@@ -29,7 +29,6 @@ const SignupCard = () => {
           autoComplete="email"
           onChange={(e) => {
             setCurrentSignupEmail(e.target.value);
-            console.log(currentSignupEmail);
           }}
         ></TextField>
 
@@ -46,7 +45,6 @@ const SignupCard = () => {
           autoComplete="new-password"
           onChange={(e) => {
             setCurrentSignupPassword(e.target.value);
-            console.log(currentSignupPassword);
           }}
         ></TextField>
 

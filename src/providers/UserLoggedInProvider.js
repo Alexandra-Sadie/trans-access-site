@@ -1,6 +1,7 @@
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
 import { useState, createContext } from "react";
 import { auth } from "../firebase";
@@ -23,7 +24,13 @@ const UserLoggedInProvider = ({ children }) => {
   };
 
   const logOut = () => {
-    setUser(null);
+    signOut(auth)
+      // expected to return nothing when succesful
+      .then(() => {
+        console.log("Signed Out!");
+        setUser(null);
+      })
+      .catch((err) => console.error(err));
   };
 
   const createNewUser = (signupEmail, signupPassword) => {
@@ -32,7 +39,7 @@ const UserLoggedInProvider = ({ children }) => {
         const { email, uid } = userCredential.user;
         setUser({ email, uid });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
   };
 
   return (
