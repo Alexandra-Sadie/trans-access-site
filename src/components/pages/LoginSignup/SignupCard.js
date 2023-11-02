@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 
 const SignupCard = () => {
   // !LOGIC ZONE
-  const { user } = useContext(UserLoggedInContext);
+  const { createNewUser } = useContext(UserLoggedInContext);
   const [currentSignupEmail, setCurrentSignupEmail] = useState("");
   const [currentSignupPassword, setCurrentSignupPassword] = useState("");
 
@@ -50,7 +50,10 @@ const SignupCard = () => {
         <Button
           type="submit"
           variant="contained"
-          onClick={(e) => e.preventDefault()}
+          onClick={(e) => {
+            e.preventDefault();
+            createNewUser(currentSignupEmail, currentSignupPassword);
+          }}
         >
           Sign Up
         </Button>

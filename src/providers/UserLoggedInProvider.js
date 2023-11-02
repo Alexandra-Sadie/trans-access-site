@@ -36,7 +36,9 @@ const UserLoggedInProvider = ({ children }) => {
 
   return (
     // passing down our relevant state and associated functions in an anonymous object that children can pull from as needed using useContext
-    <UserLoggedInContext.Provider value={{ user, logIn, logOut }}>
+    <UserLoggedInContext.Provider
+      value={{ user, logIn, logOut, createNewUser }}
+    >
       {children}
     </UserLoggedInContext.Provider>
   );
