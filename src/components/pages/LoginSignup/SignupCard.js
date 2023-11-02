@@ -24,6 +24,10 @@ const SignupCard = () => {
           //type="email" adds validation parameters and mobile keyboard customized for email input -- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types
           type="email"
           autoComplete="email"
+          onChange={(e) => {
+            setCurrentSignupEmail(e.target.value);
+            console.log(currentSignupEmail);
+          }}
         ></TextField>
 
         {/* password */}
@@ -37,6 +41,10 @@ const SignupCard = () => {
           type="password"
           id="signup-password"
           autoComplete="new-password"
+          onChange={(e) => {
+            setCurrentSignupPassword(e.target.value);
+            console.log(currentSignupPassword);
+          }}
         ></TextField>
 
         <Button
