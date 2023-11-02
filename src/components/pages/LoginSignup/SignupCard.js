@@ -1,10 +1,22 @@
 import { Card, Stack, Typography, TextField, Button } from "@mui/material";
+import { UserLoggedInContext } from "../../../providers/UserLoggedInProvider";
+import { useContext, useState } from "react";
+import { routingObject } from "../../../routing";
+import { useNavigate } from "react-router-dom";
 
 const SignupCard = () => {
+  // !LOGIC ZONE
+  const { createNewUser } = useContext(UserLoggedInContext);
+  const [currentSignupEmail, setCurrentSignupEmail] = useState("");
+  const [currentSignupPassword, setCurrentSignupPassword] = useState("");
+  const navigate = useNavigate();
+
+  // !RETURN
   return (
     <Card elevation={2} sx={{ p: 3 }}>
       <Stack component="form" noValidate>
         <Typography variant="h4">Sign Up</Typography>
+
         {/* email */}
         <TextField
           margin="normal"
@@ -15,6 +27,10 @@ const SignupCard = () => {
           //type="email" adds validation parameters and mobile keyboard customized for email input -- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types
           type="email"
           autoComplete="email"
+          onChange={(e) => {
+            setCurrentSignupEmail(e.target.value);
+            console.log(currentSignupEmail);
+          }}
         ></TextField>
 
         {/* password */}
@@ -28,12 +44,23 @@ const SignupCard = () => {
           type="password"
           id="signup-password"
           autoComplete="new-password"
+          onChange={(e) => {
+            setCurrentSignupPassword(e.target.value);
+            console.log(currentSignupPassword);
+          }}
         ></TextField>
 
         <Button
           type="submit"
           variant="contained"
-          onClick={(e) => e.preventDefault()}
+          onClick={(e) => {
+            e.preventDefault();
+            createNewUser(currentSignupEmail, currentSignupPassword);
+            // this timeout is to look nice, remove for final production
+            setTimeout(() => {
+              navigate(routingObject.main.route);
+            }, 300);
+          }}
         >
           Sign Up
         </Button>

@@ -1,4 +1,7 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
+import {
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
 import { useState, createContext } from "react";
 import { auth } from "../firebase";
 
@@ -12,8 +15,8 @@ const UserLoggedInProvider = ({ children }) => {
 
   const logIn = (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
-      .then((userObj) => {
-        const { email, uid } = userObj.user;
+      .then((userCredential) => {
+        const { email, uid } = userCredential.user;
         setUser({ email, uid });
       })
       .catch((err) => console.error(err));
@@ -23,11 +26,20 @@ const UserLoggedInProvider = ({ children }) => {
     setUser(null);
   };
 
-  // const createNewUser = () => {};
+  const createNewUser = (signupEmail, signupPassword) => {
+    createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
+      .then((userCredential) => {
+        const { email, uid } = userCredential.user;
+        setUser({ email, uid });
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     // passing down our relevant state and associated functions in an anonymous object that children can pull from as needed using useContext
-    <UserLoggedInContext.Provider value={{ user, logIn, logOut }}>
+    <UserLoggedInContext.Provider
+      value={{ user, logIn, logOut, createNewUser }}
+    >
       {children}
     </UserLoggedInContext.Provider>
   );

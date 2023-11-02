@@ -9,7 +9,6 @@ const LoginCard = () => {
   const [currentEmail, setCurrentEmail] = useState("");
   const [currentPassword, setCurrentPassword] = useState("");
   const { logIn } = useContext(UserLoggedInContext);
-
   const navigate = useNavigate();
 
   // !RETURN
@@ -61,6 +60,7 @@ const LoginCard = () => {
           onClick={(e) => {
             e.preventDefault();
             logIn(currentEmail, currentPassword);
+            // this timeout is to look nice, remove for final production
             setTimeout(() => {
               navigate(routingObject.main.route);
             }, 300);
