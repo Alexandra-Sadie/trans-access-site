@@ -6,11 +6,11 @@ import { routingObject } from "../../../routing";
 
 // ? i'd be open to a better name for this
 const NavUserButtons = () => {
-  const { isUserLoggedIn, logOut } = useContext(UserLoggedInContext);
+  const { user, logOut } = useContext(UserLoggedInContext);
   const navigate = useNavigate();
   return (
     <Stack direction="row" spacing={2}>
-      {isUserLoggedIn ? (
+      {user ? (
         <>
           {/* TODO - break these individual buttons into components in some elegant way */}
           <Button
