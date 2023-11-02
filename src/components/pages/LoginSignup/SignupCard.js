@@ -1,10 +1,19 @@
 import { Card, Stack, Typography, TextField, Button } from "@mui/material";
+import { UserLoggedInContext } from "../../../providers/UserLoggedInProvider";
+import { useContext, useState } from "react";
 
 const SignupCard = () => {
+  // !LOGIC ZONE
+  const { user } = useContext(UserLoggedInContext);
+  const [currentSignupEmail, setCurrentSignupEmail] = useState("");
+  const [currentSignupPassword, setCurrentSignupPassword] = useState("");
+
+  // !RETURN
   return (
     <Card elevation={2} sx={{ p: 3 }}>
       <Stack component="form" noValidate>
         <Typography variant="h4">Sign Up</Typography>
+
         {/* email */}
         <TextField
           margin="normal"
