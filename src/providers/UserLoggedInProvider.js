@@ -2,8 +2,9 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 import { auth } from "../firebase";
 
 export const UserLoggedInContext = createContext({});
@@ -12,13 +13,27 @@ export const UserLoggedInContext = createContext({});
 const UserLoggedInProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
+  useEffect(() => {
+    const listen = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log(user);
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+    });
+
+    // TODO: explain this
+    return listen;
+  }, []);
+
   // functions to change logged in/out status
 
   const logIn = (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
+      // TODO: decide if we really want to do anything here
       .then((userCredential) => {
-        const { email, uid } = userCredential.user;
-        setUser({ email, uid });
+        console.log(userCredential);
       })
       .catch((err) => console.error(err));
   };
@@ -28,16 +43,15 @@ const UserLoggedInProvider = ({ children }) => {
       // expected to return nothing when succesful
       .then(() => {
         console.log("Signed Out!");
-        setUser(null);
       })
       .catch((err) => console.error(err));
   };
 
   const createNewUser = (signupEmail, signupPassword) => {
     createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
+      // TODO: decide if we really want to do anything here
       .then((userCredential) => {
-        const { email, uid } = userCredential.user;
-        setUser({ email, uid });
+        console.log(userCredential);
       })
       .catch((err) => console.error(err));
   };
