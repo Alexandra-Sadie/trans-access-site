@@ -30,11 +30,15 @@ const AuthProvider = ({ children }) => {
 
   // functions to change logged in/out status
 
-  const logIn = (loginEmail, loginPassword) => {
+  const logIn = (loginEmail, loginPassword, callback) => {
     signInWithEmailAndPassword(auth, loginEmail, loginPassword)
       // TODO: decide if we really want to do anything here
       .then((userCredential) => {
         console.log(userCredential);
+        // This callback is an optional argument that can be implemented lower down in the application to perform a desired callback function once the login promise successfully completes.
+        if (callback) {
+          callback();
+        }
       })
       .catch((err) => console.error(err));
   };

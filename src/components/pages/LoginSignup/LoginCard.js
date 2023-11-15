@@ -23,9 +23,10 @@ const LoginCard = () => {
         noValidate
         onSubmit={(e) => {
           e.preventDefault();
-          logIn(currentLoginEmail, currentLoginPassword);
-          // this timeout is to look nice, remove for final production
-          navigate(routingObject.main.route);
+          // we are providing this anonymous fn as our logIn fn's third "callback" argument so that if the log in successfully completes, it navigates to main page
+          logIn(currentLoginEmail, currentLoginPassword, () => {
+            navigate(routingObject.main.route);
+          });
         }}
       >
         {/* email */}
