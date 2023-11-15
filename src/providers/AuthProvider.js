@@ -52,7 +52,7 @@ const AuthProvider = ({ children }) => {
       .catch((err) => console.error(err));
   };
 
-  const createNewUserEnglish = (signupEmail, signupPassword) => {
+  const createNewUserEnglish = (signupEmail, signupPassword, callback) => {
     createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
       // TODO: decide if we really want to do anything here
       .then((userCredential) => {
@@ -60,17 +60,23 @@ const AuthProvider = ({ children }) => {
         // TODO: investigate if this can be tied to a global provider using auth.languageCode
         auth.languageCode = "en";
         sendEmailVerification(auth.currentUser);
+        if (callback) {
+          callback();
+        }
       })
       .catch((err) => console.error(err));
   };
 
-  const createNewUserFrench = (signupEmail, signupPassword) => {
+  const createNewUserFrench = (signupEmail, signupPassword, callback) => {
     createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
       // TODO: decide if we really want to do anything here
       .then((userCredential) => {
         console.log(userCredential);
         auth.languageCode = "fr";
         sendEmailVerification(auth.currentUser);
+        if (callback) {
+          callback();
+        }
       })
       .catch((err) => console.error(err));
   };

@@ -14,7 +14,17 @@ const SignupCard = () => {
   // !RETURN
   return (
     <Card elevation={2} sx={{ p: 3 }}>
-      <Stack component="form" noValidate>
+      <Stack
+        component="form"
+        noValidate
+        onSubmit={(e) => {
+          e.preventDefault();
+          // we are providing this anonymous fn as our fn's third "callback" argument so that if the sign up successfully completes, it navigates to main page
+          createNewUserEnglish(currentLoginEmail, currentLoginPassword, () => {
+            navigate(routingObject.main.route);
+          });
+        }}
+      >
         <Typography variant="h4">Sign Up</Typography>
 
         {/* email */}
@@ -48,18 +58,7 @@ const SignupCard = () => {
           }}
         ></TextField>
 
-        <Button
-          type="submit"
-          variant="contained"
-          onClick={(e) => {
-            e.preventDefault();
-            createNewUserEnglish(currentSignupEmail, currentSignupPassword);
-            // this timeout is to look nice, remove for final production
-            setTimeout(() => {
-              navigate(routingObject.main.route);
-            }, 300);
-          }}
-        >
+        <Button type="submit" variant="contained">
           Sign Up
         </Button>
       </Stack>
