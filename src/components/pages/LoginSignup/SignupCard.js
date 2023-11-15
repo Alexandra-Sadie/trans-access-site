@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const SignupCard = () => {
   // !LOGIC ZONE
-  const { createNewUser } = useContext(AuthContext);
+  const { createNewUserEnglish } = useContext(AuthContext);
   const [currentSignupEmail, setCurrentSignupEmail] = useState("");
   const [currentSignupPassword, setCurrentSignupPassword] = useState("");
   const navigate = useNavigate();
@@ -53,7 +53,7 @@ const SignupCard = () => {
           variant="contained"
           onClick={(e) => {
             e.preventDefault();
-            createNewUser(currentSignupEmail, currentSignupPassword);
+            createNewUserEnglish(currentSignupEmail, currentSignupPassword);
             // this timeout is to look nice, remove for final production
             setTimeout(() => {
               navigate(routingObject.main.route);

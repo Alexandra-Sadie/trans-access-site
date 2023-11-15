@@ -3,6 +3,7 @@ import {
   createUserWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
+  sendEmailVerification,
 } from "firebase/auth";
 import { useState, createContext, useEffect } from "react";
 import { auth } from "../firebase";
