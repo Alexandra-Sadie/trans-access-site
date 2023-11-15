@@ -20,9 +20,13 @@ const SignupCard = () => {
         onSubmit={(e) => {
           e.preventDefault();
           // we are providing this anonymous fn as our fn's third "callback" argument so that if the sign up successfully completes, it navigates to main page
-          createNewUserEnglish(currentLoginEmail, currentLoginPassword, () => {
-            navigate(routingObject.main.route);
-          });
+          createNewUserEnglish(
+            currentSignupEmail,
+            currentSignupPassword,
+            () => {
+              navigate(routingObject.main.route);
+            }
+          );
         }}
       >
         <Typography variant="h4">Sign Up</Typography>
