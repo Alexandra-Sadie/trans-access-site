@@ -59,6 +59,17 @@ const AuthProvider = ({ children }) => {
       .catch((err) => console.error(err));
   };
 
+  const createNewUserFrench = (signupEmail, signupPassword) => {
+    createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
+      // TODO: decide if we really want to do anything here
+      .then((userCredential) => {
+        console.log(userCredential);
+        auth.languageCode = "fr";
+        sendEmailVerification(auth.currentUser);
+      })
+      .catch((err) => console.error(err));
+  };
+
   return (
     // passing down our relevant state and associated functions in an anonymous object that children can pull from as needed using useContext
     <AuthContext.Provider value={{ user, logIn, logOut, createNewUserEnglish }}>
