@@ -53,6 +53,7 @@ const AuthProvider = ({ children }) => {
       // TODO: decide if we really want to do anything here
       .then((userCredential) => {
         console.log(userCredential);
+        // TODO: investigate if this can be tied to a global provider using auth.languageCode
         auth.languageCode = "en";
         sendEmailVerification(auth.currentUser);
       })
