@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const SignupCard = () => {
   // !LOGIC ZONE
-  const { createNewUserEnglish } = useContext(AuthContext);
+  const { createNewUser } = useContext(AuthContext);
   const [currentSignupEmail, setCurrentSignupEmail] = useState("");
   const [currentSignupPassword, setCurrentSignupPassword] = useState("");
   const navigate = useNavigate();
@@ -20,13 +20,9 @@ const SignupCard = () => {
         onSubmit={(e) => {
           e.preventDefault();
           // we are providing this anonymous fn as our fn's third "callback" argument so that if the sign up successfully completes, it navigates to main page
-          createNewUserEnglish(
-            currentSignupEmail,
-            currentSignupPassword,
-            () => {
-              navigate(routingObject.main.route);
-            }
-          );
+          createNewUser(currentSignupEmail, currentSignupPassword, () => {
+            navigate(routingObject.main.route);
+          });
         }}
       >
         <Typography variant="h4">Sign Up</Typography>

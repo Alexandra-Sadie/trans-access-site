@@ -13,6 +13,8 @@ export const AuthContext = createContext({});
 // defining the data to be passed down
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  // this will actually have lang switch logic later on
+  const currentLang = "en";
 
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
@@ -52,27 +54,15 @@ const AuthProvider = ({ children }) => {
       .catch((err) => console.error(err));
   };
 
-  const createNewUserEnglish = (signupEmail, signupPassword, callback) => {
+  const createNewUser = (signupEmail, signupPassword, callback) => {
     createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
       // TODO: decide if we really want to do anything here
       .then((userCredential) => {
         console.log(userCredential);
         // TODO: investigate if this can be tied to a global provider using auth.languageCode
-        auth.languageCode = "en";
-        sendEmailVerification(auth.currentUser);
-        if (callback) {
-          callback();
-        }
-      })
-      .catch((err) => console.error(err));
-  };
-
-  const createNewUserFrench = (signupEmail, signupPassword, callback) => {
-    createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
-      // TODO: decide if we really want to do anything here
-      .then((userCredential) => {
-        console.log(userCredential);
-        auth.languageCode = "fr";
+        // we're doing this in order to send different language verification emails
+        // eventually, if the user toggles the site language to french, currentLang will be updated to french -- currently hardcoded to "en"
+        auth.languageCode = currentLang;
         sendEmailVerification(auth.currentUser);
         if (callback) {
           callback();
@@ -83,7 +73,7 @@ const AuthProvider = ({ children }) => {
 
   return (
     // passing down our relevant state and associated functions in an anonymous object that children can pull from as needed using useContext
-    <AuthContext.Provider value={{ user, logIn, logOut, createNewUserEnglish }}>
+    <AuthContext.Provider value={{ user, logIn, logOut, createNewUser }}>
       {children}
     </AuthContext.Provider>
   );
