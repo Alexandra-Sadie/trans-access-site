@@ -21,6 +21,13 @@ const LoginCard = () => {
         component="form"
         // TODO do we want novalidate? with it gone, it checks for valid email which is handy, but do we need it so html validation doesnt fuck with react?
         noValidate
+        onSubmit={(e) => {
+          e.preventDefault();
+          // we are providing this anonymous fn as our logIn fn's third "callback" argument so that if the log in successfully completes, it navigates to main page
+          logIn(currentLoginEmail, currentLoginPassword, () => {
+            navigate(routingObject.main.route);
+          });
+        }}
       >
         {/* email */}
         <TextField
@@ -54,18 +61,7 @@ const LoginCard = () => {
           }}
         ></TextField>
 
-        <Button
-          type="submit"
-          variant="contained"
-          onClick={(e) => {
-            e.preventDefault();
-            logIn(currentLoginEmail, currentLoginPassword);
-            // this timeout is to look nice, remove for final production
-            setTimeout(() => {
-              navigate(routingObject.main.route);
-            }, 300);
-          }}
-        >
+        <Button type="submit" variant="contained">
           Log In
         </Button>
       </Stack>
