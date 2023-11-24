@@ -1,8 +1,15 @@
 import { useContext } from "react";
 import { CardsContext } from "../../providers/CardsProvider";
+import { useLocation, useParams } from "react-router-dom";
 
 const Therapist = () => {
   const cards = useContext(CardsContext);
+  // this pulls the pathname off of the route
+  // TODO: explain this better, maybe find a more elegant way with router??
+  const cardSubset = useLocation().pathname.slice(1);
+
+  console.log(cardSubset);
+
   return (
     <>
       {cards.therapist.map(
