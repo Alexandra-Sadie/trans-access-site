@@ -1,14 +1,22 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { CardsContext } from "../../providers/CardsProvider";
 import { useLocation } from "react-router-dom";
 
 const Therapist = () => {
-  const { currentCards } = useContext(CardsContext);
+  //on mount, currentCards should be an empty array
+  const { currentCards, requestNewCards, resetCards } =
+    useContext(CardsContext);
+
   // this pulls the pathname off of the route
   // TODO: explain this better, maybe find a more elegant way with router??
   const cardSubset = useLocation().pathname.slice(1);
 
-  console.log(cardSubset);
+  useEffect(() => {
+    requestNewCards(cardSubset);
+    console.count("inside " + cardSubset + " useEffect");
+
+    return resetCards;
+  }, [requestNewCards, cardSubset, resetCards]);
 
   return (
     <>
