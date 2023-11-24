@@ -5,6 +5,7 @@ export const CardsContext = createContext({});
 const cards = {
   therapist: [
     {
+      uid: "1",
       name: "Jane Doe",
       profession: "Therapist",
       location: "123 X Street, Montreal, Quebec, V6B 4A2",
@@ -17,9 +18,7 @@ const cards = {
 
 const CardsProvider = ({ children }) => {
   return (
-    <CardsContext.Provider value={cards.therapist}>
-      {children}
-    </CardsContext.Provider>
+    <CardsContext.Provider value={cards}>{children}</CardsContext.Provider>
   );
 };
 export default CardsProvider;
