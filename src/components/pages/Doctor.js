@@ -34,7 +34,7 @@ const Doctor = () => {
     },
     {
       uid: "3",
-      name: "Badpic Karl",
+      name: "Pic With Bad Url",
       profession: "Therapist",
       location: "99 X Street, Montreal, Quebec, V6B 4A2",
       available: true,
