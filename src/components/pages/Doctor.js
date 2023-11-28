@@ -48,7 +48,7 @@ const Doctor = () => {
     },
   ];
 
-  console.log(modelDoctor);
+  console.log(dummyDoctorsList);
 
   return (
     <div>
