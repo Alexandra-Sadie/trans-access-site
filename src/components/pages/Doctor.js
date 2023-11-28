@@ -44,6 +44,9 @@ const Doctor = () => {
 
   const stringAvatar = (name) => {
     return {
+      // uses .split (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) to extract the first letter of the first word in name and the first letter of the second word in name
+      // assumes two-word name -- could be an issue?
+      // mb database should expect first and last names as separate data entries to account for this
       children: `${name.split(" ")[0][0]}${name.split(" ")[1][0]}`,
     };
   };
