@@ -58,11 +58,11 @@ const Doctor = () => {
       name: "Horrible Goblin",
       profession: "Brigand",
       location: "Dank Cave",
-      available: true,
+      available: false,
       waitTime: 666,
       bio: "I'll get ya!",
       avatar:
-        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhighxtar.com%2Fwp-content%2Fuploads%2F2020%2F07%2Fhighxtar-britney-spears-1.jpg&f=1&nofb=1&ipt=5830f49e53dd70d12e97e723ece51eb1789d2bf7457b77fa4285b2e39a440183&ipo=images",
+        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffictionhorizon.com%2Fwp-content%2Fuploads%2F2020%2F03%2FNINTCHDBPICT0004777086082-1.jpg&f=1&nofb=1&ipt=eb5b882c8883ffce6fa0f57b26204e117f53338d53b0531f71fa0471267e7c14&ipo=images",
     },
   ];
 
@@ -70,7 +70,7 @@ const Doctor = () => {
   const filteredList = dummyDoctorsList.filter(
     (professional) =>
       // remove professionals who are in the database but not currently taking new patients
-      (professional.available = true)
+      professional.available === true
   );
   console.log(filteredList);
 
@@ -91,7 +91,7 @@ const Doctor = () => {
           .filter(
             (professional) =>
               // remove professionals who are in the database but not currently taking new patients
-              (professional.available = true)
+              professional.available === true
           )
           .map((professional) => {
             return (
