@@ -22,7 +22,7 @@ const Doctor = () => {
   return (
     <div>
       Doctor
-      <Card sx={{ maxWidth: 400 }}>
+      <Card variant="outlined" sx={{ maxWidth: 400 }}>
         <CardHeader
           title={modelDoctor.name}
           // can this be square?
