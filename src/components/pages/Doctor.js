@@ -37,8 +37,7 @@ const Doctor = () => {
       available: true,
       waitTime: 2,
       bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos molestias asperiores repellendus quibusdam alias voluptatum molestiae. Optio impedit incidunt veniam et libero officia placeat, corrupti sequi at. Omnis, soluta!",
-      avatar:
-        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupl.roob.la%2F2015%2F01%2Fdale-cooper-coffee-e1421147082530.png&f=1&nofb=1&ipt=060a6fa657b51ce6c3bdd1485a4a66da671dc9fe9d27985729ae6026c286bab6&ipo=images",
+      avatar: "INVALID AVATAR LINK",
     },
   ];
 
@@ -58,18 +57,25 @@ const Doctor = () => {
           title={professional.name}
           // can this be square?
           avatar={
-            professional.avatar ? (
-              <Avatar src={professional.avatar}>yes</Avatar>
-            ) : (
-              <Avatar {...stringAvatar(professional.name)} />
-            )
+            <Avatar
+              src={professional.avatar}
+              // if they don't have an avatar, it runs stringAvatar on their name to make the avatar their initials
+              // this fallback will also apply if they have a listed avatar but it is somehow invalid, but otherwise is overwritten by the image
+              {...stringAvatar(professional.name)}
+            ></Avatar>
           }
           subheader={professional.profession}
         ></CardHeader>
         <CardContent>
           <Card>{professional.location}</Card>
           <Card>Wait time: {professional.waitTime} months</Card>
-          <Typography noWrap={true}>{professional.bio}</Typography>
+
+          <Typography
+            // noWrap is what makes it cut short with ellipsis at card limit
+            noWrap={true}
+          >
+            {professional.bio}
+          </Typography>
         </CardContent>
       </Card>
     );
