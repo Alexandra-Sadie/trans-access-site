@@ -1,4 +1,4 @@
-import { Avatar, Card, CardHeader } from "@mui/material";
+import { Avatar, Card, CardHeader, CardContent } from "@mui/material";
 
 const Doctor = () => {
   const modelDoctor = {
@@ -19,10 +19,17 @@ const Doctor = () => {
       <Card sx={{ maxWidth: 400 }}>
         <CardHeader
           title={modelDoctor.name}
+          // can this be square?
           avatar={
             <Avatar src="https://images.unsplash.com/photo-1582201942988-13e60e4556ee?q=80&w=2004&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></Avatar>
           }
+          subheader={modelDoctor.profession}
         ></CardHeader>
+        <CardContent>
+          <Card>{modelDoctor.location}</Card>
+          <Card>Wait time: {modelDoctor.waitTime} months</Card>
+          <Card></Card>
+        </CardContent>
       </Card>
     </div>
   );
