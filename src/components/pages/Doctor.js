@@ -53,7 +53,11 @@ const Doctor = () => {
 
   return dummyDoctorsList.map((professional) => {
     return (
-      <Card key={professional.uid} variant="outlined" sx={{ maxWidth: 400 }}>
+      <Card
+        key={professional.uid}
+        variant="outlined"
+        sx={{ maxWidth: 400, m: 1 }}
+      >
         <CardHeader
           title={professional.name}
           titleTypographyProps={{ fontSize: 20 }}
