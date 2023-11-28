@@ -28,6 +28,7 @@ const Doctor = () => {
       available: true,
       waitTime: 2,
       bio: "According to all known laws of aviation, there is no way that a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway because bees don't care what humans think is impossible.",
+      avatar: "",
     },
     {
       uid: "3",
@@ -37,7 +38,7 @@ const Doctor = () => {
       available: true,
       waitTime: 2,
       bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos molestias asperiores repellendus quibusdam alias voluptatum molestiae. Optio impedit incidunt veniam et libero officia placeat, corrupti sequi at. Omnis, soluta!",
-      avatar: "INVALID AVATAR LINK",
+      avatar: "https://invalidlink.nogood.com",
     },
   ];
 
@@ -60,7 +61,7 @@ const Doctor = () => {
             <Avatar
               src={professional.avatar}
               // if they don't have an avatar, it runs stringAvatar on their name to make the avatar their initials
-              // this fallback will also apply if they have a listed avatar but it is somehow invalid, but otherwise is overwritten by the image
+              // this fallback will also apply if they have a listed avatar but it is somehow invalid (bc src looks for image link), but otherwise is overwritten by the image
               {...stringAvatar(professional.name)}
             ></Avatar>
           }
