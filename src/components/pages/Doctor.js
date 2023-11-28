@@ -4,6 +4,8 @@ import {
   CardHeader,
   CardContent,
   Typography,
+  List,
+  ListItem,
 } from "@mui/material";
 
 const Doctor = () => {
@@ -40,6 +42,17 @@ const Doctor = () => {
       bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos molestias asperiores repellendus quibusdam alias voluptatum molestiae. Optio impedit incidunt veniam et libero officia placeat, corrupti sequi at. Omnis, soluta!",
       avatar: "https://invalidlink.nogood.com",
     },
+    {
+      uid: "4",
+      name: "Second Therapist",
+      profession: "Therapist",
+      location: "420 Slay Street, Montreal, Quebec, V6B 4A2",
+      available: true,
+      waitTime: 8,
+      bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos molestias asperiores repellendus quibusdam alias voluptatum molestiae. Optio impedit incidunt veniam et libero officia placeat, corrupti sequi at. Omnis, soluta!",
+      avatar:
+        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhighxtar.com%2Fwp-content%2Fuploads%2F2020%2F07%2Fhighxtar-britney-spears-1.jpg&f=1&nofb=1&ipt=5830f49e53dd70d12e97e723ece51eb1789d2bf7457b77fa4285b2e39a440183&ipo=images",
+    },
   ];
 
   const stringAvatar = (name) => {
@@ -51,45 +64,56 @@ const Doctor = () => {
     };
   };
 
-  return dummyDoctorsList.map((professional) => {
-    return (
-      <Card
-        key={professional.uid}
-        variant="outlined"
-        sx={{ maxWidth: 400, m: 1 }}
-      >
-        <CardHeader
-          title={professional.name}
-          titleTypographyProps={{ fontSize: 20 }}
-          // can this be square?
-          avatar={
-            <Avatar
-              src={professional.avatar}
-              // if they don't have an avatar, it runs stringAvatar on their name to make the avatar their initials
-              // this fallback will also apply if they have a listed avatar but it is somehow invalid (bc src looks for image link), but otherwise is overwritten by the image
-              {...stringAvatar(professional.name)}
-            ></Avatar>
-          }
-          subheader={
-            <>
-              <Typography>{professional.profession}</Typography>
-            </>
-          }
-        ></CardHeader>
-        <CardContent>
-          <Typography>Location: {professional.location}</Typography>
-          <Typography>Wait time: {professional.waitTime} months</Typography>
-          <Typography
-            sx={{ mt: 1 }}
-            // noWrap is what makes it cut short with ellipsis at card limit
-            noWrap={true}
-          >
-            {professional.bio}
-          </Typography>
-        </CardContent>
-      </Card>
-    );
-  });
+  return (
+    <>
+      <Typography>List of professionals:</Typography>
+      <List>
+        {dummyDoctorsList.map((professional) => {
+          return (
+            <ListItem>
+              <Card
+                key={professional.uid}
+                variant="outlined"
+                sx={{ maxWidth: 400 }}
+              >
+                <CardHeader
+                  title={professional.name}
+                  titleTypographyProps={{ fontSize: 20 }}
+                  // can this be square?
+                  avatar={
+                    <Avatar
+                      src={professional.avatar}
+                      // if they don't have an avatar, it runs stringAvatar on their name to make the avatar their initials
+                      // this fallback will also apply if they have a listed avatar but it is somehow invalid (bc src looks for image link), but otherwise is overwritten by the image
+                      {...stringAvatar(professional.name)}
+                    ></Avatar>
+                  }
+                  subheader={
+                    <>
+                      <Typography>{professional.profession}</Typography>
+                    </>
+                  }
+                ></CardHeader>
+                <CardContent>
+                  <Typography>Location: {professional.location}</Typography>
+                  <Typography>
+                    Wait time: {professional.waitTime} months
+                  </Typography>
+                  <Typography
+                    sx={{ mt: 1 }}
+                    // noWrap is what makes it cut short with ellipsis at card limit
+                    noWrap={true}
+                  >
+                    {professional.bio}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </ListItem>
+          );
+        })}
+      </List>
+    </>
+  );
 };
 
 export default Doctor;
