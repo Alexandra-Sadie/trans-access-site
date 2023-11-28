@@ -99,7 +99,7 @@ const Doctor = () => {
                 <Card
                   key={professional.uid}
                   variant="outlined"
-                  sx={{ maxWidth: 400 }}
+                  sx={{ width: 400 }}
                 >
                   <CardHeader
                     title={professional.name}
