@@ -13,7 +13,7 @@ const Doctor = () => {
   const dummyDoctorsList = [
     {
       uid: "1",
-      name: "First Doctor",
+      name: "Laura Palmer",
       profession: "Doctor",
       location: "123 X Street, Montreal, Quebec, V6B 4A2",
       available: true,
@@ -24,7 +24,7 @@ const Doctor = () => {
     },
     {
       uid: "2",
-      name: "Second Doctor",
+      name: "Bee Movie",
       profession: "Doctor",
       location: "456 X Street, Montreal, Quebec, V6B 4A2",
       available: true,
@@ -34,7 +34,7 @@ const Doctor = () => {
     },
     {
       uid: "3",
-      name: "First Therapist",
+      name: "Badpic Karl",
       profession: "Therapist",
       location: "99 X Street, Montreal, Quebec, V6B 4A2",
       available: true,
@@ -44,7 +44,7 @@ const Doctor = () => {
     },
     {
       uid: "4",
-      name: "Second Therapist",
+      name: "Britney Spears",
       profession: "Therapist",
       location: "420 Slay Street, Montreal, Quebec, V6B 4A2",
       available: true,
