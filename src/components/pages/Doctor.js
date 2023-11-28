@@ -1,4 +1,10 @@
-import { Avatar, Card, CardHeader, CardContent } from "@mui/material";
+import {
+  Avatar,
+  Card,
+  CardHeader,
+  CardContent,
+  Typography,
+} from "@mui/material";
 
 const Doctor = () => {
   const modelDoctor = {
@@ -28,7 +34,12 @@ const Doctor = () => {
         <CardContent>
           <Card>{modelDoctor.location}</Card>
           <Card>Wait time: {modelDoctor.waitTime} months</Card>
-          <Card></Card>
+          <Typography noWrap={true}>
+            According to all known laws of aviation, there is no way that a bee
+            should be able to fly. Its wings are too small to get its fat little
+            body off the ground. The bee, of course, flies anyway because bees
+            don't care what humans think is impossible.
+          </Typography>
         </CardContent>
       </Card>
     </div>
