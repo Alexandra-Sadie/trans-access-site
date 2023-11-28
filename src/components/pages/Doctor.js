@@ -56,6 +56,7 @@ const Doctor = () => {
       <Card key={professional.uid} variant="outlined" sx={{ maxWidth: 400 }}>
         <CardHeader
           title={professional.name}
+          titleTypographyProps={{ fontSize: 20 }}
           // can this be square?
           avatar={
             <Avatar
@@ -65,13 +66,17 @@ const Doctor = () => {
               {...stringAvatar(professional.name)}
             ></Avatar>
           }
-          subheader={professional.profession}
+          subheader={
+            <>
+              <Typography>{professional.profession}</Typography>
+            </>
+          }
         ></CardHeader>
         <CardContent>
-          <Card>{professional.location}</Card>
-          <Card>Wait time: {professional.waitTime} months</Card>
-
+          <Typography>Location: {professional.location}</Typography>
+          <Typography>Wait time: {professional.waitTime} months</Typography>
           <Typography
+            sx={{ mt: 1 }}
             // noWrap is what makes it cut short with ellipsis at card limit
             noWrap={true}
           >
