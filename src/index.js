@@ -87,7 +87,7 @@ root.render(
 
               <Route
                 path={routingObject.doctor.route}
-                element={<Doctor path={routingObject.name_change.route} />}
+                element={<Doctor path={routingObject.doctor.route} />}
               />
 
               <Route
