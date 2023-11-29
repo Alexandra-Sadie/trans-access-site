@@ -1,16 +1,10 @@
 import { useContext, useEffect } from "react";
 import { CardsContext } from "../../providers/CardsProvider";
-import { useLocation } from "react-router-dom";
 
-const Therapist = () => {
+const Therapist = ({ path }) => {
   //on mount, currentCards should be an empty array
   const { currentCards, requestNewCards, resetCards } =
     useContext(CardsContext);
-
-  // this pulls the pathname off of the route
-  // i.e. "therapist" for the therapist page etc
-  // TODO: explain this better, maybe find a more elegant way with router??
-  const cardSubset = useLocation().pathname.slice(1);
 
   // on mount, currentCards is empty array
   // THEN this fires, and requests a specific serviceType array from CardsProvider
@@ -22,9 +16,9 @@ const Therapist = () => {
   // long term useEffect may be wrong herre but i think is ok for the lifetime of this mock
   useEffect(
     () => {
-      requestNewCards(cardSubset);
+      requestNewCards(path);
       // this is to double check we're not creating an infinite loop
-      console.count("inside " + cardSubset + " useEffect");
+      console.count("inside " + path + " useEffect");
 
       return resetCards;
     },
@@ -32,7 +26,7 @@ const Therapist = () => {
     // useEffect may be hacky here
     // TODO: read react docs on using something other than useEffect
     // however this logic will be different when the real db is up anyway
-    [requestNewCards, cardSubset, resetCards]
+    [requestNewCards, path, resetCards]
   );
 
   return (
