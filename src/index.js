@@ -67,20 +67,28 @@ root.render(
 
               <Route
                 path={routingObject.intervention.route}
-                element={<Intervention />}
+                // Intervention ALSO receives a path prop because
+                // react router doesnt directly pass props of Route to the route element
+                // i.e., to have access to the path in the element, it needs the prop directly
+                element={
+                  <Intervention path={routingObject.intervention.route} />
+                }
               />
 
               <Route
                 path={routingObject.therapist.route}
-                element={<Therapist />}
+                element={<Therapist path={routingObject.therapist.route} />}
               />
 
               <Route
                 path={routingObject.name_change.route}
-                element={<NameChange />}
+                element={<NameChange path={routingObject.name_change.route} />}
               />
 
-              <Route path={routingObject.doctor.route} element={<Doctor />} />
+              <Route
+                path={routingObject.doctor.route}
+                element={<Doctor path={routingObject.name_change.route} />}
+              />
 
               <Route
                 path={routingObject.login_signup.route}
