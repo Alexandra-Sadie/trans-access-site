@@ -27,7 +27,12 @@ const ProfessionalCard = ({
     // by default it justifies content to 'flex-start', i.e. to the left edge
     // this centers the card in the page
     <ListItem sx={{ justifyContent: "center" }}>
-      <Card variant="outlined" sx={{ width: 400 }}>
+      <Card
+        variant="outlined"
+        // TODO set height to multiple breakpoint IF noWrap can be set to further lines
+        // TODO choose best nreakpoints
+        sx={{ width: { xs: 400, md: 850 } }}
+      >
         <CardHeader
           title={name}
           titleTypographyProps={{ fontSize: 20 }}
@@ -53,6 +58,7 @@ const ProfessionalCard = ({
           <Typography
             sx={{ mt: 1 }}
             // noWrap is what makes it cut short with ellipsis at card limit
+            // ? is it possible to cut short after two lines??
             noWrap={true}
           >
             Bio: {bio}
