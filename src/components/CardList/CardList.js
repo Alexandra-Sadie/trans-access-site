@@ -5,7 +5,7 @@ const CardList = ({ cardArr }) => {
   return (
     <List>
       {cardArr.map((professional) => (
-        <ProfessionalCard {...professional} />
+        <ProfessionalCard key={professional.uid} {...professional} />
       ))}
     </List>
   );

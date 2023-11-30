@@ -24,7 +24,7 @@ const ProfessionalCard = ({
   bio,
 }) => {
   return (
-    <ListItem key={uid}>
+    <ListItem>
       <Card variant="outlined" sx={{ width: 400 }}>
         <CardHeader
           title={name}
