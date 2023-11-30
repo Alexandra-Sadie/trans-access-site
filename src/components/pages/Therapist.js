@@ -1,5 +1,6 @@
 import { useContext, useEffect } from "react";
 import { CardsContext } from "../../providers/CardsProvider";
+import CardList from "../CardList/CardList";
 
 const Therapist = ({ path }) => {
   //on mount, currentCards should be an empty array
@@ -29,24 +30,7 @@ const Therapist = ({ path }) => {
     [requestNewCards, path, resetCards]
   );
 
-  return (
-    <>
-      {currentCards
-        ? currentCards.map(
-            ({ uid, name, profession, location, waitTime, bio }) => (
-              <div key={uid}>
-                <h1>{name}</h1>
-                <h2>{profession}</h2>
-                <h3>{location}</h3>
-                <p>{`Wait Time: ${waitTime} weeks`}</p>
-                <p>{bio}</p>
-                <br />
-              </div>
-            )
-          )
-        : null}
-    </>
-  );
+  return <>{currentCards ? <CardList cardArr={currentCards} /> : null}</>;
 };
 
 export default Therapist;

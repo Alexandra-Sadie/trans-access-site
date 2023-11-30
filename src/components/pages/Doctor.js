@@ -1,4 +1,3 @@
-import { Typography } from "@mui/material";
 import CardList from "../CardList/CardList";
 
 const Doctor = () => {
@@ -59,12 +58,7 @@ const Doctor = () => {
     },
   ];
 
-  return (
-    <>
-      <Typography>List of professionals:</Typography>
-      <CardList cardArr={dummyDoctorsList} />
-    </>
-  );
+  return <CardList cardArr={dummyDoctorsList} />;
 };
 
 export default Doctor;
