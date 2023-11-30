@@ -15,7 +15,6 @@ const stringAvatar = (name) =>
     .join("");
 
 const ProfessionalCard = ({
-  uid,
   name,
   avatar,
   profession,
