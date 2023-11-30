@@ -1,12 +1,4 @@
-import {
-  Avatar,
-  Card,
-  CardHeader,
-  CardContent,
-  Typography,
-  List,
-  ListItem,
-} from "@mui/material";
+import CardList from "../CardList/CardList";
 
 const Doctor = () => {
   // unsure if this is ok by default as an array of objects or if it should be an object and run Object.values() on it like we do in main.js to routingObject
@@ -34,7 +26,7 @@ const Doctor = () => {
     },
     {
       uid: "3",
-      name: "Pic With Bad Url",
+      name: "Pic",
       profession: "Therapist",
       location: "99 X Street, Montreal, Quebec, V6B 4A2",
       available: true,
@@ -66,79 +58,7 @@ const Doctor = () => {
     },
   ];
 
-  //TODO currently this var isn't used below -- did it functional programming style -- but I'm keeping it around as a reminder that it might be worth having this filtering done at a higher-level provider component, so that various lower-down pages can access the filtered list (eg when filtering additionally by profession, wait time, etc) without having to do the filter each time
-  const filteredList = dummyDoctorsList.filter(
-    (professional) =>
-      // remove professionals who are in the database but not currently taking new patients
-      professional.available === true
-  );
-  console.log(filteredList);
-
-  const stringAvatar = (name) => {
-    return {
-      // uses .split (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) to extract the first letter of the first word in name and the first letter of the second word in name
-      // assumes two-word name -- could be an issue?
-      // mb database should expect first and last names as separate data entries to account for this
-      children: `${name.split(" ")[0][0]}${name.split(" ")[1][0]}`,
-    };
-  };
-
-  return (
-    <>
-      <Typography>List of professionals:</Typography>
-      <List>
-        {dummyDoctorsList
-          .filter(
-            (professional) =>
-              // remove professionals who are in the database but not currently taking new patients
-              professional.available === true
-          )
-          .map((professional) => {
-            return (
-              <ListItem>
-                <Card
-                  key={professional.uid}
-                  variant="outlined"
-                  sx={{ width: 400 }}
-                >
-                  <CardHeader
-                    title={professional.name}
-                    titleTypographyProps={{ fontSize: 20 }}
-                    // can this be square?
-                    avatar={
-                      <Avatar
-                        src={professional.avatar}
-                        // if they don't have an avatar, it runs stringAvatar on their name to make the avatar their initials
-                        // this fallback will also apply if they have a listed avatar but it is somehow invalid (bc src looks for image link), but otherwise is overwritten by the image
-                        {...stringAvatar(professional.name)}
-                      ></Avatar>
-                    }
-                    subheader={
-                      <>
-                        <Typography>{professional.profession}</Typography>
-                      </>
-                    }
-                  ></CardHeader>
-                  <CardContent>
-                    <Typography>Location: {professional.location}</Typography>
-                    <Typography>
-                      Wait time: {professional.waitTime} months
-                    </Typography>
-                    <Typography
-                      sx={{ mt: 1 }}
-                      // noWrap is what makes it cut short with ellipsis at card limit
-                      noWrap={true}
-                    >
-                      Bio: {professional.bio}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </ListItem>
-            );
-          })}
-      </List>
-    </>
-  );
+  return <CardList cardArr={dummyDoctorsList} />;
 };
 
 export default Doctor;
