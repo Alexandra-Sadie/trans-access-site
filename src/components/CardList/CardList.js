@@ -21,8 +21,8 @@ const CardList = ({ cardArr }) => {
     <List>
       {cardArr.map((professional) => {
         return (
-          <ListItem>
-            <Card key={professional.uid} variant="outlined" sx={{ width: 400 }}>
+          <ListItem key={professional.uid}>
+            <Card variant="outlined" sx={{ width: 400 }}>
               <CardHeader
                 title={professional.name}
                 titleTypographyProps={{ fontSize: 20 }}
