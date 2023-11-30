@@ -23,7 +23,10 @@ const ProfessionalCard = ({
   bio,
 }) => {
   return (
-    <ListItem>
+    // the ListItem takes full width and is a row-direction flexbox
+    // by default it justifies content to 'flex-start', i.e. to the left edge
+    // this centers the card in the page
+    <ListItem sx={{ justifyContent: "center" }}>
       <Card variant="outlined" sx={{ width: 400 }}>
         <CardHeader
           title={name}
