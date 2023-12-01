@@ -1,5 +1,3 @@
-import { useContext, useEffect } from "react";
-import { CardsContext } from "../../providers/CardsProvider";
 import CardList from "../CardList/CardList";
 import useCardList from "../../hooks/useCardList";
 
