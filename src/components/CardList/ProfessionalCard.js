@@ -56,10 +56,19 @@ const ProfessionalCard = ({
           <Typography>Location: {location}</Typography>
           <Typography>Wait time: {waitTime} months</Typography>
           <Typography
-            sx={{ mt: 1 }}
-            // noWrap is what makes it cut short with ellipsis at card limit
-            // ? is it possible to cut short after two lines??
-            noWrap={true}
+            sx={{
+              mt: 1,
+              // this should work for most browsers - tested in firefox and chrome
+              // this will make the bio truncate with an ellipsis after TWO lines
+              // previous we just gave it noWrap={true}, but this makes it cut off after 1 line, and 2 looks nicer for a full bio
+              // https://stackoverflow.com/questions/64315111/material-ui-write-text-in-exactly-2-lines-with-ellipsis
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              lineClamp: 2,
+              display: "-webkit-box",
+              WebkitLineClamp: "2",
+              WebkitBoxOrient: "vertical",
+            }}
           >
             Bio: {bio}
           </Typography>
