@@ -30,7 +30,7 @@ const ProfessionalCard = ({
       <Card
         variant="outlined"
         // TODO set height to multiple breakpoint IF noWrap can be set to further lines
-        // TODO choose best nreakpoints
+        // TODO choose best breakpoints
         sx={{ width: { xs: 400, md: 850 } }}
       >
         <CardHeader
