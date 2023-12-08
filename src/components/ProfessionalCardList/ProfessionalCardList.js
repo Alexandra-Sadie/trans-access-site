@@ -1,7 +1,7 @@
 import { Stack, List } from "@mui/material";
 import ProfessionalCard from "./ProfessionalCard";
 
-const CardList = ({ cardArr }) => {
+const ProfessionalCardList = ({ cardArr }) => {
   return (
     // Stack component="List"
     // gives us access to spacing, flex, etc properties of Stack
@@ -13,4 +13,4 @@ const CardList = ({ cardArr }) => {
     </Stack>
   );
 };
-export default CardList;
+export default ProfessionalCardList;

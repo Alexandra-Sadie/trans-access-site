@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { CardsContext } from "../../providers/CardsProvider";
-import CardList from "../CardList/CardList";
+import ProfessionalCardList from "../ProfessionalCardList/ProfessionalCardList";
 
 const Therapist = ({ path }) => {
   //on mount, currentCards should be an empty array
@@ -30,7 +30,9 @@ const Therapist = ({ path }) => {
     [requestNewCards, path, resetCards]
   );
 
-  return <>{currentCards ? <CardList cardArr={currentCards} /> : null}</>;
+  return (
+    <>{currentCards ? <ProfessionalCardList cardArr={currentCards} /> : null}</>
+  );
 };
 
 export default Therapist;
