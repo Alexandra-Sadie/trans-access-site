@@ -1,10 +1,10 @@
 // !IMPORT ZONE
 import HamburgerIcon from "@mui/icons-material/Menu";
 import { Box, IconButton, Menu } from "@mui/material";
-import HamburgerLink from "./HamburgerLink";
+import MobileNavButton from "./MobileNavButton";
 import { useState } from "react";
 
-const HamburgerMenu = ({ navRoutesArray }) => {
+const MobileNavLinks = ({ navRoutesArray }) => {
   // *STATE ZONE
   // we handle the hamburger dropdown menu by anchoring the menu to the hamburger icon when the hamburger (ie IconButton component) is clicked on. (when the menu has no anchor it doesn't appear)
   // this state is used to monitor what html element the menu is anchoring to, if any (should only ever be the burger IconButton)
@@ -77,10 +77,10 @@ const HamburgerMenu = ({ navRoutesArray }) => {
         {navRoutesArray
           // this takes said sub-objects and renders them as typographical links in the menu
           .map(({ route, title }) => (
-            <HamburgerLink key={route} route={route} title={title} />
+            <MobileNavButton key={route} route={route} title={title} />
           ))}
       </Menu>
     </Box>
   );
 };
-export default HamburgerMenu;
+export default MobileNavLinks;

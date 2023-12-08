@@ -8,7 +8,7 @@ import { Link, MenuItem, Typography } from "@mui/material";
 // MUI routing/link docs: https://mui.com/material-ui/guides/routing/
 import { Link as RouterLink } from "react-router-dom";
 
-const HamburgerLink = ({ route, title }) => (
+const MobileNavButton = ({ route, title }) => (
   //TODO Link>MenuItem>Typography seems to be the most semantic and accessible way to make a MenuItem into a link, but we should determine if this is truly the correct accessibility approach
   <Link
     sx={{ textDecoration: "none" }}
@@ -16,7 +16,7 @@ const HamburgerLink = ({ route, title }) => (
     // see above on why this is RouterLink called inside an MUI Link
     component={RouterLink}
   >
-    {/* This is a MUI component, designed to be a child of a higher-up Menu component - note that the Menu component is not in this file, but in HamburgerMenu.js, which calls this HamburgerLink component, making this MenuItem a valid child of that Menu
+    {/* This is a MUI component, designed to be a child of a higher-up Menu component - note that the Menu component is not in this file, but in MobileNavLinks.js, which calls this MobileNavButton component, making this MenuItem a valid child of that Menu
     
     MenuItem mostly creates nice spacing around items in a MUI menu
     docs: https://mui.com/material-ui/api/menu-item/
@@ -30,4 +30,4 @@ const HamburgerLink = ({ route, title }) => (
   </Link>
 );
 
-export default HamburgerLink;
+export default MobileNavButton;
