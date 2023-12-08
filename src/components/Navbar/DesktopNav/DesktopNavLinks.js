@@ -1,6 +1,6 @@
 // !IMPORT ZONE
 import { Stack } from "@mui/material";
-import NavbarButton from "./NavbarButton";
+import DesktopNavButton from "./DesktopNavButton";
 
 const DesktopNavLinks = ({ navRoutesArray }) => {
   return (
@@ -14,13 +14,11 @@ const DesktopNavLinks = ({ navRoutesArray }) => {
       // this means the Stack will be display:none at mobile breakpoints and display:flex on desktop breakpoints
       sx={{ display: { xs: "none", md: "flex" } }}
     >
-      {
-        navRoutesArray
-          // this takes said sub-objects and renders them as buttons
-          .map(({ route, title }) => (
-            <NavbarButton key={route} route={route} title={title} />
-          ))
-      }
+      {navRoutesArray
+        // this takes said sub-objects and renders them as buttons
+        .map(({ route, title }) => (
+          <DesktopNavButton key={route} route={route} title={title} />
+        ))}
     </Stack>
   );
 };

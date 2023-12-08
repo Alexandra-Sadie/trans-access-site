@@ -1,8 +1,8 @@
 // !IMPORT ZONE
 import { AppBar, Box, Toolbar } from "@mui/material";
 // our components
-import DesktopNavLinks from "./DesktopNavLinks/DesktopNavLinks";
-import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
+import DesktopNavLinks from "./DesktopNav/DesktopNavLinks";
+import MobileNavLinks from "./MobileNav/MobileNavLinks";
 import { routingObject } from "../../routing";
 import NavUserButtons from "./NavUserButtons/NavUserButtons";
 
@@ -26,7 +26,7 @@ const Navbar = () => {
         {/* // ? mb put the sx breakpoints css here in these elements to make it self-commenting */}
         <Box sx={{ flexGrow: 1 }}>
           {/* this is visible on mobile breakpoints */}
-          <HamburgerMenu navRoutesArray={navRoutesArray} />
+          <MobileNavLinks navRoutesArray={navRoutesArray} />
           {/* this is visible on desktop breakpoint */}
           <DesktopNavLinks navRoutesArray={navRoutesArray} />
         </Box>

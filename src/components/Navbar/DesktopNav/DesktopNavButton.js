@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 // ? should we make a generic button component w variants?
 
-const NavbarButton = ({ route, title }) => {
+const DesktopNavButton = ({ route, title }) => {
   return (
     // minor note, this is the MUI-specific Button component
     // docs: https://mui.com/material-ui/react-button/
@@ -24,4 +24,4 @@ const NavbarButton = ({ route, title }) => {
   );
 };
 
-export default NavbarButton;
+export default DesktopNavButton;
