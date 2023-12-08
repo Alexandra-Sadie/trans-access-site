@@ -109,7 +109,7 @@ const intervention = [
   {
     uid: "3",
     name: "Horrible Goblin",
-    profession: "Intervention Worker",
+    profession: "Brigand",
     location: "Dank Cave",
     available: false,
     waitTime: 666,
