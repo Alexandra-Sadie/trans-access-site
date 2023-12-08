@@ -5,6 +5,7 @@ import { Button } from "@mui/material";
 // React Router Link docs: https://reactrouter.com/en/main/components/link
 // MUI routing/link docs: https://mui.com/material-ui/guides/routing/
 import { Link as RouterLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 // ? should we make a generic button component w variants?
 
@@ -16,8 +17,12 @@ const NavbarButton = ({ route, title }) => {
       variant="text"
       sx={{ color: "#fff" }}
       to={route}
-      // see above on why this is RouterLink
-      component={RouterLink}
+      // NavLink is a react router-provided component that works as a link but knows whether it is "active" or not
+      component={NavLink}
+      // we use this to style the navlink button for the active page
+      style={({ isActive }) => {
+        return isActive ? { backgroundColor: "rgba(255,255,255,0.25)" } : {};
+      }}
     >
       {title}
     </Button>
