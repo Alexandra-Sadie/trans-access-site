@@ -13,10 +13,25 @@ const CustomThemesProvider = ({ children }) => {
     },
   });
 
+  // TODO presumably we will rename this lol
+  const homoeroticBullying = createTheme({
+    palette: {
+      mode: "light",
+      background: { default: "#000", paper: "#000", object: "#000" },
+      //   text: {},
+      //   primary: {},
+      //   secondary: {},
+    },
+    typography: {
+      fontFamily: "Lato",
+    },
+  });
+
   return (
     <CustomThemesContext.Provider
       value={{
         defaultTheme,
+        homoeroticBullying,
       }}
     >
       {children}
