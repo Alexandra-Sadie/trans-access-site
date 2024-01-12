@@ -44,8 +44,9 @@ const CustomThemesProvider = ({ children }) => {
       mode: "dark",
       background: { default: "#45435a", paper: "#4E4C67" },
       text: { primary: "#eeebfc" },
-      primary: { main: "#a6b0e1", contrastText: "#272633" },
-      secondary: { main: "#F4ACB7" },
+      //   the primary.main here is adjusted from #B4869F above -- a dif versin of it has primary.main as #A6B1E1 -- gives the site a more blue/cold tone, rather than pink/warm. i like this, but both Work
+      primary: { main: "#b689a2", contrastText: "#272633" },
+      secondary: { main: "#985F6F" },
     },
     typography: {
       fontFamily: "Lato",
