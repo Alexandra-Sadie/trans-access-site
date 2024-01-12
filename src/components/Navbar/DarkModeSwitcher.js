@@ -18,8 +18,8 @@ const DarkModeSwitcher = () => {
         sx={{ color: "primary.contrastText" }}
         onClick={() => {
           setCurrentTheme(twinPeaksCharacter);
-          console.log(themeMode);
           setThemeMode("dark");
+          console.log(themeMode);
         }}
       >
         <DarkModeOutlined />
