@@ -2,7 +2,6 @@
 // standard requisite imports
 import React from "react";
 import ReactDOM from "react-dom/client";
-import CssBaseline from "@mui/material/CssBaseline";
 // fonts
 // We've imported our fonts here because MUI uses them to construct its internal stylesheet; even if we don't call them directly in our code they're being used in the MUI styling. This is an MUI standard practice (as opposed to importing them in an HTML or CSS file)
 // docs: https://mui.com/material-ui/getting-started/installation/#roboto-font
@@ -37,7 +36,6 @@ root.render(
     {/* // CssBaseline is MUI's version of a CSS Normalize snippet, which applies universal styles to the entire app to normalize some differences in visual rendering across browsers
     docs: https://mui.com/material-ui/react-css-baseline/
     */}
-    <CssBaseline />
     {/* 
     BrowserRouter is a part of React Router - since this is the first point you're seeig React Router, this comment briefly explains what React Router is.
     
