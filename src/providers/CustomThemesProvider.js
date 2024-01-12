@@ -8,6 +8,9 @@ const CustomThemesProvider = ({ children }) => {
     palette: {
       mode: "light",
     },
+    typography: {
+      fontFamily: "Lato",
+    },
   });
 
   return (
