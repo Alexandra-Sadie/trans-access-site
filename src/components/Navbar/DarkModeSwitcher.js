@@ -24,7 +24,12 @@ const DarkModeSwitcher = () => {
     } else if (currentTheme === twinPeaksCharacter) {
       setThemeMode("light");
     }
-  }, [currentTheme]);
+  }, [
+    currentTheme,
+    // eslint requires these but they are static -- other option is to insert comment to disable eslint for this. for now i'm including them in the dependency array, keep an eye on if this breaks things
+    homoeroticBullying,
+    twinPeaksCharacter,
+  ]);
 
   return (
     <>
