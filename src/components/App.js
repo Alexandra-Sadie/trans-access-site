@@ -11,12 +11,7 @@ import { CustomThemesContext } from "../providers/CustomThemesProvider";
 
 const App = () => {
   // ! I believe that this context being accessed & thus requiring some logic makes this better to host in app.js rather than index.js
-  const {
-    homoeroticBullying,
-    twinPeaksCharacter,
-    appliedTheme,
-    setCurrentTheme,
-  } = useContext(CustomThemesContext);
+  const { appliedTheme } = useContext(CustomThemesContext);
 
   return (
     <>
