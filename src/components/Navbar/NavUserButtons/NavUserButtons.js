@@ -45,7 +45,6 @@ const NavUserButtons = () => {
         <Button
           variant="contained"
           sx={{
-            color: "#fff",
             fontSize: { sm: "small", md: "medium" },
           }}
           component={RouterLink}

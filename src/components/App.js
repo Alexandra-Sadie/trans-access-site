@@ -11,11 +11,12 @@ import { CustomThemesContext } from "../providers/CustomThemesProvider";
 
 const App = () => {
   // ! I believe that this context being accessed & thus requiring some logic makes this better to host in app.js rather than index.js
-  const { homoeroticBullying, defaultTheme } = useContext(CustomThemesContext);
+  const { homoeroticBullying, defaultTheme, twinPeaksCharacter } =
+    useContext(CustomThemesContext);
 
   return (
     <>
-      <ThemeProvider theme={homoeroticBullying}>
+      <ThemeProvider theme={twinPeaksCharacter}>
         <CssBaseline />
         {/* Using React Router's Outlet feature (see index.js), we can render the navbar, and below it, any route/page we want as a child of App.js. In practice, this puts the navbar on every page.
       See comments on index.js for further info. 

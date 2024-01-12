@@ -25,8 +25,26 @@ const CustomThemesProvider = ({ children }) => {
       mode: "light",
       background: { default: "#FFE5D9", paper: "#fff9fa", object: "#FFE5D9" },
       text: { primary: "#5c474e" },
-      // constrast-adjusted from 1.
       primary: { main: "#4f6a5a" },
+      secondary: { main: "#F4ACB7" },
+    },
+    typography: {
+      fontFamily: "Lato",
+    },
+  });
+
+  const twinPeaksCharacter = createTheme({
+    // Lumi's color scheme:
+    // 1. #DCD6F7
+    // 2. #A6B1E1
+    // 3. #B4869F
+    // 4. #985F6F
+    // 5. #4E4C67
+    palette: {
+      mode: "dark",
+      background: { default: "#45435a", paper: "#4E4C67" },
+      text: { primary: "#eeebfc" },
+      primary: { main: "#a6b0e1", contrastText: "#272633" },
       secondary: { main: "#F4ACB7" },
     },
     typography: {
@@ -39,6 +57,7 @@ const CustomThemesProvider = ({ children }) => {
       value={{
         defaultTheme,
         homoeroticBullying,
+        twinPeaksCharacter,
       }}
     >
       {children}
