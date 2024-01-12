@@ -2,18 +2,9 @@ import { createContext, useState, useMemo } from "react";
 import { createTheme } from "@mui/material";
 
 export const CustomThemesContext = createContext({});
-
 const CustomThemesProvider = ({ children }) => {
-  const defaultTheme = createTheme({
-    palette: {
-      mode: "light",
-    },
-    typography: {
-      fontFamily: "Lato",
-    },
-  });
-
-  // TODO presumably we will rename this lol
+  //   *Our Themes
+  // TODO presumably we will rename these lol
   const homoeroticBullying = createTheme({
     // Lumi's color scheme:
     // 1. #D8E2DC
@@ -53,10 +44,18 @@ const CustomThemesProvider = ({ children }) => {
     },
   });
 
+  //*state to track current theme
+  const [currentTheme, setCurrentTheme] = useState(homoeroticBullying);
+
+  // *useMemo lets react dynamically switch theme (otherwise changing the theme state doesn't go "upstream" and adjust the themeProvider's theme prop in app.js, so the page doesn't update)
+  const appliedTheme = useMemo(() => createTheme(currentTheme), [currentTheme]);
+
   return (
     <CustomThemesContext.Provider
       value={{
-        defaultTheme,
+        currentTheme,
+        setCurrentTheme,
+        appliedTheme,
         homoeroticBullying,
         twinPeaksCharacter,
       }}
