@@ -3,19 +3,22 @@ import { createTheme } from "@mui/material";
 
 export const CustomThemesContext = createContext({});
 
-const CustomThemesProvider = () => {
-  const CustomThemesProvider = ({ children }) => {
-    return (
-      <CustomThemesContext.Provider
-        value={
-          {
-            // things to pass
-          }
-        }
-      >
-        {children}
-      </CustomThemesContext.Provider>
-    );
-  };
+const CustomThemesProvider = ({ children }) => {
+  const defaultDark = createTheme({
+    palette: {
+      mode: "dark",
+    },
+  });
+
+  return (
+    <CustomThemesContext.Provider
+      value={{
+        defaultDark,
+      }}
+    >
+      {children}
+    </CustomThemesContext.Provider>
+  );
 };
+
 export default CustomThemesProvider;

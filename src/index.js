@@ -15,6 +15,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { routingObject } from "./routing";
 // our providers
 import AuthProvider from "./providers/AuthProvider";
+import CardsProvider from "./providers/CardsProvider";
+import CustomThemesProvider from "./providers/CustomThemesProvider";
 // our components
 import App from "./components/App";
 import Main from "./components/pages/Main/Main";
@@ -24,8 +26,6 @@ import NameChange from "./components/pages/NameChange";
 import Doctor from "./components/pages/Doctor";
 import LoginSignup from "./components/pages/LoginSignup/LoginSignup";
 import MyAccount from "./components/pages/MyAccount";
-import CardsProvider from "./providers/CardsProvider";
-import CustomThemesProvider from "./providers/CustomThemesProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -56,6 +56,7 @@ root.render(
     <AuthProvider>
       {/* //TODO explain CardsProvider literally at all */}
       <CardsProvider>
+        {/* //TODO explain this one too lol */}
         <CustomThemesProvider>
           <BrowserRouter>
             <Routes>
