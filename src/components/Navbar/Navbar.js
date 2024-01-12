@@ -5,6 +5,7 @@ import DesktopNavLinks from "./DesktopNav/DesktopNavLinks";
 import MobileNavLinks from "./MobileNav/MobileNavLinks";
 import { routingObject } from "../../routing";
 import NavUserButtons from "./NavUserButtons/NavUserButtons";
+import DarkModeSwitcher from "./DarkModeSwitcher";
 
 const Navbar = () => {
   // defining pages that should be linked to in nav
@@ -32,6 +33,7 @@ const Navbar = () => {
         </Box>
         {/* for UI development this is one Button with ternaries in it - we may want a ternary between two buttons */}
         <NavUserButtons />
+        <DarkModeSwitcher />
       </Toolbar>
     </AppBar>
   );
