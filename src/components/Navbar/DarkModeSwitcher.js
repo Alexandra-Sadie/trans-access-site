@@ -6,18 +6,33 @@ import { useContext } from "react";
 import { CustomThemesContext } from "../../providers/CustomThemesProvider";
 
 const DarkModeSwitcher = () => {
-  const { setCurrentTheme, homoeroticBullying, twinPeaksCharacter } =
-    useContext(CustomThemesContext);
+  const {
+    currentTheme,
+    setCurrentTheme,
+    homoeroticBullying,
+    twinPeaksCharacter,
+  } = useContext(CustomThemesContext);
   return (
     <>
-      <Button
-        sx={{ color: "primary.contrastText" }}
-        onClick={() => {
-          setCurrentTheme(twinPeaksCharacter);
-        }}
-      >
-        <DarkModeOutlined />
-      </Button>
+      {currentTheme === homoeroticBullying ? (
+        <Button
+          sx={{ color: "primary.contrastText" }}
+          onClick={() => {
+            setCurrentTheme(twinPeaksCharacter);
+          }}
+        >
+          <DarkModeOutlined />
+        </Button>
+      ) : (
+        <Button
+          sx={{ color: "primary.contrastText" }}
+          onClick={() => {
+            setCurrentTheme(homoeroticBullying);
+          }}
+        >
+          <LightModeOutlined />
+        </Button>
+      )}
     </>
   );
 };
