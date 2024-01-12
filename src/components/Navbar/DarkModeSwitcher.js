@@ -10,7 +10,7 @@ const DarkModeSwitcher = () => {
     useContext(CustomThemesContext);
 
   // attempting to destructure/de-state-ify currentTheme to see if the switcher interacts with it better that way -- i think there might be a dom/react desync issue
-  const [themeMode, setThemeMode] = useState("light");
+  const [themeMode, setThemeMode] = useState("");
   return (
     <>
       {/* {currentTheme === homoeroticBullying ? ( */}
