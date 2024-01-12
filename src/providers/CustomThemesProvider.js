@@ -23,11 +23,11 @@ const CustomThemesProvider = ({ children }) => {
     // 5. #9D8189
     palette: {
       mode: "light",
-      background: { default: "#FFE5D9", paper: "#fff4f7", object: "#FFE5D9" },
+      background: { default: "#FFE5D9", paper: "#fff9fa", object: "#FFE5D9" },
       text: { primary: "#5c474e" },
       // constrast-adjusted from 1.
       primary: { main: "#4f6a5a" },
-      //   secondary: {},
+      secondary: { main: "#F4ACB7" },
     },
     typography: {
       fontFamily: "Lato",
