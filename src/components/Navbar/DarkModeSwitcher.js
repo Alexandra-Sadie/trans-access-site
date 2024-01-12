@@ -19,6 +19,7 @@ const DarkModeSwitcher = () => {
         onClick={() => {
           setCurrentTheme(twinPeaksCharacter);
           console.log(themeMode);
+          setThemeMode("dark");
         }}
       >
         <DarkModeOutlined />
