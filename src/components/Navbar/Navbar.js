@@ -21,7 +21,7 @@ const Navbar = () => {
 
     // MUI AppBar docs: https://mui.com/material-ui/react-app-bar/
     // MUI Toolbar docs: https://mui.com/material-ui/api/toolbar/
-    <AppBar position="sticky">
+    <AppBar position="sticky" enableColorOnDark>
       <Toolbar>
         {/* // ? mb put the sx breakpoints css here in these elements to make it self-commenting */}
         <Box sx={{ flexGrow: 1 }}>

@@ -4,16 +4,16 @@ import { createTheme } from "@mui/material";
 export const CustomThemesContext = createContext({});
 
 const CustomThemesProvider = ({ children }) => {
-  const defaultDark = createTheme({
+  const defaultTheme = createTheme({
     palette: {
-      mode: "dark",
+      mode: "light",
     },
   });
 
   return (
     <CustomThemesContext.Provider
       value={{
-        defaultDark,
+        defaultTheme,
       }}
     >
       {children}
