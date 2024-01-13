@@ -10,7 +10,6 @@ const DarkModeSwitcher = () => {
     setCurrentTheme,
     homoeroticBullying,
     twinPeaksCharacter,
-    currentTheme,
   } = useContext(CustomThemesContext);
 
   // this useEffect and daisy-chain state exist to make the conditional rendering on the dark/light mode work -- just using state runs into sync issues with the DOM
@@ -24,29 +23,19 @@ const DarkModeSwitcher = () => {
     // if user previously selected light theme, revert to light theme
     if (window.localStorage.themeMode === "light") {
       setCurrentTheme(homoeroticBullying);
+      setThemeMode("light");
     }
     // if user previously selected dark theme, revert to dark theme
     else if (window.localStorage.themeMode === "dark") {
       setCurrentTheme(twinPeaksCharacter);
+      setThemeMode("dark");
     } else {
       // in any other situation (first time using app, somehow something wrong got in localStorage), default to light theme
       setCurrentTheme(homoeroticBullying);
+      setThemeMode("light");
     }
     // the comment below is necessary to let useEffect run with no dependencies (aka to run at pagemount), when eslint would claim it has missing dependencies 'homoeroticBullying', 'setCurrentTheme', and 'twinPeaksCharacter'. again, this is hacky and almost certainly unideal -- finding a better hook is on the agenda
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-  useEffect(() => {
-    if (currentTheme === homoeroticBullying) {
-      setThemeMode("light");
-    } else if (currentTheme === twinPeaksCharacter) {
-      setThemeMode("dark");
-    }
-  }, [
-    currentTheme,
-    // eslint requires these but they are static -- other option is to insert comment to disable eslint for this. for now i'm including them in the dependency array, keep an eye on if this breaks things
-    homoeroticBullying,
-    twinPeaksCharacter,
-  ]);
 
   return (
     <>
