@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
-import { Button, Stack, IconButton, Menu, MenuItem, Box } from "@mui/material";
+import { IconButton, Menu, MenuItem } from "@mui/material";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { routingObject } from "../../../routing";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";

@@ -32,8 +32,8 @@ const Navbar = () => {
           <DesktopNavLinks navRoutesArray={navRoutesArray} />
         </Box>
         {/* for UI development this is one Button with ternaries in it - we may want a ternary between two buttons */}
-        <NavUserButtons />
         <DarkModeSwitcher />
+        <NavUserButtons />
       </Toolbar>
     </AppBar>
   );
