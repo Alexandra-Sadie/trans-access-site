@@ -6,12 +6,33 @@ import Navbar from "./Navbar/Navbar";
 // theming provider imported from mui
 // ? this COULD be bundled with CssBaseline import on line 5 -- idk which is more performant or readable, probably best like this for readability?
 import { ThemeProvider } from "@mui/material";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { CustomThemesContext } from "../providers/CustomThemesProvider";
 
 const App = () => {
-  // ! I believe that this context being accessed & thus requiring some logic makes this better to host in app.js rather than index.js
-  const { appliedTheme } = useContext(CustomThemesContext);
+  // ! I believe that this context being accessed & thus requiring some logic makes mui's ThemeProvider better to host in app.js rather than index.js
+  const {
+    appliedTheme,
+    setCurrentTheme,
+    homoeroticBullying,
+    twinPeaksCharacter,
+  } = useContext(CustomThemesContext);
+
+  // useEffect on-mount to set theme to previously selected theme which was stored in localStorage - see DarkModeSwitcher.js
+  // TODO I still feel like using useEffect like this is hacky at best -- there Must be a better way to do this!
+  useEffect(() => {
+    // if user previously selected light theme, revert to light theme
+    if (window.localStorage.themeMode === "light") {
+      setCurrentTheme(homoeroticBullying);
+    }
+    // if user previously selected dark theme, revert to dark theme
+    else if (window.localStorage.themeMode === "dark") {
+      setCurrentTheme(twinPeaksCharacter);
+    } else {
+      // in any other situation (first time using app, somehow something wrong got in localStorage), default to light theme
+      setCurrentTheme(homoeroticBullying);
+    }
+  }, []);
 
   return (
     <>
