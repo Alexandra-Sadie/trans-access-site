@@ -18,6 +18,23 @@ const DarkModeSwitcher = () => {
 
   const [themeMode, setThemeMode] = useState("light");
 
+  // useEffect on-mount to set theme to previously selected theme which was stored in localStorage - see DarkModeSwitcher.js
+  // TODO I still feel like using useEffect like this is hacky at best -- there Must be a better way to do this!
+  useEffect(() => {
+    // if user previously selected light theme, revert to light theme
+    if (window.localStorage.themeMode === "light") {
+      setCurrentTheme(homoeroticBullying);
+    }
+    // if user previously selected dark theme, revert to dark theme
+    else if (window.localStorage.themeMode === "dark") {
+      setCurrentTheme(twinPeaksCharacter);
+    } else {
+      // in any other situation (first time using app, somehow something wrong got in localStorage), default to light theme
+      setCurrentTheme(homoeroticBullying);
+    }
+    // the comment below is necessary to let useEffect run with no dependencies (aka to run at pagemount), when eslint would claim it has missing dependencies 'homoeroticBullying', 'setCurrentTheme', and 'twinPeaksCharacter'. again, this is hacky and almost certainly unideal -- finding a better hook is on the agenda
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   useEffect(() => {
     if (currentTheme === homoeroticBullying) {
       setThemeMode("light");
