@@ -20,7 +20,7 @@ const NavUserButtons = () => {
           <Button
             variant="contained"
             sx={{
-              color: "#fff",
+              color: "primary.contrastText",
               fontSize: { sm: "small", md: "medium" },
             }}
             component={RouterLink}
@@ -31,7 +31,7 @@ const NavUserButtons = () => {
           <Button
             variant="contained"
             sx={{
-              color: "#fff",
+              color: "primary.contrastText",
               fontSize: { sm: "small", md: "medium" },
             }}
             onClick={() => {
