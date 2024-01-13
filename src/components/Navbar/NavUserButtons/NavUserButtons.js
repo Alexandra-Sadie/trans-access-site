@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
-import { IconButton, Menu, MenuItem } from "@mui/material";
+import { IconButton, Menu, MenuItem, Box } from "@mui/material";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { routingObject } from "../../../routing";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
@@ -73,7 +73,8 @@ const NavUserButtons = () => {
         onClose={handleCloseAcctMenu}
       >
         {user ? (
-          <>
+          // MUI is unhappy if this renders as a fragment
+          <Box>
             {/* TODO - break these individual buttons into components in some elegant way */}
             <MenuItem
               variant="contained"
@@ -102,7 +103,7 @@ const NavUserButtons = () => {
             >
               Log Out
             </MenuItem>
-          </>
+          </Box>
         ) : (
           <MenuItem
             variant="contained"

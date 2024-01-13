@@ -39,6 +39,8 @@ const DarkModeSwitcher = () => {
           onClick={() => {
             setCurrentTheme(twinPeaksCharacter);
             setThemeMode("dark");
+            window.localStorage.setItem("themeMode", "dark");
+            console.log(window.localStorage.themeMode);
           }}
         >
           <DarkModeOutlined />
@@ -49,6 +51,8 @@ const DarkModeSwitcher = () => {
           onClick={() => {
             setCurrentTheme(homoeroticBullying);
             setThemeMode("light");
+            window.localStorage.setItem("themeMode", "light");
+            console.log(window.localStorage.themeMode);
           }}
         >
           <LightModeOutlined />

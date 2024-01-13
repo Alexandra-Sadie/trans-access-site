@@ -45,7 +45,7 @@ const CustomThemesProvider = ({ children }) => {
   });
 
   //*state to track current theme
-  const [currentTheme, setCurrentTheme] = useState(homoeroticBullying);
+  const [currentTheme, setCurrentTheme] = useState(twinPeaksCharacter);
 
   // *useMemo lets react dynamically switch theme (otherwise changing the theme state doesn't go "upstream" and adjust the themeProvider's theme prop in app.js, so the page doesn't update)
   const appliedTheme = useMemo(() => createTheme(currentTheme), [currentTheme]);
