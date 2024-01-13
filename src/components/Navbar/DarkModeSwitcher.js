@@ -39,7 +39,7 @@ const DarkModeSwitcher = () => {
     if (currentTheme === homoeroticBullying) {
       setThemeMode("light");
     } else if (currentTheme === twinPeaksCharacter) {
-      setThemeMode("light");
+      setThemeMode("dark");
     }
   }, [
     currentTheme,
