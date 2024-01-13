@@ -32,7 +32,8 @@ const App = () => {
       // in any other situation (first time using app, somehow something wrong got in localStorage), default to light theme
       setCurrentTheme(homoeroticBullying);
     }
-  }, []);
+    // the comment below is necessary to let useEffect run with no dependencies (aka to run at pagemount), when eslint would claim it has missing dependencies 'homoeroticBullying', 'setCurrentTheme', and 'twinPeaksCharacter'. again, this is hacky and almost certainly unideal -- finding a better hook is on the agenda
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
