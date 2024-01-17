@@ -11,7 +11,7 @@ import { Link as RouterLink } from "react-router-dom";
 const MobileNavButton = ({ route, title }) => (
   //TODO Link>MenuItem>Typography seems to be the most semantic and accessible way to make a MenuItem into a link, but we should determine if this is truly the correct accessibility approach
   <Link
-    sx={{ textDecoration: "none" }}
+    sx={{ textDecoration: "none", color: "text.primary" }}
     to={route}
     // see above on why this is RouterLink called inside an MUI Link
     component={RouterLink}

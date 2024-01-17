@@ -5,6 +5,7 @@ import DesktopNavLinks from "./DesktopNav/DesktopNavLinks";
 import MobileNavLinks from "./MobileNav/MobileNavLinks";
 import { routingObject } from "../../routing";
 import NavUserButtons from "./NavUserButtons/NavUserButtons";
+import DarkModeSwitcher from "./DarkModeSwitcher";
 
 const Navbar = () => {
   // defining pages that should be linked to in nav
@@ -21,7 +22,7 @@ const Navbar = () => {
 
     // MUI AppBar docs: https://mui.com/material-ui/react-app-bar/
     // MUI Toolbar docs: https://mui.com/material-ui/api/toolbar/
-    <AppBar position="sticky">
+    <AppBar position="sticky" enableColorOnDark>
       <Toolbar>
         {/* // ? mb put the sx breakpoints css here in these elements to make it self-commenting */}
         <Box sx={{ flexGrow: 1 }}>
@@ -31,6 +32,7 @@ const Navbar = () => {
           <DesktopNavLinks navRoutesArray={navRoutesArray} />
         </Box>
         {/* for UI development this is one Button with ternaries in it - we may want a ternary between two buttons */}
+        <DarkModeSwitcher />
         <NavUserButtons />
       </Toolbar>
     </AppBar>

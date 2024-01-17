@@ -2,7 +2,6 @@
 // standard requisite imports
 import React from "react";
 import ReactDOM from "react-dom/client";
-import CssBaseline from "@mui/material/CssBaseline";
 // fonts
 // We've imported our fonts here because MUI uses them to construct its internal stylesheet; even if we don't call them directly in our code they're being used in the MUI styling. This is an MUI standard practice (as opposed to importing them in an HTML or CSS file)
 // docs: https://mui.com/material-ui/getting-started/installation/#roboto-font
@@ -10,11 +9,17 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
+// lato
+import "@fontsource/lato/300.css";
+import "@fontsource/lato/400.css";
+import "@fontsource/lato/700.css";
 // routing
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { routingObject } from "./routing";
 // our providers
 import AuthProvider from "./providers/AuthProvider";
+import CardsProvider from "./providers/CardsProvider";
+import CustomThemesProvider from "./providers/CustomThemesProvider";
 // our components
 import App from "./components/App";
 import Main from "./components/pages/Main/Main";
@@ -24,7 +29,6 @@ import NameChange from "./components/pages/NameChange";
 import Doctor from "./components/pages/Doctor";
 import LoginSignup from "./components/pages/LoginSignup/LoginSignup";
 import MyAccount from "./components/pages/MyAccount";
-import CardsProvider from "./providers/CardsProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -32,7 +36,6 @@ root.render(
     {/* // CssBaseline is MUI's version of a CSS Normalize snippet, which applies universal styles to the entire app to normalize some differences in visual rendering across browsers
     docs: https://mui.com/material-ui/react-css-baseline/
     */}
-    <CssBaseline />
     {/* 
     BrowserRouter is a part of React Router - since this is the first point you're seeig React Router, this comment briefly explains what React Router is.
     
@@ -55,58 +58,63 @@ root.render(
     <AuthProvider>
       {/* //TODO explain CardsProvider literally at all */}
       <CardsProvider>
-        <BrowserRouter>
-          <Routes>
-            {/* 
+        {/* //TODO explain this one too lol */}
+        <CustomThemesProvider>
+          <BrowserRouter>
+            <Routes>
+              {/* 
         We've structured our routes (AKA our pages) as nested sub-routes "inside" of App.js. This lets us use the React Router Outlet feature to load universal content in App.js which will be visible on every sub-route (AKA every page). We use this to make the Navbar load identically everywhere.
         See comments on app.js for further info. 
         docs: https://reactrouter.com/en/6.10.0/components/outlet
         */}
-            <Route element={<App />}>
-              <Route path={routingObject.main.route} element={<Main />} />
+              <Route element={<App />}>
+                <Route path={routingObject.main.route} element={<Main />} />
 
-              <Route
-                path={routingObject.intervention.route}
-                // Intervention ALSO receives a path prop because
-                // react router doesnt directly pass props of Route to the route element
-                // i.e., to have access to the path in the element, it needs the prop directly
-                element={
-                  <Intervention path={routingObject.intervention.route} />
-                }
-              />
+                <Route
+                  path={routingObject.intervention.route}
+                  // Intervention ALSO receives a path prop because
+                  // react router doesnt directly pass props of Route to the route element
+                  // i.e., to have access to the path in the element, it needs the prop directly
+                  element={
+                    <Intervention path={routingObject.intervention.route} />
+                  }
+                />
 
-              <Route
-                path={routingObject.therapist.route}
-                element={<Therapist path={routingObject.therapist.route} />}
-              />
+                <Route
+                  path={routingObject.therapist.route}
+                  element={<Therapist path={routingObject.therapist.route} />}
+                />
 
-              <Route
-                path={routingObject.name_change.route}
-                element={<NameChange path={routingObject.name_change.route} />}
-              />
+                <Route
+                  path={routingObject.name_change.route}
+                  element={
+                    <NameChange path={routingObject.name_change.route} />
+                  }
+                />
 
-              <Route
-                path={routingObject.doctor.route}
-                element={<Doctor path={routingObject.doctor.route} />}
-              />
+                <Route
+                  path={routingObject.doctor.route}
+                  element={<Doctor path={routingObject.doctor.route} />}
+                />
 
-              <Route
-                path={routingObject.login_signup.route}
-                element={<LoginSignup />}
-              />
+                <Route
+                  path={routingObject.login_signup.route}
+                  element={<LoginSignup />}
+                />
 
-              <Route
-                path={routingObject.my_account.route}
-                element={<MyAccount />}
-              />
-            </Route>
+                <Route
+                  path={routingObject.my_account.route}
+                  element={<MyAccount />}
+                />
+              </Route>
 
-            {/* 
+              {/* 
         // TODO: either make this properly fall through to full home page OR make custom error page 
         for now, people will see the toolbar with links to leave*/}
-            <Route path="*" element={<App />} />
-          </Routes>
-        </BrowserRouter>
+              <Route path="*" element={<App />} />
+            </Routes>
+          </BrowserRouter>
+        </CustomThemesProvider>
       </CardsProvider>
     </AuthProvider>
   </React.StrictMode>
