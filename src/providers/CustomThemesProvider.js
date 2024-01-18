@@ -3,8 +3,11 @@ import { createTheme } from "@mui/material";
 
 export const CustomThemesContext = createContext({});
 const CustomThemesProvider = ({ children }) => {
+  const fontFamily = "Poppins";
+
   //   *Our Themes
   // TODO presumably we will rename these lol
+
   const homoeroticBullying = createTheme({
     // Lumi's color scheme:
     // 1. #D8E2DC
@@ -20,7 +23,7 @@ const CustomThemesProvider = ({ children }) => {
       secondary: { main: "#F4ACB7" },
     },
     typography: {
-      fontFamily: "Lato",
+      fontFamily,
     },
   });
 
@@ -40,7 +43,7 @@ const CustomThemesProvider = ({ children }) => {
       secondary: { main: "#985F6F" },
     },
     typography: {
-      fontFamily: "Lato",
+      fontFamily,
     },
   });
 
