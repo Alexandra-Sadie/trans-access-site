@@ -10,7 +10,7 @@ const DesktopNavButton = ({ route, title }) => {
     // docs: https://mui.com/material-ui/react-button/
     <Button
       variant="text"
-      sx={{ color: "primary.contrastText", fontWeight: "500" }}
+      sx={{ color: "primary.contrastText" }}
       to={route}
       // NavLink is a react router-provided component that works as a link but knows whether it is "active" or not
       component={NavLink}
