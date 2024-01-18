@@ -16,7 +16,7 @@ const CustomThemesProvider = ({ children }) => {
       mode: "light",
       background: { default: "#FFE5D9", paper: "#fff9fa", object: "#FFE5D9" },
       text: { primary: "#5c474e" },
-      primary: { main: "#4f6a5a" },
+      primary: { main: "#9D8189", contrastText: "#271f22" },
       secondary: { main: "#F4ACB7" },
     },
     typography: {
