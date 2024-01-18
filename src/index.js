@@ -3,16 +3,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 // fonts
-// We've imported our fonts here because MUI uses them to construct its internal stylesheet; even if we don't call them directly in our code they're being used in the MUI styling. This is an MUI standard practice (as opposed to importing them in an HTML or CSS file)
-// docs: https://mui.com/material-ui/getting-started/installation/#roboto-font
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
-// lato
-import "@fontsource/lato/300.css";
-import "@fontsource/lato/400.css";
-import "@fontsource/lato/700.css";
+import "@fontsource/poppins";
 // routing
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { routingObject } from "./routing";
