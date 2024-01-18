@@ -13,6 +13,21 @@ import "@fontsource/roboto/700.css";
 import "@fontsource/lato/300.css";
 import "@fontsource/lato/400.css";
 import "@fontsource/lato/700.css";
+// road rage
+import "@fontsource/road-rage";
+// others for testing
+import "@fontsource/poppins";
+// Supports weights 100-900
+import "@fontsource-variable/museomoderno";
+// Supports weights 300-900
+import "@fontsource-variable/rubik";
+// Supports weights 400-700
+import "@fontsource-variable/lora";
+// Supports weights 200-900
+import "@fontsource-variable/nunito";
+// Supports weights 100-900
+import "@fontsource-variable/exo";
+import "@fontsource/arvo";
 // routing
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { routingObject } from "./routing";
