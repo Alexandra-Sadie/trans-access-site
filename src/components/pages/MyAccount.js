@@ -1,22 +1,25 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { Box, Typography } from "@mui/material";
 
 const MyAccount = () => {
   const { user } = useContext(AuthContext);
 
   return (
-    <div>
+    <Box>
       {user ? (
         <>
-          <p>current user: {user.email}</p>
-          <p>is this user email-verified? {`${user.emailVerified}`}</p>
-          <p>full user object:</p>
-          <p>{JSON.stringify(user)}</p>
+          <Typography>current user: {user.email}</Typography>
+          <Typography>
+            is this user email-verified? {`${user.emailVerified}`}
+          </Typography>
+          <Typography>full user object:</Typography>
+          <Typography>{JSON.stringify(user)}</Typography>
         </>
       ) : (
         "No current user"
       )}
-    </div>
+    </Box>
   );
 };
 export default MyAccount;
