@@ -14,7 +14,9 @@ const MyAccount = () => {
             is this user email-verified? {`${user.emailVerified}`}
           </Typography>
           <Typography>full user object:</Typography>
-          <Typography>{JSON.stringify(user)}</Typography>
+          <Typography sx={{ overflowWrap: "break-word" }}>
+            {JSON.stringify(user)}
+          </Typography>
         </>
       ) : (
         "No current user"
