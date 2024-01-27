@@ -1,8 +1,8 @@
 import ProfessionalCardList from "../ProfessionalCardList/ProfessionalCardList";
-import useCardList from "../../hooks/useCardList";
+import useCollection from "../../hooks/useCollection";
 
 const Doctor = ({ path }) => {
-  const currentCards = useCardList(path);
+  const currentCards = useCollection(path);
 
   return (
     <>{currentCards ? <ProfessionalCardList cardArr={currentCards} /> : null}</>
