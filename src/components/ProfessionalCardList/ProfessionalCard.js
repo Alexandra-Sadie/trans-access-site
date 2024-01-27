@@ -31,7 +31,11 @@ const ProfessionalCard = ({
         variant="outlined"
         // TODO set height to multiple breakpoint IF noWrap can be set to further lines
         // TODO choose best breakpoints
-        sx={{ width: { xs: 400, md: 850 } }}
+        sx={{
+          width: { xs: 400, md: 850 },
+          // minHeight ensures style consistency with a blank card
+          minHeight: { xs: "256px", md: "232px" },
+        }}
       >
         <CardHeader
           title={name}
@@ -51,6 +55,8 @@ const ProfessionalCard = ({
               <Typography>{profession}</Typography>
             </>
           }
+          // minHeight ensures standard styling on blank UI card - this element is the same height at xs and md breakpoints as oif Jan 2024
+          sx={{ minHeight: "84px" }}
         ></CardHeader>
         <CardContent>
           <Typography>Location: {location}</Typography>
