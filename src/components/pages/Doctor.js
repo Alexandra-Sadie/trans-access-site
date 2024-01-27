@@ -1,6 +1,48 @@
 import ProfessionalCardList from "../ProfessionalCardList/ProfessionalCardList";
 import useCollection from "../../hooks/useCollection";
-import { Typography } from "@mui/material";
+
+const blankCardArr = [
+  {
+    uid: "0",
+    name: "",
+    profession: "",
+    location: "",
+    available: true,
+    waitTime: 0,
+    bio: "",
+    avatar: "",
+  },
+  {
+    uid: "1",
+    name: "",
+    profession: "",
+    location: "",
+    available: true,
+    waitTime: 0,
+    bio: "",
+    avatar: "",
+  },
+  {
+    uid: "2",
+    name: "",
+    profession: "",
+    location: "",
+    available: true,
+    waitTime: 0,
+    bio: "",
+    avatar: "",
+  },
+  {
+    uid: "3",
+    name: "",
+    profession: "",
+    location: "",
+    available: true,
+    waitTime: 0,
+    bio: "",
+    avatar: "",
+  },
+];
 
 const Doctor = ({ path }) => {
   const { currentCollection } = useCollection(path);
@@ -8,9 +50,9 @@ const Doctor = ({ path }) => {
   return (
     <>
       {currentCollection ? (
-        <ProfessionalCardList cardArr={currentCollection} />
+        <ProfessionalCardList cardArr={blankCardArr} />
       ) : (
-        <Typography>Loading...</Typography>
+        <ProfessionalCardList cardArr={blankCardArr} />
       )}
     </>
   );
