@@ -1,11 +1,18 @@
 import ProfessionalCardList from "../ProfessionalCardList/ProfessionalCardList";
 import useCollection from "../../hooks/useCollection";
+import { Typography } from "@mui/material";
 
 const Doctor = ({ path }) => {
-  const currentCards = useCollection(path);
+  const { currentCollection } = useCollection(path);
 
   return (
-    <>{currentCards ? <ProfessionalCardList cardArr={currentCards} /> : null}</>
+    <>
+      {currentCollection ? (
+        <ProfessionalCardList cardArr={currentCollection} />
+      ) : (
+        <Typography>Loading...</Typography>
+      )}
+    </>
   );
 };
 
