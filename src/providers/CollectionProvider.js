@@ -1,9 +1,10 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 
 const collectionContext = createContext();
 export const useCollectionContext = () => useContext(collectionContext);
 
-const collectionProvider = ({ children }) => {
+const CollectionProvider = ({ children }) => {
+  const [collections, setCollections] = useState({});
   return <collectionContext.Provider>{children}</collectionContext.Provider>;
 };
-export default collectionProvider;
+export default CollectionProvider;
