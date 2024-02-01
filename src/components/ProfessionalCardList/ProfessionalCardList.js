@@ -47,6 +47,7 @@ const blankCardArr = [
 ];
 
 const ProfessionalCardList = ({ path }) => {
+  // TODO useCollectionContext also delivers error, we could receive and handle that but don't yet
   const { getCollection, currentCollection } = useCollectionContext();
   useEffect(() => getCollection(path), [getCollection, path]);
   // on first load of a provider categoary, currentCollection may be null

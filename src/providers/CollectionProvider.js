@@ -6,6 +6,7 @@ const collectionContext = createContext();
 export const useCollectionContext = () => useContext(collectionContext);
 
 const CollectionProvider = ({ children }) => {
+  // TODO memoise this further to use time-limited localStorage to further restrain request volume
   const [collectionsObj, setCollectionsObj] = useState({});
   const [currentCollection, setCurrentCollection] = useState(null);
   const [error, setError] = useState(null);
@@ -20,6 +21,7 @@ const CollectionProvider = ({ children }) => {
             ...doc.data(),
             id: doc.id,
           }));
+          console.log("db request: ", collectionArray.length, " items");
           setCollectionsObj((currentCollectionsObj) => ({
             ...currentCollectionsObj,
             [collectionString]: collectionArray,
