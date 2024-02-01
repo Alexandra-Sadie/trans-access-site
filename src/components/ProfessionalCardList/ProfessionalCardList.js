@@ -1,6 +1,8 @@
 import { Stack, List } from "@mui/material";
 import ProfessionalCard from "./ProfessionalCard";
 import useCollection from "../../hooks/useCollection";
+import { useCollectionContext } from "../../providers/CollectionProvider";
+import { useEffect } from "react";
 
 const blankCardArr = [
   {
@@ -46,7 +48,9 @@ const blankCardArr = [
 ];
 
 const ProfessionalCardList = ({ path }) => {
-  const { currentCollection } = useCollection(path);
+  // const { currentCollection } = useCollection(path);
+  const { getCollection, currentCollection } = useCollectionContext();
+  useEffect(() => getCollection(path), [getCollection, path]);
   // on load, currentCollection will be null while the request is pending
   // we thus act defensively to have styles that match our cards load in blank
   // as we wait for the cards to appear
