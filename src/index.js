@@ -9,7 +9,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { routingObject } from "./routing";
 // our providers
 import AuthProvider from "./providers/AuthProvider";
-import CardsProvider from "./providers/CardsProvider";
 import CustomThemesProvider from "./providers/CustomThemesProvider";
 // our components
 import App from "./components/App";
@@ -20,6 +19,7 @@ import NameChange from "./components/pages/NameChange";
 import Doctor from "./components/pages/Doctor";
 import LoginSignup from "./components/pages/LoginSignup/LoginSignup";
 import MyAccount from "./components/pages/MyAccount";
+import CollectionProvider from "./providers/CollectionProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -47,8 +47,8 @@ root.render(
     I have wrapped BrowserRouter in our LoggedInProvider so that it can give context on the user's logged in status to all routes in the app
  */}
     <AuthProvider>
-      {/* //TODO explain CardsProvider literally at all */}
-      <CardsProvider>
+      {/* //TODO explain CollectionProvider literally at all */}
+      <CollectionProvider>
         {/* //TODO explain this one too lol */}
         <CustomThemesProvider>
           <BrowserRouter>
@@ -106,7 +106,7 @@ root.render(
             </Routes>
           </BrowserRouter>
         </CustomThemesProvider>
-      </CardsProvider>
+      </CollectionProvider>
     </AuthProvider>
   </React.StrictMode>
 );
