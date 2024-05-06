@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { IconButton, Menu, MenuItem, Box } from "@mui/material";
+// We're importing react-router's Link as RouterLink to avoid namespace confusion with MUI's Link component. See our readme for more information on this :)
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { routingObject } from "../../../routing";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
