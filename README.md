@@ -19,6 +19,8 @@ For documentation please see React's excellent official [getting started guide](
 _todo_
 
 - explain single page app concept
+- quick sentence explaining how jsx -> hmtl works
+  - [https://react.dev/learn/writing-markup-with-jsx0](https://react.dev/learn/writing-markup-with-jsx)
 
 ### MUI
 
@@ -29,10 +31,14 @@ MUI's documentation is [here](https://mui.com/material-ui/getting-started/overvi
 _todo_
 
 - explain components more
+  - Components are a way of breaking down the code that will render as html elements. This keeps the code clean and easily navigable by splitting page elements or complex logic into multiple files. It also allows for modularity by, for instance, letting us make a "doctor listing card" component which can then be re-used and filled with the relevant data.
 - more theory of MUI
 - explain Material Design
 - link to Material Design docs
+  - [https://m3.material.io/get-started](https://m3.material.io/get-started)
 - explain breakpoints
+  - how in-depth to get in this explanation?
+  - We're using MUI's [breakpoint system](https://mui.com/material-ui/customization/breakpoints/) as defined by its [default theme](https://mui.com/material-ui/customization/default-theme/?expand-path=$.breakpoints) to render elements designed for computer screens, like DesktopNavLinks.js, at desktop screen size; and elements designed for phone screens, like MobileNavLinks.js on phone screens.
 
 ### React Router
 
@@ -43,7 +49,16 @@ React Router has a decent [official tutorial](https://reactrouter.com/en/main/st
 _todo_
 
 - explain how BrowserRouter works in our app
+
+  - calling alexandra in on this one
+
 - explain RouterLink import maybe
+
+You might notice we this line of code throughout the site:
+`import { Link as RouterLink } from "react-router-dom"`
+"react-router-dom" is a React Router component that acts as an anchor link (wow!) to other routes (aka pages). HOWEVER because MUI ALSO has a component called Link, used to style anchor text, we import it as RouterLink across the entire project to avoid namespace confusion. This is MUI recommended practice.
+[React Router Link docs](https://reactrouter.com/en/main/components/link)
+[MUI routing/link docs](https://mui.com/material-ui/guides/routing/)
 
 ## Our sponsors
 
