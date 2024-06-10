@@ -6,9 +6,8 @@ const CustomThemesProvider = ({ children }) => {
   const fontFamily = "Poppins";
 
   //   *Our Themes
-  // TODO presumably we will rename these lol
-
-  const homoeroticBullying = createTheme({
+  // rip to the original theme names. gone but not forgotten
+  const customLightTheme = createTheme({
     // Lumi's color scheme:
     // 1. #D8E2DC
     // 2. #FFE5D9
@@ -27,7 +26,7 @@ const CustomThemesProvider = ({ children }) => {
     },
   });
 
-  const twinPeaksCharacter = createTheme({
+  const customDarkTheme = createTheme({
     // Lumi's color scheme:
     // 1. #DCD6F7
     // 2. #A6B1E1
@@ -48,7 +47,7 @@ const CustomThemesProvider = ({ children }) => {
   });
 
   //*state to track current theme
-  const [currentTheme, setCurrentTheme] = useState(twinPeaksCharacter);
+  const [currentTheme, setCurrentTheme] = useState(customDarkTheme);
 
   // *useMemo lets react dynamically switch theme (otherwise changing the theme state doesn't go "upstream" and adjust the themeProvider's theme prop in app.js, so the page doesn't update)
   const appliedTheme = useMemo(() => createTheme(currentTheme), [currentTheme]);
@@ -59,8 +58,8 @@ const CustomThemesProvider = ({ children }) => {
         currentTheme,
         setCurrentTheme,
         appliedTheme,
-        homoeroticBullying,
-        twinPeaksCharacter,
+        customLightTheme,
+        customDarkTheme,
       }}
     >
       {children}
