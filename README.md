@@ -44,13 +44,20 @@ _todo_
 
 React Router is a routing library, that is primarily used to make the routes that you see in the url bar of the browser interact with, and provide their own data to React, in order to display particular pages correctly.
 
-React Router has a decent [official tutorial](https://reactrouter.com/en/main/start/tutorial) but we actually reccomend reading their [main concepts page](https://reactrouter.com/en/main/start/concepts) to really understand what is going on
+React Router has a decent [official tutorial](https://reactrouter.com/en/main/start/tutorial) but we actually reccomend reading their [main concepts page](https://reactrouter.com/en/main/start/concepts) to really understand what is going on.
+
+#### BrowserRouter
+React itself renders a "Single Page App", using only one html page behind the scenes, and using javascript to change what that page looks like. This is powerful but takes away the ability for the user to enter URLs to access specific pages of our app, since there is only one webpage loaded.
+    
+React Router's BrowserRouter component gives us BACK this URL functionality, by intercepting the load of a new page when the user enters a sub-url on our domain, and sending that data to React instead, to load page and component views itself.
+    
+See especially this page of the React Router docs: https://reactrouter.com/en/6.10.0/start/concepts
+    
+Component documentation here: https://reactrouter.com/en/6.10.0/router-components/browser-router
 
 _todo_
 
 - explain how BrowserRouter works in our app
-
-  - calling alexandra in on this one
 
 - explain RouterLink import maybe
 
