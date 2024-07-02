@@ -8,9 +8,6 @@ const NameChange = () => {
   console.log(elevationVariable);
   return (
     <>
-      <Paper elevation={3} sx={{ maxWidth: "400px", height: "100px" }}>
-        test
-      </Paper>
       {elevationVariable.map((_thisdoesntmatter, elevationValue) => (
         <Paper
           elevation={elevationValue}
