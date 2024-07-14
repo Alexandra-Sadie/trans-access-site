@@ -2,9 +2,7 @@ import * as React from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import CssBaseline from "@mui/material/CssBaseline";
 import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
@@ -57,7 +55,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 export default function PersistentDrawerRight() {
   //! states
-  const [finchYelling, setFinchYelling] = useState(false);
+  // const [finchYelling, setFinchYelling] = useState(false);
   // this one has default state of "" because we want it to appear on page load
   const [displayWhoIsYellingQuestion, setDisplayWhoIsYellingQuestion] =
     useState("");
@@ -121,12 +119,14 @@ export default function PersistentDrawerRight() {
                   variant="contained"
                   onClick={() => {
                     // I'm leaving this state here, because state tracking + ternary rendering was my first thought on how to go through the questions, but i'm going to implement another idea that i think might work better, detailed below
-                    setFinchYelling(true);
+                    // setFinchYelling(true);
                     // hides itself
                     setDisplayWhoIsYellingQuestion("none");
                     setDisplayIsFinchAloneQuestion("");
                     // adds "finch is yelling" to "things that are true"
                     setTrueThings([...trueThings, "Finch is yelling"]);
+                    setThingsToDo([...thingsToDo, "Care for finch"]);
+                    console.log(thingsToDo);
                   }}
                 >
                   Finch
@@ -140,17 +140,17 @@ export default function PersistentDrawerRight() {
                 <Button
                   variant="contained"
                   onClick={() => {
-                    setDisplayIsFinchAloneQuestion("none");
-                    setDisplayFinchIsAloneEndpoint("");
                     setTrueThings([
                       ...trueThings,
                       "Finch is going aaaaa where are you guys",
                     ]);
                     setThingsToDo([
                       ...thingsToDo,
-                      "Finch is going aaaaa where are you guys",
+                      "Make a sound so finch knows she's not alone in the universe",
                     ]);
                     console.log(thingsToDo);
+                    setDisplayIsFinchAloneQuestion("none");
+                    setDisplayFinchIsAloneEndpoint("");
                   }}
                 >
                   Yes
@@ -165,6 +165,7 @@ export default function PersistentDrawerRight() {
                       "There is a bird, or the cats are playing",
                     ]);
                     setThingsToDo([...thingsToDo, "Let them have fun 😎"]);
+                    console.log(thingsToDo);
                   }}
                 >
                   No
@@ -193,6 +194,7 @@ export default function PersistentDrawerRight() {
           </Stack>
         </>
       </Main>
+
       <Drawer
         sx={{
           width: drawerWidth,
@@ -227,6 +229,7 @@ export default function PersistentDrawerRight() {
           {thingsToDo.map((task) => {
             <ListItem key={task}>{task}</ListItem>;
           })}
+          {thingsToDo}
         </List>
       </Drawer>
     </Stack>
