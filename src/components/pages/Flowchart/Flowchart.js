@@ -1,6 +1,7 @@
 // !IMPORT ZONE
 import { Button, Stack, Typography, Box } from "@mui/material";
 import { useState } from "react";
+import WhoIsYelling from "./Questions/WhoIsYelling";
 
 const Flowchart = () => {
   // so I'm looking at react mui drawers: https://mui.com/material-ui/react-drawer/ -- there are a couple options
@@ -8,7 +9,6 @@ const Flowchart = () => {
   // this being for having a checklist on the side that can keep trakc of what papers/etc somene needs as they fill out the quiz
   // i will implement basic flowchart functionality first and then examine this further, presumably we'll do this together
   // *STATE ZONE
-  const [finchYelling, setFinchYelling] = useState(false);
 
   return (
     <>
@@ -16,41 +16,13 @@ const Flowchart = () => {
         <Typography variant="h2">Why is my cat yelling?</Typography>
         {/* Putting this in a box (mui div) so that when I apply vanilla react state/conditional logic, this box can appear or disappear based on said logic*/}
         {/* Maybe this could/should be a Stack or a more directly relevant MUI component? */}
-        <Box>
-          <Typography>Which cat is yelling?</Typography>
-          <Stack direction="row" spacing={2}>
-            {/* I am just giong to code the "Finch" path first */}
-            {/* These buttons should have some logic to make them be the same size but I'm doing that rn lol */}
-            <Button variant="contained">Cricket</Button>
-            <Button
-              variant="contained"
-              // I'm leaving this state here, because state tracking + ternary rendering was my first thought on how to go through the questions, but i'm going to implement another idea that i think might work better, detailed below
-              onClick={() => {
-                setFinchYelling(true);
-                
-              }}
-            >
-              Finch
-            </Button>
-          </Stack>
-        </Box>
+        <WhoIsYelling />
 
         {/* render this finch-specific question only if finch is yelling 
         this kind of conditional rendering will quickly break or become very cumbersome, however -- i think maybe what we will want is two separate things
         1. a set of states tracking the important takeaways -- eg "finchYelling" or "therapistNoteNeeded"
         2. we have a bunch of components with questions within them, which are set to display:none by default. clicking on a button to answer a question then re-sets its component to display: none, and display:flex (or whatever) to the question that it leads to in the flowchart?
         */}
-        {finchYelling ? (
-          <Box>
-            <Typography>Is she alone in a room?</Typography>
-            <Stack direction="row" spacing={2}>
-              <Button variant="contained">Yes</Button>
-              <Button variant="contained">No</Button>
-            </Stack>
-          </Box>
-        ) : (
-          ""
-        )}
 
         <Box>
           <Typography>
