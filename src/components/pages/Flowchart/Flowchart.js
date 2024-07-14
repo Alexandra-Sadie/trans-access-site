@@ -46,7 +46,7 @@ const Flowchart = () => {
               variant="contained"
               onClick={() => {
                 // I'm leaving this state here, because state tracking + ternary rendering was my first thought on how to go through the questions, but i'm going to implement another idea that i think might work better, detailed below
-                setFinchYelling(true);
+                // setFinchYelling(true);
                 // hides itself
                 setDisplayWhoIsYellingQuestion("none");
                 setDisplayIsFinchAloneQuestion("");
