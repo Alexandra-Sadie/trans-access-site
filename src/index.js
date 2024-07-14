@@ -19,7 +19,7 @@ import NameChange from "./components/pages/NameChange";
 import Doctor from "./components/pages/Doctor";
 import LoginSignup from "./components/pages/LoginSignup/LoginSignup";
 import MyAccount from "./components/pages/MyAccount";
-import Flowchart from "./components/pages/Flowchart";
+import Flowchart from "./components/pages/Flowchart/Flowchart";
 import CollectionProvider from "./providers/CollectionProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
