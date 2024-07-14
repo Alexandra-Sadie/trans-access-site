@@ -19,6 +19,7 @@ import NameChange from "./components/pages/NameChange";
 import Doctor from "./components/pages/Doctor";
 import LoginSignup from "./components/pages/LoginSignup/LoginSignup";
 import MyAccount from "./components/pages/MyAccount";
+import Flowchart from "./components/pages/Flowchart";
 import CollectionProvider from "./providers/CollectionProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -45,7 +46,7 @@ root.render(
           <BrowserRouter>
             <Routes>
               {/* 
-        We've structured our routes (AKA our pages) as nested sub-routes "inside" of App.js. This lets us use the React Router Outlet feature to load universal content in App.js which will be visible on every sub-route (AKA every page). We use this to make the Navbar load identically everywhere.
+        We've structured our routes (AKA our pages) as nested sub-routes "inside" of App.js. This lets us use the React Router Outlet feature to load universal content in App.js which will be visible on every sub-route (AKA every page). We use this to make the Navbar load identically everywhere.This is why the App Route here is the only one that isn't self closing, and has a </Route> below -- it's containing all our other routes, so the appbar works as desired.
         See comments on app.js for further info. 
         docs: https://reactrouter.com/en/6.10.0/components/outlet
         */}
@@ -87,6 +88,11 @@ root.render(
                 <Route
                   path={routingObject.my_account.route}
                   element={<MyAccount />}
+                />
+
+                <Route
+                  path={routingObject.flowchart.route}
+                  element={<Flowchart />}
                 />
               </Route>
 

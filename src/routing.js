@@ -35,4 +35,9 @@ export const routingObject = {
     title: "My Account",
     route: "my_account",
   },
+
+  flowchart: {
+    title: "Flowchart",
+    route: "flowchart",
+  },
 };
