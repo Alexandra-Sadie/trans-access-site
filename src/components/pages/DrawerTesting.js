@@ -226,10 +226,9 @@ export default function PersistentDrawerRight() {
         <Divider />
         <Typography fontSize="1.4rem">Things to do</Typography>
         <List>
-          {thingsToDo.map((task) => {
-            <ListItem key={task}>{task}</ListItem>;
-          })}
-          {thingsToDo}
+          {thingsToDo.map((task) => (
+            <ListItem key={task}>{task}</ListItem>
+          ))}
         </List>
       </Drawer>
     </Stack>
