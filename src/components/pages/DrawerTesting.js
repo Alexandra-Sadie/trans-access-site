@@ -147,6 +147,15 @@ export default function PersistentDrawerRight() {
                   onClick={() => {
                     setDisplayIsFinchAloneQuestion("none");
                     setDisplayFinchIsAloneEndpoint("");
+                    setTrueThings([
+                      ...trueThings,
+                      "Finch is going aaaaa where are you guys",
+                    ]);
+                    setThingsToDo([
+                      ...thingsToDo,
+                      "Finch is going aaaaa where are you guys",
+                    ]);
+                    console.log(thingsToDo);
                   }}
                 >
                   Yes
@@ -156,6 +165,11 @@ export default function PersistentDrawerRight() {
                   onClick={() => {
                     setDisplayIsFinchAloneQuestion("none");
                     setDisplayBirdOrPlayfightingEndpoint("");
+                    setTrueThings([
+                      ...trueThings,
+                      "There is a bird, or the cats are playing",
+                    ]);
+                    setThingsToDo([...thingsToDo, "Let them have fun 😎"]);
                   }}
                 >
                   No
@@ -182,7 +196,7 @@ export default function PersistentDrawerRight() {
               <Typography>Let them have fun. :)</Typography>
             </Box>
           </Stack>
-        </>{" "}
+        </>
       </Main>
       <Drawer
         sx={{
@@ -215,16 +229,9 @@ export default function PersistentDrawerRight() {
         <Divider />
         <Typography fontSize="1.4rem">Things to do</Typography>
         <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
+          {thingsToDo.map((task) => {
+            <ListItem key={task}>{task}</ListItem>;
+          })}
         </List>
       </Drawer>
     </Stack>
