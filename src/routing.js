@@ -40,4 +40,9 @@ export const routingObject = {
     title: "Flowchart",
     route: "flowchart",
   },
+
+  drawer_testing: {
+    title: "Drawer Testing",
+    route: "drawer_testing",
+  },
 };

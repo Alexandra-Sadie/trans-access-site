@@ -20,6 +20,7 @@ import Doctor from "./components/pages/Doctor";
 import LoginSignup from "./components/pages/LoginSignup/LoginSignup";
 import MyAccount from "./components/pages/MyAccount";
 import Flowchart from "./components/pages/Flowchart/Flowchart";
+import DrawerTesting from "./components/pages/DrawerTesting";
 import CollectionProvider from "./providers/CollectionProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -93,6 +94,11 @@ root.render(
                 <Route
                   path={routingObject.flowchart.route}
                   element={<Flowchart />}
+                />
+
+                <Route
+                  path={routingObject.drawer_testing.route}
+                  element={<DrawerTesting />}
                 />
               </Route>
 

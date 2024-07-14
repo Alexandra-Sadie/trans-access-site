@@ -14,6 +14,7 @@ const Flowchart = () => {
   const [displayWhoIsYellingQuestion, setDisplayWhoIsYellingQuestion] =
     useState("");
   // the rest have default state of "none" because they will display:none by default
+  // this could probably be done more functionally, without using these states, by having the buttons directly display:none the elements in question
   const [displayIsFinchAloneQuestion, setDisplayIsFinchAloneQuestion] =
     useState("none");
   const [displayFinchIsAloneEndpoint, setDisplayFinchIsAloneEndpoint] =
@@ -23,8 +24,13 @@ const Flowchart = () => {
     setDisplayBirdOrPlayfightingEndpoint,
   ] = useState("none");
 
+  // states to put things that are true and things to be done in the drawer
+  const [trueThings, setTrueThings] = useState([]);
+  const [thingsToDo, setThingsToDo] = useState([]);
+
   return (
     <>
+      {/* //* FLOWCHART QUESTIONS */}
       <Stack sx={{ pt: 6 }} spacing={1.5} alignItems="center">
         <Typography variant="h2">Why is my cat yelling?</Typography>
         {/* Putting this in a box (mui div) so that when I apply vanilla react state/conditional logic, this box can appear or disappear based on said logic*/}
@@ -44,6 +50,8 @@ const Flowchart = () => {
                 // hides itself
                 setDisplayWhoIsYellingQuestion("none");
                 setDisplayIsFinchAloneQuestion("");
+                // adds "finch is yelling" to "things that are true"
+                setTrueThings([...trueThings, "Finch is yelling"]);
               }}
             >
               Finch
