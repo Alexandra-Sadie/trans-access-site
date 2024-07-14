@@ -9,7 +9,7 @@ const Flowchart = () => {
   // i will implement basic flowchart functionality first and then examine this further, presumably we'll do this together
 
   // *STATE ZONE
-  const [finchYelling, setFinchYelling] = useState(false);
+  // const [finchYelling, setFinchYelling] = useState(false);
   // this one has default state of "" because we want it to appear on page load
   const [displayWhoIsYellingQuestion, setDisplayWhoIsYellingQuestion] =
     useState("");
@@ -26,7 +26,7 @@ const Flowchart = () => {
 
   // states to put things that are true and things to be done in the drawer
   const [trueThings, setTrueThings] = useState([]);
-  const [thingsToDo, setThingsToDo] = useState([]);
+  // const [thingsToDo, setThingsToDo] = useState([]);
 
   return (
     <>
