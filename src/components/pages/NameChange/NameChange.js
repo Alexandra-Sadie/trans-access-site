@@ -5,11 +5,14 @@ import SplashScreen from "./SplashScreen";
 const NameChange = () => {
   const [showSplashScreen, setShowSplashScreen] = useState(true);
 
-  const disableSplashScreen = () => setShowSplashScreen(false);
+  const disableSplashScreen = () => {
+    setShowSplashScreen(false);
+    console.log(showSplashScreen);
+  };
 
   return (
     <>
-      <SplashScreen />
+      <SplashScreen disableSplashScreen={disableSplashScreen} />
     </>
   );
 };

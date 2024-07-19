@@ -1,6 +1,6 @@
 import { Typography, Button, Stack, Card } from "@mui/material";
 
-const SplashScreen = () => {
+const SplashScreen = ({ disableSplashScreen }) => {
   return (
     <Stack spacing={{ xs: 1, md: 2 }} alignItems="center" paddingTop={6}>
       <Typography variant="h2">Name Change Tool</Typography>
@@ -11,7 +11,9 @@ const SplashScreen = () => {
         ipsum laudantium blanditiis neque, veritatis optio laborum delectus.
         Nostrum.
       </Typography>
-      <Button variant="contained">button</Button>
+      <Button variant="contained" onClick={disableSplashScreen}>
+        button
+      </Button>
     </Stack>
   );
 };
