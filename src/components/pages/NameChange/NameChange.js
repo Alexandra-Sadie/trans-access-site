@@ -1,18 +1,20 @@
 import { Typography, Button, Stack, Card } from "@mui/material";
 import { useState } from "react";
 import SplashScreen from "./SplashScreen";
+import Questionnaire from "./Questionnaire";
 
 const NameChange = () => {
   const [showSplashScreen, setShowSplashScreen] = useState(true);
 
-  const disableSplashScreen = () => {
-    setShowSplashScreen(false);
-    console.log(showSplashScreen);
-  };
+  const disableSplashScreen = () => setShowSplashScreen(false);
 
   return (
     <>
-      <SplashScreen disableSplashScreen={disableSplashScreen} />
+      {showSplashScreen ? (
+        <SplashScreen disableSplashScreen={disableSplashScreen} />
+      ) : (
+        <Questionnaire />
+      )}
     </>
   );
 };
