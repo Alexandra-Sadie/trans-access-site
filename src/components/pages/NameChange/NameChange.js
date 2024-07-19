@@ -1,5 +1,4 @@
 const NameChange = () => {
-  return <div>Name Change</div>;
+  return <div>NameChange: 2!</div>;
 };
-
 export default NameChange;
