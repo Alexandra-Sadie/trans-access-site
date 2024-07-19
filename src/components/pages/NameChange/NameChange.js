@@ -1,4 +1,3 @@
-import { Typography, Button, Stack, Card } from "@mui/material";
 import { useState } from "react";
 import SplashScreen from "./SplashScreen";
 import Questionnaire from "./Questionnaire";
