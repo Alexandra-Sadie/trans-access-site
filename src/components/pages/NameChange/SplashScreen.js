@@ -18,7 +18,7 @@ const SplashScreen = ({ disableSplashScreen }) => {
         can save after the quiz to track your progress.
       </Typography>
       <Button variant="contained" onClick={disableSplashScreen}>
-        button
+        Begin
       </Button>
       <Typography variant="body1" maxWidth={"40vw"}>
         If you want, you can see the flowchart this is modeled after{" "}
