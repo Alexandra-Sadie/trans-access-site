@@ -1,14 +1,4 @@
-import {
-  Typography,
-  Button,
-  Stack,
-  Card,
-  Link,
-  CardHeader,
-  CardContent,
-  Grid,
-  Paper,
-} from "@mui/material";
+import { Typography, Button, Stack, Grid, Paper } from "@mui/material";
 
 const SplashScreen = ({ disableSplashScreen }) => {
   return (
