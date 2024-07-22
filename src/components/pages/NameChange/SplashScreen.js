@@ -17,14 +17,13 @@ const SplashScreen = ({ disableSplashScreen }) => {
         about your situation, you'll see a checklist of requirements, which you
         can save after the quiz to track your progress.
       </Typography>
+      <Button variant="contained" onClick={disableSplashScreen}>
+        button
+      </Button>
       <Typography variant="body1" maxWidth={"40vw"}>
         If you want, you can see the flowchart this is modeled after{" "}
         <Link href="https://i.imgur.com/RlD4UQ8.png">here</Link>.
       </Typography>
-
-      <Button variant="contained" onClick={disableSplashScreen}>
-        button
-      </Button>
     </Stack>
   );
 };
