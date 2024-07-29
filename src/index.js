@@ -36,14 +36,15 @@ root.render(
     {/*
     I have wrapped BrowserRouter in our LoggedInProvider so that it can give context on the user's logged in status to all routes in the app
  */}
+    {/* AuthProvider contains our logic to track whether the user is logged in or not, as well as the functions that log them in our out, and create a new user. */}
     <AuthProvider>
       {/* //TODO explain CollectionProvider literally at all */}
       <CollectionProvider>
         {/* //TODO explain this one too lol */}
+        {/* CustomThemesProvider contains the custom themes we have made, as well as logic to track the active theme and let the user switch between light and dark mode themes. */}
         <CustomThemesProvider>
           {/* BrowserRouter is the higher-order component that lets us define all the url bar routes our app will accept, defined below as children of BrowserRouter. See README.md for full documentation.
-          Component documentation here: https://reactrouter.com/en/6.10.0/router-components/browser-router
- */}
+          Component documentation here: https://reactrouter.com/en/6.10.0/router-components/browser-router*/}
           <BrowserRouter>
             <Routes>
               {/* We've structured our routes (AKA our pages) as nested sub-routes "inside" of App.js. This lets us use the React Router Outlet feature to load universal content in App.js which will be visible on every sub-route (AKA every page). We use this to make the Navbar load identically everywhere.
