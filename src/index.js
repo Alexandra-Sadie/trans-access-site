@@ -91,9 +91,9 @@ root.render(
                 />
               </Route>
 
-              {/* 
-        // TODO: either make this properly fall through to full home page OR make custom error page 
-        for now, people will see the toolbar with links to leave*/}
+              {/* // TODO: either make this properly fall through to full home page OR make custom error page 
+              for now, people will see the toolbar with links to leave*/}
+              {/* This is a common way to make an "error" page. By defining the path as "*", this route will render if the url reads anything other than the defined paths. In practice, this means that if the user accidentally navigates to, for example, "/therapistttt" instead of "/therapist", they will be redirected to the defined element. We have not yet made a custom error page, and this is not redirecting properly to the home page, so for the moment it renders a blank page, with the toolbar visible so they can click to navigate to the correct page. */}
               <Route path="*" element={<App />} />
             </Routes>
           </BrowserRouter>
