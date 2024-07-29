@@ -18,8 +18,8 @@ const AuthProvider = ({ children }) => {
 
   // this useEffect runs on page mount, and checks if the auth status has changed -- aka using firebase auth to let us know when it flags a user as having signed in
   useEffect(() => {
-    // firebase auth will give us a "user" object...
-    const listen = onAuthStateChanged(auth, (returnedUser) => {
+    const unsubscribeFromAuth = onAuthStateChanged(auth, (returnedUser) => {
+      // firebase auth will give us a "user" object...
       // ...which, if we have it, we can set our local user state to be equal to
       if (returnedUser) {
         setLocalUser(returnedUser);
@@ -31,8 +31,13 @@ const AuthProvider = ({ children }) => {
     });
 
     // TODO: explain this better lol
-    // this returns itself recursively because this helps with performance?
-    return listen;
+    // returning this here ensures that it runs the function in "onAuthStateChanged" from firebase, which at its end unsubscribes from the firebase database
+    // this is defensive -- because this useEffect is within our Provider, it technically never unmounts, but if this was done in a component that could unmount, then the  it means that we ensure that we are not continually listening to the firebase auth database even when the user is already logged in/we've navigated to a different component. this prevents possible memory leaks :)
+    // see these docs:
+    // https://firebase.google.com/docs/reference/js/v8/firebase.auth.Auth#onauthstatechanged
+    // https://react.dev/reference/react/useEffect (the part about cleanup logic)
+
+    return unsubscribeFromAuth;
   }, []);
 
   // functions to change logged in/out status
