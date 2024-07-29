@@ -23,6 +23,10 @@ const CustomThemesProvider = ({ children }) => {
     },
     typography: {
       fontFamily,
+      fontWeightLight: 300,
+      fontWeightRegular: 400,
+      fontWeightMedium: 500,
+      fontWeightBold: 700,
       h1: {
         fontWeight: "light",
         fontSize: "3.625rem", //58px
@@ -38,6 +42,14 @@ const CustomThemesProvider = ({ children }) => {
         fontSize: "19px",
         letterSpacing: "0.15px",
       },
+      // the h4 isn't defined in the design document but we technically call the "Log In" and "Sign Up" card headers as h4s at the moment so i'm coding it in here for testing
+      // i'm taking the values from "old desktop type styles > log in header"
+      // i assume we could update this to one of our new styles but for now i will just replicate it
+      h4: {
+        fontWeight: typography.fontWeightRegular,
+        fontSize: "34px",
+        lineHeight: "42px",
+      },
       subtitle1: {
         fontWeight: "regular",
         fontSize: "16px",
@@ -49,7 +61,7 @@ const CustomThemesProvider = ({ children }) => {
         letterSpacing: "0.15px",
       },
       body1: {
-        fontWeight: "regular",
+        fontWeight: fontWeightRegular,
         fontSize: "16px",
         letterSpacing: "0.5px",
       },
