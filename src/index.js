@@ -24,16 +24,6 @@ import CollectionProvider from "./providers/CollectionProvider";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/* // CssBaseline is MUI's version of a CSS Normalize snippet, which applies universal styles to the entire app to normalize some differences in visual rendering across browsers
-    docs: https://mui.com/material-ui/react-css-baseline/
-    */}
-    {/* 
-    
-    BrowserRouter is the higher-order component that lets us define all the url bar routes our app will accept, defined below as children of BrowserRouter. See README.md for full documentation.
-    
-    Component documentation here: https://reactrouter.com/en/6.10.0/router-components/browser-router
-    
- */}
     {/* //TODO more detail on how providers work
     I have wrapped BrowserRouter in our LoggedInProvider so that it can give context on the user's logged in status to all routes in the app
  */}
@@ -42,6 +32,9 @@ root.render(
       <CollectionProvider>
         {/* //TODO explain this one too lol */}
         <CustomThemesProvider>
+          {/* BrowserRouter is the higher-order component that lets us define all the url bar routes our app will accept, defined below as children of BrowserRouter. See README.md for full documentation.
+          Component documentation here: https://reactrouter.com/en/6.10.0/router-components/browser-router
+ */}
           <BrowserRouter>
             <Routes>
               {/* 
