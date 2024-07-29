@@ -8,7 +8,7 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 
 // ? i'd be open to a better name for this
 const NavUserButtons = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { localUser, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
 
   // *STATE ZONE
@@ -73,7 +73,7 @@ const NavUserButtons = () => {
         open={Boolean(anchorElAcct)}
         onClose={handleCloseAcctMenu}
       >
-        {user ? (
+        {localUser ? (
           // MUI is unhappy if this renders as a fragment
           <Box>
             {/* TODO - break these individual buttons into components in some elegant way */}

@@ -12,26 +12,26 @@ export const AuthContext = createContext({});
 
 // defining the data to be passed down
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [localUser, setLocalUser] = useState(null);
   // this will actually have lang switch logic later on
   const currentLang = "en";
 
   // this useEffect runs on page mount, and checks if the auth status has changed -- aka using firebase auth to let us know when it flags a user as having signed in
   useEffect(() => {
     // firebase auth will give us a "user" object...
-    const listen = onAuthStateChanged(auth, (user) => {
+    const listen = onAuthStateChanged(auth, (returnedUser) => {
       // ...which, if we have it, we can set our local user state to be equal to
-      if (user) {
-        setUser(user);
+      if (returnedUser) {
+        setLocalUser(returnedUser);
       }
       // if we don't get a user object from firebase auth for whatever reason, we set our user state to null so the browser shows them as locally logged out
       else {
-        setUser(null);
+        setLocalUser(null);
       }
     });
 
     // TODO: explain this better lol
-    // this returns itself recursively because this helps with performance? 
+    // this returns itself recursively because this helps with performance?
     return listen;
   }, []);
 
@@ -77,7 +77,7 @@ const AuthProvider = ({ children }) => {
 
   return (
     // passing down our relevant state and associated functions in an anonymous object that children can pull from as needed using useContext
-    <AuthContext.Provider value={{ user, logIn, logOut, createNewUser }}>
+    <AuthContext.Provider value={{ localUser, logIn, logOut, createNewUser }}>
       {children}
     </AuthContext.Provider>
   );

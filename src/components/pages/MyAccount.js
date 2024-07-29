@@ -3,19 +3,19 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { Box, Typography } from "@mui/material";
 
 const MyAccount = () => {
-  const { user } = useContext(AuthContext);
+  const { localUser } = useContext(AuthContext);
 
   return (
     <Box>
-      {user ? (
+      {localUser ? (
         <>
-          <Typography>current user: {user.email}</Typography>
+          <Typography>current user: {localUser.email}</Typography>
           <Typography>
-            is this user email-verified? {`${user.emailVerified}`}
+            is this user email-verified? {`${localUser.emailVerified}`}
           </Typography>
           <Typography>full user object:</Typography>
           <Typography sx={{ overflowWrap: "break-word" }}>
-            {JSON.stringify(user)}
+            {JSON.stringify(localUser)}
           </Typography>
         </>
       ) : (
