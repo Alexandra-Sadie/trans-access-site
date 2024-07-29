@@ -40,12 +40,12 @@ const CustomThemesProvider = ({ children }) => {
       },
       h2: {
         fontWeight: fontWeightRegular,
-        fontSize: "33px",
+        fontSize: "2.0625rem", //33px
         letterSpacing: "0.25px",
       },
       h3: {
         fontWeight: fontWeightMedium,
-        fontSize: "19px",
+        fontSize: "1.1875rem", //19px
         letterSpacing: "0.15px",
       },
       // the h4 isn't defined in the design document but we technically call the "Log In" and "Sign Up" card headers as h4s at the moment so i'm coding it in here for testing
