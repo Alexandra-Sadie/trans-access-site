@@ -31,7 +31,7 @@ root.render(
 
     It would be overly cumbersome to put this prop passing in every component that needs to access, for example, our basic theme, so instead we define states like theme and logged-in status in Providers, and use React's useContext hook to call them when needed in children components. Effectively, this lets us access these states/props when desired, without having to manually pass every prop to every child component ever.
 
-    This docs page explains how useContext works in detail, and has a nice writeup on what prop drilling is and how iseContext avoids it: https://react.dev/learn/passing-data-deeply-with-context
+    This docs page explains how useContext works in detail, and has a nice writeup on what prop drilling is and how useContext avoids it: https://react.dev/learn/passing-data-deeply-with-context
     */}
     {/*
     I have wrapped BrowserRouter in our LoggedInProvider so that it can give context on the user's logged in status to all routes in the app
