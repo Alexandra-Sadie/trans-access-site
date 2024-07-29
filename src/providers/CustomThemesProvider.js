@@ -4,6 +4,10 @@ import { createTheme } from "@mui/material";
 export const CustomThemesContext = createContext({});
 const CustomThemesProvider = ({ children }) => {
   const fontFamily = "Poppins";
+  const fontWeightLight = 300;
+  const fontWeightRegular = 400;
+  const fontWeightMedium = 500;
+  const fontWeightBold = 700;
 
   //   *Our Themes
   // rip to the original theme names. gone but not forgotten
@@ -23,22 +27,18 @@ const CustomThemesProvider = ({ children }) => {
     },
     typography: {
       fontFamily,
-      fontWeightLight: 300,
-      fontWeightRegular: 400,
-      fontWeightMedium: 500,
-      fontWeightBold: 700,
       h1: {
-        fontWeight: "light",
+        fontWeight: fontWeightLight,
         fontSize: "3.625rem", //58px
         letterSpacing: "-0.5px",
       },
       h2: {
-        fontWeight: "regular",
+        fontWeight: fontWeightRegular,
         fontSize: "33px",
         letterSpacing: "0.25px",
       },
       h3: {
-        fontWeight: "medium",
+        fontWeight: fontWeightMedium,
         fontSize: "19px",
         letterSpacing: "0.15px",
       },
@@ -46,17 +46,17 @@ const CustomThemesProvider = ({ children }) => {
       // i'm taking the values from "old desktop type styles > log in header"
       // i assume we could update this to one of our new styles but for now i will just replicate it
       h4: {
-        fontWeight: typography.fontWeightRegular,
+        fontWeight: fontWeightRegular,
         fontSize: "34px",
         lineHeight: "42px",
       },
       subtitle1: {
-        fontWeight: "regular",
+        fontWeight: fontWeightRegular,
         fontSize: "16px",
         letterSpacing: "0.15px",
       },
       subtitle2: {
-        fontWeight: "medium",
+        fontWeight: fontWeightMedium,
         fontSize: "14px",
         letterSpacing: "0.15px",
       },
@@ -66,22 +66,22 @@ const CustomThemesProvider = ({ children }) => {
         letterSpacing: "0.5px",
       },
       body2: {
-        fontWeight: "regular",
+        fontWeight: fontWeightRegular,
         fontSize: "14px",
         letterSpacing: "0.25px",
       },
       button: {
-        fontWeight: "medium",
+        fontWeight: fontWeightMedium,
         fontSize: "14px",
         letterSpacing: "1.25px",
       },
       caption: {
-        fontWeight: "regular",
+        fontWeight: fontWeightRegular,
         fontSize: "12px",
         letterSpacing: "0.4px",
       },
       overline: {
-        fontWeight: "regular",
+        fontWeight: fontWeightRegular,
         fontSize: "10px",
         letterSpacing: "1.5px",
       },
