@@ -36,12 +36,14 @@ const DarkModeSwitcher = () => {
 
   return (
     <>
+      {/* this button changes to dark mode, appears in light mode */}
       {themeMode === "light" ? (
         <Button
           sx={{ color: "primary.contrastText" }}
           onClick={() => {
             setCurrentTheme(customDarkTheme);
             setThemeMode("dark");
+            // localStorage item so the browser remembers dark mode
             window.localStorage.setItem("themeMode", "dark");
             console.log(window.localStorage.themeMode);
           }}
@@ -49,11 +51,13 @@ const DarkModeSwitcher = () => {
           <DarkModeOutlined />
         </Button>
       ) : (
+        // this button changes to light mode, appears in dark mode
         <Button
           sx={{ color: "primary.contrastText" }}
           onClick={() => {
             setCurrentTheme(customLightTheme);
             setThemeMode("light");
+            // localstorage so the browser remembers light mode
             window.localStorage.setItem("themeMode", "light");
             console.log(window.localStorage.themeMode);
           }}
