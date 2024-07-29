@@ -27,9 +27,15 @@ const CustomThemesProvider = ({ children }) => {
     },
     typography: {
       fontFamily,
+      // i'm applying these changes only to the light mode so that switching to dark mode shows how it changes things quickly
       h1: {
         fontWeight: fontWeightLight,
         fontSize: "3.625rem", //58px
+        // https://mui.com/material-ui/customization/default-theme/
+        // MUI theme docs has the letterSpacing as ems, not rems -- this means that the em is techically relative to the fontSize, aka the spacing will change slightly as the font size changes. we could do this -- it would apply if we ever decide to change the fontSize value of a typography element and want the letter spacing to adapt to it.
+        // this is complicated because it means calculating the em value by dividing the pixel value by the pixel value of the element's fontsize, rather than the 16px rem
+        // e.g. this h1's letter spacing would be -0.5/58, or "-0.0086206896551724em"
+        // this is a bit unwieldy and only comes into play if we start changing around our typography sizing a lot while wanting the letterSpacing to be strictly relatively consistent... for the momeny i am leaving them as raw px values
         letterSpacing: "-0.5px",
       },
       h2: {
@@ -44,45 +50,47 @@ const CustomThemesProvider = ({ children }) => {
       },
       // the h4 isn't defined in the design document but we technically call the "Log In" and "Sign Up" card headers as h4s at the moment so i'm coding it in here for testing
       // i'm taking the values from "old desktop type styles > log in header"
-      // i assume we could update this to one of our new styles but for now i will just replicate it
+      // i assume we could update this to one of our new styles but for now i will just replicate it, especially because it is the only header that we directly call and this makes it useful to test and see changes in realtime
       h4: {
         fontWeight: fontWeightRegular,
-        fontSize: "34px",
-        lineHeight: "42px",
+        fontSize: "2.125rem",
+        // can confirm this is equivalent to fontSize: "34px" -> aka divide the raw px value by 16
+        lineHeight: "2.625rem", //34px
+        // the letterSpacing on this is "0%" on figma, which i assume means 1:1, or left at default
       },
       subtitle1: {
         fontWeight: fontWeightRegular,
-        fontSize: "16px",
+        fontSize: "1rem", //16px
         letterSpacing: "0.15px",
       },
       subtitle2: {
         fontWeight: fontWeightMedium,
-        fontSize: "14px",
+        fontSize: "0.875rem", // "14px"
         letterSpacing: "0.15px",
       },
       body1: {
         fontWeight: fontWeightRegular,
-        fontSize: "16px",
+        fontSize: "1rem", //16px
         letterSpacing: "0.5px",
       },
       body2: {
         fontWeight: fontWeightRegular,
-        fontSize: "14px",
+        fontSize: "0.875rem", // "14px"
         letterSpacing: "0.25px",
       },
       button: {
         fontWeight: fontWeightMedium,
-        fontSize: "14px",
+        fontSize: "0.875rem", // "14px"
         letterSpacing: "1.25px",
       },
       caption: {
         fontWeight: fontWeightRegular,
-        fontSize: "12px",
+        fontSize: "0.75rem", //12px
         letterSpacing: "0.4px",
       },
       overline: {
         fontWeight: fontWeightRegular,
-        fontSize: "10px",
+        fontSize: "0.625rem", //"10px"
         letterSpacing: "1.5px",
       },
     },
