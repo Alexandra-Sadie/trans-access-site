@@ -23,6 +23,56 @@ const CustomThemesProvider = ({ children }) => {
     },
     typography: {
       fontFamily,
+      h1: {
+        fontWeight: "light",
+        fontSize: "3.625rem", //58px
+        letterSpacing: "-0.5px",
+      },
+      h2: {
+        fontWeight: "regular",
+        fontSize: "33px",
+        letterSpacing: "0.25px",
+      },
+      h3: {
+        fontWeight: "medium",
+        fontSize: "19px",
+        letterSpacing: "0.15px",
+      },
+      subtitle1: {
+        fontWeight: "regular",
+        fontSize: "16px",
+        letterSpacing: "0.15px",
+      },
+      subtitle2: {
+        fontWeight: "medium",
+        fontSize: "14px",
+        letterSpacing: "0.15px",
+      },
+      body1: {
+        fontWeight: "regular",
+        fontSize: "16px",
+        letterSpacing: "0.5px",
+      },
+      body2: {
+        fontWeight: "regular",
+        fontSize: "14px",
+        letterSpacing: "0.25px",
+      },
+      button: {
+        fontWeight: "medium",
+        fontSize: "14px",
+        letterSpacing: "1.25px",
+      },
+      caption: {
+        fontWeight: "regular",
+        fontSize: "12px",
+        letterSpacing: "0.4px",
+      },
+      overline: {
+        fontWeight: "regular",
+        fontSize: "10px",
+        letterSpacing: "1.5px",
+      },
     },
   });
 
