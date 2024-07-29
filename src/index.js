@@ -24,7 +24,16 @@ import CollectionProvider from "./providers/CollectionProvider";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/* //TODO more detail on how providers work
+    {/* We have our app nested within a series of "Providers". This is a common way to structure react's useContext hook. UseContext is a tool used to counteract the need for "prop drilling" when you have certain React States or Javascript functions, variables, etc, that you want the entire app to have access to. (For example, we use this to track whether a user is logged in, or the currently selected theme.)
+
+    Without useContext, we would have to define these "props" from our parent component, App.js, to every single child component and subcomponent that wants to call them, as specified here:
+    https://react.dev/learn/passing-props-to-a-component
+
+    It would be overly cumbersome to put this prop passing in every component that needs to access, for example, our basic theme, so instead we define states like theme and logged-in status in Providers, and use React's useContext hook to call them when needed in children components. Effectively, this lets us access these states/props when desired, without having to manually pass every prop to every child component ever.
+
+    This docs page explains how useContext works in detail, and has a nice writeup on what prop drilling is and how iseContext avoids it: https://react.dev/learn/passing-data-deeply-with-context
+    */}
+    {/*
     I have wrapped BrowserRouter in our LoggedInProvider so that it can give context on the user's logged in status to all routes in the app
  */}
     <AuthProvider>
@@ -37,11 +46,9 @@ root.render(
  */}
           <BrowserRouter>
             <Routes>
-              {/* 
-        We've structured our routes (AKA our pages) as nested sub-routes "inside" of App.js. This lets us use the React Router Outlet feature to load universal content in App.js which will be visible on every sub-route (AKA every page). We use this to make the Navbar load identically everywhere.
-        See comments on app.js for further info. 
-        docs: https://reactrouter.com/en/6.10.0/components/outlet
-        */}
+              {/* We've structured our routes (AKA our pages) as nested sub-routes "inside" of App.js. This lets us use the React Router Outlet feature to load universal content in App.js which will be visible on every sub-route (AKA every page). We use this to make the Navbar load identically everywhere.
+              See comments on app.js for further info. 
+              docs: https://reactrouter.com/en/6.10.0/components/outlet */}
               <Route element={<App />}>
                 <Route path={routingObject.main.route} element={<Main />} />
 
