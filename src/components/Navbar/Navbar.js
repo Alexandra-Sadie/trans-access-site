@@ -12,6 +12,7 @@ const Navbar = () => {
   // this returns an array of each route sub-object of routingObject
   // these are expected to be of structure {route: string, title: string}
   const navRoutesArray = Object.values(routingObject).filter(
+    // we want login & signup pages to exist but not to appear in the navbar here; as our pages grow we may instead have a subobject of routes that should appear in the navbar but at the moment it makes more sense to filter out the ones we don't
     ({ route }) => route !== "my_account" && route !== "login_signup"
   );
 

@@ -1,6 +1,9 @@
 import { createContext, useState, useMemo } from "react";
 import { createTheme } from "@mui/material";
 
+// MUI uses a default theme modeled after Material Design, provided as a js object, and allows for modifications. If a value in the default theme is not changed, the default value is used.
+// Effectively, this means that the specified values below are our alterations to the default MUI theme, and anything else is using the MUI default.
+// The MUI default theme is available here: https://mui.com/material-ui/customization/default-theme/
 export const CustomThemesContext = createContext({});
 const CustomThemesProvider = ({ children }) => {
   const fontFamily = "Poppins";

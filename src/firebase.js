@@ -1,3 +1,5 @@
+// This exists as the file where we store all our relevant Firebase information, which allows us to pull Firebase data, functions, etc, throughout the app.
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";

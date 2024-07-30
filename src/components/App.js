@@ -16,6 +16,8 @@ const App = () => {
   return (
     <>
       <ThemeProvider theme={appliedTheme}>
+        {/* // CssBaseline is MUI's version of a CSS Normalize snippet, which applies universal styles to the entire app to normalize some differences in visual rendering across browsers.
+        docs: https://mui.com/material-ui/react-css-baseline/ */}
         <CssBaseline />
         {/* Using React Router's Outlet feature (see index.js), we can render the navbar, and below it, any route/page we want as a child of App.js. In practice, this puts the navbar on every page.
       See comments on index.js for further info. 

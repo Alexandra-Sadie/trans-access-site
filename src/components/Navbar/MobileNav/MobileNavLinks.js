@@ -69,13 +69,12 @@ const MobileNavLinks = ({ navRoutesArray }) => {
         }}
         // Boolean() returns true if anchorElNav has content (i.e. the IconButton has been clicked and so handleOpenNavMenu has been called) and false if anchorElNav is null (i.e. on application start or if handleCloseNavMenu has been called)
         // this is considered derived state
-        //
         // then, if it returns true, the Menu is open, i.e. visible, if it returns false, the menu is not visible
         open={Boolean(anchorElNav)}
         onClose={handleCloseNavMenu}
       >
         {navRoutesArray
-          // this takes said sub-objects and renders them as typographical links in the menu
+          // this takes the sub-objects described in Navbar.js and renders them as typographical links in the menu
           .map(({ route, title }) => (
             <MobileNavButton key={route} route={route} title={title} />
           ))}

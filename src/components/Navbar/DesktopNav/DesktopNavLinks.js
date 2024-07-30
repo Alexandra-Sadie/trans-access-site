@@ -15,7 +15,7 @@ const DesktopNavLinks = ({ navRoutesArray }) => {
       sx={{ display: { xs: "none", md: "flex" } }}
     >
       {navRoutesArray
-        // this takes said sub-objects and renders them as buttons
+        // this takes the sub-objects described in Navbar.js and renders them as buttons
         .map(({ route, title }) => (
           <DesktopNavButton key={route} route={route} title={title} />
         ))}
