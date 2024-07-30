@@ -15,7 +15,7 @@ import App from "./components/App";
 import Main from "./components/pages/Main/Main";
 import Intervention from "./components/pages/Intervention";
 import Therapist from "./components/pages/Therapist";
-import NameChange from "./components/pages/NameChange";
+import NameChange from "./components/pages/NameChange/NameChange";
 import Doctor from "./components/pages/Doctor";
 import LoginSignup from "./components/pages/LoginSignup/LoginSignup";
 import MyAccount from "./components/pages/MyAccount";
