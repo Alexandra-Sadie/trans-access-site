@@ -28,7 +28,6 @@ const ProfessionalCard = ({
     // this centers the card in the page
     <ListItem sx={{ justifyContent: "center" }}>
       <Card
-        variant="outlined"
         // TODO set height to multiple breakpoint IF noWrap can be set to further lines
         // TODO choose best breakpoints
         // TODO should this use MUI's built-in breakpoints like our other stuff?
