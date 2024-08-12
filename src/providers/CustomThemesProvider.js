@@ -42,7 +42,7 @@ const CustomThemesProvider = ({ children }) => {
       text: { primary: "#eeebfc" },
       //   the primary.main here is adjusted from #B4869F above -- a dif versin of it has primary.main as #A6B1E1 -- gives the site a more blue/cold tone, rather than pink/warm. i like this, but both Work
       primary: { main: "#b689a2", contrastText: "#282735" },
-      secondary: { main: "#985F6F" },
+      secondary: { main: "#9e6183" },
     },
     typography: {
       fontFamily,
