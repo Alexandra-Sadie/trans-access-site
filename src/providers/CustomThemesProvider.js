@@ -22,6 +22,7 @@ const CustomThemesProvider = ({ children }) => {
       background: { default: "#FFE5D9", paper: "#fff9fa", object: "#FFE5D9" },
       text: { primary: "#5c474e" },
       primary: { main: "#9D8189", contrastText: "#271f22" },
+      // !Note for building name change tool – some of these are hover states, test before building interactions
       secondary: { main: "#F8CDD4", light: "#F4ACB7", dark: "#FBDFE4", contrastText: "#271f22" },
       progressBar: { main: "#F8CDD4", light: "#FDEDEF" },
     },
