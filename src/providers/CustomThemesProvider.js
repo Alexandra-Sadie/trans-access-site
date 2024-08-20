@@ -43,7 +43,7 @@ const CustomThemesProvider = ({ children }) => {
       text: { primary: "#eeebfc" },
       //   the primary.main here is adjusted from #B4869F above -- a dif versin of it has primary.main as #A6B1E1 -- gives the site a more blue/cold tone, rather than pink/warm. i like this, but both Work
       primary: { main: "#b689a2", contrastText: "#282735" },
-      secondary: { main: "#3419A9", light: "#3A3659", dark: "#1A0D54", contrastText: "#282735" },
+      secondary: { main: "#3419A9", light: "#3A3659", dark: "#1A0D54", contrastText: "#eeebfc" },
       progressBar: { main: "#5E40E2", light: "#EEEBFC" },
     },
     typography: {
