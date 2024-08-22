@@ -66,7 +66,7 @@ const CustomThemesProvider = ({ children }) => {
       subtitle2: {
         fontWeight: fontWeightMedium,
         fontSize: "0.875rem", // "14px"
-        letterSpacing: "0.15px",
+        letterSpacing: "0.1px",
       },
       body1: {
         fontWeight: fontWeightRegular,
