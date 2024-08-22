@@ -9,6 +9,11 @@ const CustomThemesProvider = ({ children }) => {
   const fontWeightMedium = 500;
   const fontWeightBold = 700;
 
+  const calculateLetterSpacingEm = (
+    letterSpacingPixelValue,
+    fontSizePixelValue
+  ) => `${(letterSpacingPixelValue / fontSizePixelValue).toFixed(5)}em`;
+
   //   *Our Themes
   // rip to the original theme names. gone but not forgotten
   const customLightTheme = createTheme({
@@ -36,7 +41,8 @@ const CustomThemesProvider = ({ children }) => {
         // this is complicated because it means calculating the em value by dividing the pixel value by the pixel value of the element's fontsize, rather than the 16px rem
         // e.g. this h1's letter spacing would be -0.5/58, or "-0.0086206896551724em"
         // this is a bit unwieldy and only comes into play if we start changing around our typography sizing a lot while wanting the letterSpacing to be strictly relatively consistent... for the momeny i am leaving them as raw px values
-        letterSpacing: "-0.5px",
+        letterSpacing: calculateLetterSpacingEm(-0.5, 58),
+        // letterSpacing: "-0.5px",
       },
       h2: {
         fontWeight: fontWeightRegular,
