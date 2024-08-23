@@ -7,7 +7,8 @@ const CustomThemesProvider = ({ children }) => {
   const fontWeightLight = 300;
   const fontWeightRegular = 400;
   const fontWeightMedium = 500;
-  const fontWeightBold = 700;
+  // note: this is commented because not used but we keep it for future use
+  // const fontWeightBold = 700;
 
   // TODO better name for this function
   const calculateFontValues = (letterSpacingPixelValue, fontSizePixelValue) => {
