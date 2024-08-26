@@ -6,7 +6,6 @@ export const CustomThemesContext = createContext({});
 const CustomThemesProvider = ({ children }) => {
   const fontFamily = "Poppins";
 
-
   //   *Our Themes
   // rip to the original theme names. gone but not forgotten
   // TODO full explainer of how mui theme works
@@ -47,8 +46,7 @@ const CustomThemesProvider = ({ children }) => {
       primary: { main: "#b689a2", contrastText: "#272633" },
       secondary: { main: "#985F6F" },
     },
-    typography: {
-      fontFamily,
+    typography: typescale,
   });
 
   //*state to track current theme
