@@ -12,7 +12,11 @@ const CustomThemesProvider = ({ children }) => {
 
   // TODO better name for this function
   const calculateFontValues = (letterSpacingPixelValue, fontSizePixelValue) => {
+    // ? could be better to pass base font size explicitly (curry maybe?)
     const BASE_FONT_SIZE = 16;
+    // TODO revisit this comment to make it make sense
+    // https://mui.com/material-ui/customization/default-theme/
+    // MUI theme docs has the letterSpacing as ems, not rems -- this means that the em is techically relative to the fontSize, aka the spacing will change slightly as the font size changes. we could do this -- it would apply if we ever decide to change the fontSize value of a typography element and want the letter spacing to adapt to it.
     return {
       fontSize: `${fontSizePixelValue / BASE_FONT_SIZE}rem`,
       letterSpacing: `${(letterSpacingPixelValue / fontSizePixelValue).toFixed(
@@ -42,21 +46,14 @@ const CustomThemesProvider = ({ children }) => {
       // i'm applying these changes only to the light mode so that switching to dark mode shows how it changes things quickly
       h1: {
         fontWeight: fontWeightLight,
-        // fontSize: "3.625rem", //58px
-        // https://mui.com/material-ui/customization/default-theme/
-        // MUI theme docs has the letterSpacing as ems, not rems -- this means that the em is techically relative to the fontSize, aka the spacing will change slightly as the font size changes. we could do this -- it would apply if we ever decide to change the fontSize value of a typography element and want the letter spacing to adapt to it.
-        // this is complicated because it means calculating the em value by dividing the pixel value by the pixel value of the element's fontsize, rather than the 16px rem
-        // e.g. this h1's letter spacing would be -0.5/58, or "-0.0086206896551724em"
-        // this is a bit unwieldy and only comes into play if we start changing around our typography sizing a lot while wanting the letterSpacing to be strictly relatively consistent... for the momeny i am leaving them as raw px values
-        // letterSpacing: calculateLetterSpacingEm(-0.5, 58),
-        // letterSpacing: "-0.5px",
+        lineHeight: 1.2,
         ...calculateFontValues(-0.5, 58),
       },
 
       h2: {
         fontWeight: fontWeightRegular,
-        fontSize: "2.0625rem", //33px
-        letterSpacing: "0.25px",
+        lineHeight: 1.235,
+        ...calculateFontValues(0.25, 33),
       },
       h3: {
         fontWeight: fontWeightMedium,
