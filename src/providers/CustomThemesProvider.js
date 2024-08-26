@@ -27,6 +27,11 @@ const CustomThemesProvider = ({ children }) => {
 
   //   *Our Themes
   // rip to the original theme names. gone but not forgotten
+  // TODO full explainer of how mui theme works
+  // in line with how MUI theming works, our custom themes below use the default MUI theme values unless otherwise specified
+  // default theme here: https://mui.com/material-ui/customization/default-theme/
+  // in other words, the custom values below are the only instances where we overwrite the default theme; otherwise the default applies
+  // in some instances, we have values commented out below -- those are to indicate instances of a property that we are using the default theme value for that component, but have changed for other components. (e.g. we use a custom lineHeight for h1-h3, but the default one for the rest -- the default values are provided in a comment for consistency & legibility)
   const customLightTheme = createTheme({
     // Lumi's color scheme:
     // 1. #D8E2DC
@@ -79,22 +84,22 @@ const CustomThemesProvider = ({ children }) => {
         // lineHeight: 1.43
         ...calculateFontValues(0.25, 14),
       },
-      // button is all caps - dont think we do that here in the theme tho
       button: {
         fontWeight: fontWeightMedium,
         // lineHeight: 1.75
         ...calculateFontValues(1.25, 14),
+        // textTransform: "uppercase"
       },
       caption: {
         fontWeight: fontWeightRegular,
         // lineHeight: 1.66
         ...calculateFontValues(0.4, 12),
       },
-      // overline is all caps
       overline: {
         fontWeight: fontWeightRegular,
         // lineHeight: 2.66
         ...calculateFontValues(1.5, 10),
+        // textTransform: "uppercase"
       },
     },
   });
