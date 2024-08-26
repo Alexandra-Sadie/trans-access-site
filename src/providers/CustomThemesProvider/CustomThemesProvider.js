@@ -1,19 +1,16 @@
 import { createContext, useState, useMemo } from "react";
 import { createTheme } from "@mui/material";
+import typescale from "./typescale";
 
 export const CustomThemesContext = createContext({});
 const CustomThemesProvider = ({ children }) => {
   const fontFamily = "Poppins";
-  const fontWeightLight = 300;
-  const fontWeightRegular = 400;
-  const fontWeightMedium = 500;
-  // note: this is commented because not used but we keep it for future use
-  // const fontWeightBold = 700;
 
- 
+
   //   *Our Themes
   // rip to the original theme names. gone but not forgotten
   // TODO full explainer of how mui theme works
+  // TODO make this accurate to stuff being in typescale.js now
   // in line with how MUI theming works, our custom themes below use the default MUI theme values unless otherwise specified
   // default theme here: https://mui.com/material-ui/customization/default-theme/
   // in other words, the custom values below are the only instances where we overwrite the default theme; otherwise the default applies
@@ -32,67 +29,7 @@ const CustomThemesProvider = ({ children }) => {
       primary: { main: "#9D8189", contrastText: "#271f22" },
       secondary: { main: "#F4ACB7" },
     },
-    typography: {
-      fontFamily,
-      // i'm applying these changes only to the light mode so that switching to dark mode shows how it changes things quickly
-      h1: {
-        fontWeight: fontWeightLight,
-        lineHeight: 1.2,
-        ...calculateFontValues(-0.5, 58),
-      },
-      h2: {
-        fontWeight: fontWeightRegular,
-        lineHeight: 1.235,
-        ...calculateFontValues(0.25, 33),
-      },
-      h3: {
-        fontWeight: fontWeightMedium,
-        lineHeight: 1.6,
-        ...calculateFontValues(0.15, 19),
-      },
-      // we're disables h4-h6 because we don't plan to use headers that deep, and feels against general semantics best practices to do so. we're disabling them to ensure that this remains the case
-      // https://mui.com/material-ui/customization/typography/#adding-amp-disabling-variants
-      h4: undefined,
-      h5: undefined,
-      h6: undefined,
-      subtitle1: {
-        fontWeight: fontWeightRegular,
-        // lineHeight: 1.75
-        ...calculateFontValues(0.15, 16),
-      },
-      subtitle2: {
-        fontWeight: fontWeightMedium,
-        // lineHeight: 1.57
-        ...calculateFontValues(0.1, 14),
-      },
-      body1: {
-        fontWeight: fontWeightRegular,
-        // lineHeight: 1.5
-        ...calculateFontValues(0.5, 16),
-      },
-      body2: {
-        fontWeight: fontWeightRegular,
-        // lineHeight: 1.43
-        ...calculateFontValues(0.25, 14),
-      },
-      button: {
-        fontWeight: fontWeightMedium,
-        // lineHeight: 1.75
-        ...calculateFontValues(1.25, 14),
-        // textTransform: "uppercase"
-      },
-      caption: {
-        fontWeight: fontWeightRegular,
-        // lineHeight: 1.66
-        ...calculateFontValues(0.4, 12),
-      },
-      overline: {
-        fontWeight: fontWeightRegular,
-        // lineHeight: 2.66
-        ...calculateFontValues(1.5, 10),
-        // textTransform: "uppercase"
-      },
-    },
+    typography: typescale,
   });
 
   const customDarkTheme = createTheme({
@@ -112,7 +49,6 @@ const CustomThemesProvider = ({ children }) => {
     },
     typography: {
       fontFamily,
-    },
   });
 
   //*state to track current theme
