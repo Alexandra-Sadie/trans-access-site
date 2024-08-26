@@ -64,6 +64,11 @@ const CustomThemesProvider = ({ children }) => {
         lineHeight: 1.6,
         ...calculateFontValues(0.15, 19),
       },
+      // we're disables h4-h6 because we don't plan to use headers that deep, and feels against general semantics best practices to do so. we're disabling them to ensure that this remains the case
+      // https://mui.com/material-ui/customization/typography/#adding-amp-disabling-variants
+      h4: undefined,
+      h5: undefined,
+      h6: undefined,
       subtitle1: {
         fontWeight: fontWeightRegular,
         // lineHeight: 1.75
