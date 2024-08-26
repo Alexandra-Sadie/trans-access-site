@@ -60,16 +60,6 @@ const CustomThemesProvider = ({ children }) => {
         lineHeight: 1.6,
         ...calculateFontValues(0.15, 19),
       },
-      // the h4 isn't defined in the design document but we technically call the "Log In" and "Sign Up" card headers as h4s at the moment so i'm coding it in here for testing
-      // i'm taking the values from "old desktop type styles > log in header"
-      // i assume we could update this to one of our new styles but for now i will just replicate it, especially because it is the only header that we directly call and this makes it useful to test and see changes in realtime
-      h4: {
-        fontWeight: fontWeightRegular,
-        fontSize: "2.125rem",
-        // can confirm this is equivalent to fontSize: "34px" -> aka divide the raw px value by 16
-        lineHeight: "2.625rem", //34px
-        // the letterSpacing on this is "0%" on figma, which i assume means 1:1, or left at default
-      },
       subtitle1: {
         fontWeight: fontWeightRegular,
         fontSize: "1rem", //16px
