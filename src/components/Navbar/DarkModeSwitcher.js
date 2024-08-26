@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import { DarkModeOutlined, LightModeOutlined } from "@mui/icons-material";
 import { useContext, useEffect, useState } from "react";
 // our context
-import { CustomThemesContext } from "../../providers/CustomThemesProvider";
+import { CustomThemesContext } from "../../providers/CustomThemesProvider/CustomThemesProvider";
 
 const DarkModeSwitcher = () => {
   const { setCurrentTheme, customLightTheme, customDarkTheme } =
