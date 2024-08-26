@@ -49,7 +49,6 @@ const CustomThemesProvider = ({ children }) => {
         lineHeight: 1.2,
         ...calculateFontValues(-0.5, 58),
       },
-
       h2: {
         fontWeight: fontWeightRegular,
         lineHeight: 1.235,
@@ -62,38 +61,40 @@ const CustomThemesProvider = ({ children }) => {
       },
       subtitle1: {
         fontWeight: fontWeightRegular,
-        fontSize: "1rem", //16px
-        letterSpacing: "0.15px",
+        // lineHeight: 1.75
+        ...calculateFontValues(0.15, 16),
       },
       subtitle2: {
         fontWeight: fontWeightMedium,
-        fontSize: "0.875rem", // "14px"
-        letterSpacing: "0.1px",
+        // lineHeight: 1.57
+        ...calculateFontValues(0.1, 14),
       },
       body1: {
         fontWeight: fontWeightRegular,
-        fontSize: "1rem", //16px
-        letterSpacing: "0.5px",
+        // lineHeight: 1.5
+        ...calculateFontValues(0.5, 16),
       },
       body2: {
         fontWeight: fontWeightRegular,
-        fontSize: "0.875rem", // "14px"
-        letterSpacing: "0.25px",
+        // lineHeight: 1.43
+        ...calculateFontValues(0.25, 14),
       },
+      // button is all caps - dont think we do that here in the theme tho
       button: {
         fontWeight: fontWeightMedium,
-        fontSize: "0.875rem", // "14px"
-        letterSpacing: "1.25px",
+        // lineHeight: 1.75
+        ...calculateFontValues(1.25, 14),
       },
       caption: {
         fontWeight: fontWeightRegular,
-        fontSize: "0.75rem", //12px
-        letterSpacing: "0.4px",
+        // lineHeight: 1.66
+        ...calculateFontValues(0.4, 12),
       },
+      // overline is all caps
       overline: {
         fontWeight: fontWeightRegular,
-        fontSize: "0.625rem", //"10px"
-        letterSpacing: "1.5px",
+        // lineHeight: 2.66
+        ...calculateFontValues(1.5, 10),
       },
     },
   });
