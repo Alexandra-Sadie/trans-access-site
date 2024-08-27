@@ -14,23 +14,11 @@ const CustomThemesProvider = ({ children }) => {
   // in other words, the custom values below are the only instances where we overwrite the default theme; otherwise the default applies
   // in some instances, we have values commented out below -- those are to indicate instances of a property that we are using the default theme value for that component, but have changed for other components. (e.g. we use a custom lineHeight for h1-h3, but the default one for the rest -- the default values are provided in a comment for consistency & legibility)
   const customLightTheme = createTheme({
-    // Lumi's color scheme:
-    // 1. #D8E2DC
-    // 2. #FFE5D9
-    // 3. #FFCAD4
-    // 4. #F4ACB7
-    // 5. #9D8189
     palette: palette.light,
     typography: typescale,
   });
 
   const customDarkTheme = createTheme({
-    // Lumi's color scheme:
-    // 1. #DCD6F7
-    // 2. #A6B1E1
-    // 3. #B4869F
-    // 4. #985F6F
-    // 5. #4E4C67
     palette: palette.dark,
     typography: typescale,
   });
