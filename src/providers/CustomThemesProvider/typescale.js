@@ -1,5 +1,3 @@
-import { type } from "@testing-library/user-event/dist/type";
-
 const fontFamily = "Poppins";
 const fontWeightLight = 300;
 const fontWeightRegular = 400;
