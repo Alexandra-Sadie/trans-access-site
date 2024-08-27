@@ -5,8 +5,6 @@ import palette from "./palette";
 
 export const CustomThemesContext = createContext({});
 const CustomThemesProvider = ({ children }) => {
-  const fontFamily = "Poppins";
-
   //   *Our Themes
   // rip to the original theme names. gone but not forgotten
   // TODO full explainer of how mui theme works
