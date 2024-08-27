@@ -1,6 +1,7 @@
 import { createContext, useState, useMemo } from "react";
 import { createTheme } from "@mui/material";
 import typescale from "./typescale";
+import palette from "./palette";
 
 export const CustomThemesContext = createContext({});
 const CustomThemesProvider = ({ children }) => {
@@ -21,13 +22,7 @@ const CustomThemesProvider = ({ children }) => {
     // 3. #FFCAD4
     // 4. #F4ACB7
     // 5. #9D8189
-    palette: {
-      mode: "light",
-      background: { default: "#FFE5D9", paper: "#fff9fa", object: "#FFE5D9" },
-      text: { primary: "#5c474e" },
-      primary: { main: "#9D8189", contrastText: "#271f22" },
-      secondary: { main: "#F4ACB7" },
-    },
+    palette: palette,
     typography: typescale,
   });
 
