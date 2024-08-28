@@ -16,6 +16,12 @@ If ye come here searching for meaningful HTML turn back! Try README.md or index.
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <!-- React uses this div with id "root" as the foundational element that it grabs in index.js and renders everything else to. -->
+    <!-- It's not visible in this file, but under the hood, React uses a tool called Webpack and "html-webpack-plugin" to insert a <script> into this html page, which calls the rest of our React app in turn. -->
+    <!-- More specifically, it inserts the "const root = ReactDOM.createRoot(document.getElementById("root"))" function from index.js, and runs it here. The next line, "root.render", renders the entirety of our app. -->
+    <!-- check out these links for a bit more information on how this works:
+      https://stackoverflow.com/questions/42438171/wheres-the-connection-between-index-html-and-index-js-in-a-create-react-app-app
+      https://hardyian.hashnode.dev/demystifying-the-react-indexjs-file-a-comprehensive-guide
+      -->
     <div id="root"></div>
     <!--
       This HTML file is a template.
