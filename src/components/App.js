@@ -30,8 +30,9 @@ const App = () => {
           // ?https://mui.com/material-ui/react-grid/#negative-margin
           //? padding does what we want, but is it the standard implementation on Grid?
           container
-          sx={{ paddingLeft: 25, paddingRight: 25 }}
+          sx={{ paddingLeft: 25, paddingRight: 25, paddingTop: 6 }}
           spacing={3}
+          justifyContent="center"
         >
           <Outlet />
         </Grid>
