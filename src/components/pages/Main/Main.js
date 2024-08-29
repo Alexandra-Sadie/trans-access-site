@@ -9,7 +9,7 @@ const Main = () => {
   return (
     // Stack is essentially MUI's version of a flex container "for arranging items on a one-dimensional vertical/horizontal (horizontal is the default) axis".
     // docs: https://mui.com/material-ui/react-stack/
-    <Grid md={2}>
+    <Grid size={2}>
       <Stack
         sx={{ pt: 6 }}
         spacing={1.5}

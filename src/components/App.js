@@ -34,7 +34,7 @@ const App = () => {
           // this paddingTop is slightly different than how it currently renders on main, but i believe is consistent with the figma design
           sx={{ paddingLeft: 25, paddingRight: 25, paddingTop: 2 }}
           spacing={3}
-          justifyContent="center"
+          columns={{ md: 12 }}
         >
           <Outlet />
         </Grid>
