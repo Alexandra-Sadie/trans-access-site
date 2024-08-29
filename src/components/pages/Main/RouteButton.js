@@ -12,7 +12,7 @@ const RouteButton = ({ route, title }) => {
     // <Grid item md={8}>
     <Button
       variant="contained"
-      // sx={{ minWidth: "200px" }}
+      sx={{ minWidth: "100%" }}
       to={route}
       // see above on why this is RouterLink
       component={RouterLink}
