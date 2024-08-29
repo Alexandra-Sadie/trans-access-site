@@ -1,4 +1,4 @@
-import { Stack, List } from "@mui/material";
+import { Stack, List, Grid } from "@mui/material";
 import ProfessionalCard from "./ProfessionalCard";
 import { useCollectionContext } from "../../providers/CollectionProvider";
 import { useEffect } from "react";
@@ -54,15 +54,10 @@ const ProfessionalCardList = ({ path }) => {
   // we thus act defensively to have styles that match our cards load in blank
   // as we wait for the cards to appear
   const cardArr = currentCollection ? currentCollection : blankCardArr;
-  return (
-    // Stack component="List"
-    // gives us access to spacing, flex, etc properties of Stack
-    // as vs. just List
-    <Stack component={List} spacing={{ xs: 1, md: 2 }}>
-      {cardArr.map((professional) => (
-        <ProfessionalCard key={professional.id} {...professional} />
-      ))}
-    </Stack>
-  );
+  return cardArr.map((professional) => (
+    <Grid item md={10}>
+      <ProfessionalCard key={professional.id} {...professional} />
+    </Grid>
+  ));
 };
 export default ProfessionalCardList;
