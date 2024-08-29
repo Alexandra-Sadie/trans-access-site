@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 // theming provider imported from mui
 // ? this COULD be bundled with CssBaseline import on line 5 -- idk which is more performant or readable, probably best like this for readability?
-import { ThemeProvider } from "@mui/material";
+import { Grid, ThemeProvider } from "@mui/material";
 import { useContext } from "react";
 import { CustomThemesContext } from "../providers/CustomThemesProvider/CustomThemesProvider";
 
@@ -24,7 +24,17 @@ const App = () => {
       docs: https://reactrouter.com/en/6.10.0/components/outlet
        */}
         <Navbar />
-        <Outlet />
+        <Grid
+          // spacing=3 leads to 24px spacing
+          // ?: does spacing steal from second container? confirm and see if theres a fix
+          // ?https://mui.com/material-ui/react-grid/#negative-margin
+          //? padding does what we want, but is it the standard implementation on Grid?
+          container
+          sx={{ paddingLeft: 25, paddingRight: 25 }}
+          spacing={3}
+        >
+          <Outlet />
+        </Grid>
       </ThemeProvider>
     </>
   );
