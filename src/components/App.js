@@ -30,6 +30,7 @@ const App = () => {
           // ?https://mui.com/material-ui/react-grid/#negative-margin
           //? padding does what we want, but is it the standard implementation on Grid?
           container
+          // this paddingTop is slightly different than how it currently renders on main, but i believe is consistent with the figma design
           sx={{ paddingLeft: 25, paddingRight: 25, paddingTop: 2 }}
           spacing={3}
           justifyContent="center"
