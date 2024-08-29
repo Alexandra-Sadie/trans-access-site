@@ -5,7 +5,8 @@ import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 // theming provider imported from mui
 // ? this COULD be bundled with CssBaseline import on line 5 -- idk which is more performant or readable, probably best like this for readability?
-import { Grid, ThemeProvider } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
+import Grid from "@mui/material/Unstable_Grid2";
 import { useContext } from "react";
 import { CustomThemesContext } from "../providers/CustomThemesProvider/CustomThemesProvider";
 
