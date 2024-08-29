@@ -9,7 +9,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { routingObject } from "./routing";
 // our providers
 import AuthProvider from "./providers/AuthProvider";
-import CustomThemesProvider from "./providers/CustomThemesProvider";
+import CustomThemesProvider from "./providers/CustomThemesProvider/CustomThemesProvider";
+import CollectionProvider from "./providers/CollectionProvider";
 // our components
 import App from "./components/App";
 import Main from "./components/pages/Main/Main";
@@ -19,7 +20,6 @@ import NameChange from "./components/pages/NameChange";
 import Doctor from "./components/pages/Doctor";
 import LoginSignup from "./components/pages/LoginSignup/LoginSignup";
 import MyAccount from "./components/pages/MyAccount";
-import CollectionProvider from "./providers/CollectionProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
