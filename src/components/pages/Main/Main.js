@@ -9,18 +9,18 @@ const Main = () => {
   return (
     // Stack is essentially MUI's version of a flex container "for arranging items on a one-dimensional vertical/horizontal (horizontal is the default) axis".
     // docs: https://mui.com/material-ui/react-stack/
-    <Grid size={2}>
+    <Grid size={{ md: 10 }} offset={{ md: 5 }}>
       <Stack
         sx={{ pt: 6 }}
         spacing={1.5}
         // This divider is purely a stylistic touch we added while futzing around.
-        divider={
-          <Divider
-            flexItem
-            // Dividers always start from the left - this makes it stop halfway through the page - and it looks fun like this :)
-            sx={{ maxWidth: "50%" }}
-          />
-        }
+        // divider={
+        //   <Divider
+        //     flexItem
+        //     // Dividers always start from the left - this makes it stop halfway through the page - and it looks fun like this :)
+        //     sx={{ maxWidth: "50%" }}
+        //   />
+        // }
         alignItems="center"
       >
         {/* <Grid
