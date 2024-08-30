@@ -31,7 +31,8 @@ const App = () => {
           columns={{ xs: 4, md: 12 }}
           columnSpacing={{ xs: 2, md: 3 }}
           marginTop={{ xs: 6, md: 8 }}
-          paddingX={{ md: 25 }}
+          // paddingX gives left-right padding
+          paddingX={{ xs: 2, md: 25 }}
         >
           <Outlet />
         </Grid>
