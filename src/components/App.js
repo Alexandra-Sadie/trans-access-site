@@ -26,7 +26,12 @@ const App = () => {
        */}
         <Navbar />
         {/* with no mt the grid hugs the navbar, not hidden - good */}
-        <Grid container spacing={{ xs: 2, md: 3 }} marginTop={{ xs: 6, md: 8 }}>
+        <Grid
+          container
+          columns={{ xs: 4, md: 12 }}
+          spacing={{ xs: 2, md: 3 }}
+          marginTop={{ xs: 6, md: 8 }}
+        >
           <Outlet />
         </Grid>
       </ThemeProvider>
