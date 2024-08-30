@@ -8,6 +8,7 @@ import Navbar from "./Navbar/Navbar";
 import { ThemeProvider } from "@mui/material";
 import { useContext } from "react";
 import { CustomThemesContext } from "../providers/CustomThemesProvider/CustomThemesProvider";
+import Grid from "@mui/material/Unstable_Grid2";
 
 const App = () => {
   // ! I believe that this context being accessed & thus requiring some logic makes mui's ThemeProvider better to host in app.js rather than index.js
@@ -24,7 +25,9 @@ const App = () => {
       docs: https://reactrouter.com/en/6.10.0/components/outlet
        */}
         <Navbar />
-        <Outlet />
+        <Grid container spacing={{ xs: 2, md: 2 }} mt={11}>
+          <Outlet />
+        </Grid>
       </ThemeProvider>
     </>
   );
