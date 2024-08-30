@@ -4,7 +4,7 @@ const NameChange = () => {
   return (
     <Grid container spacing={2} pt={11}>
       {[...new Array(12)].map((_, i) => (
-        <Grid item xs={1}>
+        <Grid xs={1}>
           <Paper>{i}</Paper>
         </Grid>
       ))}
