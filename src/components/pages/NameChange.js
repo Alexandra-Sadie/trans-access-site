@@ -1,6 +1,15 @@
-import { Typography } from "@mui/material";
+import { Box, Paper, Typography } from "@mui/material";
+import Grid from "@mui/material/Unstable_Grid2";
 const NameChange = () => {
-  return <Typography variant="h1">Name Change</Typography>;
+  return (
+    <Grid container spacing={2} pt={11}>
+      {[...new Array(12)].map((_, i) => (
+        <Grid item xs={1}>
+          <Paper>{i}</Paper>
+        </Grid>
+      ))}
+    </Grid>
+  );
 };
 
 export default NameChange;
