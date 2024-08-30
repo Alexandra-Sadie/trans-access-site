@@ -25,7 +25,8 @@ const App = () => {
       docs: https://reactrouter.com/en/6.10.0/components/outlet
        */}
         <Navbar />
-        <Grid container spacing={{ xs: 2, md: 2 }} mt={11}>
+        {/* with no mt the grid hugs the navbar, not hidden - good */}
+        <Grid container spacing={{ xs: 2, md: 2 }}>
           <Outlet />
         </Grid>
       </ThemeProvider>
