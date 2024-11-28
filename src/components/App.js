@@ -28,6 +28,7 @@ const App = () => {
         {/* with no mt the grid hugs the navbar, not hidden - good */}
         <Grid
           container
+          // TODO explain column integer vs spacing value
           columns={{ xs: 4, md: 12 }}
           columnSpacing={{ xs: 2, md: 3 }}
           // note that this is a placeholder for making a
