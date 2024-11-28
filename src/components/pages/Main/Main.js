@@ -14,13 +14,14 @@ const Main = () => {
         sx={{ pt: 6 }}
         spacing={1.5}
         // This divider is purely a stylistic touch we added while futzing around.
-        // divider={
-        //   <Divider
-        //     flexItem
-        //     // Dividers always start from the left - this makes it stop halfway through the page - and it looks fun like this :)
-        //     sx={{ maxWidth: "50%" }}
-        //   />
-        // }
+        // TODO removing divider ruins the vertical spacing lol
+        divider={
+          <Divider
+            flexItem
+            // Dividers always start from the left - this makes it stop halfway through the page - and it looks fun like this :)
+            sx={{ maxWidth: "50%" }}
+          />
+        }
         alignItems="center"
       >
         {
