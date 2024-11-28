@@ -32,7 +32,7 @@ const ProfessionalCard = ({
         // TODO choose best breakpoints
         // TODO should this use MUI's built-in breakpoints like our other stuff?
         sx={{
-          width: { xs: 400, md: 850 },
+          // width: { xs: 400, md: 850 },
           // minHeight ensures style consistency with a blank card
           minHeight: { xs: "256px", md: "232px" },
         }}
