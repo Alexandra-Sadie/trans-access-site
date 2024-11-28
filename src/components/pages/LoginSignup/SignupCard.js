@@ -25,6 +25,7 @@ const SignupCard = () => {
           });
         }}
       >
+        {/* // TODO this should not be h4 */}
         <Typography variant="h4">Sign Up</Typography>
 
         {/* email */}
