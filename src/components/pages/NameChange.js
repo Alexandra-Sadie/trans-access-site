@@ -1,6 +1,15 @@
-import { Typography } from "@mui/material";
+import { Paper } from "@mui/material";
+import GridItemPolyfill from "../GridItemPolyfill";
 const NameChange = () => {
-  return <Typography variant="h1">Name Change</Typography>;
+  return (
+    <>
+      {[...new Array(12)].map((_, i) => (
+        <GridItemPolyfill size={{ xs: 1, md: 1 }}>
+          <Paper>{i}</Paper>
+        </GridItemPolyfill>
+      ))}
+    </>
+  );
 };
 
 export default NameChange;

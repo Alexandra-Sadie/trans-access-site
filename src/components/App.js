@@ -8,6 +8,7 @@ import Navbar from "./Navbar/Navbar";
 import { ThemeProvider } from "@mui/material";
 import { useContext } from "react";
 import { CustomThemesContext } from "../providers/CustomThemesProvider/CustomThemesProvider";
+import Grid from "@mui/material/Unstable_Grid2";
 
 const App = () => {
   // ! I believe that this context being accessed & thus requiring some logic makes mui's ThemeProvider better to host in app.js rather than index.js
@@ -24,7 +25,22 @@ const App = () => {
       docs: https://reactrouter.com/en/6.10.0/components/outlet
        */}
         <Navbar />
-        <Outlet />
+        {/* with no mt the grid hugs the navbar, not hidden - good */}
+        <Grid
+          container
+          // TODO explain column integer vs spacing value
+          columns={{ xs: 4, md: 12 }}
+          columnSpacing={{ xs: 2, md: 3 }}
+          // note that this is a placeholder for making a
+          // decision re: row spacing
+          // for now it mirrors columnSpacing
+          rowSpacing={{ xs: 2, md: 3 }}
+          marginTop={{ xs: 6, md: 8 }}
+          // paddingX gives left-right padding
+          paddingX={{ xs: 2, md: 25 }}
+        >
+          <Outlet />
+        </Grid>
       </ThemeProvider>
     </>
   );

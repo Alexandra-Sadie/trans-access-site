@@ -11,7 +11,7 @@ const RouteButton = ({ route, title }) => {
     // docs: https://mui.com/material-ui/react-button/
     <Button
       variant="contained"
-      sx={{ minWidth: "200px" }}
+      sx={{ minWidth: "100%" }}
       to={route}
       // see above on why this is RouterLink
       component={RouterLink}

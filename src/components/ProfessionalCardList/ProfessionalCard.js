@@ -26,13 +26,16 @@ const ProfessionalCard = ({
     // the ListItem takes full width and is a row-direction flexbox
     // by default it justifies content to 'flex-start', i.e. to the left edge
     // this centers the card in the page
-    <ListItem sx={{ justifyContent: "center" }}>
+    <ListItem sx={{ justifyContent: "center", 
+    // ? we have padding:0 because this ListItem was rendering with padding, we're not sure if that's coming from MUI, from default css list item properties, or something yet more arcane
+    padding: 0 }}>
       <Card
         // TODO set height to multiple breakpoint IF noWrap can be set to further lines
         // TODO choose best breakpoints
         // TODO should this use MUI's built-in breakpoints like our other stuff?
         sx={{
-          width: { xs: 400, md: 850 },
+          // width: { xs: 400, md: 850 },
+          minWidth: "100%",
           // minHeight ensures style consistency with a blank card
           minHeight: { xs: "256px", md: "232px" },
         }}

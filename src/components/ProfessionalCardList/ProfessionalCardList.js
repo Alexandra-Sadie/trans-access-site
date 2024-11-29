@@ -2,6 +2,7 @@ import { Stack, List } from "@mui/material";
 import ProfessionalCard from "./ProfessionalCard";
 import { useCollectionContext } from "../../providers/CollectionProvider";
 import { useEffect } from "react";
+import GridItemPolyfill from "../GridItemPolyfill";
 
 const blankCardArr = [
   {
@@ -58,11 +59,13 @@ const ProfessionalCardList = ({ path }) => {
     // Stack component="List"
     // gives us access to spacing, flex, etc properties of Stack
     // as vs. just List
-    <Stack component={List} spacing={{ xs: 1, md: 2 }}>
-      {cardArr.map((professional) => (
-        <ProfessionalCard key={professional.id} {...professional} />
-      ))}
-    </Stack>
+    <GridItemPolyfill size={{ xs: 4, md: 10 }} offset={{ xs: 0, md: 1 }}>
+      <Stack component={List} spacing={{ xs: 1, md: 2 }}>
+        {cardArr.map((professional) => (
+          <ProfessionalCard key={professional.id} {...professional} />
+        ))}
+      </Stack>
+    </GridItemPolyfill>
   );
 };
 export default ProfessionalCardList;
