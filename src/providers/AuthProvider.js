@@ -8,6 +8,8 @@ import {
 import { useState, createContext, useEffect } from "react";
 import { auth } from "../firebase";
 
+// TODO explain this syntax/pattern better -- why we create an empty context (applies to all our contexts)
+// we need to create the context before we use it in the provider, but context needs at least one argument to initialize. we create an empty object and then replace it with a stateful object in the provider
 export const AuthContext = createContext({});
 
 // defining the data to be passed down
