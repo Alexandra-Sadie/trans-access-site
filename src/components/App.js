@@ -5,10 +5,9 @@ import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 // theming provider imported from mui
 // ? this COULD be bundled with CssBaseline import on line 5 -- idk which is more performant or readable, probably best like this for readability?
-import { ThemeProvider } from "@mui/material";
+import { Grid2 as Grid, ThemeProvider } from "@mui/material";
 import { useContext } from "react";
 import { CustomThemesContext } from "../providers/CustomThemesProvider/CustomThemesProvider";
-import Grid from "@mui/material/Unstable_Grid2";
 
 const App = () => {
   // ! I believe that this context being accessed & thus requiring some logic makes mui's ThemeProvider better to host in app.js rather than index.js
