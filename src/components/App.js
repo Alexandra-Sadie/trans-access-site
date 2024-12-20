@@ -30,8 +30,9 @@ const App = () => {
         */}
         <Grid
           container
-          // TODO explain column integer vs spacing value
+          // n.b. the integer values of this "columns" property designates the count of the NUMBER of columns
           columns={{ xs: 4, md: 12 }}
+          // all other integer values below are multiplier's of MUI's spacing value in px (default, which we use, is x)
           columnSpacing={{ xs: 2, md: 3 }}
           // note that this is a placeholder for making a
           // decision re: row spacing
