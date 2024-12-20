@@ -40,7 +40,6 @@ root.render(
     <AuthProvider>
       {/* //TODO explain CollectionProvider literally at all */}
       <CollectionProvider>
-        {/* //TODO explain this one too lol */}
         {/* CustomThemesProvider contains the custom themes we have made, as well as logic to track the active theme and let the user switch between light and dark mode themes. */}
         <CustomThemesProvider>
           {/* BrowserRouter is the higher-order component that lets us define all the url bar routes our app will accept, defined below as children of BrowserRouter. See README.md for full documentation.

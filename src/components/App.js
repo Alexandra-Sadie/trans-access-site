@@ -25,11 +25,16 @@ const App = () => {
       docs: https://reactrouter.com/en/6.10.0/components/outlet
        */}
         <Navbar />
-        {/* with no mt the grid hugs the navbar, not hidden - good */}
+        {/* Because our visual design system uses a column grid, we are wrapping the Outlet in MUI's Grid container component, following Material Design best practices.
+        In practice, this means that all our pages are rendered in this Grid format, and we can style the width and horizontal offset of their elements using MUI's Grid features knowing they are all wrapped in this Grid by virtue of the Outlet feature.
+        MUI docs: https://mui.com/system/react-grid/
+        Material Design docs: https://m2.material.io/design/layout/responsive-layout-grid.html#breakpoints
+        */}
         <Grid
           container
-          // TODO explain column integer vs spacing value
+          // n.b. the integer values of this "columns" property designates the count of the NUMBER of columns
           columns={{ xs: 4, md: 12 }}
+          // all other integer values below are multiplier's of MUI's spacing value in px (default, which we use, is x)
           columnSpacing={{ xs: 2, md: 3 }}
           // note that this is a placeholder for making a
           // decision re: row spacing
