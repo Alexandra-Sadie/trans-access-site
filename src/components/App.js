@@ -34,9 +34,8 @@ const App = () => {
           // decision re: row spacing
           // for now it mirrors columnSpacing
           rowSpacing={{ xs: 2, md: 3 }}
-          marginTop={{ xs: 6, md: 8 }}
           // paddingX gives left-right padding
-          paddingX={{ xs: 2, md: 25 }}
+          sx={{ marginTop: { xs: 6, md: 8 }, paddingX: { xs: 2, md: 25 } }}
         >
           <Outlet />
         </Grid>
