@@ -20,7 +20,7 @@ const MobileNavButton = ({ route, title }) => (
       {/* Typography is a MUI component for all text elements in a page - the default is a <p> tag, which this element is
     docs: https://mui.com/material-ui/api/typography/
     */}
-      <Typography textAlign="center">{title}</Typography>
+      <Typography>{title}</Typography>
     </MenuItem>
   </Link>
 );
