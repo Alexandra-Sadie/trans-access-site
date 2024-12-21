@@ -11,16 +11,9 @@ const Main = () => {
     <Grid size={{ xs: 2, md: 2 }} offset={{ xs: 1, md: 5 }}>
       <Stack
         sx={{ pt: 6, alignItems: "center" }}
-        spacing={1.5}
+        spacing={3}
         // This divider is purely a stylistic touch we added while futzing around.
         // TODO removing divider ruins the vertical spacing lol
-        divider={
-          <Divider
-            flexItem
-            // Dividers always start from the left - this makes it stop halfway through the page - and it looks fun like this :)
-            sx={{ maxWidth: "50%" }}
-          />
-        }
       >
         {
           // this returns an array of each route sub-object of routingObject
