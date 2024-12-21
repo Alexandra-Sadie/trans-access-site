@@ -10,7 +10,7 @@ const Main = () => {
     // docs: https://mui.com/material-ui/react-stack/
     <Grid size={{ xs: 2, md: 2 }} offset={{ xs: 1, md: 5 }}>
       <Stack
-        sx={{ pt: 6 }}
+        sx={{ pt: 6, alignItems: "center" }}
         spacing={1.5}
         // This divider is purely a stylistic touch we added while futzing around.
         // TODO removing divider ruins the vertical spacing lol
@@ -21,7 +21,6 @@ const Main = () => {
             sx={{ maxWidth: "50%" }}
           />
         }
-        alignItems="center"
       >
         {
           // this returns an array of each route sub-object of routingObject
