@@ -25,7 +25,10 @@ const Main = () => {
               ({ route }) =>
                 route !== "/" &&
                 route !== "my_account" &&
-                route !== "login_signup"
+                route !== "login_signup" &&
+                // screening for french routes
+                route !== "connexion_inscription" &&
+                route !== "mon_compte"
             )
             // this takes said sub-objects and renders them as buttons
             .map(({ route, title }) => (

@@ -27,7 +27,7 @@ export const routingObject = {
   },
 
   login_signup: {
-    title: "Connexion & inscription",
+    title: "Connexion/inscription",
     route: "connexion_inscription",
   },
 
