@@ -17,7 +17,8 @@ const stringAvatar = (name) =>
 const ProfessionalCard = ({
   name,
   avatar,
-  profession,
+  // profession,
+  professionFrench,
   waitTime,
   location,
   bio,
@@ -59,7 +60,7 @@ const ProfessionalCard = ({
           }
           subheader={
             <>
-              <Typography>{profession}</Typography>
+              <Typography>{professionFrench}</Typography>
             </>
           }
           // minHeight ensures standard styling on blank UI card - this element is the same height at xs and md breakpoints as oif Jan 2024
