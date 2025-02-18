@@ -13,7 +13,7 @@ export const routingObject = {
 
   name_change: {
     title: "Changement de nom",
-    route: "changement-de-nom",
+    route: "changement_de_nom",
   },
 
   therapist: {
