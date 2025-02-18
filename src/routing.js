@@ -12,27 +12,27 @@ export const routingObject = {
   },
 
   name_change: {
-    title: "Name Change",
-    route: "name_change",
+    title: "Changer son nom",
+    route: "changement-de-nom",
   },
 
   therapist: {
-    title: "Therapist",
-    route: "therapist",
+    title: "Thérapeutes",
+    route: "thérapeutes",
   },
 
   doctor: {
-    title: "Doctor",
-    route: "doctor",
+    title: "Médecins",
+    route: "medecin",
   },
 
   login_signup: {
-    title: "Login & Signup",
-    route: "login_signup",
+    title: "Connexion & inscription",
+    route: "connexion_inscription",
   },
 
   my_account: {
-    title: "My Account",
-    route: "my_account",
+    title: "Mon compte",
+    route: "mon_compte",
   },
 };
