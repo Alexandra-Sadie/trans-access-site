@@ -115,7 +115,7 @@ const NavUserButtons = () => {
             component={RouterLink}
             to={routingObject.login_signup.route}
           >
-            Log In
+            Connexion
           </MenuItem>
         )}
       </Menu>

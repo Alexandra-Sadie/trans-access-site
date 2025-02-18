@@ -15,7 +15,7 @@ const LoginCard = () => {
   return (
     <Card elevation={2} sx={{ p: 3 }}>
       {/* //TODO we may want this to not be component and/or variant h4 for semantics */}
-      <Typography variant="h4">Login</Typography>
+      <Typography variant="h4">Connexion</Typography>
 
       <Stack
         component="form"
@@ -62,7 +62,7 @@ const LoginCard = () => {
         ></TextField>
 
         <Button type="submit" variant="contained">
-          Log In
+          Se connecter
         </Button>
       </Stack>
     </Card>
