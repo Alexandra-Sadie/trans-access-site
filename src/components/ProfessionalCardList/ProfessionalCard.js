@@ -26,9 +26,13 @@ const ProfessionalCard = ({
     // the ListItem takes full width and is a row-direction flexbox
     // by default it justifies content to 'flex-start', i.e. to the left edge
     // this centers the card in the page
-    <ListItem sx={{ justifyContent: "center", 
-    // ? we have padding:0 because this ListItem was rendering with padding, we're not sure if that's coming from MUI, from default css list item properties, or something yet more arcane
-    padding: 0 }}>
+    <ListItem
+      sx={{
+        justifyContent: "center",
+        // ? we have padding:0 because this ListItem was rendering with padding, we're not sure if that's coming from MUI, from default css list item properties, or something yet more arcane
+        padding: 0,
+      }}
+    >
       <Card
         // TODO set height to multiple breakpoint IF noWrap can be set to further lines
         // TODO choose best breakpoints
@@ -62,8 +66,8 @@ const ProfessionalCard = ({
           sx={{ minHeight: "84px" }}
         ></CardHeader>
         <CardContent>
-          <Typography>Location: {location}</Typography>
-          <Typography>Wait time: {waitTime} months</Typography>
+          <Typography>Adresse: {location}</Typography>
+          <Typography>Temps d'attente: {waitTime} mois</Typography>
           <Typography
             sx={{
               mt: 1,
@@ -79,7 +83,7 @@ const ProfessionalCard = ({
               WebkitBoxOrient: "vertical",
             }}
           >
-            Bio: {bio}
+            À propos: {bio}
           </Typography>
         </CardContent>
       </Card>
