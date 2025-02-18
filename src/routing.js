@@ -12,7 +12,7 @@ export const routingObject = {
   },
 
   name_change: {
-    title: "Changer son nom",
+    title: "Changement de nom",
     route: "changement-de-nom",
   },
 
@@ -27,7 +27,7 @@ export const routingObject = {
   },
 
   login_signup: {
-    title: "Connexion/inscription",
+    title: "Connexion & inscription",
     route: "connexion_inscription",
   },
 
