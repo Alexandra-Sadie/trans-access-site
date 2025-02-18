@@ -18,12 +18,12 @@ export const routingObject = {
 
   therapist: {
     title: "Thérapeutes",
-    route: "thérapeutes",
+    route: "therapist",
   },
 
   doctor: {
     title: "Médecins",
-    route: "medecin",
+    route: "doctor",
   },
 
   login_signup: {
