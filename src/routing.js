@@ -2,7 +2,7 @@
 // We have the routes structured each as their own object, with "title" and "route" keys.
 export const routingObject = {
   main: {
-    title: "Main",
+    title: "Accueil",
     route: "/",
   },
 
