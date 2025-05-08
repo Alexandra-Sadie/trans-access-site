@@ -2,7 +2,7 @@
 // We have the routes structured each as their own object, with "title" and "route" keys.
 export const routingObject = {
   main: {
-    title: "Main",
+    title: "Accueil",
     route: "/",
   },
 
@@ -12,27 +12,27 @@ export const routingObject = {
   },
 
   name_change: {
-    title: "Name Change",
-    route: "name_change",
+    title: "Changement de nom",
+    route: "changement_de_nom",
   },
 
   therapist: {
-    title: "Therapist",
+    title: "Thérapeutes",
     route: "therapist",
   },
 
   doctor: {
-    title: "Doctor",
+    title: "Médecins",
     route: "doctor",
   },
 
   login_signup: {
-    title: "Login & Signup",
-    route: "login_signup",
+    title: "Connexion & inscription",
+    route: "connexion_inscription",
   },
 
   my_account: {
-    title: "My Account",
-    route: "my_account",
+    title: "Mon compte",
+    route: "mon_compte",
   },
 };

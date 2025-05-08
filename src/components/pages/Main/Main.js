@@ -1,8 +1,8 @@
 // !IMPORT ZONE
-import { Grid2 as Grid } from "@mui/material";
 import { Stack } from "@mui/system";
 import { routingObject } from "../../../routing";
 import RouteButton from "./RouteButton";
+import { Grid2 as Grid } from "@mui/material";
 
 const Main = () => {
   return (
@@ -25,7 +25,10 @@ const Main = () => {
               ({ route }) =>
                 route !== "/" &&
                 route !== "my_account" &&
-                route !== "login_signup"
+                route !== "login_signup" &&
+                // screening for french routes
+                route !== "connexion_inscription" &&
+                route !== "mon_compte"
             )
             // this takes said sub-objects and renders them as buttons
             .map(({ route, title }) => (
