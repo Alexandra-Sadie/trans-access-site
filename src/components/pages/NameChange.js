@@ -1,12 +1,11 @@
-import { Paper } from "@mui/material";
-import GridItemPolyfill from "../GridItemPolyfill";
+import { Grid2 as Grid, Paper } from "@mui/material";
 const NameChange = () => {
   return (
     <>
       {[...new Array(12)].map((_, i) => (
-        <GridItemPolyfill size={{ xs: 1, md: 1 }}>
+        <Grid size={{ xs: 1, md: 1 }}>
           <Paper>{i}</Paper>
-        </GridItemPolyfill>
+        </Grid>
       ))}
     </>
   );
