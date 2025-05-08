@@ -26,7 +26,7 @@ const SignupCard = () => {
         }}
       >
         {/* // TODO this should not be h4 */}
-        <Typography variant="h4">Sign Up</Typography>
+        <Typography variant="h4">Inscrivez-vous </Typography>
 
         {/* email */}
         <TextField
@@ -60,7 +60,7 @@ const SignupCard = () => {
         ></TextField>
 
         <Button type="submit" variant="contained">
-          Sign Up
+          Inscription
         </Button>
       </Stack>
     </Card>

@@ -86,7 +86,7 @@ const NavUserButtons = () => {
               component={RouterLink}
               to={routingObject.my_account.route}
             >
-              My Account
+              Mon Compte
             </MenuItem>
             <MenuItem
               variant="contained"
@@ -102,7 +102,7 @@ const NavUserButtons = () => {
                 }, 300);
               }}
             >
-              Log Out
+              Déconnexion
             </MenuItem>
           </Box>
         ) : (
@@ -115,7 +115,7 @@ const NavUserButtons = () => {
             component={RouterLink}
             to={routingObject.login_signup.route}
           >
-            Log In
+            Connexion
           </MenuItem>
         )}
       </Menu>

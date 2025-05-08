@@ -17,7 +17,8 @@ const stringAvatar = (name) =>
 const ProfessionalCard = ({
   name,
   avatar,
-  profession,
+  // profession,
+  professionFrench,
   waitTime,
   location,
   bio,
@@ -26,9 +27,13 @@ const ProfessionalCard = ({
     // the ListItem takes full width and is a row-direction flexbox
     // by default it justifies content to 'flex-start', i.e. to the left edge
     // this centers the card in the page
-    <ListItem sx={{ justifyContent: "center", 
-    // ? we have padding:0 because this ListItem was rendering with padding, we're not sure if that's coming from MUI, from default css list item properties, or something yet more arcane
-    padding: 0 }}>
+    <ListItem
+      sx={{
+        justifyContent: "center",
+        // ? we have padding:0 because this ListItem was rendering with padding, we're not sure if that's coming from MUI, from default css list item properties, or something yet more arcane
+        padding: 0,
+      }}
+    >
       <Card
         // TODO set height to multiple breakpoint IF noWrap can be set to further lines
         // TODO choose best breakpoints
@@ -55,15 +60,15 @@ const ProfessionalCard = ({
           }
           subheader={
             <>
-              <Typography>{profession}</Typography>
+              <Typography>{professionFrench}</Typography>
             </>
           }
           // minHeight ensures standard styling on blank UI card - this element is the same height at xs and md breakpoints as oif Jan 2024
           sx={{ minHeight: "84px" }}
         ></CardHeader>
         <CardContent>
-          <Typography>Location: {location}</Typography>
-          <Typography>Wait time: {waitTime} months</Typography>
+          <Typography>Adresse: {location}</Typography>
+          <Typography>Temps d'attente: {waitTime} mois</Typography>
           <Typography
             sx={{
               mt: 1,
@@ -79,7 +84,7 @@ const ProfessionalCard = ({
               WebkitBoxOrient: "vertical",
             }}
           >
-            Bio: {bio}
+            À propos: {bio}
           </Typography>
         </CardContent>
       </Card>
