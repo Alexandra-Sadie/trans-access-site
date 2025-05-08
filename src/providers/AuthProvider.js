@@ -8,6 +8,8 @@ import {
 import { useState, createContext, useEffect } from "react";
 import { auth } from "../firebase";
 
+// TODO explain this syntax/pattern better -- why we create an empty context (applies to all our contexts)
+// we need to create the context before we use it in the provider, but context needs at least one argument to initialize. we create an empty object and then replace it with a stateful object in the provider
 export const AuthContext = createContext({});
 
 // defining the data to be passed down
@@ -18,20 +20,20 @@ const AuthProvider = ({ children }) => {
 
   // this useEffect runs on page mount, and checks if the auth status has changed -- aka using firebase auth to let us know when it flags a user as having signed in
   useEffect(() => {
+    // firebase.onAuthStateChanged returns an unsubscribe function which is described further below
     const unsubscribeFromAuth = onAuthStateChanged(auth, (returnedUser) => {
-      // firebase auth will give us a "user" object...
+      // firebase auth will give us a "returnedUser" object...
       // ...which, if we have it, we can set our local user state to be equal to
       if (returnedUser) {
         setLocalUser(returnedUser);
       }
-      // if we don't get a user object from firebase auth for whatever reason, we set our user state to null so the browser shows them as locally logged out
+      // if we don't get a returnedUser object from firebase auth for whatever reason, we set our user state to null so the browser shows them as locally logged out
       else {
         setLocalUser(null);
       }
     });
 
-    // TODO: explain this better lol
-    // returning this here ensures that it runs the function in "onAuthStateChanged" from firebase, which at its end unsubscribes from the firebase database
+    // returning unsubscribeFromAuth here ensures that, on cleanup, useEffect runs the function returned by firebase.onAuthStateChanged, which unsubscribes from the firebase database
     // this is defensive -- because this useEffect is within our Provider, it technically never unmounts, but if this was done in a component that could unmount, then the  it means that we ensure that we are not continually listening to the firebase auth database even when the user is already logged in/we've navigated to a different component. this prevents possible memory leaks :)
     // see these docs:
     // https://firebase.google.com/docs/reference/js/v8/firebase.auth.Auth#onauthstatechanged
