@@ -18,7 +18,7 @@ const palette = {
       light: "#FBDFE4",
       contrastText: "#271f22",
     },
-    progressBar: { main: "#F8CDD4", light: "#FDEDEF" },
+    progressBar: { main: "#F4ACB7", light: "#FDEDEF" },
   },
 
   // Lumi's color scheme:
