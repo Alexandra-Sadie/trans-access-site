@@ -8,7 +8,9 @@ const palette = {
 
   light: {
     mode: "light",
-    background: { default: "#FFE5D9", paper: "#fff9fa", object: "#FFE5D9" },
+    background: { default: "#FFE5D9", paper: "#fff9fa", 
+    // object does not exist as style token in figma
+    object: "#FFE5D9" }, 
     text: { primary: "#5c474e" },
     primary: { main: "#9D8189", contrastText: "#271f22" },
     // !Note for building name change tool – some of these are hover states, test before building interactions
@@ -38,7 +40,7 @@ const palette = {
       main: "#3419A9",
       light: "#3A3659",
       dark: "#1A0D54",
-      contrastText: "#eeebfc",
+      contrastText: "#eeebfc", // not present in the Figma as style token
       // 'Color' style token in Figma isnt here
     },
     progressBar: { main: "#5E40E2", light: "#EEEBFC" },
