@@ -39,6 +39,7 @@ const palette = {
       light: "#3A3659",
       dark: "#1A0D54",
       contrastText: "#eeebfc",
+      // 'Color' style token in Figma isnt here
     },
     progressBar: { main: "#5E40E2", light: "#EEEBFC" },
   },
