@@ -16,7 +16,6 @@ const DarkModeSwitcher = () => {
 
   // useEffect on-mount to set theme to previously selected theme which was stored in localStorage - see DarkModeSwitcher.js
   // TODO I still feel like using useEffect like this is hacky at best -- there Must be a better way to do this!
-  // TODO maybe this? https://react.dev/reference/react/Component#componentdidmount
   useEffect(() => {
     // if user previously selected light theme, revert to light theme
     if (window.localStorage.themeMode === "light") {
