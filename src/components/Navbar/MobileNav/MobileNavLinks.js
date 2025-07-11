@@ -80,6 +80,8 @@ const MobileNavLinks = ({ navRoutesArray }) => {
               key={route}
               route={route}
               title={title}
+              // i'm passing our handleCloseNavMenu function to the child MobileNavButton component so that it can run that function when clicked -- if this pattern is confusing, see react docs here:
+              // https://react.dev/learn/passing-props-to-a-component
               handleCloseNavMenu={handleCloseNavMenu}
             />
           ))}
