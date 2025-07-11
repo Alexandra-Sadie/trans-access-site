@@ -76,7 +76,12 @@ const MobileNavLinks = ({ navRoutesArray }) => {
         {navRoutesArray
           // this takes the sub-objects described in Navbar.js and renders them as typographical links in the menu
           .map(({ route, title }) => (
-            <MobileNavButton key={route} route={route} title={title} />
+            <MobileNavButton
+              key={route}
+              route={route}
+              title={title}
+              handleCloseNavMenu={handleCloseNavMenu}
+            />
           ))}
       </Menu>
     </Box>

@@ -3,13 +3,14 @@ import { Link, MenuItem, Typography } from "@mui/material";
 // We're importing react-router's Link as RouterLink to avoid namespace confusion with MUI's Link component. See our readme for more information on this :)
 import { Link as RouterLink } from "react-router-dom";
 
-const MobileNavButton = ({ route, title }) => (
+const MobileNavButton = ({ route, title, handleCloseNavMenu }) => (
   //TODO Link>MenuItem>Typography seems to be the most semantic and accessible way to make a MenuItem into a link, but we should determine if this is truly the correct accessibility approach
   <Link
     sx={{ textDecoration: "none", color: "text.primary" }}
     to={route}
     // see above on why this is RouterLink called inside an MUI Link
     component={RouterLink}
+    onClick={handleCloseNavMenu}
   >
     {/* This is a MUI component, designed to be a child of a higher-up Menu component - note that the Menu component is not in this file, but in MobileNavLinks.js, which calls this MobileNavButton component, making this MenuItem a valid child of that Menu
     
