@@ -21,24 +21,26 @@ const ProgressBar = ({ value, custHeight, custPadding }) => {
   value = `${value}%`; // We are turning it into a string and adding the % character
 
   return (
-    <Paper // This is the outer Paper, ie the bar's background
-      elevation={4}
-      sx={{
-        backgroundColor: "progressBar.light",
-        // Not sure if we actually want the size and padding to be editable...
-        // Also aware we probs need different values for mobile and desktop
-        height: custHeight,
-        padding: custPadding,
-      }}
-    >
-      <Paper // This is the inner Paper, ie the inner bar that represents the amount completed
+    <Paper elevation={4}>
+      <Paper // This is the outer Paper, ie the bar's background
         elevation={4}
         sx={{
-          backgroundColor: "progressBar.main",
-          height: "100%",
-          width: value,
+          backgroundColor: "progressBar.light",
+          // Not sure if we actually want the size and padding to be editable...
+          // Also aware we probs need different values for mobile and desktop
+          height: custHeight,
+          padding: custPadding,
         }}
-      ></Paper>
+      >
+        <Paper // This is the inner Paper, ie the inner bar that represents the amount completed
+          elevation={4}
+          sx={{
+            backgroundColor: "progressBar.main",
+            height: "100%",
+            width: value,
+          }}
+        ></Paper>
+      </Paper>
     </Paper>
   );
 };
