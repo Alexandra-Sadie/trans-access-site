@@ -7,7 +7,7 @@ const NameChange = () => {
   return (
     <>
       <Grid size={12}>
-        <ProgressBar></ProgressBar>
+        <ProgressBar value={50}></ProgressBar> {/* dummy value for now */}
       </Grid>
       <Grid size={8}>
         <Quiz></Quiz>
