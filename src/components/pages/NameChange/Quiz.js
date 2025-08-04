@@ -1,11 +1,4 @@
-import {
-  Grid2 as Grid,
-  Stack,
-  Paper,
-  Card,
-  Typography,
-  Button,
-} from "@mui/material";
+import { Stack, Paper, Typography, Button } from "@mui/material";
 
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 
