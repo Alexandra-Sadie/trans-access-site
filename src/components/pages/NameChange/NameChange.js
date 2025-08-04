@@ -1,5 +1,7 @@
-// import { Grid2 as Grid, Paper } from "@mui/material";
-import { Typography } from "@mui/material";
+import { Grid2 as Grid, Typography } from "@mui/material";
+import ProgressBar from "./ProgressBar";
+import Quiz from "./Quiz";
+import Checklist from "./Checklist";
 
 const NameChange = () => {
   return (
