@@ -24,7 +24,7 @@ const ProgressBar = ({ value, custHeight, custPadding }) => {
   return (
     <Paper // This is the Paper to hold the progress bar and checklist button
       elevation={4}
-      sx={{ height: 72, paddingY: 3, paddingX: 5 }}
+      sx={{ height: 72, paddingY: 3, paddingX: 6 }}
     >
       <Paper // This is the bar's background
         elevation={4}

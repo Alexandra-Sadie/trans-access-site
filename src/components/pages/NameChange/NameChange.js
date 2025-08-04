@@ -5,7 +5,7 @@ import Checklist from "./Checklist";
 
 const NameChange = () => {
   return (
-    <>
+    <Grid container spacing={0} sx={{ width: "100%" }}>
       <Grid size={12}>
         <ProgressBar value={50}></ProgressBar> {/* dummy value for now */}
       </Grid>
@@ -20,7 +20,7 @@ const NameChange = () => {
           <Paper>{i}</Paper>
         </Grid>
       ))} */}
-    </>
+    </Grid>
   );
 };
 
