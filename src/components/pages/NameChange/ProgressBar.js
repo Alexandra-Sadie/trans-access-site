@@ -28,7 +28,7 @@ const ProgressBar = ({ value, custHeight, custPadding }) => {
       <Stack
         direction="row"
         spacing={3}
-        sx={{ alignItems: "center", height: "100%" }}
+        sx={{ alignItems: "stretch", height: "100%" }}
       >
         <Paper // This is the bar's background
           elevation={4}
@@ -36,7 +36,6 @@ const ProgressBar = ({ value, custHeight, custPadding }) => {
             backgroundColor: "progressBar.light",
             // Not sure if we actually want the size and padding to be editable...
             // Also aware we probs need different values for mobile and desktop
-            height: "100%", // Not sure why I need to be explicit about height with both the Stack and the Paper...
             padding: custPadding,
             width: "100%",
           }}
