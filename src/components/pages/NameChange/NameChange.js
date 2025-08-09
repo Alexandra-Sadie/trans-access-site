@@ -3,6 +3,8 @@ import ProgressBar from "./ProgressBar";
 import Quiz from "./Quiz";
 import Checklist from "./Checklist";
 
+// TODO: We want a minHeight for the quiz and checklist, along with a percentage instead of set heights
+
 const NameChange = () => {
   return (
     <Grid container spacing={0} sx={{ width: "100%" }}>
