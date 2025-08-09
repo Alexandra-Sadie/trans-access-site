@@ -28,6 +28,7 @@ const ProgressBar = ({ value, custHeight, custPadding }) => {
       <Stack
         direction="row"
         spacing={3}
+        // alignItems needs to be set to stretch for the papers and icon to align properly
         sx={{ alignItems: "stretch", height: "100%" }}
       >
         <Paper // This is the bar's background
