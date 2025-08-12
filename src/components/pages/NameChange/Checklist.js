@@ -1,9 +1,19 @@
 import { Stack, Paper, Card, Typography } from "@mui/material";
 import { Close } from "@mui/icons-material";
 
-const Checklist = () => {
+const Checklist = ({ custHeight, custMinHeight }) => {
   return (
-    <Paper elevation={4} sx={{ paddingTop: 6, paddingX: 2, height: 688 }}>
+    <Paper
+      elevation={4}
+      sx={{
+        position: "relative",
+        paddingTop: 6,
+        paddingX: 2,
+        top: -custHeight - 72,
+        height: custHeight,
+        minHeight: custMinHeight,
+      }}
+    >
       <Stack
         direction="row"
         sx={{ justifyContent: "space-between", alignItems: "center" }}

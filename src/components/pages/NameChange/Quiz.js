@@ -2,9 +2,20 @@ import { Stack, Paper, Typography, Button } from "@mui/material";
 
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 
-const Quiz = () => {
+const Quiz = ({ custHeight, custMinHeight }) => {
   return (
-    <Paper elevation={4} sx={{ paddingY: 10, paddingX: 6 }}>
+    <Paper
+      elevation={4}
+      sx={{
+        position: "relative",
+        paddingTop: 19,
+        paddingBottom: 10,
+        paddingX: 25,
+        top: -72,
+        minHeight: custMinHeight,
+        height: custHeight,
+      }}
+    >
       <Stack
         spacing={7}
         sx={{ justifyContent: "center", alignItems: "stretch" }}
