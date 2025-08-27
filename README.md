@@ -170,4 +170,4 @@ We have been funded by:
 - The Concordia Council on Student Life
 - Campus Ex/El Office
 - SHIFT
-- Emplois Ete Canada
+- Emplois Été Canada
