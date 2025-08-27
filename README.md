@@ -166,8 +166,8 @@ You might notice this line of code throughout the site: import { Link as RouterL
 
 We have been funded by:
 
-CURE Concordia
-The Concordia Council on Student Life
-Campus Ex/El Office
-SHIFT
-Emplois Ete Canada
+- CURE Concordia
+- The Concordia Council on Student Life
+- Campus Ex/El Office
+- SHIFT
+- Emplois Ete Canada
