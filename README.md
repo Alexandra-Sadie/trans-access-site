@@ -135,8 +135,7 @@ Material UI provides systematic tools that help us create responsive and visuall
 #### Styling through the sx prop:
 
 - The sx prop is a shortcut for defining custom styles that have access to the theme, and it allows us to work with CSS packages that give us theme-aware values and breakpoint shortcuts.
-- Basically it lets us make little tweaks and customizations to individual components using normal CSS rules. For example, the following code snippet will create a Box (MUI's version of an HTML div), and use the sx prop to apply custom paddingTop and paddingBottom properties to it.
-  `<Box sx={{ paddingTop: 9, paddingBottom: 9.5 }}>`
+- Basically it lets us make little tweaks and customizations to individual components using normal CSS rules. For example, the following code snippet will create a Box (MUI's version of an HTML div), and use the sx prop to apply custom paddingTop and paddingBottom properties to it: `<Box sx={{ paddingTop: 9, paddingBottom: 9.5 }}>`
 - The sx prop also lets us do theme integration, responsive designs, CSS shorthand, and pseudo-classes and states if we ever need them.
 - The sx prop styles get converted to plain CSS at runtime, and we use it when we want to do quick prototyping, margins, and responsive layouts.
 
