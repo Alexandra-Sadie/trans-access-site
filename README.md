@@ -160,7 +160,7 @@ React Router's BrowserRouter component gives us back this URL functionality, by 
 
 #### A Note on RouterLink Import:
 
-You might notice this line of code throughout the site: import { Link as RouterLink } from "react-router-dom". "react-router-dom" is a React Router component that acts as an anchor link to other routes (pages). However, because MUI also has a component called Link, used to style anchor text, we import it as RouterLink across the entire project to avoid namespace confusion. This is MUI recommended practice.
+You might notice this line of code throughout the site: `import { Link as RouterLink } from "react-router-dom"`. "react-router-dom" is a React Router component that acts as an anchor link to other routes (pages). However, because MUI also has a component called Link, used to style anchor text, we import it as RouterLink across the entire project to avoid namespace confusion. This is MUI recommended practice.
 
 ## Our sponsors
 
