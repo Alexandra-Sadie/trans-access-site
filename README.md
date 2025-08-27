@@ -1,12 +1,12 @@
 # Trans Access Site Prototype
 
-## What's this app?
+## What Is This App?
 
 This is a prototype of CURE Concordia's Trans Access Site. We've built out a basic site architecture as a foundation for future work. As a finished product, this site will help trans people in Quebec find accessible, quality medical, legal, and community care.
 
 The live version of this app can be found [here.](https://trans-access-site.web.app)
 
-## Tech we use
+## Tech We Use
 
 ### What We Assume You Already Know:
 
