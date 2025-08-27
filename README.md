@@ -40,7 +40,7 @@ A traditional website depends on the three base technologies that work together:
 
 React is a modern web framework that allows you to create advanced web browser applications. It is the basis for all of our work. React itself is a JavaScript library for building user interfaces, where the rendering logic and markup are contained inside components.
 
-For documentation please see React's excellent official [getting started guide] (https://react.dev/learn) which is designed for beginners and very easy to use. In this section we have information about React, and different definitions that will help you get familiar with our work process and how it’s going so far.
+For documentation please see React's excellent official [getting started guide](https://react.dev/learn) which is designed for beginners and very easy to use. In this section we have information about React, and different definitions that will help you get familiar with our work process and how it’s going so far.
 
 #### The single-page app
 
