@@ -77,15 +77,19 @@ Material UI provides systematic tools that help us create responsive and visuall
 #### Layouts:
 
 - Material Design layouts use components and spacing to create consistency across platforms, environments, and screen sizes. Layouts have three main regions: app bars, navigation, and body. They are the foundation when it comes to building an interactive experience.
-- The body region is used to display most of the content in the app, such as buttons, lists, and cards, the navigation region helps the user navigate between important sections, and the app bar is used to display and organize buttons that help users take action on elements located in the body region. For our app, we placed all of our navigation in an app bar at the top. Screenshot here.
+- The body region is used to display most of the content in the app, such as buttons, lists, and cards, the navigation region helps the user navigate between important sections, and the app bar is used to display and organize buttons that help users take action on elements located in the body region. For our app, we placed all of our navigation in an app bar at the top.
+  ![A wireframe design of our app highlighting the navbar and navigation at the top, and the main body below.](./src/images/layout.png)
 - Material Design’s responsive layout grid is an interactive grid that dynamically responds to users' input and adapts to screen sizes to ensure consistency across all platforms, and it’s made up of three elements: columns, gutters, and margins.
-- Content is placed within columns, and the number of columns adjusts automatically at set breakpoints, though these rules are determined by developers. We use twelve columns for desktop applications and four for mobile ones. Margins are on the sides of the page and have fixed widths. The gutters are typically small, located between columns, and also have fixed widths. We use margins (left-ride sides) = 16px mobile, 200px desktop. gutters (between columns) = 16px mobile, 24 px desktop. Screenshot here.
+- Content is placed within columns, and the number of columns adjusts automatically at set breakpoints, though these rules are determined by developers. We use twelve columns for desktop applications and four for mobile ones. Margins are on the sides of the page and have fixed widths. The gutters are typically small, located between columns, and also have fixed widths. We use margins (left-ride sides) = 16px mobile, 200px desktop. gutters (between columns) = 16px mobile, 24 px desktop.
+  ![A wireframe design of our site highlighting the column grid layout, and the gutters along the side, in desktop and mobile view.](./src/images/gutters.png)
+  ![A mockup design of our site showing the grid columns for reference and how it appears to users.](./src/images/grid-system.png)
 
 #### Breakpoints:
 
 - A breakpoint is the screen size limit determined by specific layout requirements; the layout adjusts to suit different screen sizes. Our design is based on MUI’s grid system, and uses four columns on mobile, and twelve columns on desktop.
 - Each breakpoint range determines the number of columns, margins, and gutters for each display size.
-- We're using MUI's breakpoint system as defined by its default theme to render elements designed for computer screens, like DesktopNavLinks.js, at desktop screen size, and elements designed for phone screens, like MobileNavLinks.js, on phone screens. Each breakpoint (a key) matches with a fixed screen width (a value): extra-small: 0px, medium: 900px. Screenshot here.
+- We're using MUI's breakpoint system as defined by its default theme to render elements designed for computer screens, like DesktopNavLinks.js, at desktop screen size, and elements designed for phone screens, like MobileNavLinks.js, on phone screens. Each breakpoint (a key) matches with a fixed screen width (a value): extra-small: 0px, medium: 900px.
+  ![A more detailed mockup design of our cards listing healthcare providers, highlighting how they are displayed differently at a desktop breakpoint versus a mobile](./src/images/breakpoints.png)
 
 #### The Grid system:
 
@@ -131,7 +135,8 @@ Material UI provides systematic tools that help us create responsive and visuall
 #### Styling through the sx prop:
 
 - The sx prop is a shortcut for defining custom styles that have access to the theme, and it allows us to work with CSS packages that give us theme-aware values and breakpoint shortcuts.
-- Basically it lets us make little tweaks and customizations to individual components using normal CSS rules. Screenshot here?
+- Basically it lets us make little tweaks and customizations to individual components using normal CSS rules. For example, the following code snippet will create a Box (MUI's version of an HTML div), and use the sx prop to apply custom paddingTop and paddingBottom properties to it.
+  `<Box sx={{ paddingTop: 9, paddingBottom: 9.5 }}>`
 - The sx prop also lets us do theme integration, responsive designs, CSS shorthand, and pseudo-classes and states if we ever need them.
 - The sx prop styles get converted to plain CSS at runtime, and we use it when we want to do quick prototyping, margins, and responsive layouts.
 
