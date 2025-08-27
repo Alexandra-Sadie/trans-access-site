@@ -56,7 +56,7 @@ JSX is a syntax extension that looks like HTML but follows JavaScript rules. We 
 
 ### MUI
 
-MUI is an open-source component library for React, implementing Google's Material Design 2.0 spec. It has a full suite of components designed to be production-ready, and it also comes full of customization options, so you can build your own customized system using it. MUI's documentation is [here.] (https://mui.com/material-ui/getting-started/)
+MUI is an open-source component library for React, implementing Google's Material Design 2.0 spec. It has a full suite of components designed to be production-ready, and it also comes full of customization options, so you can build your own customized system using it. MUI's documentation is [here.](https://mui.com/material-ui/getting-started/)
 
 #### Why we chose MUI:
 
