@@ -3,8 +3,11 @@ import HamburgerIcon from "@mui/icons-material/Menu";
 import { Box, IconButton, Menu } from "@mui/material";
 import MobileNavButton from "./MobileNavButton";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const MobileNavLinks = ({ navRoutesArray }) => {
+  const { t } = useTranslation();
+
   // *STATE ZONE
   // we handle the hamburger dropdown menu by anchoring the menu to the hamburger icon when the hamburger (ie IconButton component) is clicked on. (when the menu has no anchor it doesn't appear)
   // this state is used to monitor what html element the menu is anchoring to, if any (should only ever be the burger IconButton)
@@ -76,7 +79,7 @@ const MobileNavLinks = ({ navRoutesArray }) => {
         {navRoutesArray
           // this takes the sub-objects described in Navbar.js and renders them as typographical links in the menu
           .map(({ route, title }) => (
-            <MobileNavButton key={route} route={route} title={title} />
+            <MobileNavButton key={route} route={route} title={t(title)} />
           ))}
       </Menu>
     </Box>

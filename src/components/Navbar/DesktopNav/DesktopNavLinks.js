@@ -1,8 +1,11 @@
 // !IMPORT ZONE
 import { Stack } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import DesktopNavButton from "./DesktopNavButton";
 
 const DesktopNavLinks = ({ navRoutesArray }) => {
+  const { t } = useTranslation();
+
   return (
     // Stack is essentially MUI's version of a flex container "for arranging items on a one-dimensional vertical/horizontal (horizontal is the default) axis".
     // docs: https://mui.com/material-ui/react-stack/
@@ -17,7 +20,7 @@ const DesktopNavLinks = ({ navRoutesArray }) => {
       {navRoutesArray
         // this takes the sub-objects described in Navbar.js and renders them as buttons
         .map(({ route, title }) => (
-          <DesktopNavButton key={route} route={route} title={title} />
+          <DesktopNavButton key={route} route={route} title={t(title)} />
         ))}
     </Stack>
   );
