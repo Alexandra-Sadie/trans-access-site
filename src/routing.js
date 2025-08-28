@@ -29,10 +29,12 @@ export const routingObject = {
   login_signup: {
     title: "Connexion & inscription",
     route: "connexion_inscription",
+    redactFromNav: true,
   },
 
   my_account: {
     title: "Mon compte",
     route: "mon_compte",
+    redactFromNav: true,
   },
 };
