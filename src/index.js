@@ -7,6 +7,8 @@ import "@fontsource/poppins";
 // routing
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { routingObject } from "./routing";
+// i18n
+import i18n from "./i18n/i18n";
 // our providers
 import AuthProvider from "./providers/AuthProvider";
 import CustomThemesProvider from "./providers/CustomThemesProvider/CustomThemesProvider";

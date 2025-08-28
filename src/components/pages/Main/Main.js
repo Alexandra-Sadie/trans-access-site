@@ -3,12 +3,18 @@ import { Stack } from "@mui/system";
 import { routingObject } from "../../../routing";
 import RouteButton from "./RouteButton";
 import { Grid2 as Grid } from "@mui/material";
+import LanguageChangeButton from "../../../i18n/LanguageChangeButton";
+import { useTranslation } from "react-i18next";
 
 const Main = () => {
+  const { t } = useTranslation();
+
   return (
     // Stack is essentially MUI's version of a flex container "for arranging items on a one-dimensional vertical/horizontal (horizontal is the default) axis".
     // docs: https://mui.com/material-ui/react-stack/
     <Grid size={{ xs: 2, md: 2 }} offset={{ xs: 1, md: 5 }}>
+      <h1>{t("routeNames:main")}</h1>
+      <LanguageChangeButton />
       <Stack
         sx={{ pt: 6, alignItems: "center" }}
         spacing={3}
