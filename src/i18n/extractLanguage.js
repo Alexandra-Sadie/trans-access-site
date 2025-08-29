@@ -1,3 +1,4 @@
+// see comment in thingsToTranslate.js for why we do this
 const extractLanguage = (obj, language) => {
   return Object.fromEntries(
     Object.entries(obj).map(([namespace, translatedText]) => [

@@ -1,5 +1,6 @@
 import extractLanguage from "./extractLanguage";
 
+// being able to organize our information like this key-first is much preferable to us than i18next's default, language-first -- as a result we use the extractLanguage function to transform this object into an enObject and a frObject, which we then feed into i18next in i18nProvider.j
 export const thingsToTranslate = {
   routeNames: {
     main: { en: "Home", fr: "Accueil" },
