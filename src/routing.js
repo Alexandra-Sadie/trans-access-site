@@ -3,47 +3,40 @@
 // TODO explain weird routeNames:main formatting
 export const routingObject = {
   main: {
-    titleEn: "Home",
-    titleFr: "Acceuil",
+    title: "routeNames:main",
     route: "/",
     redactFromMain: true,
   },
 
   intervention: {
-    titleEn: "Intervention",
-    titleFr: "Intervention",
+    title: "routeNames:intervention",
     route: "intervention",
   },
 
   name_change: {
-    titleEn: "Name Change",
-    titleFr: "Changement de nom",
+    title: "routeNames:nameChange",
     route: "changement_de_nom",
   },
 
   therapist: {
-    titleEn: "Therapists",
-    titleFr: "Thérapeutes",
+    title: "routeNames:therapists",
     route: "therapist",
   },
 
   doctor: {
-    titleEn: "Doctors",
-    titleFr: "Médecins",
+    title: "routeNames:doctors",
     route: "doctor",
   },
 
   login_signup: {
-    titleEn: "Login & Signup",
-    titleFr: "Connexion & inscription",
+    title: "routeNames: loginSignup",
     route: "connexion_inscription",
     redactFromNav: true,
     redactFromMain: true,
   },
 
   my_account: {
-    titleEn: "My Account",
-    titleFr: "Mon compte",
+    title: "routeNames:loginSignup",
     route: "mon_compte",
     redactFromNav: true,
     redactFromMain: true,
