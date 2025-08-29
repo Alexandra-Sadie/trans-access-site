@@ -18,7 +18,6 @@ const LoginCard = () => {
     <Card elevation={2} sx={{ p: 3 }}>
       {/* //TODO we may want this to not be component and/or variant h4 for semantics */}
       <Typography variant="h4">{t("logIn")}</Typography>
-
       <Stack
         component="form"
         // TODO do we want novalidate? with it gone, it checks for valid email which is handy, but do we need it so html validation doesnt fuck with react?
@@ -36,7 +35,7 @@ const LoginCard = () => {
           margin="normal"
           required
           id="login-email"
-          label="Email Address"
+          label={t("emailFieldLabel")}
           name="login-email"
           //type="email" adds validation parameters and mobile keyboard customized for email input -- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types
           type="email"
@@ -52,7 +51,7 @@ const LoginCard = () => {
           margin="normal"
           required
           name="login-password"
-          label="Password"
+          label={t("passwordFieldLabel")}
           // TODO can we add a button to make it visible?
           // this censors the text as you type it -- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types
           type="password"
@@ -64,7 +63,7 @@ const LoginCard = () => {
         ></TextField>
 
         <Button type="submit" variant="contained">
-          Se connecter
+          {t("logIn")}
         </Button>
       </Stack>
     </Card>

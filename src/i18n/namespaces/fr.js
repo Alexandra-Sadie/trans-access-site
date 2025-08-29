@@ -19,7 +19,7 @@ export const frObject = {
     logOut: "Déconnexion",
     signUp: "Inscription",
     myAccount: "Mon Compte",
-    emailFieldLabel: "Email Address",
-    passwordFieldLabel: "Password",
+    emailFieldLabel: "Courriel",
+    passwordFieldLabel: "Mot de passe",
   },
 };

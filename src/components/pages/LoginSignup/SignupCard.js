@@ -3,6 +3,7 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import { useContext, useState } from "react";
 import { routingObject } from "../../../routing";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const SignupCard = () => {
   // !LOGIC ZONE
@@ -10,6 +11,7 @@ const SignupCard = () => {
   const [currentSignupEmail, setCurrentSignupEmail] = useState("");
   const [currentSignupPassword, setCurrentSignupPassword] = useState("");
   const navigate = useNavigate();
+  const { t } = useTranslation("loginSignup");
 
   // !RETURN
   return (
@@ -26,14 +28,14 @@ const SignupCard = () => {
         }}
       >
         {/* // TODO this should not be h4 */}
-        <Typography variant="h4">Inscrivez-vous </Typography>
+        <Typography variant="h4">{t("signUp")} </Typography>
 
         {/* email */}
         <TextField
           margin="normal"
           required
           id="signup-email"
-          label="Email Address"
+          label={t("emailFieldLabel")}
           name="signup-email"
           //type="email" adds validation parameters and mobile keyboard customized for email input -- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types
           type="email"
@@ -48,7 +50,7 @@ const SignupCard = () => {
           margin="normal"
           required
           name="signup-password"
-          label="Password"
+          label={t("passwordFieldLabel")}
           // TODO can we add a button to make it visible?
           // this censors the text as you type it -- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types
           type="password"
@@ -60,7 +62,7 @@ const SignupCard = () => {
         ></TextField>
 
         <Button type="submit" variant="contained">
-          Inscription
+          {t("signUp")}
         </Button>
       </Stack>
     </Card>
