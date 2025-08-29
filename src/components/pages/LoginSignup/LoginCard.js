@@ -3,6 +3,7 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import { useContext, useState } from "react";
 import { routingObject } from "../../../routing";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const LoginCard = () => {
   // !LOGIC ZONE
@@ -10,12 +11,13 @@ const LoginCard = () => {
   const [currentLoginPassword, setCurrentLoginPassword] = useState("");
   const { logIn } = useContext(AuthContext);
   const navigate = useNavigate();
+  const { t } = useTranslation("loginSignup");
 
   // !RETURN
   return (
     <Card elevation={2} sx={{ p: 3 }}>
       {/* //TODO we may want this to not be component and/or variant h4 for semantics */}
-      <Typography variant="h4">Connexion</Typography>
+      <Typography variant="h4">{t("logIn")}</Typography>
 
       <Stack
         component="form"

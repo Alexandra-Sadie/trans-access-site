@@ -14,4 +14,12 @@ export const frObject = {
     months: "mois",
     about: "À propos",
   },
+  loginSignup: {
+    logIn: "Connexion",
+    logOut: "Déconnexion",
+    signUp: "Inscription",
+    myAccount: "Mon Compte",
+    emailFieldLabel: "Email Address",
+    passwordFieldLabel: "Password",
+  },
 };

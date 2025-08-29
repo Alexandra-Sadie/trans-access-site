@@ -15,4 +15,12 @@ export const enObject = {
     months_other: "months",
     about: "About",
   },
+  loginSignup: {
+    logIn: "Log In",
+    logOut: "Log Out",
+    signUp: "Sign Up",
+    myAccount: "My Account",
+    emailFieldLabel: "Email Address",
+    passwordFieldLabel: "Password",
+  },
 };

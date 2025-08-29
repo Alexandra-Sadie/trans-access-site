@@ -5,9 +5,11 @@ import { IconButton, Menu, MenuItem, Box } from "@mui/material";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { routingObject } from "../../../routing";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import { useTranslation } from "react-i18next";
 
 // ? i'd be open to a better name for this
 const NavUserButtons = () => {
+  const { t } = useTranslation("loginSignup");
   const { localUser, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -86,7 +88,7 @@ const NavUserButtons = () => {
               component={RouterLink}
               to={routingObject.my_account.route}
             >
-              Mon Compte
+              {t("myAccount")}
             </MenuItem>
             <MenuItem
               variant="contained"
@@ -102,7 +104,7 @@ const NavUserButtons = () => {
                 }, 300);
               }}
             >
-              Déconnexion
+              {t("logOut")}
             </MenuItem>
           </Box>
         ) : (
@@ -115,7 +117,7 @@ const NavUserButtons = () => {
             component={RouterLink}
             to={routingObject.login_signup.route}
           >
-            Connexion
+            {t("logIn")}
           </MenuItem>
         )}
       </Menu>
