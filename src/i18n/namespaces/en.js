@@ -8,4 +8,11 @@ export const enObject = {
     loginSignup: "Login & Signup",
     myAccount: "My Account",
   },
+  professionalInfo: {
+    address: "Address",
+    waitTime: "Wait time",
+    months_one: "month",
+    months_other: "months",
+    about: "About",
+  },
 };

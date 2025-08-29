@@ -8,4 +8,10 @@ export const frObject = {
     loginSignup: "Connexion & inscription",
     myAccount: "Mon compte",
   },
+  professionalInfo: {
+    address: "Addresse",
+    waitTime: "Temps d'attente",
+    months: "mois",
+    about: "À propos",
+  },
 };

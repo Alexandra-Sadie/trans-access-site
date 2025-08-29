@@ -6,6 +6,9 @@ import {
   Typography,
   ListItem,
 } from "@mui/material";
+
+import { useTranslation } from "react-i18next";
+
 // uses .split (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) to extract the first letter of the first word in name and the first letter of the second word in name
 // could think about updating to have a third letter etc
 const stringAvatar = (name) =>
@@ -23,6 +26,7 @@ const ProfessionalCard = ({
   location,
   bio,
 }) => {
+  const { t } = useTranslation("professionalInfo");
   return (
     // the ListItem takes full width and is a row-direction flexbox
     // by default it justifies content to 'flex-start', i.e. to the left edge
@@ -67,8 +71,16 @@ const ProfessionalCard = ({
           sx={{ minHeight: "84px" }}
         ></CardHeader>
         <CardContent>
-          <Typography>Adresse: {location}</Typography>
-          <Typography>Temps d'attente: {waitTime} mois</Typography>
+          <Typography>
+            {t("address")}: {location}
+          </Typography>
+          <Typography>
+            {
+              // TODO: explain this
+              t("waitTime")
+            }
+            : {waitTime} {t("months", { count: waitTime })}
+          </Typography>
           <Typography
             sx={{
               mt: 1,
@@ -84,7 +96,7 @@ const ProfessionalCard = ({
               WebkitBoxOrient: "vertical",
             }}
           >
-            À propos: {bio}
+            {t("about")}: {bio}
           </Typography>
         </CardContent>
       </Card>
