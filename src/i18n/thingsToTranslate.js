@@ -1,4 +1,4 @@
-import extractLanguage from "../extractLanguage";
+import extractLanguage from "./extractLanguage";
 
 export const thingsToTranslate = {
   routeNames: {
