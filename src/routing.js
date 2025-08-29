@@ -1,42 +1,49 @@
 // This is the object we use to define all the routes (pages) in our site. We export them from this file so we're not re-typing the route titles and addresses over and over again (prevent human error). Any future routes added to this file will automatically be added to the parts of the site that iterate through this object (navbar, etc).
-// We have the routes structured each as their own object, with "title" and "route" keys.
+// We have the routes structured each as their own object, with "titleEn: and "route" keys.
 // TODO explain weird routeNames:main formatting
 export const routingObject = {
   main: {
-    title: "routeNames:main",
+    titleEn: "Home",
+    titleFr: "Acceuil",
     route: "/",
     redactFromMain: true,
   },
 
   intervention: {
-    title: "routeNames:intervention",
+    titleEn: "Intervention",
+    titleFr: "Intervention",
     route: "intervention",
   },
 
   name_change: {
-    title: "routeNames:nameChange",
+    titleEn: "Name Change",
+    titleFr: "Changement de nom",
     route: "changement_de_nom",
   },
 
   therapist: {
-    title: "routeNames:therapists",
+    titleEn: "Therapists",
+    titleFr: "Thérapeutes",
     route: "therapist",
   },
 
   doctor: {
-    title: "routeNames:doctors",
+    titleEn: "Doctors",
+    titleFr: "Médecins",
     route: "doctor",
   },
 
   login_signup: {
-    title: "routeNames:loginSignup",
+    titleEn: "Login & Signup",
+    titleFr: "Connexion & inscription",
     route: "connexion_inscription",
     redactFromNav: true,
     redactFromMain: true,
   },
 
   my_account: {
-    title: "routeNames:myAccount",
+    titleEn: "My Account",
+    titleFr: "Mon compte",
     route: "mon_compte",
     redactFromNav: true,
     redactFromMain: true,
