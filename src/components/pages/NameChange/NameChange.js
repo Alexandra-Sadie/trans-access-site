@@ -1,4 +1,5 @@
-import { Grid2 as Grid, Typography } from "@mui/material";
+import * as React from "react";
+import { Grid2 as Grid, Backdrop, Slide, Button } from "@mui/material";
 import ProgressBar from "./ProgressBar";
 import Quiz from "./Quiz";
 import Checklist from "./Checklist";
@@ -13,45 +14,50 @@ const NameChange = () => {
     // prev doesn't need to be defined because it's a parameter,
     // Also, useState setter functions, when given a function as a parameter, automatically give that function the previous value
     setDrawerOpen((prev) => !prev);
-    console.log(contRef.current);
   };
 
   const height = 700;
   // Not sure if important, but the Papers seem to have their own rules for minimum heights aside from the sx prop
 
   return (
-    <Grid container spacing={0} sx={{ width: "100%" }}>
-      <Grid size={12} sx={{ zIndex: 10 }}>
-        <ProgressBar value={50}></ProgressBar> {/* dummy value for now */}
-      </Grid>
-      <Grid size={12} sx={{ zIndex: 0 }}>
-        <Quiz custHeight={height}></Quiz>
-      </Grid>
-      <Backdrop
-        open={drawerOpen}
-        sx={{
-          position: "relative",
-          // These two make the backdrop fill the Grid row
-          width: "100%",
-          height: "100%",
-          zIndex: 20, // This places the backdrop in between the progress bar and checklist
-          borderRadius: 1, // This matches the Paper's radius
-          justifyContent: "flex-start", // This is necesassary for Grid item size to be respected
-        }}
-      >
-        <Slide in={drawerOpen} direction="left">
-          <Grid size={4} offset={8} sx={{ zIndex: 30 }}>
-            <Checklist custHeight={height}></Checklist>
-          </Grid>
-        </Slide>
-      </Backdrop>
+    <>
+      <Grid container spacing={0} sx={{ width: "100%" }}>
+        <Grid size={12} sx={{ zIndex: 10 }}>
+          <ProgressBar value={50}></ProgressBar> {/* dummy value for now */}
+        </Grid>
+        <Grid size={12} sx={{ zIndex: 0 }}>
+          <Quiz custHeight={height}></Quiz>
+        </Grid>
+        <Backdrop
+          open={drawerOpen}
+          sx={{
+            position: "relative",
+            // These two make the backdrop fill the Grid row
+            width: "100%",
+            height: height,
+            top: -height - 72,
+            zIndex: 20, // This places the backdrop in between the progress bar and checklist
+            borderRadius: 1, // This matches the Paper's radius
+            justifyContent: "flex-start", // This is necesassary for Grid item size to be respected
+          }}
+        >
+          <Slide in={drawerOpen} direction="left">
+            <Grid size={4} offset={8} sx={{ zIndex: 30 }}>
+              <Checklist custHeight={height}></Checklist>
+            </Grid>
+          </Slide>
+        </Backdrop>
 
-      {/* old grid test array: {[...new Array(12)].map((_, i) => (
+        {/* old grid test array: {[...new Array(12)].map((_, i) => (
         <Grid size={{ xs: 1, md: 1 }}>
           <Paper>{i}</Paper>
         </Grid>
       ))} */}
-    </Grid>
+      </Grid>
+      <Button variant="contained" onClick={handleDrawer}>
+        open drawer
+      </Button>
+    </>
   );
 };
 
