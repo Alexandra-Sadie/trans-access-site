@@ -7,6 +7,15 @@ import Checklist from "./Checklist";
 // Realizing this should be the same for both, so this should probably be handled here with props
 
 const NameChange = () => {
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const handleDrawer = () => {
+    // My understanding is that I'm giving it a function to switch state from the previous to a new one
+    // prev doesn't need to be defined because it's a parameter,
+    // Also, useState setter functions, when given a function as a parameter, automatically give that function the previous value
+    setDrawerOpen((prev) => !prev);
+    console.log(contRef.current);
+  };
+
   const height = 700;
   // Not sure if important, but the Papers seem to have their own rules for minimum heights aside from the sx prop
 
@@ -18,9 +27,24 @@ const NameChange = () => {
       <Grid size={12} sx={{ zIndex: 0 }}>
         <Quiz custHeight={height}></Quiz>
       </Grid>
-      <Grid size={4} offset={8} sx={{ zIndex: 20 }}>
-        <Checklist custHeight={height}></Checklist>
-      </Grid>
+      <Backdrop
+        open={drawerOpen}
+        sx={{
+          position: "relative",
+          // These two make the backdrop fill the Grid row
+          width: "100%",
+          height: "100%",
+          zIndex: 20, // This places the backdrop in between the progress bar and checklist
+          borderRadius: 1, // This matches the Paper's radius
+          justifyContent: "flex-start", // This is necesassary for Grid item size to be respected
+        }}
+      >
+        <Slide in={drawerOpen} direction="left">
+          <Grid size={4} offset={8} sx={{ zIndex: 30 }}>
+            <Checklist custHeight={height}></Checklist>
+          </Grid>
+        </Slide>
+      </Backdrop>
 
       {/* old grid test array: {[...new Array(12)].map((_, i) => (
         <Grid size={{ xs: 1, md: 1 }}>
