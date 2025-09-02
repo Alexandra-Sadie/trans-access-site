@@ -54,7 +54,11 @@ const NameChange = () => {
         </Grid>
       ))} */}
       </Grid>
-      <Button variant="contained" onClick={handleDrawer}>
+      <Button
+        variant="contained"
+        onClick={handleDrawer}
+        sx={{ position: "relative", top: -height - 72 }}
+      >
         open drawer
       </Button>
     </>
