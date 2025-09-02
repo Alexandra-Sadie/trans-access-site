@@ -9,7 +9,8 @@ const Checklist = ({ custHeight, custMinHeight }) => {
         position: "relative",
         paddingTop: 6,
         paddingX: 2,
-        top: -custHeight - 72,
+        top: -custHeight - 72, // Could handle this math earlier or use a template string
+        // Alexandra leans towards latter so it's easier to find later if we want to change it
         height: custHeight,
         minHeight: custMinHeight,
       }}
