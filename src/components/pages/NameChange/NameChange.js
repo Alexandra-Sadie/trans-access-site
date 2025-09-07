@@ -8,12 +8,11 @@ import Checklist from "./Checklist";
 // Realizing this should be the same for both, so this should probably be handled here with props
 
 const NameChange = () => {
+  // Creating variable and setter function for the checklist drawer functionality
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   const handleDrawer = () => {
-    // My understanding is that I'm giving it a function to switch state from the previous to a new one
-    // prev doesn't need to be defined because it's a parameter,
-    // Also, useState setter functions, when given a function as a parameter, automatically give that function the previous value
-    setDrawerOpen((prev) => !prev); // TODO: Explain this arrow function pattern
+    // A feature of useState setter functions is that when given a function as a parameter, they automatically assume it's an updater function and thus pass the variable's previous value
+    setDrawerOpen((prev) => !prev);
   };
 
   const height = 700;
