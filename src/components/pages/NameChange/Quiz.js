@@ -7,7 +7,7 @@ const Quiz = ({ custHeight, custMinHeight }) => {
     <Paper
       elevation={4}
       sx={{
-        position: "relative",
+        position: "relative", // TODO: Explain overlapping, organize accordingly
         paddingTop: 19,
         paddingBottom: 10,
         paddingX: 25,

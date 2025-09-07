@@ -13,7 +13,7 @@ const NameChange = () => {
     // My understanding is that I'm giving it a function to switch state from the previous to a new one
     // prev doesn't need to be defined because it's a parameter,
     // Also, useState setter functions, when given a function as a parameter, automatically give that function the previous value
-    setDrawerOpen((prev) => !prev);
+    setDrawerOpen((prev) => !prev); // TODO: Explain this arrow function pattern
   };
 
   const height = 700;
@@ -22,22 +22,26 @@ const NameChange = () => {
   return (
     <>
       <Grid container spacing={0} sx={{ width: "100%" }}>
+        {/* TODO: Get rid of this */}
         <Grid size={12} sx={{ zIndex: 10 }}>
+          {/* TODO: Investigate relative positioning here */}
           <ProgressBar value={50}></ProgressBar> {/* dummy value for now */}
         </Grid>
+
         <Grid size={12} sx={{ zIndex: 0 }}>
           <Quiz custHeight={height}></Quiz>
         </Grid>
+
         <Backdrop
           open={drawerOpen}
           sx={{
             position: "relative",
+            top: -height - 72,
             // These two make the backdrop fill the Grid row
             width: "100%",
             height: height,
-            top: -height - 72,
             zIndex: 20, // This places the backdrop in between the progress bar and checklist
-            borderRadius: 1, // This matches the Paper's radius
+            borderRadius: 1, // This matches the Paper's radius TODO: look into theme aware property
             justifyContent: "flex-start", // This is necesassary for Grid item size to be respected
           }}
         >
@@ -47,13 +51,13 @@ const NameChange = () => {
             </Grid>
           </Slide>
         </Backdrop>
-
         {/* old grid test array: {[...new Array(12)].map((_, i) => (
         <Grid size={{ xs: 1, md: 1 }}>
           <Paper>{i}</Paper>
         </Grid>
       ))} */}
       </Grid>
+
       <Button
         variant="contained"
         onClick={handleDrawer}
