@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import { Stack, Paper, IconButton } from "@mui/material";
 import { FormatListBulleted } from "@mui/icons-material";
+import { ModalStateContext } from "./ModalStateProvider";
 
 /* This is a custom progress bar that can 
 
@@ -19,6 +21,8 @@ const ProgressBar = ({ value, custHeight, custPadding }) => {
 
   // This turns the value prop input, received as a number, into something the width attribute can understand
   value = `${value}%`; // We are turning it into a string and adding the % character
+
+  const { setModalState } = useContext(ModalStateContext);
 
   return (
     <Paper // This is the Paper to hold the progress bar and checklist button
@@ -50,7 +54,11 @@ const ProgressBar = ({ value, custHeight, custPadding }) => {
             }}
           ></Paper>
         </Paper>
-        <IconButton aria-label="open checklist" size="small">
+        <IconButton
+          onClick={setModalState}
+          aria-label="open checklist"
+          size="small"
+        >
           <FormatListBulleted />
         </IconButton>
       </Stack>
