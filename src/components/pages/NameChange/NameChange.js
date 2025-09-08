@@ -16,7 +16,9 @@ const NameChange = () => {
     setDrawerOpen((prev) => !prev);
   };
 
-  const height = 700;
+  const height = React.useState(700);
+  // Temporarily deciding on making height a State because of its simplicity and use only in these direct children with no intermediaries
+  // That being said, potential complications later with progress bar height being different?
   // Not sure if important, but the Papers seem to have their own rules for minimum heights aside from the sx prop
 
   return (
