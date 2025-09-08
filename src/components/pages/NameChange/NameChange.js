@@ -4,17 +4,18 @@ import ProgressBar from "./ProgressBar";
 import Quiz from "./Quiz";
 import Checklist from "./Checklist";
 import Modal from "./Modal";
+import ModalStateProvider from "./ModalStateProvider";
 
 // TODO: We want a minHeight for the quiz and checklist, along with a percentage instead of set heights
 // Realizing this should be the same for both, so this should probably be handled here with props
 
 const NameChange = () => {
-  // Creating variable and setter function for the checklist drawer functionality
-  const [drawerOpen, setDrawerOpen] = React.useState(false);
-  const handleDrawer = () => {
-    // A feature of useState setter functions is that when given a function as a parameter, they automatically assume it's an updater function and thus pass the variable's previous value
-    setDrawerOpen((prev) => !prev);
-  };
+  // // Creating variable and setter function for the checklist drawer functionality
+  // const [drawerOpen, setDrawerOpen] = React.useState(false);
+  // const handleDrawer = () => {
+  //   // A feature of useState setter functions is that when given a function as a parameter, they automatically assume it's an updater function and thus pass the variable's previous value
+  //   setDrawerOpen((prev) => !prev);
+  // };
 
   const height = React.useState(700);
   // Temporarily deciding on making height a State because of its simplicity and use only in these direct children with no intermediaries
@@ -23,18 +24,19 @@ const NameChange = () => {
 
   return (
     <>
-      <Grid container spacing={0} sx={{ width: "100%" }}>
-        {/* TODO: Get rid of this */}
-        <Grid size={12} sx={{ zIndex: 10 }}>
-          {/* TODO: Investigate relative positioning here */}
-          <ProgressBar value={50}></ProgressBar> {/* dummy value for now */}
-        </Grid>
+      <ModalStateProvider>
+        <Grid container spacing={0} sx={{ width: "100%" }}>
+          {/* TODO: Get rid of this */}
+          <Grid size={12} sx={{ zIndex: 10 }}>
+            {/* TODO: Investigate relative positioning here */}
+            <ProgressBar value={50}></ProgressBar> {/* dummy value for now */}
+          </Grid>
 
-        <Grid size={12} sx={{ zIndex: 0 }}>
-          <Quiz custHeight={height}></Quiz>
-        </Grid>
+          <Grid size={12} sx={{ zIndex: 0 }}>
+            <Quiz custHeight={height}></Quiz>
+          </Grid>
 
-        {/* <Backdrop
+          {/* <Backdrop
           open={drawerOpen}
           sx={{
             // These two properties make the backdrop fill the Grid row
@@ -47,27 +49,28 @@ const NameChange = () => {
           }}
         >
           <Slide in={drawerOpen} direction="left"> */}
-        <Modal height={height}>
-          <Grid size={4} offset={8} sx={{ zIndex: 30 }}>
-            <Checklist custHeight={height}></Checklist>
-          </Grid>
-        </Modal>
-        {/* </Slide>
+          <Modal height={height}>
+            <Grid size={4} offset={8} sx={{ zIndex: 30 }}>
+              <Checklist custHeight={height}></Checklist>
+            </Grid>
+          </Modal>
+          {/* </Slide>
         </Backdrop> */}
-        {/* old grid test array: {[...new Array(12)].map((_, i) => (
+          {/* old grid test array: {[...new Array(12)].map((_, i) => (
         <Grid size={{ xs: 1, md: 1 }}>
           <Paper>{i}</Paper>
         </Grid>
       ))} */}
-      </Grid>
-
+        </Grid>
+        {/* // Modal test button
       <Button
         variant="contained"
         onClick={handleDrawer}
         sx={{ position: "relative", top: -height - 72 }}
       >
         open drawer
-      </Button>
+      </Button> */}
+      </ModalStateProvider>
     </>
   );
 };

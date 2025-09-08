@@ -1,12 +1,16 @@
+import { useContext } from "react";
 import { Backdrop, Slide } from "@mui/material";
+import { ModalStateContext } from "./ModalStateProvider";
 
 // TODO: remove 'height' once provider is up and running
 // ? Not sure if just Modal is a good name as there is also an MUI Modal component, as well as because this is currently very specifically just for the checklist and can't be used elsewhere
 const Modal = ({ height, children }) => {
+  const [modalState, setModalState] = useContext(ModalStateContext);
+
   return (
     <Backdrop
       // TODO: replace 'true' once provider is up and running
-      open={true}
+      open={modalState}
       sx={{
         // These two properties make the backdrop fill the Grid row
         position: "relative",
@@ -19,7 +23,7 @@ const Modal = ({ height, children }) => {
     >
       <Slide
         // TODO: replace 'true' once provider is up and running
-        in={true}
+        in={modalState}
         direction="left"
       >
         {children}
