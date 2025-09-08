@@ -34,13 +34,12 @@ const NameChange = () => {
         <Backdrop
           open={drawerOpen}
           sx={{
+            // These two properties make the backdrop fill the Grid row
             position: "relative",
             top: -height - 72,
-            // These two make the backdrop fill the Grid row
-            width: "100%",
-            height: height,
+            width: "100%", // This ensures the checklist and backdrop fill the Grid container
             zIndex: 20, // This places the backdrop in between the progress bar and checklist
-            borderRadius: 1, // This matches the Paper's radius TODO: look into theme aware property
+            borderRadius: 1, // Gives Backdrop a border radius, 1 here is not the px value, but the amount to multiply default theme value by
             justifyContent: "flex-start", // This is necesassary for Grid item size to be respected
           }}
         >
