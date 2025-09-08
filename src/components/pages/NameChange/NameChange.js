@@ -3,6 +3,7 @@ import { Grid2 as Grid, Backdrop, Slide, Button } from "@mui/material";
 import ProgressBar from "./ProgressBar";
 import Quiz from "./Quiz";
 import Checklist from "./Checklist";
+import Modal from "./Modal";
 
 // TODO: We want a minHeight for the quiz and checklist, along with a percentage instead of set heights
 // Realizing this should be the same for both, so this should probably be handled here with props
@@ -31,7 +32,7 @@ const NameChange = () => {
           <Quiz custHeight={height}></Quiz>
         </Grid>
 
-        <Backdrop
+        {/* <Backdrop
           open={drawerOpen}
           sx={{
             // These two properties make the backdrop fill the Grid row
@@ -43,12 +44,14 @@ const NameChange = () => {
             justifyContent: "flex-start", // This is necesassary for Grid item size to be respected
           }}
         >
-          <Slide in={drawerOpen} direction="left">
-            <Grid size={4} offset={8} sx={{ zIndex: 30 }}>
-              <Checklist custHeight={height}></Checklist>
-            </Grid>
-          </Slide>
-        </Backdrop>
+          <Slide in={drawerOpen} direction="left"> */}
+        <Modal height={height}>
+          <Grid size={4} offset={8} sx={{ zIndex: 30 }}>
+            <Checklist custHeight={height}></Checklist>
+          </Grid>
+        </Modal>
+        {/* </Slide>
+        </Backdrop> */}
         {/* old grid test array: {[...new Array(12)].map((_, i) => (
         <Grid size={{ xs: 1, md: 1 }}>
           <Paper>{i}</Paper>
