@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Grid2 as Grid, Backdrop, Slide, Button } from "@mui/material";
+import { Grid2 as Grid, Backdrop, Slide, Button, Paper } from "@mui/material";
 import ProgressBar from "./ProgressBar";
 import Quiz from "./Quiz";
 import Checklist from "./Checklist";
@@ -27,13 +27,23 @@ const NameChange = () => {
       <ModalStateProvider>
         <Grid container spacing={0} sx={{ width: "100%" }}>
           {/* TODO: Get rid of this */}
-          <Grid size={12} sx={{ zIndex: 10 }}>
-            {/* TODO: Investigate relative positioning here */}
-            <ProgressBar value={50}></ProgressBar> {/* dummy value for now */}
-          </Grid>
+          {/* TODO: Investigate relative positioning here */}
 
           <Grid size={12} sx={{ zIndex: 0 }}>
-            <Quiz custHeight={height}></Quiz>
+            <Paper
+              elevation={4}
+              sx={{
+                position: "relative", // TODO: Explain overlapping, organize accordingly
+                // paddingTop: 19,
+                // paddingBottom: 10,
+                // top: -72,
+                // minHeight: custMinHeight,
+                height: height,
+              }}
+            >
+              <ProgressBar value={50}></ProgressBar> {/* dummy value for now */}
+              <Quiz custHeight={height}></Quiz>
+            </Paper>
           </Grid>
 
           {/* <Backdrop
