@@ -41,8 +41,8 @@ const NameChange = () => {
                 height: height,
               }}
             >
-              <ProgressBar value={50}></ProgressBar> {/* dummy value for now */}
-              <Quiz custHeight={height}></Quiz>
+              <ProgressBar value={50} /> {/* dummy value for now */}
+              <Quiz custHeight={height} />
             </Paper>
           </Grid>
 
