@@ -61,7 +61,7 @@ const NameChange = () => {
           <Slide in={drawerOpen} direction="left"> */}
           <Modal height={height}>
             <Grid size={4} offset={8} sx={{ zIndex: 30 }}>
-              <Checklist custHeight={height}></Checklist>
+              <Checklist custHeight={height} />
             </Grid>
           </Modal>
           {/* </Slide>
