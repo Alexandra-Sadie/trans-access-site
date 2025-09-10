@@ -1,8 +1,13 @@
-import { Stack, Paper, Typography, Button } from "@mui/material";
-
+import { Stack, Typography, Button } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
+import { dummyQuestion } from "./dummyQuestion";
+import { useState } from "react";
 
 const Quiz = () => {
+  const [currentQuestion, setCurrentQuestion] = useState(dummyQuestion);
+  const [currentCheckListItems, setCurrentCheckListItems] = useState([]);
+
+  const handleSelectAnswer = () => {};
   return (
     <Stack
       spacing={7}
@@ -15,25 +20,24 @@ const Quiz = () => {
     >
       <Typography variant="h2" component="h1" align="center">
         {/* Not sure which header scale to use here */}
-        Have you acquired and submitted all the documents in your checklist?
+        {currentQuestion.questionHeader}
       </Typography>
       <Typography variant="body1" align="left">
-        Once you’ve submitted everything, the État Civil will render a decision.
+        {currentQuestion.questionSubHeader}
       </Typography>
-      <Button
-        variant="contained"
-        size="large"
-        sx={{ bgcolor: "secondary.main" }}
-      >
-        They approved
-      </Button>
-      <Button
-        variant="contained"
-        size="large"
-        sx={{ bgcolor: "secondary.main" }}
-      >
-        They refused
-      </Button>
+      {currentQuestion.answers.map((answer) => {
+        return (
+          <Button
+            variant="contained"
+            size="large"
+            sx={{ bgcolor: "secondary.main" }} // TODO this looks WILD on dark mode
+            // onClick={}
+          >
+            {answer.buttonText}
+          </Button>
+        );
+      })}
+
       <Stack
         direction="row"
         spacing={1}

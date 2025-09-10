@@ -5,7 +5,10 @@ import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 // theming provider imported from mui
 // ? this COULD be bundled with CssBaseline import on line 5 -- idk which is more performant or readable, probably best like this for readability?
-import { Grid2 as Grid, ThemeProvider } from "@mui/material";
+import {
+  Grid2 as Grid,
+  ThemeProvider as MUIThemeProvider,
+} from "@mui/material";
 import { useContext } from "react";
 import { CustomThemesContext } from "../providers/CustomThemesProvider/CustomThemesProvider";
 
@@ -15,7 +18,7 @@ const App = () => {
 
   return (
     <>
-      <ThemeProvider theme={appliedTheme}>
+      <MUIThemeProvider theme={appliedTheme}>
         {/* // CssBaseline is MUI's version of a CSS Normalize snippet, which applies universal styles to the entire app to normalize some differences in visual rendering across browsers.
         docs: https://mui.com/material-ui/react-css-baseline/ */}
         <CssBaseline />
@@ -44,7 +47,7 @@ const App = () => {
         >
           <Outlet />
         </Grid>
-      </ThemeProvider>
+      </MUIThemeProvider>
     </>
   );
 };
