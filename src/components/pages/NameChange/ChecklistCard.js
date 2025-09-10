@@ -7,7 +7,6 @@ import {
   Typography,
 } from "@mui/material";
 import { KeyboardArrowDown } from "@mui/icons-material";
-import { dummyQuestion } from "./dummyQuestion";
 
 const ChecklistCard = ({
   checkItemHeader,
