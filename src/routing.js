@@ -36,3 +36,8 @@ export const routingObject = {
     route: "mon_compte",
   },
 };
+
+const question = {
+  headingText: "",
+  answers: [{ buttonText: "", documents: [], nextQuestion: {}, done: false }],
+};
