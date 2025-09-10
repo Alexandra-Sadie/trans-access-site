@@ -1,7 +1,5 @@
-import { useContext } from "react";
 import { Stack, Paper, IconButton } from "@mui/material";
 import { FormatListBulleted } from "@mui/icons-material";
-import { ModalStateContext } from "./ModalStateProvider";
 
 /* This is a custom progress bar that can 
 
