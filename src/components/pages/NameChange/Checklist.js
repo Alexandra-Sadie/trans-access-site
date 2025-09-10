@@ -14,9 +14,14 @@ const Checklist = ({ displayModalBoolean, setDisplayModalBoolean }) => {
         display: displayModalBoolean ? "flex" : "none",
       }}
     >
-      {/* TODO this Box stops the Stacks below from inherting "height: 100%" -- idk ifthats the best way to do it */}
-      <Box> 
-        <Stack direction="row">
+      <Box
+        // TODO this Box stops the Stacks below from inherting "height: 100%" -- idk ifthats the best way to do it
+        // also width=100% makes it fill the paper
+        // TODO padding: 3 is an eyeball based on the design having ~24px of padding -- this may need to change for consistency with ProgressBar, ideally the buttons are at the same place on the screen
+        width="100%"
+        sx={{ padding: 3 }}
+      >
+        <Stack direction="row" justifyContent="space-between">
           <Typography
             // TODO confirm this in the figma -- i'm not sure i have access to it due to our new account setup
             component="h2"
