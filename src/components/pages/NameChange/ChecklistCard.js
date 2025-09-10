@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import { KeyboardArrowDown } from "@mui/icons-material";
 
-const ChecklistItem = () => {
+const ChecklistCard = () => {
   return (
     <Accordion>
       <AccordionSummary expandIcon={<KeyboardArrowDown />}>
@@ -34,4 +34,4 @@ const ChecklistItem = () => {
     </Accordion>
   );
 };
-export default ChecklistItem;
+export default ChecklistCard;
