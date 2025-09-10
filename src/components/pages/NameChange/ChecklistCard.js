@@ -30,8 +30,8 @@ const ChecklistCard = ({
         <Typography>{checkItemBodyText}</Typography>
       </AccordionDetails>
       <AccordionActions sx={{ justifyContent: "center" }}>
-        <Button variant="contained" href="https://zombo.com/">
-          "You can do anything..."
+        <Button variant="contained" href={checkItemButton.url}>
+          {checkItemButton.text}
         </Button>
       </AccordionActions>
     </Accordion>
