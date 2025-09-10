@@ -1,5 +1,6 @@
 import { Stack, Paper, Typography, IconButton, Box } from "@mui/material";
 import { Close } from "@mui/icons-material";
+import ChecklistItem from "./ChecklistItem";
 
 const Checklist = ({ displayModalBoolean, setDisplayModalBoolean }) => {
   return (
@@ -38,7 +39,10 @@ const Checklist = ({ displayModalBoolean, setDisplayModalBoolean }) => {
             <Close />
           </IconButton>
         </Stack>
-        <Stack></Stack>
+
+        <Stack>
+          <ChecklistItem />
+        </Stack>
       </Box>
     </Paper>
   );
