@@ -6,9 +6,10 @@ import { useState } from "react";
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(dummyQuestion);
   const [pendingChecklistItems, setPendingChecklistItems] = useState([]);
-  const [currentCheckListItems, setCurrentCheckListItems] = useState([]);
+  const [currentChecklistItems, setCurrentChecklistItems] = useState([]);
   const [currentSelectedAnswer, setCurrentSelectedAnswer] = useState("");
 
+  console.log(currentChecklistItems);
   return (
     <Stack
       spacing={7}
@@ -52,7 +53,17 @@ const Quiz = () => {
           <ArrowBackIos fontSize="small" />
           {/* no idea why it's displaying off-center */}
         </Button>
-        <Button variant="contained" size="small">
+        <Button
+          variant="contained"
+          size="small"
+          onClick={() => {
+            //TODO append currentQuestion onto prevQuestions array - upcoming
+            //TODO the decision to use concat on an array of arrays should probably be explained
+            setCurrentChecklistItems(
+              currentChecklistItems.concat([pendingChecklistItems])
+            );
+          }}
+        >
           <ArrowForwardIos fontSize="small" />
         </Button>
       </Stack>
