@@ -12,7 +12,7 @@ That being said, this is also not written as MUI components are.
 It is instead written as a more basic React component, within which we are using MUI components.
 */
 
-const ProgressBar = ({ value, custPadding, setDisplayModal }) => {
+const ProgressBar = ({ value, custPadding, setDisplayModalBoolean }) => {
   // These two lines assign default values for height and padding
   //custHeight = custHeight ? custHeight : 24;
   custPadding = custPadding ? custPadding : 1;
@@ -21,8 +21,6 @@ const ProgressBar = ({ value, custPadding, setDisplayModal }) => {
 
   // This turns the value prop input, received as a number, into something the width attribute can understand
   value = `${value}%`; // We are turning it into a string and adding the % character
-
-  const { setModalState } = useContext(ModalStateContext);
 
   return (
     <Paper // This is the Paper to hold the progress bar and checklist button
@@ -63,7 +61,7 @@ const ProgressBar = ({ value, custPadding, setDisplayModal }) => {
           aria-label="open checklist"
           size="small"
           onClick={() => {
-            setDisplayModal("flex");
+            setDisplayModalBoolean(true);
           }}
         >
           <FormatListBulleted />

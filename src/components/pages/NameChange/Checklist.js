@@ -1,30 +1,37 @@
-import { Stack, Paper, Card, Typography } from "@mui/material";
+import { Stack, Paper, Typography, IconButton } from "@mui/material";
 import { Close } from "@mui/icons-material";
 
-const Checklist = ({ custHeight, custMinHeight }) => {
+const Checklist = ({ displayModalBoolean, setDisplayModalBoolean }) => {
   return (
     <Paper
-      elevation={4}
+      elevation={4} // TODO is this doing things?
       sx={{
-        position: "relative",
-        paddingTop: 6,
-        paddingX: 2,
-        //top: -custHeight - 72, // Could handle this math earlier or use a template string
-        // Alexandra leans towards latter so it's easier to find later if we want to change it
-        height: custHeight,
-        minHeight: custMinHeight,
+        position: "absolute",
+        width: "40%",
+        height: "100%",
+        zIndex: "99",
+        right: 0,
+        display: displayModalBoolean ? "flex" : "none",
       }}
     >
-      <Stack
-        direction="row"
-        sx={{ justifyContent: "space-between", alignItems: "center" }}
-      >
-        <Typography variant="h6" component="h2">
-          Your checklist
+      <Stack direction="row">
+        <Typography
+          // TODO confirm this in the figma -- i'm not sure i have access to it due to our new account setup
+          component="h2"
+          variant="h6"
+        >
+          Your Checklist
         </Typography>
-        <Close />
+        <IconButton
+          aria-label="close checklist"
+          size="small"
+          onClick={() => {
+            setDisplayModalBoolean(false);
+          }}
+        >
+          <Close />
+        </IconButton>
       </Stack>
-      <Stack spacing={4}></Stack>
     </Paper>
   );
 };
