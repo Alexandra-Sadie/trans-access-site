@@ -61,7 +61,7 @@ const Quiz = ({
             //TODO append currentQuestion onto prevQuestions array - upcoming
             //TODO the decision to use concat on an array of arrays should probably be explained
             setCurrentChecklistItems(
-              currentChecklistItems.concat([pendingChecklistItems])
+              currentChecklistItems.concat(pendingChecklistItems)
             );
           }}
         >
