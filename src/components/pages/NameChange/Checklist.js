@@ -1,4 +1,4 @@
-import { Stack, Paper, Typography, IconButton } from "@mui/material";
+import { Stack, Paper, Typography, IconButton, Box } from "@mui/material";
 import { Close } from "@mui/icons-material";
 
 const Checklist = ({ displayModalBoolean, setDisplayModalBoolean }) => {
@@ -14,24 +14,27 @@ const Checklist = ({ displayModalBoolean, setDisplayModalBoolean }) => {
         display: displayModalBoolean ? "flex" : "none",
       }}
     >
-      <Stack direction="row">
-        <Typography
-          // TODO confirm this in the figma -- i'm not sure i have access to it due to our new account setup
-          component="h2"
-          variant="h6"
-        >
-          Your Checklist
-        </Typography>
-        <IconButton
-          aria-label="close checklist"
-          size="small"
-          onClick={() => {
-            setDisplayModalBoolean(false);
-          }}
-        >
-          <Close />
-        </IconButton>
-      </Stack>
+      {/* TODO this Box stops the Stacks below from inherting "height: 100%" -- idk ifthats the best way to do it */}
+      <Box> 
+        <Stack direction="row">
+          <Typography
+            // TODO confirm this in the figma -- i'm not sure i have access to it due to our new account setup
+            component="h2"
+            variant="h6"
+          >
+            Your Checklist
+          </Typography>
+          <IconButton
+            aria-label="close checklist"
+            onClick={() => {
+              setDisplayModalBoolean(false);
+            }}
+          >
+            <Close />
+          </IconButton>
+        </Stack>
+        <Stack>test</Stack>
+      </Box>
     </Paper>
   );
 };
