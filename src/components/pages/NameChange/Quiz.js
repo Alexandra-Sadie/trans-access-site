@@ -2,7 +2,7 @@ import { Stack, Paper, Typography, Button } from "@mui/material";
 
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 
-const Quiz = ({ custHeight, custMinHeight }) => {
+const Quiz = () => {
   return (
     <Stack
       spacing={7}
