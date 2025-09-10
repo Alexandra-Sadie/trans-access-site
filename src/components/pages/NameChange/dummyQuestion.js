@@ -11,7 +11,7 @@ export const dummyQuestion = {
           checkItemBodyText:
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea molestiae, ex quibusdam at nostrum dolorem laborum omnis non quaerat cumque placeat nulla eum consectetur a et dolore? Maxime, molestias at?",
           checkItemButton: {
-            text: "Link to document",
+            text: "You can do anything...",
             url: "https://zombo.com/",
           },
         },

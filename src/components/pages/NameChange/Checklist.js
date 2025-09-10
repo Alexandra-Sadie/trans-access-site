@@ -1,7 +1,11 @@
 import { Stack, Paper, Typography, IconButton, Box } from "@mui/material";
 import { Close } from "@mui/icons-material";
 import ChecklistCard from "./ChecklistCard";
-const Checklist = ({ displayModalBoolean, setDisplayModalBoolean }) => {
+const Checklist = ({
+  displayModalBoolean,
+  setDisplayModalBoolean,
+  currentChecklistItems,
+}) => {
   // TODO would be nice to close it by clicking elsewhere on the page
   return (
     <Paper
@@ -41,7 +45,9 @@ const Checklist = ({ displayModalBoolean, setDisplayModalBoolean }) => {
         </Stack>
 
         <Stack>
-          <ChecklistCard />
+          {currentChecklistItems.map((item) => (
+            <ChecklistCard key={item.checkItemHeader} {...item} />
+          ))}
         </Stack>
       </Box>
     </Paper>

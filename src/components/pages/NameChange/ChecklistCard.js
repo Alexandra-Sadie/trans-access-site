@@ -7,8 +7,14 @@ import {
   Typography,
 } from "@mui/material";
 import { KeyboardArrowDown } from "@mui/icons-material";
+import { dummyQuestion } from "./dummyQuestion";
 
-const ChecklistCard = () => {
+const ChecklistCard = ({
+  checkItemHeader,
+  checkItemBodyText,
+  checkItemButton,
+}) => {
+  console.log(checkItemHeader, checkItemBodyText, checkItemButton);
   return (
     <Accordion>
       <AccordionSummary expandIcon={<KeyboardArrowDown />}>
@@ -17,19 +23,16 @@ const ChecklistCard = () => {
           component="h3"
           variant="h6"
         >
-          This is your checklist.
+          {checkItemHeader}
         </Typography>
       </AccordionSummary>
       <AccordionDetails>
-        <Typography>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione
-          perspiciatis quidem, blanditiis quia iste ab, commodi eligendi ad fuga
-          consequuntur alias! Aperiam omnis nemo accusamus quibusdam aspernatur
-          et perspiciatis fugiat?
-        </Typography>
+        <Typography>{checkItemBodyText}</Typography>
       </AccordionDetails>
       <AccordionActions sx={{ justifyContent: "center" }}>
-        <Button variant="contained">Dismiss</Button>
+        <Button variant="contained" href="https://zombo.com/">
+          "You can do anything..."
+        </Button>
       </AccordionActions>
     </Accordion>
   );

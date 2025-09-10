@@ -1,14 +1,16 @@
 import { Stack, Typography, Button } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { dummyQuestion } from "./dummyQuestion";
-import { useState } from "react";
 
-const Quiz = () => {
-  const [currentQuestion, setCurrentQuestion] = useState(dummyQuestion);
-  const [pendingChecklistItems, setPendingChecklistItems] = useState([]);
-  const [currentChecklistItems, setCurrentChecklistItems] = useState([]);
-  const [currentSelectedAnswer, setCurrentSelectedAnswer] = useState("");
-
+const Quiz = ({
+  currentQuestion,
+  setCurrentQuestion,
+  setCurrentSelectedAnswer,
+  currentChecklistItems,
+  setCurrentChecklistItems,
+  pendingChecklistItems,
+  setPendingChecklistItems,
+}) => {
   return (
     <Stack
       spacing={7}
