@@ -48,8 +48,8 @@ const Quiz = () => {
         spacing={1}
         sx={{ alignItems: "center", justifyContent: "center" }}
       >
-        <Button variant="contained" size="small">
-          <ArrowBackIos fontSize="small" />{" "}
+        <Button variant="contained" size="small" disabled>
+          <ArrowBackIos fontSize="small" />
           {/* no idea why it's displaying off-center */}
         </Button>
         <Button variant="contained" size="small">
