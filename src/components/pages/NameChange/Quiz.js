@@ -5,9 +5,10 @@ import { useState } from "react";
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(dummyQuestion);
+  const [pendingChecklistItems, setPendingChecklistItems] = useState([]);
   const [currentCheckListItems, setCurrentCheckListItems] = useState([]);
+  const [currentSelectedAnswer, setCurrentSelectedAnswer] = useState("");
 
-  const handleSelectAnswer = () => {};
   return (
     <Stack
       spacing={7}
@@ -28,10 +29,14 @@ const Quiz = () => {
       {currentQuestion.answers.map((answer) => {
         return (
           <Button
+            key={answer.buttonText}
             variant="contained"
             size="large"
             sx={{ bgcolor: "secondary.main" }} // TODO this looks WILD on dark mode
-            // onClick={}
+            onClick={() => {
+              setCurrentSelectedAnswer(answer.buttonText);
+              setPendingChecklistItems(answer.checklistItems);
+            }}
           >
             {answer.buttonText}
           </Button>
