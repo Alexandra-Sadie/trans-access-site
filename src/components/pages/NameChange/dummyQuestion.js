@@ -5,13 +5,13 @@ export const dummyQuestion = {
   answers: [
     {
       buttonText: "Add checklist item",
-      addToChecklist: [], // TODO this needs a better name i don't like documents cuz its sometimes Actions but idk
+      checklistItems: [], // TODO this needs a better name i don't like documents cuz its sometimes Actions but idk
       nextQuestion: {},
       done: true,
     },
     {
       buttonText: "Do NOT add a checklist item",
-      addToChecklist: [],
+      checklistItems: [],
       nextQuestion: {},
       done: true,
     },
