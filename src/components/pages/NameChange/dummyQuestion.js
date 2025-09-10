@@ -5,7 +5,17 @@ export const dummyQuestion = {
   answers: [
     {
       buttonText: "Add checklist item",
-      checklistItems: ["a", "b"], // TODO this needs a better name i don't like documents cuz its sometimes Actions but idk
+      checklistItems: [
+        {
+          checkItemHeader: "Successful checklist item!",
+          checkItemBodyText:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea molestiae, ex quibusdam at nostrum dolorem laborum omnis non quaerat cumque placeat nulla eum consectetur a et dolore? Maxime, molestias at?",
+          checkItemButton: {
+            text: "Link to document",
+            url: "https://zombo.com/",
+          },
+        },
+      ], // TODO this needs a better name i don't like documents cuz its sometimes Actions but idk
       nextQuestion: {},
       done: true,
     },

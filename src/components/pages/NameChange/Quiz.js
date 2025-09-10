@@ -9,7 +9,6 @@ const Quiz = () => {
   const [currentChecklistItems, setCurrentChecklistItems] = useState([]);
   const [currentSelectedAnswer, setCurrentSelectedAnswer] = useState("");
 
-  console.log(currentChecklistItems);
   return (
     <Stack
       spacing={7}
