@@ -69,13 +69,16 @@ const Quiz = ({
           size="small"
           onClick={() => {
             //TODO append currentQuestion onto prevQuestions array - upcoming
-            //TODO the decision to use concat on an array of arrays should probably be explained
-            setCurrentChecklistItems(
-              //TODO we need to run a flatten on the display side. this should be a nested array
-              currentChecklistItems.concat([pendingChecklistItems])
-            );
-            setCurrentQuestion(pendingQuestion);
-            setSelectedButton(""); // stops buttons from staying highlighted across questions if they have the same answer text
+            if (selectedButton) {
+              //TODO the decision to use concat on an array of arrays should probably be explained
+              setCurrentChecklistItems(
+                //TODO we need to run a flatten on the display side. this should be a nested array
+                currentChecklistItems.concat([pendingChecklistItems])
+              );
+
+              setCurrentQuestion(pendingQuestion);
+              setSelectedButton(""); // stops buttons from staying highlighted across questions if they have the same answer text
+            }
           }}
         >
           <ArrowForwardIos fontSize="small" />
