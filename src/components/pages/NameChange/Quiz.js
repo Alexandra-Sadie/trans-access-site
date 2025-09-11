@@ -6,14 +6,13 @@ import { useState } from "react";
 const Quiz = ({
   currentQuestion,
   setCurrentQuestion,
-  setCurrentSelectedAnswer,
   currentChecklistItems,
   setCurrentChecklistItems,
   pendingChecklistItems,
   setPendingChecklistItems,
 }) => {
   const [selectedButton, setSelectedButton] = useState("");
-  console.log(selectedButton);
+  const [pendingQuestion, setpendingQuestion] = useState({});
   return (
     <Stack
       spacing={7}
@@ -46,9 +45,9 @@ const Quiz = ({
                   : "secondary.light", // the unselected button is de-highlighted light
             }} // TODO this looks WILD on dark mode
             onClick={() => {
-              setCurrentSelectedAnswer(answer.buttonText);
               setPendingChecklistItems(answer.checklistItems);
               setSelectedButton(answer.buttonText);
+              setpendingQuestion(answer.nextQuestion);
             }}
           >
             {answer.buttonText}
@@ -75,6 +74,7 @@ const Quiz = ({
               //TODO we need to run a flatten on the display side. this should be a nested array
               currentChecklistItems.concat([pendingChecklistItems])
             );
+            setCurrentQuestion(pendingQuestion);
           }}
         >
           <ArrowForwardIos fontSize="small" />

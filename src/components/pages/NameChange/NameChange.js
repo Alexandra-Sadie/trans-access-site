@@ -17,7 +17,6 @@ const NameChange = () => {
   const [currentQuestion, setCurrentQuestion] = useState(firstQuestion);
   const [pendingChecklistItems, setPendingChecklistItems] = useState([]);
   const [currentChecklistItems, setCurrentChecklistItems] = useState([]);
-  const [currentSelectedAnswer, setCurrentSelectedAnswer] = useState("");
 
   return (
     <>
@@ -55,7 +54,6 @@ const NameChange = () => {
             <Quiz
               currentQuestion={currentQuestion}
               setCurrentQuestion={setCurrentQuestion}
-              setCurrentSelectedAnswer={setCurrentSelectedAnswer}
               currentChecklistItems={currentChecklistItems}
               setCurrentChecklistItems={setCurrentChecklistItems}
               pendingChecklistItems={pendingChecklistItems}

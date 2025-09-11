@@ -42,7 +42,7 @@ export const firstQuestion = {
           {
             buttonText: "Do NOT add a checklist item",
             checklistItems: [],
-            nextQuestion: {},
+            nextQuestion: secondQuestion,
             done: true,
           },
         ],
