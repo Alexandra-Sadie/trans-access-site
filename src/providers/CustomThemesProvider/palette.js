@@ -14,8 +14,8 @@ const palette = {
     // !Note for building name change tool – some of these are hover states, test before building interactions
     secondary: {
       main: "#F8CDD4",
-      light: "#F4ACB7",
-      dark: "#FBDFE4",
+      light: "#FBDFE4", // i switched this with secondary.dark to match the figma
+      dark: "#F4ACB7",
       contrastText: "#271f22",
     },
     progressBar: { main: "#F8CDD4", light: "#FDEDEF" },
