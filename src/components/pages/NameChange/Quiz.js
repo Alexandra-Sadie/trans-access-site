@@ -75,6 +75,7 @@ const Quiz = ({
               currentChecklistItems.concat([pendingChecklistItems])
             );
             setCurrentQuestion(pendingQuestion);
+            setSelectedButton(""); // stops buttons from staying highlighted across questions if they have the same answer text
           }}
         >
           <ArrowForwardIos fontSize="small" />
