@@ -45,9 +45,13 @@ const Checklist = ({
         </Stack>
 
         <Stack>
-          {currentChecklistItems.map((item) => (
-            <ChecklistCard key={item.checkItemHeader} {...item} />
-          ))}
+          {currentChecklistItems
+            //TODO this flattens one level of the nested array-- double check that is correct and we won't run into any issues
+            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
+            .flat()
+            .map((item) => (
+              <ChecklistCard key={item.checkItemHeader} {...item} />
+            ))}
         </Stack>
       </Box>
     </Paper>
