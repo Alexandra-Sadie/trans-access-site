@@ -1,7 +1,7 @@
 export const dummyQuestion = {
   questionHeader: "This is a test question to add a checklist item.",
   questionSubHeader:
-    "Press either button below to add an item to your checklist. (Eventually!)",
+    "Press either button below to add an item to your checklist!",
   answers: [
     {
       buttonText: "Add checklist item",
