@@ -1,6 +1,7 @@
 import { Stack, Typography, Button } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { dummyQuestion } from "./dummyQuestion";
+import { useState } from "react";
 
 const Quiz = ({
   currentQuestion,
@@ -11,6 +12,8 @@ const Quiz = ({
   pendingChecklistItems,
   setPendingChecklistItems,
 }) => {
+  const [selectedButton, setSelectedButton] = useState("");
+  console.log(selectedButton);
   return (
     <Stack
       spacing={7}
@@ -34,10 +37,18 @@ const Quiz = ({
             key={answer.buttonText}
             variant="contained"
             size="large"
-            sx={{ bgcolor: "secondary.main" }} // TODO this looks WILD on dark mode
+            sx={{
+              bgcolor:
+                selectedButton === ""
+                  ? "secondary.main" // default color if no buttons are selected yet
+                  : selectedButton === answer.buttonText
+                  ? "secondary.dark" // if the current button is selected it's highlighted dark
+                  : "secondary.light", // the unselected button is de-highlighted light
+            }} // TODO this looks WILD on dark mode
             onClick={() => {
               setCurrentSelectedAnswer(answer.buttonText);
               setPendingChecklistItems(answer.checklistItems);
+              setSelectedButton(answer.buttonText);
             }}
           >
             {answer.buttonText}
