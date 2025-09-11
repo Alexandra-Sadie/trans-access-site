@@ -13,7 +13,6 @@ const ChecklistCard = ({
   checkItemBodyText,
   checkItemButton,
 }) => {
-  console.log(checkItemHeader, checkItemBodyText, checkItemButton);
   return (
     <Accordion>
       <AccordionSummary expandIcon={<KeyboardArrowDown />}>

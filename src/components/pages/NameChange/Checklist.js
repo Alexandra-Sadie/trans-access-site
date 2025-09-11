@@ -7,7 +7,6 @@ const Checklist = ({
   currentChecklistItems,
 }) => {
   // TODO would be nice to close it by clicking elsewhere on the page
-  console.log(currentChecklistItems);
   return (
     <Paper
       elevation={4} // TODO is this doing things?
