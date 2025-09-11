@@ -1,6 +1,6 @@
 import { Stack, Typography, Button } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
-import { dummyQuestion } from "./dummyQuestion";
+import { firstQuestion } from "./questions/firstQuestion";
 import { useState } from "react";
 
 const Quiz = ({

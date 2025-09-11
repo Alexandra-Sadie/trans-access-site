@@ -1,7 +1,6 @@
-export const dummyQuestion = {
-  questionHeader: "This is a test question to add a checklist item.",
-  questionSubHeader:
-    "Press either button below to add an item to your checklist!",
+export const secondQuestion = {
+  questionHeader: "This is the second mandatory question.",
+  questionSubHeader: "This is the end of the current path.",
   answers: [
     {
       buttonText: "Add checklist item",
@@ -15,7 +14,7 @@ export const dummyQuestion = {
             url: "https://zombo.com/",
           },
         },
-      ], // TODO this needs a better name i don't like documents cuz its sometimes Actions but idk
+      ],
       nextQuestion: {},
       done: true,
     },
