@@ -49,6 +49,7 @@ const NameChange = () => {
             />
             <ProgressBar
               value={50} // dummy value for now
+              displayModalBoolean={displayModalBoolean}
               setDisplayModalBoolean={setDisplayModalBoolean}
             />
             <Quiz
