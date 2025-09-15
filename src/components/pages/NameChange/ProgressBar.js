@@ -1,7 +1,5 @@
-import { useContext } from "react";
 import { Stack, Paper, IconButton } from "@mui/material";
 import { FormatListBulleted } from "@mui/icons-material";
-import { ModalStateContext } from "./ModalStateProvider";
 
 /* This is a custom progress bar that can 
 
@@ -12,7 +10,7 @@ That being said, this is also not written as MUI components are.
 It is instead written as a more basic React component, within which we are using MUI components.
 */
 
-const ProgressBar = ({ value, custHeight, custPadding }) => {
+const ProgressBar = ({ value, custPadding, setDisplayModalBoolean }) => {
   // These two lines assign default values for height and padding
   //custHeight = custHeight ? custHeight : 24;
   custPadding = custPadding ? custPadding : 1;
@@ -22,12 +20,15 @@ const ProgressBar = ({ value, custHeight, custPadding }) => {
   // This turns the value prop input, received as a number, into something the width attribute can understand
   value = `${value}%`; // We are turning it into a string and adding the % character
 
-  const { setModalState } = useContext(ModalStateContext);
-
   return (
     <Paper // This is the Paper to hold the progress bar and checklist button
       elevation={4}
-      sx={{ height: 72, paddingY: 3, paddingLeft: 6, paddingRight: 3 }}
+      sx={{
+        height: 72,
+        paddingY: 3,
+        paddingLeft: 6,
+        paddingRight: 3,
+      }}
     >
       <Stack
         direction="row"
@@ -55,9 +56,11 @@ const ProgressBar = ({ value, custHeight, custPadding }) => {
           ></Paper>
         </Paper>
         <IconButton
-          onClick={setModalState}
           aria-label="open checklist"
           size="small"
+          onClick={() => {
+            setDisplayModalBoolean(true);
+          }}
         >
           <FormatListBulleted />
         </IconButton>

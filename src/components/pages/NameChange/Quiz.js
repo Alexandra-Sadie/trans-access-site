@@ -1,62 +1,90 @@
-import { Stack, Paper, Typography, Button } from "@mui/material";
-
+import { Stack, Typography, Button } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
+import { firstQuestion } from "./questions/firstQuestion";
+import { useState } from "react";
 
-const Quiz = ({ custHeight, custMinHeight }) => {
+const Quiz = ({
+  currentQuestion,
+  setCurrentQuestion,
+  currentChecklistItems,
+  setCurrentChecklistItems,
+  pendingChecklistItems,
+  setPendingChecklistItems,
+}) => {
+  const [selectedButton, setSelectedButton] = useState("");
+  const [pendingQuestion, setpendingQuestion] = useState({});
   return (
-    <Paper
-      elevation={4}
+    <Stack
+      spacing={7}
       sx={{
-        position: "relative", // TODO: Explain overlapping, organize accordingly
-        paddingTop: 19,
-        paddingBottom: 10,
-        paddingX: 25,
-        top: -72,
-        minHeight: custMinHeight,
-        height: custHeight,
+        justifyContent: "center",
+        alignItems: "stretch",
+        marginTop: 10,
+        marginX: "16%",
       }}
     >
+      <Typography variant="h2" component="h1" align="center">
+        {/* Not sure which header scale to use here */}
+        {currentQuestion.questionHeader}
+      </Typography>
+      <Typography variant="body1" align="left">
+        {currentQuestion.questionSubHeader}
+      </Typography>
+      {currentQuestion.answers.map((answer) => {
+        return (
+          <Button
+            key={answer.buttonText}
+            variant="contained"
+            size="large"
+            sx={{
+              bgcolor:
+                selectedButton === ""
+                  ? "secondary.main" // default color if no buttons are selected yet
+                  : selectedButton === answer.buttonText
+                  ? "secondary.dark" // if the current button is selected it's highlighted dark
+                  : "secondary.light", // the unselected button is de-highlighted light
+            }} // TODO this looks WILD on dark mode
+            onClick={() => {
+              setPendingChecklistItems(answer.checklistItems);
+              setSelectedButton(answer.buttonText);
+              setpendingQuestion(answer.nextQuestion);
+            }}
+          >
+            {answer.buttonText}
+          </Button>
+        );
+      })}
+
       <Stack
-        spacing={7}
-        sx={{ justifyContent: "center", alignItems: "stretch" }}
+        direction="row"
+        spacing={1}
+        sx={{ alignItems: "center", justifyContent: "center" }}
       >
-        <Typography variant="h2" component="h1" align="center">
-          {/* Not sure which header scale to use here */}
-          Have you acquired and submitted all the documents in your checklist?
-        </Typography>
-        <Typography variant="body1" align="left">
-          Once you’ve submitted everything, the État Civil will render a
-          decision.
-        </Typography>
-        <Button
-          variant="contained"
-          size="large"
-          sx={{ bgcolor: "secondary.main" }}
-        >
-          They approved
+        <Button variant="contained" size="small" disabled>
+          <ArrowBackIos fontSize="small" />
+          {/* no idea why it's displaying off-center */}
         </Button>
         <Button
           variant="contained"
-          size="large"
-          sx={{ bgcolor: "secondary.main" }}
+          size="small"
+          onClick={() => {
+            //TODO append currentQuestion onto prevQuestions array - upcoming
+            if (selectedButton) {
+              //TODO the decision to use concat on an array of arrays should probably be explained
+              setCurrentChecklistItems(
+                //TODO we need to run a flatten on the display side. this should be a nested array
+                currentChecklistItems.concat([pendingChecklistItems])
+              );
+
+              setCurrentQuestion(pendingQuestion);
+              setSelectedButton(""); // stops buttons from staying highlighted across questions if they have the same answer text
+            }
+          }}
         >
-          They refused
+          <ArrowForwardIos fontSize="small" />
         </Button>
-        <Stack
-          direction="row"
-          spacing={1}
-          sx={{ alignItems: "center", justifyContent: "center" }}
-        >
-          <Button variant="contained" size="small">
-            <ArrowBackIos fontSize="small" />{" "}
-            {/* no idea why it's displaying off-center */}
-          </Button>
-          <Button variant="contained" size="small">
-            <ArrowForwardIos fontSize="small" />
-          </Button>
-        </Stack>
       </Stack>
-    </Paper>
+    </Stack>
   );
 };
 
