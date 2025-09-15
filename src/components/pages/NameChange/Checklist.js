@@ -21,7 +21,7 @@ const Checklist = ({
       // this ClickAwayListener needs to be within the conditional rendering -- otherwise clicking on the page even when the Paper is not rendered would tricker the ClickAway
       <ClickAwayListener onClickAway={() => setDisplayModalBoolean(false)}>
         <Paper
-          elevation={4} // TODO is this doing things?
+          elevation={0} // Shadows are not needed for the checklist, as the modal backdrop provides elevation cues to the user
           sx={{
             position: "absolute",
             width: "40%",
