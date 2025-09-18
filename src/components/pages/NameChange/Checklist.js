@@ -58,7 +58,7 @@ const Checklist = ({
               {currentChecklistItems
                 //TODO this flattens one level of the nested array-- double check that is correct and we won't run into any issues
                 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
-                .flat()
+                .flat() // currentChecklistItems is a 2d array for data logic reasons, so it must first be flattened in order to be displayed
                 .map((item) => (
                   <ChecklistCard key={item.checkItemHeader} {...item} />
                 ))}
