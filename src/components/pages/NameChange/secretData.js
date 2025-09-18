@@ -1,24 +1,23 @@
-// type Question = {
-//     qHeading: string;
-//     qSubHead?: string;
-//     answers: Answer[];
-// };
+type Question = {
+  qHeading: string,
+  qSubHead?: string,
+  answers: Answer[],
+};
 
-// type Answer = {
-//     buttonText: string; // Will be a key or a UUID ???
-//     checklistItems: ChecklistItem[]; // Can be an empty array
-//     nextQuestion?: Question;
-//     done?: boolean // Slight redundancy, also need to determine sorry! paths
-// };
+type Answer = {
+  buttonText: string, // This will also serve as an identifier within answers array in Question object
+  checklistItems: ChecklistItem[], // Can be an empty array; many answers won't add checklist items, so an empty array will signify this when returning to previous question
+  nextQuestion?: Question,
+  done?: boolean, // Slight redundancy (programatically, but not in terms of readability), also need to determine sorry! paths
+};
 
-// type ChecklistItem = {
-//     // Prefix for these keys not final
-//     itemHeader: string;
-//     itemBodyText: string; // Might not be required
-//     itemButton?: ItemButtonType; // Probably only one is needed, but may need to become an array
-// };
+type ChecklistItem = {
+  checkItemHeader: string,
+  checkItemBodyText: string, // Might update this key to not be required
+  checkItemButton?: CheckItemButton, // Probably only one is needed, but may need to become an array
+};
 
-// type ItemButtonType = { // Also, does this need to have the suffix "type"
-//     text: string;
-//     link: string; // Paper says URL, but this feels like it should be a string
-// };
+type CheckItemButton = {
+  text: string,
+  link: string, // This should always be a valid URL
+};
