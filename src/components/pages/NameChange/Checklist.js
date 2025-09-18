@@ -15,9 +15,8 @@ const Checklist = ({
 }) => {
   // TODO would be nice to close it by clicking elsewhere on the page
   return (
-    // this && operator will only return the components if displayModalBoolean is true
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND
-    displayModalBoolean && (
+    // The entire component will only mount if displayModalBoolean is true
+    displayModalBoolean ? (
       // this ClickAwayListener needs to be within the conditional rendering -- otherwise clicking on the page even when the Paper is not rendered would tricker the ClickAway
       <ClickAwayListener onClickAway={() => setDisplayModalBoolean(false)}>
         <Paper
@@ -67,6 +66,8 @@ const Checklist = ({
           </Box>
         </Paper>
       </ClickAwayListener>
+    ) : (
+      <></>
     )
   );
 };
