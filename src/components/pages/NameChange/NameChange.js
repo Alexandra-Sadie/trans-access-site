@@ -20,17 +20,18 @@ const NameChange = () => {
 
   return (
     <>
+      {/* TODO: Get rid of this first Grid container  */}
       <Grid container spacing={0} sx={{ width: "100%" }}>
-        {/* TODO: Get rid of this  */}
+        {/* z-index not needed anymore I think */}
         <Grid size={12} sx={{ zIndex: 0 }}>
           <Paper
             elevation={4}
             sx={{
-              position: "relative", // TODO: Explain overlapping, organize accordingly
+              position: "relative", // TODO: remove this
               height: 700,
             }}
           >
-            <Box
+            <Box // This is the Checklist backdrop
               sx={{
                 position: "absolute",
                 width: "100%",
