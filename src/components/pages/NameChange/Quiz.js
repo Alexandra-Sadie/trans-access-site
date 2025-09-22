@@ -70,7 +70,8 @@ const Quiz = ({
           onClick={() => {
             //TODO append currentQuestion onto prevQuestions array - upcoming
             if (selectedButton) {
-              //TODO the decision to use concat on an array of arrays should probably be explained
+              // the concat() function by default, when provided an array, will concatenate the *contents* of this array, instead of concatenating the array as a whole, i.e. concatenating [c,d] to [a,b] will result in [a,b,c,d] instead of [a,b,[c,d]]
+              // Because we need to maintain currentChecklistItems as a 2D array, we thus wrap pendingChecklistItems in a new array
               setCurrentChecklistItems(
                 currentChecklistItems.concat([pendingChecklistItems])
               );
