@@ -3,7 +3,7 @@ import {
   Paper,
   Typography,
   IconButton,
-  Box,
+  //Box,
   ClickAwayListener,
 } from "@mui/material";
 import { Close } from "@mui/icons-material";
@@ -31,11 +31,11 @@ const Checklist = ({
             padding: 3,
           }}
         >
+          {/* Au-Update: The height seems to be working fine without this? Leaving it in just in case for now*/}
           {/* <Box
             //  this Box stops the Stacks below from inherting "height: 100%" -- idk ifthats the best way to do it
             // also width=100% makes it fill the paper
             width="100%"
-            // Au-Update: The height seems to be working fine without this?
             sx={{ padding: 3 }}
           > */}
           <Stack direction="row" justifyContent="space-between">
