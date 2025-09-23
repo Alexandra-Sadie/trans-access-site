@@ -42,13 +42,6 @@ const Checklist = ({
               padding: 2,
             }}
           >
-            {/* Au-Update: The height seems to be working fine without this? Leaving it in just in case for now*/}
-            {/* <Box
-            //  this Box stops the Stacks below from inherting "height: 100%" -- idk ifthats the best way to do it
-            // also width=100% makes it fill the paper
-            width="100%"
-            sx={{ padding: 3 }}
-          > */}
             <Stack direction="row" justifyContent="space-between">
               <Typography
                 // TODO confirm this in the figma -- i'm not sure i have access to it due to our new account setup
@@ -76,7 +69,6 @@ const Checklist = ({
                   <ChecklistCard key={item.checkItemHeader} {...item} />
                 ))}
             </Stack>
-            {/* </Box> */}
           </Paper>
         </ClickAwayListener>
       </Box>
