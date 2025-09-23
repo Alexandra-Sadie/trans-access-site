@@ -64,13 +64,15 @@ const Quiz = ({
         <Button
           variant="contained"
           size="small"
-          disabled={!previousQuestions.length}
+          disabled={!previousQuestions.length} // disabled if there are no previous questions — if the array has no length, it returns falsy
           onClick={() => {
-            const lastQuestionIndex = previousQuestions.length - 1;
-            setCurrentQuestion(previousQuestions[lastQuestionIndex]);
-            setPreviousQuestions(
-              previousQuestions.toSpliced(lastQuestionIndex)
-            );
+            if (previousQuestions.length) {
+              const lastQuestionIndex = previousQuestions.length - 1;
+              setCurrentQuestion(previousQuestions[lastQuestionIndex]);
+              setPreviousQuestions(
+                previousQuestions.toSpliced(lastQuestionIndex)
+              );
+            }
           }}
         >
           <ArrowBackIos fontSize="small" />
