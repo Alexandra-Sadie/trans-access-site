@@ -13,6 +13,7 @@ const Quiz = ({
 }) => {
   const [selectedButton, setSelectedButton] = useState("");
   const [pendingQuestion, setpendingQuestion] = useState({});
+  const [previousQuestions, setPreviousQuestions] = useState([]);
   return (
     <Stack
       spacing={7}
@@ -60,7 +61,17 @@ const Quiz = ({
         spacing={1}
         sx={{ alignItems: "center", justifyContent: "center" }}
       >
-        <Button variant="contained" size="small" disabled>
+        <Button
+          variant="contained"
+          size="small"
+          onClick={() => {
+            const lastQuestionIndex = previousQuestions.length - 1;
+            setCurrentQuestion(previousQuestions[lastQuestionIndex]);
+            setPreviousQuestions(
+              previousQuestions.toSpliced(lastQuestionIndex)
+            );
+          }}
+        >
           <ArrowBackIos fontSize="small" />
           {/* no idea why it's displaying off-center */}
         </Button>
@@ -76,6 +87,8 @@ const Quiz = ({
                 currentChecklistItems.concat([pendingChecklistItems])
               );
 
+              setPreviousQuestions(previousQuestions.concat(currentQuestion));
+              console.log(previousQuestions);
               setCurrentQuestion(pendingQuestion);
               setSelectedButton(""); // stops buttons from staying highlighted across questions if they have the same answer text
             }
