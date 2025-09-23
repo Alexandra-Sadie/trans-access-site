@@ -31,17 +31,6 @@ const NameChange = () => {
               height: 700,
             }}
           >
-            <Box // This is the Checklist backdrop
-              sx={{
-                position: "absolute",
-                width: "100%",
-                height: "100%",
-                bgcolor: "grey",
-                zIndex: "90", // TODO mb refine this
-                opacity: "0.3", // TODO just eyeballed, key off design
-                display: displayModalBoolean ? "flex" : "none",
-              }}
-            ></Box>
             <Checklist
               displayModalBoolean={displayModalBoolean}
               setDisplayModalBoolean={setDisplayModalBoolean}
