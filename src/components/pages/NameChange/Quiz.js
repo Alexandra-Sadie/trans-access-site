@@ -64,6 +64,7 @@ const Quiz = ({
         <Button
           variant="contained"
           size="small"
+          disabled={!previousQuestions.length}
           onClick={() => {
             const lastQuestionIndex = previousQuestions.length - 1;
             setCurrentQuestion(previousQuestions[lastQuestionIndex]);
