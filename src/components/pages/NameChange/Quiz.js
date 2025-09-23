@@ -61,7 +61,7 @@ const Quiz = ({
         spacing={1}
         sx={{ alignItems: "center", justifyContent: "center" }}
       >
-        <Button
+        <Button // Back button
           variant="contained"
           size="small"
           disabled={!previousQuestions.length} // disabled if there are no previous questions — if the array has no length, it returns falsy
@@ -78,7 +78,7 @@ const Quiz = ({
           <ArrowBackIos fontSize="small" />
           {/* no idea why it's displaying off-center */}
         </Button>
-        <Button
+        <Button // FOrwards button
           variant="contained"
           size="small"
           onClick={() => {
