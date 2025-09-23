@@ -78,7 +78,7 @@ const Quiz = ({
           <ArrowBackIos fontSize="small" />
           {/* no idea why it's displaying off-center */}
         </Button>
-        <Button // FOrwards button
+        <Button // Forwards button
           variant="contained"
           size="small"
           onClick={() => {
