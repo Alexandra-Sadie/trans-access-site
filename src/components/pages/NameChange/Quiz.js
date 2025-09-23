@@ -1,5 +1,5 @@
 import { Stack, Typography, Button } from "@mui/material";
-import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
+import { ArrowBackIosNew, ArrowForwardIos } from "@mui/icons-material";
 import { firstQuestion } from "./questions/firstQuestion";
 import { useState } from "react";
 
@@ -75,7 +75,7 @@ const Quiz = ({
             }
           }}
         >
-          <ArrowBackIos fontSize="small" />
+          <ArrowBackIosNew fontSize="small" />
           {/* no idea why it's displaying off-center */}
         </Button>
         <Button // Forwards button
