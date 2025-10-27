@@ -6,6 +6,7 @@ import {
   Box,
   ClickAwayListener,
   Fade,
+  Slide,
 } from "@mui/material";
 import { Close } from "@mui/icons-material";
 import ChecklistCard from "./ChecklistCard";
@@ -33,52 +34,64 @@ const Checklist = ({
           }}
         ></Box>
       </Fade>
-
-      {/* this ClickAwayListener needs to be within the conditional rendering
-        -- otherwise clicking on the page even when the Paper is not rendered
-        would tricker the ClickAway */}
-      {/* <ClickAwayListener onClickAway={() => setDisplayModalBoolean(false)}>
-        <Paper
-          elevation={0} // Shadows are not needed for the checklist, as the modal backdrop provides elevation cues to the user
-          sx={{
-            position: "absolute",
-            width: "40%",
-            height: "100%",
-            right: 0,
-            // TODO padding: 2 is an eyeball set for consistency with ProgressBar, the buttons are at the same place on the screen
-            padding: 2,
-            zIndex: 99,
+      {displayModalBoolean ? (
+        <ClickAwayListener
+          // this ClickAwayListener needs to be within the conditional rendering
+          // -- otherwise clicking on the page even when the Paper is not rendered
+          // would tricker the ClickAway
+          onClickAway={() => {
+            if (displayModalBoolean === true) {
+              setDisplayModalBoolean(false);
+              console.log("im hidinggggg");
+            }
           }}
         >
-          <Stack direction="row" justifyContent="space-between">
-            <Typography
-              // TODO confirm this in the figma -- i'm not sure i have access to it due to our new account setup
-              component="h2"
-              variant="h6"
-            >
-              Your Checklist
-            </Typography>
-            <IconButton
-              aria-label="close checklist"
-              onClick={() => {
-                setDisplayModalBoolean(false);
+          <Slide in={displayModalBoolean}>
+            <Paper
+              elevation={0} // Shadows are not needed for the checklist, as the modal backdrop provides elevation cues to the user
+              sx={{
+                position: "absolute",
+                width: "40%",
+                height: "100%",
+                right: 0,
+                // TODO padding: 2 is an eyeball set for consistency with ProgressBar, the buttons are at the same place on the screen
+                padding: 2,
+                zIndex: 99,
               }}
             >
-              <Close />
-            </IconButton>
-          </Stack>
+              <Stack direction="row" justifyContent="space-between">
+                <Typography
+                  // TODO confirm this in the figma -- i'm not sure i have access to it due to our new account setup
+                  component="h2"
+                  variant="h6"
+                >
+                  Your Checklist
+                </Typography>
+                <IconButton
+                  aria-label="close checklist"
+                  onClick={() => {
+                    setDisplayModalBoolean(false);
+                  }}
+                >
+                  <Close />
+                </IconButton>
+              </Stack>
 
-          <Stack>
-            {currentChecklistItems
-              //TODO this flattens one level of the nested array-- double check that is correct and we won't run into any issues
-              // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
-              .flat() // currentChecklistItems is a 2d array for data logic reasons, so it must first be flattened in order to be displayed
-              .map((item) => (
-                <ChecklistCard key={item.checkItemHeader} {...item} />
-              ))}
-          </Stack>
-        </Paper>
-      </ClickAwayListener> */}
+              <Stack>
+                {currentChecklistItems
+                  //TODO this flattens one level of the nested array-- double check that is correct and we won't run into any issues
+                  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
+                  .flat() // currentChecklistItems is a 2d array for data logic reasons, so it must first be flattened in order to be displayed
+                  .map((item) => (
+                    <ChecklistCard key={item.checkItemHeader} {...item} />
+                  ))}
+              </Stack>
+            </Paper>
+          </Slide>
+        </ClickAwayListener>
+      ) : (
+        ""
+      )}
     </>
   );
 };
