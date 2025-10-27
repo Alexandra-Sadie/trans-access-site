@@ -39,6 +39,7 @@ const Checklist = ({
           // this ClickAwayListener needs to be within the conditional rendering
           // -- otherwise clicking on the page even when the Paper is not rendered
           // would tricker the ClickAway
+          // TODO BUT!!! this may not be best to wrap the rest in we don't want it to disagree with how the slide animation does a version of this. so idk it works but to look into???
           onClickAway={() => {
             if (displayModalBoolean === true) {
               setDisplayModalBoolean(false);
