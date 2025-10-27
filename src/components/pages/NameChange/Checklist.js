@@ -5,6 +5,7 @@ import {
   IconButton,
   Box,
   ClickAwayListener,
+  Fade,
 } from "@mui/material";
 import { Close } from "@mui/icons-material";
 import ChecklistCard from "./ChecklistCard";
@@ -17,16 +18,21 @@ const Checklist = ({
   return (
     // The entire component will only mount if displayModalBoolean is true
     <>
-      <Box // This is the backdrop
-        sx={{
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-          bgcolor: "rgba(100, 100, 100, 0.3)", // TODO just eyeballed, key off design
-          zIndex: 80, // TODO mb refine this we should have an actual z index system
-          borderRadius: 1,
-        }}
-      ></Box>
+      <Fade
+        in={displayModalBoolean}
+        // TODO this is using MUI default transition timing, I think? it's in the theme? we could have our designers choose a perfect timing if we want or just say this is cool 👍 ¯\_(ツ)_/¯
+      >
+        <Box // This is the backdrop
+          sx={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            bgcolor: "rgba(100, 100, 100, 0.3)", // TODO just eyeballed, key off design
+            zIndex: 80, // TODO mb refine this we should have an actual z index system
+            borderRadius: 1,
+          }}
+        ></Box>
+      </Fade>
 
       {/* this ClickAwayListener needs to be within the conditional rendering
         -- otherwise clicking on the page even when the Paper is not rendered
