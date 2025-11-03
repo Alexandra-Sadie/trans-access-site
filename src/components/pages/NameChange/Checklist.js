@@ -47,7 +47,7 @@ const Checklist = ({
             }
           }}
         >
-          <Slide in={displayModalBoolean}>
+          <Slide in={displayModalBoolean} direction="left">
             <Paper
               elevation={0} // Shadows are not needed for the checklist, as the modal backdrop provides elevation cues to the user
               sx={{
