@@ -31,12 +31,14 @@ const NameChange = () => {
             sx={{
               position: "relative", // TODO: remove this
               height: 700,
+              overflow: "hidden",
             }}
           >
             <Checklist
               displayModalBoolean={displayModalBoolean}
               setDisplayModalBoolean={setDisplayModalBoolean}
               currentChecklistItems={currentChecklistItems}
+              modalContainerRef={modalContainerRef}
             />
             <ProgressBar
               value={50} // dummy value for now

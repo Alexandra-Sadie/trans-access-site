@@ -14,6 +14,7 @@ const Checklist = ({
   displayModalBoolean,
   setDisplayModalBoolean,
   currentChecklistItems,
+  modalContainerRef,
 }) => {
   // TODO would be nice to close it by clicking elsewhere on the page
   return (
@@ -47,7 +48,11 @@ const Checklist = ({
             }
           }}
         >
-          <Slide in={displayModalBoolean} direction="left">
+          <Slide
+            in={displayModalBoolean}
+            direction="left"
+            container={modalContainerRef.current}
+          >
             <Paper
               elevation={0} // Shadows are not needed for the checklist, as the modal backdrop provides elevation cues to the user
               sx={{
