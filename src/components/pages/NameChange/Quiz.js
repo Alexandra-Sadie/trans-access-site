@@ -44,7 +44,7 @@ const Quiz = ({
                   : selectedButton === answer.buttonText
                   ? "secondary.dark" // if the current button is selected it's highlighted dark
                   : "secondary.light", // the unselected button is de-highlighted light
-              color: "text.primary",
+              color: "text.primary", // This is the text colour, has to be set so it changes in dark mode
             }} // TODO this looks WILD on dark mode
             onClick={() => {
               setPendingChecklistItems(answer.checklistItems);
