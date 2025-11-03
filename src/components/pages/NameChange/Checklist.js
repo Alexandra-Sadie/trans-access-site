@@ -35,34 +35,40 @@ const Checklist = ({
           }}
         ></Box>
       </Fade>
-      {displayModalBoolean ? (
-        <ClickAwayListener
-          // this ClickAwayListener needs to be within the conditional rendering
-          // -- otherwise clicking on the page even when the Paper is not rendered
-          // would tricker the ClickAway
-          // TODO BUT!!! this may not be best to wrap the rest in we don't want it to disagree with how the slide animation does a version of this. so idk it works but to look into???
-          onClickAway={() => {
-            if (displayModalBoolean === true) {
-              setDisplayModalBoolean(false);
-              console.log("im hidinggggg");
-            }
+      <Slide
+        in={displayModalBoolean}
+        direction="left"
+        container={modalContainerRef.current}
+        unmountOnExit // Prevents the ClickAwayListener from closing the modal when one clicks the button to open it
+      >
+        <Box // This box is here because the Slide can't have ClickAwayListener as its direct child, neither a React fragment
+          sx={{
+            // Most of this positioning styling is duplicated from the Paper
+            // ? Not sure if some things are redundant, I did a quick check that suggested as such...
+            position: "absolute",
+            width: "40%",
+            height: "100%",
+            right: 0,
+            zIndex: 99,
           }}
         >
-          <Slide
-            in={displayModalBoolean}
-            direction="left"
-            container={modalContainerRef.current}
+          <ClickAwayListener
+            onClickAway={() => {
+              if (displayModalBoolean === true) {
+                setDisplayModalBoolean(false);
+                console.log("im hidinggggg");
+              }
+            }}
           >
             <Paper
               elevation={0} // Shadows are not needed for the checklist, as the modal backdrop provides elevation cues to the user
               sx={{
                 position: "absolute",
-                width: "40%",
+                width: "100%",
                 height: "100%",
                 right: 0,
                 // TODO padding: 2 is an eyeball set for consistency with ProgressBar, the buttons are at the same place on the screen
                 padding: 2,
-                zIndex: 99,
               }}
             >
               <Stack direction="row" justifyContent="space-between">
@@ -93,11 +99,9 @@ const Checklist = ({
                   ))}
               </Stack>
             </Paper>
-          </Slide>
-        </ClickAwayListener>
-      ) : (
-        ""
-      )}
+          </ClickAwayListener>
+        </Box>
+      </Slide>
     </>
   );
 };
