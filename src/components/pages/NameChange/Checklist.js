@@ -54,10 +54,7 @@ const Checklist = ({
         >
           <ClickAwayListener
             onClickAway={() => {
-              if (displayModalBoolean === true) {
-                setDisplayModalBoolean(false);
-                console.log("im hidinggggg");
-              }
+              setDisplayModalBoolean(false);
             }}
           >
             <Paper
