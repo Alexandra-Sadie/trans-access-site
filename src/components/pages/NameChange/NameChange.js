@@ -2,7 +2,7 @@ import { Grid2 as Grid, Paper, Box } from "@mui/material";
 import ProgressBar from "./ProgressBar";
 import Quiz from "./Quiz";
 import Checklist from "./Checklist";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { firstQuestion } from "./questions/firstQuestion";
 import { secondQuestion } from "./questions/secondQuestion";
 // TODO: We want a minHeight for the quiz and checklist, along with a percentage instead of set heights
@@ -17,6 +17,7 @@ const NameChange = () => {
   const [currentQuestion, setCurrentQuestion] = useState(firstQuestion);
   const [pendingChecklistItems, setPendingChecklistItems] = useState([]);
   const [currentChecklistItems, setCurrentChecklistItems] = useState([]);
+  const modalContainerRef = useRef(null);
 
   return (
     <>
@@ -26,6 +27,7 @@ const NameChange = () => {
         <Grid size={12} sx={{ zIndex: 0 }}>
           <Paper
             elevation={4}
+            ref={modalContainerRef}
             sx={{
               position: "relative", // TODO: remove this
               height: 700,
