@@ -31,7 +31,7 @@ const NameChange = () => {
             sx={{
               position: "relative", // TODO: remove this
               height: 700,
-              overflow: "hidden",
+              overflow: "hidden", // This is for the modal checklist, which needs to slide in from inside this Paper, to not be visible while sliding in from outside
             }}
           >
             <Checklist
