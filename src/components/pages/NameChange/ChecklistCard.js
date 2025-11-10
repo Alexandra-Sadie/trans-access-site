@@ -28,7 +28,7 @@ const ChecklistCard = ({
         <Typography>{checkItemBodyText}</Typography>
       </AccordionDetails>
       <AccordionActions sx={{ justifyContent: "center" }}>
-        <Button variant="contained" href={checkItemButton.url}>
+        <Button variant="contained" href={checkItemButton.link}>
           {checkItemButton.text}
         </Button>
       </AccordionActions>
