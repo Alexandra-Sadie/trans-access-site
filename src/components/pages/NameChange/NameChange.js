@@ -3,8 +3,8 @@ import ProgressBar from "./ProgressBar";
 import Quiz from "./Quiz";
 import Checklist from "./Checklist";
 import { useState } from "react";
-import { firstQuestion } from "./questions/firstQuestion";
-import { secondQuestion } from "./questions/secondQuestion";
+import { firstQuestion } from "./questions/flowchartQuestions/firstQuestion";
+import { secondQuestion } from "./questions/flowchartQuestions/secondQuestion";
 // TODO: We want a minHeight for the quiz and checklist, along with a percentage instead of set heights
 // Realizing this should be the same for both, so this should probably be handled here with props
 

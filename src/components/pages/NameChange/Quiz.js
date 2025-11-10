@@ -1,6 +1,6 @@
 import { Stack, Typography, Button } from "@mui/material";
 import { ArrowBackIosNew, ArrowForwardIos } from "@mui/icons-material";
-import { firstQuestion } from "./questions/firstQuestion";
+import { firstQuestion } from "./questions/flowchartQuestions/firstQuestion";
 import { useState } from "react";
 
 const Quiz = ({
