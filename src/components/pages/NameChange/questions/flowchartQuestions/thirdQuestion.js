@@ -18,8 +18,7 @@ const subquestions14Under = {
             buttonText: "Yes",
             checklistItems: [
               {
-                checkItemHeader:
-                  "14 and under sex designation change application", // Reworded from flowchart
+                checkItemHeader: "14 and under application", // Reworded from flowchart
                 checkItemBodyText:
                   "Your parent or tutor must fill out the Application to Change the Sex Designation of a Person Under 14 Years of Age...", // Reworded from flowchart
                 checkItemButton: {
@@ -196,7 +195,7 @@ export const thirdQuestion = {
       buttonText: "18+",
       checklistItems: [
         {
-          checkItemHeader: "Sex designation change application", // Based on flowchart text
+          checkItemHeader: "18+ application", // Based on flowchart text
           checkItemBodyText:
             "Application to change sex designation of a person 18 years and over", // Straight from flowchart, seems short?
           checkItemButton: {
