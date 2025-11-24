@@ -1,13 +1,14 @@
-import { secondQuestion } from "./secondQuestion";
+import { livingInQuebec } from "./livingInQuebec";
 
-export const firstQuestion = {
+export const bornInQuebec = {
+  // other options: birthplace
   questionHeader: "Were you born in Quebec?",
   questionSubHeader: "",
   answers: [
     {
       buttonText: "Yes",
       checklistItems: [],
-      nextQuestion: secondQuestion,
+      nextQuestion: livingInQuebec,
       done: false,
     },
     {

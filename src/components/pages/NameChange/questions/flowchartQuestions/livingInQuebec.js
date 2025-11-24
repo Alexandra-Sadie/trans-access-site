@@ -1,6 +1,7 @@
-import { thirdQuestion } from "./thirdQuestion";
+import { age } from "./age";
 
-export const secondQuestion = {
+export const livingInQuebec = {
+  // other options: domiciledforQ, livingInQuebecOneYear
   questionHeader: "Have you been domiciled in Quebec for at least one year?", // I feel like we should use "living" here instead...
   questionSubHeader: "",
   answers: [
@@ -17,7 +18,7 @@ export const secondQuestion = {
           },
         },
       ],
-      nextQuestion: thirdQuestion,
+      nextQuestion: age,
       done: false,
     },
     {
