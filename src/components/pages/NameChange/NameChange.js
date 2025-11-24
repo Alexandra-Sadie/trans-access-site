@@ -3,8 +3,7 @@ import ProgressBar from "./ProgressBar";
 import Quiz from "./Quiz";
 import Checklist from "./Checklist";
 import { useState } from "react";
-import { firstQuestion } from "./questions/flowchartQuestions/firstQuestion";
-import { secondQuestion } from "./questions/flowchartQuestions/secondQuestion";
+import { bornInQuebec } from "./questions/flowchartQuestions/bornInQuebec";
 // TODO: We want a minHeight for the quiz and checklist, along with a percentage instead of set heights
 // Realizing this should be the same for both, so this should probably be handled here with props
 
@@ -14,7 +13,7 @@ const NameChange = () => {
   // Not sure if important, but the Papers seem to have their own rules for minimum heights aside from the sx prop
 
   const [displayModalBoolean, setDisplayModalBoolean] = useState(false);
-  const [currentQuestion, setCurrentQuestion] = useState(firstQuestion);
+  const [currentQuestion, setCurrentQuestion] = useState(bornInQuebec);
   const [pendingChecklistItems, setPendingChecklistItems] = useState([]);
   const [currentChecklistItems, setCurrentChecklistItems] = useState([]);
 
