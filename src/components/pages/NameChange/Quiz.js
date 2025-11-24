@@ -14,6 +14,7 @@ const Quiz = ({
   const [selectedButton, setSelectedButton] = useState("");
   const [pendingQuestion, setpendingQuestion] = useState({});
   const [previousQuestions, setPreviousQuestions] = useState([]);
+  const [ofAge, setOfAge] = useState(true);
   return (
     <Stack
       spacing={7}
