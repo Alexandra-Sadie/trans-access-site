@@ -1,3 +1,5 @@
+import { childrenOfAge } from "./childrenOfAge";
+
 export const maritalStatus = {
   questionHeader: "Are you divorced, married or a widow?", // This question feels like it doesn't leave room for a "none of these" option at first
   questionSubHeader: "",
@@ -15,7 +17,7 @@ export const maritalStatus = {
           },
         },
       ],
-      nextQuestion: fourthQuestion,
+      nextQuestion: ofAge ? childrenOfAge : childrenUnderAge,
       done: false,
     },
     {
@@ -38,13 +40,13 @@ export const maritalStatus = {
                 },
               },
             ],
-            nextQuestion: fourthQuestion,
+            nextQuestion: ofAge ? childrenOfAge : childrenUnderAge,
             done: false,
           },
           {
             buttonText: "No",
             checklistItems: [],
-            nextQuestion: fourthQuestion,
+            nextQuestion: ofAge ? childrenOfAge : childrenUnderAge,
             done: false,
           },
         ],
@@ -71,13 +73,13 @@ export const maritalStatus = {
                 },
               },
             ],
-            nextQuestion: fourthQuestion,
+            nextQuestion: ofAge ? childrenOfAge : childrenUnderAge,
             done: false,
           },
           {
             buttonText: "No",
             checklistItems: [],
-            nextQuestion: fourthQuestion,
+            nextQuestion: ofAge ? childrenOfAge : childrenUnderAge,
             done: false,
           },
         ],
@@ -87,7 +89,7 @@ export const maritalStatus = {
     {
       buttonText: "None of the above",
       checklistItems: [],
-      nextQuestion: fourthQuestion,
+      nextQuestion: ofAge ? childrenOfAge : childrenUnderAge,
       done: false,
     },
   ],
