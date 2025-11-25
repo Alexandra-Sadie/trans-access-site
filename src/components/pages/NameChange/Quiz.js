@@ -28,7 +28,10 @@ const Quiz = ({
         {currentQuestion.questionHeader}
       </Typography>
       <Typography variant="body1" align="left">
-        {currentQuestion.questionSubHeader}
+        {
+          // TODO this should be defensively coded to render empty string if no subHeader value
+          currentQuestion.questionSubHeader
+        }
       </Typography>
       {currentQuestion.answers.map((answer) => {
         return (
