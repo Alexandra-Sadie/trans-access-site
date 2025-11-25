@@ -12,6 +12,7 @@ import AuthProvider from "./providers/AuthProvider";
 import CustomThemesProvider from "./providers/CustomThemesProvider/CustomThemesProvider";
 import CollectionProvider from "./providers/CollectionProvider";
 import ModalStateProvider from "./components/pages/NameChange/ModalStateProvider";
+import NameChangeProvider from "./providers/NameChangeProvider";
 // our components
 import App from "./components/App";
 import Main from "./components/pages/Main/Main";
@@ -46,58 +47,62 @@ root.render(
           {/* BrowserRouter is the higher-order component that lets us define all the url bar routes our app will accept, defined below as children of BrowserRouter. See README.md for full documentation.
           Component documentation here: https://reactrouter.com/en/6.10.0/router-components/browser-router*/}
           <ModalStateProvider>
-            <BrowserRouter>
-              <Routes>
-                {/* We've structured our routes (AKA our pages) as nested sub-routes "inside" of App.js. This lets us use the React Router Outlet feature to load universal content in App.js which will be visible on every sub-route (AKA every page). We use this to make the Navbar load identically everywhere.
+            <NameChangeProvider>
+              <BrowserRouter>
+                <Routes>
+                  {/* We've structured our routes (AKA our pages) as nested sub-routes "inside" of App.js. This lets us use the React Router Outlet feature to load universal content in App.js which will be visible on every sub-route (AKA every page). We use this to make the Navbar load identically everywhere.
               See comments on app.js for further info. 
               docs: https://reactrouter.com/en/6.10.0/components/outlet */}
-                <Route element={<App />}>
-                  <Route path={routingObject.main.route} element={<Main />} />
+                  <Route element={<App />}>
+                    <Route path={routingObject.main.route} element={<Main />} />
 
-                  <Route
-                    path={routingObject.intervention.route}
-                    // Intervention ALSO receives a path prop because
-                    // react router doesnt directly pass props of Route to the route element
-                    // i.e., to have access to the path in the element, it needs the prop directly
-                    element={
-                      <Intervention path={routingObject.intervention.route} />
-                    }
-                  />
+                    <Route
+                      path={routingObject.intervention.route}
+                      // Intervention ALSO receives a path prop because
+                      // react router doesnt directly pass props of Route to the route element
+                      // i.e., to have access to the path in the element, it needs the prop directly
+                      element={
+                        <Intervention path={routingObject.intervention.route} />
+                      }
+                    />
 
-                  <Route
-                    path={routingObject.therapist.route}
-                    element={<Therapist path={routingObject.therapist.route} />}
-                  />
+                    <Route
+                      path={routingObject.therapist.route}
+                      element={
+                        <Therapist path={routingObject.therapist.route} />
+                      }
+                    />
 
-                  <Route
-                    path={routingObject.name_change.route}
-                    element={
-                      <NameChange path={routingObject.name_change.route} />
-                    }
-                  />
+                    <Route
+                      path={routingObject.name_change.route}
+                      element={
+                        <NameChange path={routingObject.name_change.route} />
+                      }
+                    />
 
-                  <Route
-                    path={routingObject.doctor.route}
-                    element={<Doctor path={routingObject.doctor.route} />}
-                  />
+                    <Route
+                      path={routingObject.doctor.route}
+                      element={<Doctor path={routingObject.doctor.route} />}
+                    />
 
-                  <Route
-                    path={routingObject.login_signup.route}
-                    element={<LoginSignup />}
-                  />
+                    <Route
+                      path={routingObject.login_signup.route}
+                      element={<LoginSignup />}
+                    />
 
-                  <Route
-                    path={routingObject.my_account.route}
-                    element={<MyAccount />}
-                  />
-                </Route>
+                    <Route
+                      path={routingObject.my_account.route}
+                      element={<MyAccount />}
+                    />
+                  </Route>
 
-                {/* // TODO: either make this properly fall through to full home page OR make custom error page 
+                  {/* // TODO: either make this properly fall through to full home page OR make custom error page 
               for now, people will see the toolbar with links to leave*/}
-                {/* This is a common way to make an "error" page. By defining the path as "*", this route will render if the url reads anything other than the defined paths. In practice, this means that if the user accidentally navigates to, for example, "/therapistttt" instead of "/therapist", they will be redirected to the defined element. We have not yet made a custom error page, and this is not redirecting properly to the home page, so for the moment it renders a blank page, with the toolbar visible so they can click to navigate to the correct page. */}
-                <Route path="*" element={<App />} />
-              </Routes>
-            </BrowserRouter>
+                  {/* This is a common way to make an "error" page. By defining the path as "*", this route will render if the url reads anything other than the defined paths. In practice, this means that if the user accidentally navigates to, for example, "/therapistttt" instead of "/therapist", they will be redirected to the defined element. We have not yet made a custom error page, and this is not redirecting properly to the home page, so for the moment it renders a blank page, with the toolbar visible so they can click to navigate to the correct page. */}
+                  <Route path="*" element={<App />} />
+                </Routes>
+              </BrowserRouter>
+            </NameChangeProvider>
           </ModalStateProvider>
         </CustomThemesProvider>
       </CollectionProvider>
