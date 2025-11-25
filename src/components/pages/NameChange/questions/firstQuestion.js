@@ -17,6 +17,7 @@ export const firstQuestion = {
           },
         },
       ],
+      ofAgeFlag: false,
       nextQuestion: secondQuestion,
       // {
       //   //* NESTED SUB-QUESTION
@@ -53,6 +54,7 @@ export const firstQuestion = {
     {
       buttonText: "18+",
       checklistItems: [],
+      ofAgeFlag: true,
       nextQuestion: secondQuestion,
       done: true,
     },
