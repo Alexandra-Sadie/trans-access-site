@@ -13,7 +13,7 @@ const Quiz = ({
   setPendingChecklistItems,
 }) => {
   const [selectedButton, setSelectedButton] = useState("");
-  const [pendingQuestion, setpendingQuestion] = useState({});
+  const [pendingQuestion, setPendingQuestion] = useState({});
   const { ofAgeBoolean, setOfAgeBoolean } = useContext(NameChangeContext);
 
   return (
@@ -53,9 +53,20 @@ const Quiz = ({
             onClick={() => {
               setPendingChecklistItems(answer.checklistItems);
               setSelectedButton(answer.buttonText);
-              setpendingQuestion(answer.nextQuestion);
-              // of age flag
+              // if the next question would be different based on being 18+ we set pending question to that unique "ofAgeNextQuestion"
+              if (
+                // only runs if the over18 flag is true and there is a valid ofAgeNextQuestion object
+                typeof answer.ofAgeNextQuestion === "object" &&
+                ofAgeBoolean === true
+              ) {
+                setPendingQuestion(answer.ofAgeNextQuestion);
+              } else {
+                // if they are under 18 or if there is no "ofAgeNextQuestion" object, it progresses to nextQuestion as normal
+                setPendingQuestion(answer.nextQuestion);
+              }
+              // this should only run once -- when you say if you're over 18 or not at the beginning
               if (typeof answer.ofAgeFlag === "boolean") {
+                // of age flag
                 setOfAgeBoolean(answer.ofAgeFlag);
               }
             }}

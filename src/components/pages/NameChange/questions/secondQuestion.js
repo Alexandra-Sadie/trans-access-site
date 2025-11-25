@@ -1,8 +1,4 @@
 import { firstQuestion } from "./firstQuestion";
-import { useContext } from "react";
-import { NameChangeContext } from "../../../../providers/NameChangeProvider";
-const { ofAgeBoolean } = useContext(NameChangeContext);
-
 export const secondQuestion = {
   questionHeader:
     "This should lead to a different next question if you're under 18 or 18+.",
