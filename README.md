@@ -2,7 +2,7 @@
 
 ## What Is This App?
 
-This is a prototype of CURE Concordia's Trans Access Site. We've built out a basic site architecture as a foundation for future work. As a finished product, this site will help trans people in Quebec find accessible, quality medical, legal, and community care.
+This is a prototype of CURE's Trans Access Site. We've built out a basic site architecture as a foundation for future work. As a finished product, this site will help trans people in Quebec find accessible, quality medical, legal, and community care.
 
 The live version of this app can be found [here.](https://trans-access-site.web.app)
 
@@ -171,3 +171,4 @@ We have been funded by:
 - Campus Ex/El Office
 - SHIFT
 - Emplois Été Canada
+- Women and Gender Equality Canada
