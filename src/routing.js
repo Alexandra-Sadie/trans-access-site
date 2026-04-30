@@ -22,7 +22,7 @@ export const routingObject = {
   },
 
   doctor: {
-    title: "Médecins",
+    title: "Santé",
     route: "doctor",
   },
 
