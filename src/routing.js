@@ -4,6 +4,7 @@ export const routingObject = {
   main: {
     title: "Accueil",
     route: "/",
+    redactFromMain: true,
   },
 
   intervention: {
@@ -29,10 +30,14 @@ export const routingObject = {
   login_signup: {
     title: "Connexion & inscription",
     route: "connexion_inscription",
+    redactFromNav: true,
+    redactFromMain: true,
   },
 
   my_account: {
     title: "Mon compte",
     route: "mon_compte",
+    redactFromNav: true,
+    redactFromMain: true,
   },
 };

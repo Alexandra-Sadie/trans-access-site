@@ -21,15 +21,7 @@ const Main = () => {
           Object.values(routingObject)
             // we are ON main page and don't want to include a link TO main page so we filter out that route
             // and keep the others
-            .filter(
-              ({ route }) =>
-                route !== "/" &&
-                route !== "my_account" &&
-                route !== "login_signup" &&
-                // screening for french routes
-                route !== "connexion_inscription" &&
-                route !== "mon_compte"
-            )
+            .filter(({ redactFromMain }) => redactFromMain !== true)
             // this takes said sub-objects and renders them as buttons
             .map(({ route, title }) => (
               <RouteButton key={route} route={route} title={title} />
