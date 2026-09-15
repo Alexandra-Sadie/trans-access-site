@@ -1,4 +1,5 @@
 import { maritalStatus } from "./maritalStatus";
+import { firstTime } from "./firstTime";
 
 const subquestions14Under = {
   // TODO: One of the paths still has following questions, getting confused, also link
@@ -27,7 +28,7 @@ const subquestions14Under = {
                 },
               },
             ],
-            nextQuestion: fourthQuestion,
+            nextQuestion: firstTime,
             done: false,
           },
           {
