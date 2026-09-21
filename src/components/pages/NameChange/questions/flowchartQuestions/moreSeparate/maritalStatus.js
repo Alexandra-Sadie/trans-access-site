@@ -1,6 +1,6 @@
 import { childrenOfAge } from "./childrenOfAge";
 //import { childrenUnderAge } from "./childrenUnderAge";
-import { ofAge } from "../../Quiz";
+import { ofAge } from "../../../Quiz";
 
 export const maritalStatus = {
   questionHeader: "Are you divorced, married or a widow?", // This question feels like it doesn't leave room for a "none of these" option at first
