@@ -1,6 +1,5 @@
 import { Stack, Typography, Button } from "@mui/material";
 import { ArrowBackIosNew, ArrowForwardIos } from "@mui/icons-material";
-import { firstQuestion } from "./questions/flowchartQuestions/firstQuestion";
 import { useState } from "react";
 
 const Quiz = ({
@@ -43,8 +42,8 @@ const Quiz = ({
                 selectedButton === ""
                   ? "secondary.main" // default color if no buttons are selected yet
                   : selectedButton === answer.buttonText
-                  ? "secondary.dark" // if the current button is selected it's highlighted dark
-                  : "secondary.light", // the unselected button is de-highlighted light
+                    ? "secondary.dark" // if the current button is selected it's highlighted dark
+                    : "secondary.light", // the unselected button is de-highlighted light
             }} // TODO this looks WILD on dark mode
             onClick={() => {
               setPendingChecklistItems(answer.checklistItems);
@@ -71,7 +70,7 @@ const Quiz = ({
               const lastQuestionIndex = previousQuestions.length - 1;
               setCurrentQuestion(previousQuestions[lastQuestionIndex]);
               setPreviousQuestions(
-                previousQuestions.toSpliced(lastQuestionIndex)
+                previousQuestions.toSpliced(lastQuestionIndex),
               );
             }
           }}
@@ -88,7 +87,7 @@ const Quiz = ({
               // the concat() function by default, when provided an array, will concatenate the *contents* of this array, instead of concatenating the array as a whole, i.e. concatenating [c,d] to [a,b] will result in [a,b,c,d] instead of [a,b,[c,d]]
               // Because we need to maintain currentChecklistItems as a 2D array, we thus wrap pendingChecklistItems in a new array
               setCurrentChecklistItems(
-                currentChecklistItems.concat([pendingChecklistItems])
+                currentChecklistItems.concat([pendingChecklistItems]),
               );
 
               setPreviousQuestions(previousQuestions.concat(currentQuestion));
