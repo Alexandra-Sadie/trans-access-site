@@ -19,7 +19,7 @@ export const maritalStatus = {
           },
         },
       ],
-      nextQuestion: childrenOfAge
+      nextQuestion: childrenOfAge,
       done: false,
     },
     {
@@ -42,13 +42,13 @@ export const maritalStatus = {
                 },
               },
             ],
-            nextQuestion: childrenOfAge
+            nextQuestion: childrenOfAge,
             done: false,
           },
           {
             buttonText: "No",
             checklistItems: [],
-            nextQuestion: childrenOfAge
+            nextQuestion: childrenOfAge,
             done: false,
           },
         ],
@@ -75,13 +75,13 @@ export const maritalStatus = {
                 },
               },
             ],
-            nextQuestion: childrenOfAge
+            nextQuestion: childrenOfAge,
             done: false,
           },
           {
             buttonText: "No",
             checklistItems: [],
-            nextQuestion: childrenOfAge
+            nextQuestion: childrenOfAge,
             done: false,
           },
         ],
@@ -91,7 +91,7 @@ export const maritalStatus = {
     {
       buttonText: "None of the above",
       checklistItems: [],
-      nextQuestion: childrenOfAge
+      nextQuestion: childrenOfAge,
       done: false,
     },
   ],
