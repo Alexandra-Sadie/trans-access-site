@@ -64,7 +64,7 @@ const Checklist = ({
               {currentChecklistItems
                 //TODO this flattens one level of the nested array-- double check that is correct and we won't run into any issues
                 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
-                .flat() // currentChecklistItems is a 2d array for data logic reasons, so it must first be flattened in order to be displayed
+                .flat() // currentChecklistItems is a nested array of arrays for data logic reasons. (we need to add an empty array when a question does not add any checklist items, so that hitting "previous question" properly deletes empty arrays instead of deleting checklist items overzealously.) so it must first be flattened in order to be displayed
                 .map((item) => (
                   <ChecklistCard key={item.checkItemHeader} {...item} />
                 ))}
